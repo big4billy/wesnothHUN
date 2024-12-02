@@ -56,6 +56,7 @@
 #include <map>
 #include <set>
 #include <sstream>
+#include <utility>
 #include <vector>
 
 static lg::log_domain log_server("server");
@@ -188,9 +189,15 @@ static bool make_change_diff(const simple_wml::node& src,
 
 static std::string player_status(const wesnothd::player_record& player)
 {
+	auto logged_on_time = std::chrono::steady_clock::now() - player.login_time;
+	auto [d, h, m, s] = chrono::deconstruct_duration(chrono::format::days_hours_mins_secs, logged_on_time);
 	std::ostringstream out;
 	out << "'" << player.name() << "' @ " << player.client_ip()
-		<< " logged on for " << lg::format_timespan(std::chrono::duration_cast<std::chrono::seconds>(std::chrono::steady_clock::now() - player.login_time));
+		<< " logged on for "
+		<< d.count() << " days, "
+		<< h.count() << " hours, "
+		<< m.count() << " minutes, "
+		<< s.count() << " seconds";
 	return out.str();
 }
 
@@ -674,18 +681,18 @@ void server::refresh_tournaments(const boost::system::error_code& ec)
 
 void server::handle_new_client(socket_ptr socket)
 {
-	boost::asio::spawn(io_service_, [socket, this](boost::asio::yield_context yield) { login_client(yield, socket); }
+	boost::asio::spawn(io_service_, [socket, this](boost::asio::yield_context yield) { login_client(std::move(yield), socket); }
 #if BOOST_VERSION >= 108000
-		, [](std::exception_ptr e) { if (e) std::rethrow_exception(e); }
+		, [](const std::exception_ptr& e) { if (e) std::rethrow_exception(e); }
 #endif
 	);
 }
 
 void server::handle_new_client(tls_socket_ptr socket)
 {
-	boost::asio::spawn(io_service_, [socket, this](boost::asio::yield_context yield) { login_client(yield, socket); }
+	boost::asio::spawn(io_service_, [socket, this](boost::asio::yield_context yield) { login_client(std::move(yield), socket); }
 #if BOOST_VERSION >= 108000
-		, [](std::exception_ptr e) { if (e) std::rethrow_exception(e); }
+		, [](const std::exception_ptr& e) { if (e) std::rethrow_exception(e); }
 #endif
 	);
 }
@@ -794,7 +801,7 @@ void server::login_client(boost::asio::yield_context yield, SocketPtr socket)
 	boost::asio::spawn(io_service_,
 		[this, socket, new_player](boost::asio::yield_context yield) { handle_player(yield, socket, new_player); }
 #if BOOST_VERSION >= 108000
-		, [](std::exception_ptr e) { if (e) std::rethrow_exception(e); }
+		, [](const std::exception_ptr& e) { if (e) std::rethrow_exception(e); }
 #endif
 	);
 
