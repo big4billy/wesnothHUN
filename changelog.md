@@ -11,7 +11,9 @@
    * Updated translations: Bengali, British English, Chinese (Simplified), Hungarian, Italian
 ### Units
 ### User interface
+   * The `screen_pitch_microns` variable is no longer available for UI formulas
 ### WML Engine
+   * [stacked_widget] no longer accepts the long-deprecated [stack] tag
 ### Miscellaneous and Bug Fixes
 
 ## Version 1.19.6
