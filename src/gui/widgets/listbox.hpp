@@ -133,13 +133,18 @@ public:
 	void set_row_shown(const boost::dynamic_bitset<>& shown);
 
 	/**
+	 * Hides all rows for which the given predicate returns false.
+	 *
+	 * @returns                   The number of rows now visible.
+	 */
+	std::size_t filter_rows_by(const std::function<bool(std::size_t)>& filter);
+
+	/**
 	 * Returns a list of visible rows
 	 *
 	 * @returns                   A mask indicating which rows are visible
 	 */
 	boost::dynamic_bitset<> get_rows_shown() const;
-
-	bool any_rows_shown() const;
 
 	/**
 	 * Returns the grid of the wanted row.

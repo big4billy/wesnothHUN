@@ -18,12 +18,8 @@
 #include "gui/widgets/group.hpp"
 #include <map>
 
-namespace gui2
+namespace gui2::dialogs
 {
-
-namespace dialogs
-{
-
 class log_settings : public modal_dialog
 {
 public:
@@ -50,10 +46,6 @@ private:
 	virtual void post_show() override;
 
 	void filter_text_changed(const std::string& text);
-
-	std::vector<std::string> last_words_;
-
 };
 
-} // namespace dialogs
-} // end namespace gui2
+} // namespace gui2::dialogs
