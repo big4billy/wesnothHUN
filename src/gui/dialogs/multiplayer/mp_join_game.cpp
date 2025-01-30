@@ -69,6 +69,7 @@ mp_join_game::mp_join_game(saved_game& state, wesnothd_connection& connection, c
 	, flg_dialog_(nullptr)
 {
 	set_show_even_without_video(true);
+	set_allow_plugin_skip(false);
 }
 
 mp_join_game::~mp_join_game()
@@ -214,7 +215,8 @@ static std::string generate_user_description(const config& side)
 
 	const std::string controller_type = side["controller"].str();
 	const std::string reservation = side["current_player"].str();
-	const std::string owner = side["player_id"].str();
+	// Making this string const means it can't be automatically moved when returned from this method
+	std::string owner = side["player_id"].str();
 
 	if(controller_type == side_controller::ai) {
 		return _("Computer Player");

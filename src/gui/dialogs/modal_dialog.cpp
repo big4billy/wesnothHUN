@@ -35,7 +35,6 @@ namespace gui2::dialogs
 
 modal_dialog::modal_dialog(const std::string& window_id)
 	: window(get_window_builder(window_id))
-	, retval_(retval::NONE)
 	, always_save_fields_(false)
 	, fields_()
 	, focus_()
@@ -53,20 +52,25 @@ bool modal_dialog::show(const unsigned auto_close_time)
 {
 	if(video::headless() && !show_even_without_video_) {
 		DBG_DP << "modal_dialog::show denied";
-		if(!allow_plugin_skip_) {
-			return false;
-		}
+		return false;
+	}
+	if(allow_plugin_skip_) {
+		bool skipped = false;
 
 		plugins_manager* pm = plugins_manager::get();
 		if (pm && pm->any_running())
 		{
 			plugins_context pc("Dialog");
-			pc.set_callback("skip_dialog", [this](const config&) { retval_ = retval::OK; }, false);
-			pc.set_callback("quit", [](const config&) {}, false);
+			pc.set_callback("skip_dialog", [this, &skipped](const config&) { set_retval(retval::OK); skipped = true; }, false);
+			pc.set_callback("quit", [this, &skipped](const config&) { set_retval(retval::CANCEL); skipped = true; }, false);
+			pc.set_callback("select", [this, &skipped](const config& c) { set_retval(c["retval"].to_int()); skipped = true; }, false);
+			pc.set_accessor_string("id", [this](const config&) { return window_id(); });
 			pc.play_slice();
 		}
 
-		return false;
+		if(skipped) {
+			return false;
+		}
 	}
 
 	init_fields();
@@ -75,7 +79,7 @@ bool modal_dialog::show(const unsigned auto_close_time)
 
 	{
 		cursor::setter cur{cursor::NORMAL};
-		retval_ = window::show(auto_close_time);
+		window::show(auto_close_time);
 	}
 
 	/*
@@ -92,14 +96,12 @@ bool modal_dialog::show(const unsigned auto_close_time)
 	 */
 	SDL_FlushEvent(DOUBLE_CLICK_EVENT);
 
-	finalize_fields((retval_ == retval::OK || always_save_fields_));
+	finalize_fields(get_retval() == retval::OK || always_save_fields_);
 
 	post_show();
 
-	// post_show may have updated the window retval. Update it here.
-	retval_ = window::get_retval();
-
-	return retval_ == retval::OK;
+	// post_show may update the window retval
+	return get_retval() == retval::OK;
 }
 
 template<typename T, typename... Args>

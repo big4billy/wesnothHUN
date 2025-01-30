@@ -160,6 +160,8 @@ prefs::~prefs()
 
 void prefs::load_advanced_prefs(const game_config_view& gc)
 {
+	advanced_prefs_.clear();
+
 	for(const config& pref : gc.child_range("advanced_preference")) {
 		try {
 			advanced_prefs_.emplace_back(pref);
@@ -1538,7 +1540,7 @@ void prefs::set_user_servers_list(const std::vector<game_config::server_info>& v
 
 std::string prefs::network_host()
 {
-	const std::string res = preferences_[prefs_list::host];
+	std::string res = preferences_[prefs_list::host];
 	if(res.empty()) {
 		return builtin_servers_list().front().address;
 	} else {

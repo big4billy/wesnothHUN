@@ -84,7 +84,6 @@ function gui.show_inspector(title) end
 ---@field ok_label? string caption of the button with id "ok"
 ---@field cancel_label? string caption of the button with id "cancel"
 ---@field help_topic? string the help topic that is to be opened when the '?' button is clicked
----@field show_headers? boolean whether to show column headers in the main list of the dialog
 
 ---@param unit_types_list unit_type[] list of units types to be shown as available recruits
 ---@param options? unit_dialog_options a list of optional configuration keys.
@@ -245,6 +244,7 @@ function gui.add_widget_definition(type, id, content) end
 ---@class rich_label : simple_widget
 ---@field link_color string
 ---@field wrap boolean
+---@field on_link_click fun(dest:string)
 
 ---A simple image
 ---@class image : simple_widget

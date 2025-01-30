@@ -19,6 +19,7 @@
 #include "commandline_options.hpp" // for commandline_options, etc
 #include "config.hpp"              // for config, config::error, etc
 #include "cursor.hpp"              // for set, CURSOR_TYPE::NORMAL, etc
+#include "events.hpp"
 #include "filesystem.hpp" // for filesystem::file_exists, filesystem::io_exception, etc
 #include "floating_label.hpp"
 #include "font/error.hpp"          // for error
@@ -457,6 +458,10 @@ static int process_command_args(commandline_options& cmdline_opts)
 		game_config::allow_insecure = true;
 	}
 
+	if(cmdline_opts.addon_server_info) {
+		game_config::addon_server_info = true;
+	}
+
 	if(cmdline_opts.strict_lua) {
 		game_config::strict_lua = true;
 	}
@@ -825,6 +830,8 @@ static int do_gameloop(commandline_options& cmdline_opts)
 
 	const plugins_context::reg_vec callbacks {
 		{"play_multiplayer", std::bind(&game_launcher::play_multiplayer, game.get(), game_launcher::mp_mode::CONNECT)},
+		{"play_local", std::bind(&game_launcher::play_multiplayer, game.get(), game_launcher::mp_mode::LOCAL)},
+		{"play_campaign", std::bind(&game_launcher::play_campaign, game.get())},
 	};
 
 	const plugins_context::areg_vec accessors {
@@ -976,6 +983,7 @@ int wesnoth_main(int argc, char** argv)
 int main(int argc, char** argv)
 #endif
 {
+	events::set_main_thread();
 	auto args = read_argv(argc, argv);
 	assert(!args.empty());
 

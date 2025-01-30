@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Battle for Wesnoth\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2024-12-18 22:51 UTC\n"
-"PO-Revision-Date: 2024-10-25 20:51+0200\n"
+"POT-Creation-Date: 2025-01-19 17:47 UTC\n"
+"PO-Revision-Date: 2024-12-22 08:42+0100\n"
 "Last-Translator: Michal Žejdl <lachim@emer.cz>\n"
 "Language-Team: Czech https://wiki.wesnoth.org/CzechTranslation\n"
 "Language: cs\n"
@@ -403,7 +403,7 @@ msgstr ""
 #. [lua]: carryover.remaining_gold_message
 #: data/campaigns/World_Conquest/lua/campaign/scenario.lua:87
 msgid "Average remaining gold: "
-msgstr ""
+msgstr "Průměrný zbytek zlata: "
 
 #: data/campaigns/World_Conquest/lua/era/era.lua:12
 msgid "Tell me how my recruit works"
@@ -2645,10 +2645,8 @@ msgstr "Počátek"
 
 #. [lua]: wc_ii_generate_scenario
 #: data/campaigns/World_Conquest/lua/map/main.lua:127
-#, fuzzy
-#| msgid "Scenario"
 msgid "Scenario "
-msgstr "Scénář"
+msgstr "Scénář "
 
 #. [lua]: wc_ii_generate_scenario
 #: data/campaigns/World_Conquest/lua/map/main.lua:129
@@ -2942,7 +2940,7 @@ msgid "Enemies"
 msgstr "Nepřátelé"
 
 #. [lua]: add_player_side
-#: data/campaigns/World_Conquest/lua/map/scenario_utils/side_definitions.lua:59
+#: data/campaigns/World_Conquest/lua/map/scenario_utils/side_definitions.lua:60
 msgid "Allies"
 msgstr "Spojenci"
 
@@ -3968,19 +3966,19 @@ msgstr "Dobytí světa 4hr"
 
 #: data/campaigns/World_Conquest/scenarios/WC_II_scenario.cfg:17
 msgid "WC1p"
-msgstr ""
+msgstr "DS1hr"
 
 #: data/campaigns/World_Conquest/scenarios/WC_II_scenario.cfg:20
 msgid "WC2p"
-msgstr ""
+msgstr "DS2hr"
 
 #: data/campaigns/World_Conquest/scenarios/WC_II_scenario.cfg:23
 msgid "WC3p"
-msgstr ""
+msgstr "DS3hr"
 
 #: data/campaigns/World_Conquest/scenarios/WC_II_scenario.cfg:26
 msgid "WC4p"
-msgstr ""
+msgstr "DS4hr"
 
 #: data/campaigns/World_Conquest/scenarios/WC_II_scenario.cfg:29
 msgid ""
@@ -4106,6 +4104,3 @@ msgstr "Testování"
 #: data/campaigns/World_Conquest/scenarios/WC_II_scenario.cfg:177
 msgid "Campaign Maintenance"
 msgstr "Údržba kampaně"
-
-#~ msgid "WC"
-#~ msgstr "DS"

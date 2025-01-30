@@ -42,6 +42,7 @@
 #include "play_controller.hpp" //note: this can probably be refactored out
 #include "reports.hpp"
 #include "resources.hpp"
+#include "serialization/chrono.hpp"
 #include "synced_context.hpp"
 #include "team.hpp"
 #include "terrain/builder.hpp"
@@ -1929,7 +1930,7 @@ void display::scroll_to_xy(const point& screen_coordinates, SCROLL_TYPE scroll_t
 		events::pump();
 
 		auto time = std::chrono::steady_clock::now();
-		auto dt = std::chrono::duration_cast<fractional_seconds>(time - prev_time);
+		auto dt = fractional_seconds{time - prev_time};
 
 		// Do not skip too many frames on slow PCs
 		dt = std::min<fractional_seconds>(dt, 200ms);
@@ -2208,8 +2209,7 @@ void display::fade_tod_mask(
 	auto duration = 300ms / turbo_speed();
 	auto start = std::chrono::steady_clock::now();
 	for(auto now = start; now < start + duration; now = std::chrono::steady_clock::now()) {
-		float prop_f = float((now - start).count()) / float(duration.count());
-		uint8_t p = float_to_color(prop_f);
+		uint8_t p = float_to_color(chrono::normalize_progress(now - start, duration));
 		tod_hex_alpha2 = p;
 		tod_hex_alpha1 = ~p;
 		draw_manager::invalidate_region(map_outside_area());
@@ -2242,8 +2242,7 @@ void display::fade_to(const color_t& c, const std::chrono::milliseconds& duratio
 
 	// Smoothly blend and display
 	for(auto now = start; now < start + duration; now = std::chrono::steady_clock::now()) {
-		float prop_f = float((now - start).count()) / float(duration.count());
-		uint8_t p = float_to_color(prop_f);
+		uint8_t p = float_to_color(chrono::normalize_progress(now - start, duration));
 		fade_color_ = fade_start.smooth_blend(fade_end, p);
 		draw_manager::invalidate_region(map_outside_area());
 		events::pump_and_draw();
@@ -2802,13 +2801,13 @@ void display::draw_overlays_at(const map_location& loc)
 		const double ter_sub = context().map().get_terrain_info(loc).unit_submerge();
 
 		drawing_buffer_add(
-			drawing_layer::terrain_bg, loc, [this, tex, ter_sub, ovr_sub = ov.submerge](const rect& dest) mutable {
+			drawing_layer::terrain_bg, loc, [tex, ter_sub, ovr_sub = ov.submerge](const rect& dest) mutable {
 				if(ovr_sub > 0.0 && ter_sub > 0.0) {
 					// Adjust submerge appropriately
 					double submerge = ter_sub * ovr_sub;
 
 					submerge_data data
-						= this->get_submerge_data(dest, submerge, tex.draw_size(), ALPHA_OPAQUE, false, false);
+						= display::get_submerge_data(dest, submerge, tex.draw_size(), ALPHA_OPAQUE, false, false);
 
 					// set clip for dry part
 					// smooth_shaded doesn't use the clip information so it's fine to set it up front
