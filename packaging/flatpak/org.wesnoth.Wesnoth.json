@@ -34,8 +34,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://archives.boost.io/release/1.67.0/source/boost_1_67_0.tar.bz2",
-                    "sha256": "2684c972994ee57fc5632e03bf044746f6eb45d4920c343937a465fd67a5adba"
+                    "url": "https://archives.boost.io/release/1.83.0/source/boost_1_83_0.tar.bz2",
+                    "sha256": "6478edfe2f3305127cffe8caf73ea0176c53769f4bf1585be237eb30798c3b8e"
                 }
             ],
             "build-commands": [
