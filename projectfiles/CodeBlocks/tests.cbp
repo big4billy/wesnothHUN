@@ -77,6 +77,7 @@
 			<Add library="libboost_bzip2" />
 			<Add library="libboost_filesystem" />
 			<Add library="libboost_locale" />
+			<Add library="libboost_process" />
 			<Add library="libboost_program_options" />
 			<Add library="libboost_random" />
 			<Add library="libboost_regex" />
@@ -455,8 +456,6 @@
 		<Unit filename="../../src/game_events/wmi_manager.cpp" />
 		<Unit filename="../../src/game_events/wmi_manager.hpp" />
 		<Unit filename="../../src/game_initialization/component_availability.hpp" />
-		<Unit filename="../../src/game_initialization/configure_engine.cpp" />
-		<Unit filename="../../src/game_initialization/configure_engine.hpp" />
 		<Unit filename="../../src/game_initialization/connect_engine.cpp" />
 		<Unit filename="../../src/game_initialization/connect_engine.hpp" />
 		<Unit filename="../../src/game_initialization/create_engine.cpp" />

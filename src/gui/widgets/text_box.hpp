@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2008 - 2024
+	Copyright (C) 2008 - 2025
 	by Mark de Wever <koraq@xs4all.nl>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -46,7 +46,7 @@ public:
 	 */
 	static text_history get_history(const std::string& id, const bool enabled);
 
-	text_history() : history_(0), pos_(0), enabled_(false)
+	text_history() : history_(nullptr), pos_(0), enabled_(false)
 	{
 	}
 

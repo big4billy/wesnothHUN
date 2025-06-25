@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2024
+	Copyright (C) 2003 - 2025
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -214,6 +214,8 @@ struct take_village_step : undo_action
 		return true;
 	}
 };
+
+static auto reg_undo_take_village_step = undo_action_container::subaction_factory<take_village_step>();
 
 }
 game_events::pump_result_t get_village(const map_location& loc, int side, bool *action_timebonus, bool fire_event)

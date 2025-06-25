@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2024
+	Copyright (C) 2003 - 2025
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -174,6 +174,8 @@ struct map_location {
 		int y = h.r + int((h.q - abs(h.q) % 2) / 2);
 		return map_location(x, y);
 	}
+
+	std::vector<map_location> get_ring(int min, int max) const;
 
 	// Rotates the map_location clockwise in 60 degree increments around a center point. Negative numbers of steps are permitted.
 	map_location rotate_right_around_center(const map_location& center, int k) const;

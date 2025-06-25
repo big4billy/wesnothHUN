@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2024
+	Copyright (C) 2003 - 2025
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -598,8 +598,6 @@ theme::theme(const config& cfg, const SDL_Rect& screen)
 	do_resolve_rects(expand_partialresolution(cfg), cfg_);
 	set_resolution(screen);
 }
-
-theme& theme::operator=(theme&& other) = default;
 
 bool theme::set_resolution(const SDL_Rect& screen)
 {

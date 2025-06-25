@@ -33,7 +33,7 @@
          "name":"python3-scons",
          "buildsystem":"simple",
          "build-commands":[
-            "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"scons\" --no-build-isolation"
+            "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=\"${FLATPAK_DEST}\" \"scons\" --no-build-isolation"
          ],
          "sources":[
             {
@@ -54,16 +54,13 @@
             }
          ],
          "build-commands":[
-            "./bootstrap.sh --prefix=/app --with-libraries=filesystem,locale,iostreams,program_options,regex,random,thread,coroutine,context,graph,charconv",
+            "./bootstrap.sh --prefix=/app --with-libraries=filesystem,locale,iostreams,process,program_options,regex,random,thread,coroutine,context,graph,charconv",
             "./b2 -j$FLATPAK_BUILDER_N_JOBS install cxxflags='-fPIE -fstack-protector-strong' define=_FORTIFY_SOURCE=2 link=static variant=release address-model=64 --layout=system"
          ]
       },
       {
          "name":"wesnoth",
          "buildsystem":"simple",
-         "cleanup":[
-            "/share/applications/wesnoth_editor.desktop"
-         ],
          "build-commands":[
             "python3 /app/bin/scons -j $FLATPAK_BUILDER_N_JOBS prefix=/app enable_lto=true ccache=true --debug=time install wesnoth wesnothd"
          ],

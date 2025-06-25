@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2024
+	Copyright (C) 2003 - 2025
 	by Joerg Hinrichs <joerg.hinrichs@alice-dsl.de>
 	Copyright (C) 2003 by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
@@ -170,8 +170,8 @@ protected:
 		// No action by default
 	}
 
-	virtual void show_menu(const std::vector<config>& items_arg, int xloc, int yloc, bool context_menu, display& disp);
-	virtual void execute_action(const std::vector<std::string>& items_arg, int xloc, int yloc, bool context_menu);
+	virtual void show_menu(const std::vector<config>& items_arg, int xloc, int yloc, bool context_menu);
+	virtual void execute_action(const std::vector<std::string>& items_arg);
 
 	virtual bool in_context_menu(const hotkey::ui_command& cmd) const;
 

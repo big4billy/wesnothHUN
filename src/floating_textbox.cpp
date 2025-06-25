@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2006 - 2024
+	Copyright (C) 2006 - 2025
 	by Joerg Hinrichs <joerg.hinrichs@alice-dsl.de>
 	Copyright (C) 2003 by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
@@ -137,8 +137,8 @@ namespace gui{
 			text.append(line_start ? ": " : " ");
 		} else if (matches.size() > 1) {
 			std::string completion_list = utils::join(matches, " ");
-			game_display::get_singleton()->get_chat_manager().add_chat_message(time(nullptr), "", 0, completion_list,
-					events::chat_handler::MESSAGE_PRIVATE, false);
+			game_display::get_singleton()->get_chat_manager().add_chat_message(
+				std::chrono::system_clock::now(), "", 0, completion_list, events::chat_handler::MESSAGE_PRIVATE, false);
 		}
 		box_->set_text(text);
 	}

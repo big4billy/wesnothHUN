@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2024
+	Copyright (C) 2003 - 2025
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -358,7 +358,7 @@ terrain_label::terrain_label(const map_labels& parent, const config& cfg)
 	read(cfg);
 }
 
-terrain_label::terrain_label(terrain_label&& l)
+terrain_label::terrain_label(terrain_label&& l) noexcept
 	: handle_(l.handle_)
 	, tooltip_handle_(l.tooltip_handle_)
 	, text_(std::move(l.text_))

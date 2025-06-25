@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2024
+	Copyright (C) 2003 - 2025
 	by Joerg Hinrichs <joerg.hinrichs@alice-dsl.de>
 	Copyright (C) 2003 by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
@@ -87,7 +87,7 @@ void controller_base::long_touch_callback(int x, int y)
 		{
 			const theme::menu* const m = get_mouse_handler_base().gui().get_theme().context_menu();
 			if(m != nullptr) {
-				show_menu(get_display().get_theme().context_menu()->items(), x_now, y_now, true, get_display());
+				show_menu(get_display().get_theme().context_menu()->items(), x_now, y_now, true);
 			}
 		}
 	}
@@ -204,8 +204,7 @@ void controller_base::handle_event(const SDL_Event& event)
 
 		mh_base.mouse_press(event.button, is_browsing());
 		if(mh_base.get_show_menu()) {
-			show_menu(get_display().get_theme().context_menu()->items(), event.button.x, event.button.y, true,
-					get_display());
+			show_menu(get_display().get_theme().context_menu()->items(), event.button.x, event.button.y, true);
 		}
 		break;
 	case DOUBLE_CLICK_EVENT:
@@ -220,8 +219,7 @@ void controller_base::handle_event(const SDL_Event& event)
 				show_menu(get_display().get_theme().context_menu()->items(),
 						  x,
 						  y,
-						  true,
-						  get_display());
+						  true);
 			}
 		}
 		break;
@@ -426,22 +424,20 @@ void controller_base::play_slice()
 	const theme::menu* const m = get_display().menu_pressed();
 	if(m != nullptr) {
 		const rect& menu_loc = m->location(video::game_canvas());
-		show_menu(m->items(), menu_loc.x + 1, menu_loc.y + menu_loc.h + 1, false, get_display());
+		show_menu(m->items(), menu_loc.x + 1, menu_loc.y + menu_loc.h + 1, false);
 
 		return;
 	}
 
 	const theme::action* const a = get_display().action_pressed();
 	if(a != nullptr) {
-		const rect& action_loc = a->location(video::game_canvas());
-		execute_action(a->items(), action_loc.x + 1, action_loc.y + action_loc.h + 1, false);
-
+		execute_action(a->items());
 		return;
 	}
 
 	auto str_vec = additional_actions_pressed();
 	if(!str_vec.empty()) {
-		execute_action(str_vec, 0, 0, false);
+		execute_action(str_vec);
 		return;
 	}
 
@@ -461,7 +457,7 @@ void controller_base::play_slice()
 }
 
 void controller_base::show_menu(
-		const std::vector<config>& items_arg, int xloc, int yloc, bool context_menu, display& disp)
+		const std::vector<config>& items_arg, int xloc, int yloc, bool context_menu)
 {
 	hotkey::command_executor* cmd_exec = get_hotkey_command_executor();
 	if(!cmd_exec) {
@@ -482,10 +478,10 @@ void controller_base::show_menu(
 		return;
 	}
 
-	cmd_exec->show_menu(items, xloc, yloc, context_menu, disp);
+	cmd_exec->show_menu(items, xloc, yloc, context_menu);
 }
 
-void controller_base::execute_action(const std::vector<std::string>& items_arg, int xloc, int yloc, bool context_menu)
+void controller_base::execute_action(const std::vector<std::string>& items_arg)
 {
 	hotkey::command_executor* cmd_exec = get_hotkey_command_executor();
 	if(!cmd_exec) {
@@ -504,7 +500,7 @@ void controller_base::execute_action(const std::vector<std::string>& items_arg, 
 		return;
 	}
 
-	cmd_exec->execute_action(items, xloc, yloc, context_menu, get_display());
+	cmd_exec->execute_action(items);
 }
 
 bool controller_base::in_context_menu(const hotkey::ui_command& /*command*/) const

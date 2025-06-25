@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2024
+	Copyright (C) 2003 - 2025
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -173,6 +173,7 @@ enum HOTKEY_COMMAND {
 	HOTKEY_EDITOR_MAP_RESIZE,
 	HOTKEY_EDITOR_MAP_GENERATE, HOTKEY_EDITOR_MAP_APPLY_MASK,
 	HOTKEY_EDITOR_MAP_CREATE_MASK_TO,
+	HOTKEY_EDITOR_MAP_TO_SCENARIO,
 
 	// Transitions
 	HOTKEY_EDITOR_UPDATE_TRANSITIONS, HOTKEY_EDITOR_TOGGLE_TRANSITIONS,
@@ -331,8 +332,8 @@ public:
 	const wml_hotkey_record& operator=(const wml_hotkey_record&) = delete;
 
 	/** But we *do* want move semantics. */
-	wml_hotkey_record(wml_hotkey_record&&) = default;
-	wml_hotkey_record& operator=(wml_hotkey_record&&) = default;
+	wml_hotkey_record(wml_hotkey_record&&) noexcept = default;
+	wml_hotkey_record& operator=(wml_hotkey_record&&) noexcept= default;
 
 	/** Registers a hotkey_command for a WML hotkey with the given ID if one does not already exist. */
 	wml_hotkey_record(const std::string& id, const t_string& description, const config& default_hotkey);

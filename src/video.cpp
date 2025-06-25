@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2024
+	Copyright (C) 2003 - 2025
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -30,10 +30,17 @@
 #include "game_version.hpp"
 #endif
 
+#include <SDL2/SDL.h>
 #include <SDL2/SDL_render.h> // SDL_Texture
 
 #include <cassert>
 #include <vector>
+
+#ifdef __ANDROID__
+extern "C" {
+	SDL_Surface* Android_AP_getFrameBuffer();
+}
+#endif
 
 static lg::log_domain log_display("display");
 #define LOG_DP LOG_STREAM(info, log_display)
@@ -118,7 +125,6 @@ void deinit()
 	// Clear any static texture caches,
 	// lest they try to delete textures after SDL_Quit.
 	image::flush_cache();
-	font::flush_texture_cache();
 	render_texture_.reset();
 	current_render_target_.reset();
 
@@ -372,6 +378,10 @@ void init_window(bool hidden)
 		window_flags |= SDL_WINDOW_MAXIMIZED;
 	}
 
+#ifdef __ANDROID__
+	SDL_SetHint(SDL_HINT_RENDER_DRIVER, "opengles");
+#endif
+
 	if(hidden) {
 		LOG_DP << "hiding main window";
 		window_flags |= SDL_WINDOW_HIDDEN;
@@ -398,6 +408,10 @@ void init_window(bool hidden)
 	SDL_DisplayMode currentDisplayMode;
 	SDL_GetCurrentDisplayMode(window->get_display_index(), &currentDisplayMode);
 	refresh_rate_ = currentDisplayMode.refresh_rate != 0 ? currentDisplayMode.refresh_rate : 60;
+
+#ifdef __ANDROID__
+	window->set_size(w, h);
+#endif
 
 	update_framebuffer();
 }
@@ -541,8 +555,10 @@ void reset_render_target()
 
 texture get_render_target()
 {
+#ifndef __ANDROID__
 	// This should always be up-to-date, but assert for sanity.
 	assert(current_render_target_ == SDL_GetRenderTarget(get_renderer()));
+#endif
 	return current_render_target_;
 }
 

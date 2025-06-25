@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2024
+	Copyright (C) 2003 - 2025
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -247,7 +247,7 @@ public:
 	explicit theme(const config& cfg, const SDL_Rect& screen);
 	theme(const theme&) = delete;
 	theme& operator=(const theme&) = delete;
-	theme& operator=(theme&&);
+	theme& operator=(theme&&) noexcept = default;
 
 	bool set_resolution(const SDL_Rect& screen);
 	void modify(const config &cfg);

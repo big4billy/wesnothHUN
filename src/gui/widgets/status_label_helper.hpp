@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2010 - 2024
+	Copyright (C) 2010 - 2025
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
 	This program is free software; you can redistribute it and/or modify
@@ -77,12 +77,12 @@ std::function<void()> bind_status_label(
 	// Find the target status label.
 	styled_widget& label = find_in->find_widget<styled_widget>(label_id_);
 
-	const auto update_label = [&, value_getter]() {
+	const auto update_label = [&, value_getter](auto&&...) {
 		label.set_label(value_getter(source));
 	};
 
 	// Bind the callback.
-	connect_signal_notify_modified(source, std::bind(update_label));
+	connect_signal_notify_modified(source, update_label);
 
 	// Set initial value.
 	update_label();

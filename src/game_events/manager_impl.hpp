@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2024
+	Copyright (C) 2003 - 2025
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -47,7 +47,7 @@ public:
 	/** Access the event handler. */
 	event_handler* operator->() {return handler_.get();}
 	event_handler& operator*() {return *handler_;}
-	pending_event_handler(pending_event_handler&&) = default;
+	pending_event_handler(pending_event_handler&&) noexcept = default;
 	~pending_event_handler();
 };
 

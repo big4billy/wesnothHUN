@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2024
+	Copyright (C) 2003 - 2025
 	by Guillaume Melquiond <guillaume.melquiond@gmail.com>
 	Copyright (C) 2003 by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
@@ -112,14 +112,14 @@ config& config::operator=(const config& cfg)
 	return *this;
 }
 
-config::config(config&& cfg)
+config::config(config&& cfg) noexcept
 	: values_(std::move(cfg.values_))
 	, children_(std::move(cfg.children_))
 	, ordered_children(std::move(cfg.ordered_children))
 {
 }
 
-config& config::operator=(config&& cfg)
+config& config::operator=(config&& cfg) noexcept
 {
 	clear();
 	swap(cfg);

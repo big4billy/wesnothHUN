@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2024
+	Copyright (C) 2003 - 2025
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -129,7 +129,7 @@ public:
 	terrain_label(const map_labels&, const config&);
 
 	/** Move ctor. */
-	terrain_label(terrain_label&&);
+	terrain_label(terrain_label&&) noexcept;
 
 	~terrain_label();
 

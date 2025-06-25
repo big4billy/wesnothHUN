@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2014 - 2024
+	Copyright (C) 2014 - 2025
 	by Chris Beck <render787@gmail.com>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -38,7 +38,7 @@ public:
 	 * the vector be resized), these pointers will become invalid and lead to a crash.
 	 */
 	team_builder(const team_builder&) = delete;
-	team_builder(team_builder&&) = default;
+	team_builder(team_builder&&) noexcept = default;
 
 	/** Handles the first stage of team initialization (everything except unit construction). */
 	void build_team_stage_one();

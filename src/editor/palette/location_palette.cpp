@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2024
+	Copyright (C) 2003 - 2025
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -63,7 +63,7 @@ public:
 		if (state_.selected) {
 			draw::rect(location(), 255, 255, 255, 255);
 		}
-		font::pango_draw_text(true, location(), 16, font::NORMAL_COLOR, desc_.empty() ? id_ : desc_, location().x + 2, location().y, 0);
+		font::pango_draw_text(true, location(), 16, font::NORMAL_COLOR, desc_.empty() ? id_ : desc_, location().x + 2, location().y);
 	}
 
 	//TODO move to widget

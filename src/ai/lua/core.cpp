@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2010 - 2024
+	Copyright (C) 2010 - 2025
 	by Yurii Chernyi <terraninfo@terraninfo.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -739,7 +739,7 @@ static int cfun_ai_recalculate_move_maps_enemy(lua_State *L)
 }
 
 template<typename T>
-typesafe_aspect<T>* try_aspect_as(aspect_ptr p)
+typesafe_aspect<T>* try_aspect_as(const aspect_ptr& p)
 {
 	return std::dynamic_pointer_cast<typesafe_aspect<T> >(p).get();
 }

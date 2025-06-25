@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2024
+	Copyright (C) 2003 - 2025
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -200,8 +200,7 @@ int gamemap::read_header(const std::string& data)
 		return 0;
 
 	std::string header_str(std::string(data, 0, header_offset + 1));
-	config header;
-	::read(header, header_str);
+	config header = io::read(header_str);
 
 	return header_offset + 2;
 }

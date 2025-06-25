@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2024
+	Copyright (C) 2003 - 2025
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -164,8 +164,8 @@ public:
 	config(const config &);
 	config &operator=(const config &);
 
-	config(config &&);
-	config &operator=(config &&);
+	config(config &&) noexcept;
+	config &operator=(config &&) noexcept;
 
 	/**
 	 * Creates a config object with an empty child of name @a child.

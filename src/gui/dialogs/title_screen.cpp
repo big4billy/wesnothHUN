@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2008 - 2024
+	Copyright (C) 2008 - 2025
 	by Mark de Wever <koraq@xs4all.nl>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -89,12 +89,12 @@ title_screen::~title_screen()
 void title_screen::register_button(const std::string& id, hotkey::HOTKEY_COMMAND hk, const std::function<void()>& callback)
 {
 	if(hk != hotkey::HOTKEY_NULL) {
-		register_hotkey(hk, std::bind(callback));
+		register_hotkey(hk, [callback](auto&&...) { callback(); return true; });
 	}
 
 	try {
 		button& btn = find_widget<button>(id);
-		connect_signal_mouse_left_click(btn, std::bind(callback));
+		connect_signal_mouse_left_click(btn, [callback](auto&&...) { std::invoke(callback); });
 	} catch(const wml_exception& e) {
 		ERR_GUI_P << e.user_message;
 		prefs::get().set_gui2_theme("default");
@@ -102,12 +102,14 @@ void title_screen::register_button(const std::string& id, hotkey::HOTKEY_COMMAND
 	}
 }
 
-static void launch_lua_console()
+namespace
+{
+void show_lua_console()
 {
 	gui2::dialogs::lua_interpreter::display(gui2::dialogs::lua_interpreter::APP);
 }
 
-static void make_screenshot()
+void make_screenshot()
 {
 	surface screenshot = video::read_pixels();
 	if(screenshot) {
@@ -116,6 +118,8 @@ static void make_screenshot()
 		gui2::dialogs::screenshot_notification::display(filename, screenshot);
 	}
 }
+
+} // anon namespace
 
 #ifdef DEBUG_TOOLTIP
 /*
@@ -163,19 +167,20 @@ void title_screen::init_callbacks()
 	// General hotkeys
 	//
 	register_hotkey(hotkey::TITLE_SCREEN__RELOAD_WML,
-		std::bind(&gui2::window::set_retval, std::ref(*this), RELOAD_GAME_DATA, true));
-
-	register_hotkey(hotkey::HOTKEY_ACHIEVEMENTS,
-		std::bind(&title_screen::show_achievements, this));
+		[this](auto&&...) { set_retval(RELOAD_GAME_DATA); return true; });
 
 	register_hotkey(hotkey::TITLE_SCREEN__TEST,
-		std::bind(&title_screen::hotkey_callback_select_tests, this));
+		[this](auto&&...) { hotkey_callback_select_tests(); return true; });
 
-	// A wrapper is needed here since the relevant display function is overloaded, and
-	// since the wrapper's signature doesn't exactly match what register_hotkey expects.
-	register_hotkey(hotkey::LUA_CONSOLE, std::bind(&launch_lua_console));
+	register_hotkey(hotkey::TITLE_SCREEN__CORES,
+		[this](auto&&...) { button_callback_cores(); return true; });
 
-	register_hotkey(hotkey::HOTKEY_SCREENSHOT, std::bind(&make_screenshot));
+	register_hotkey(hotkey::LUA_CONSOLE,
+		[](auto&&...) { show_lua_console(); return true; });
+
+	/** @todo: should eventually become part of global hotkey handling. */
+	register_hotkey(hotkey::HOTKEY_SCREENSHOT,
+		[](auto&&...) { make_screenshot(); return true; });
 
 	//
 	// Background and logo images
@@ -194,43 +199,18 @@ void title_screen::init_callbacks()
 	//
 	// Tip-of-the-day browser
 	//
-	multi_page* tip_pages = find_widget<multi_page>("tips", false, false);
-
-	if(tip_pages != nullptr) {
-		std::vector<game_tip> tips = tip_of_the_day::shuffle(settings::tips);
-		if(tips.empty()) {
-			WRN_CF << "There are no tips of day available.";
-		}
-		for(const auto& tip : tips)	{
-			widget_item widget;
-			widget_data page;
-
-			widget["use_markup"] = "true";
-
-			// Use pango markup to insert drop cap
-			// Example: Lawful units -> <span ...>L</span>awful units
-			// If tip starts with a tag, we need to insert the <span> after it
-			// then insert the </span> tag after the first character of the text
-			// after markup. Assumes that the tags themselves don't
-			// contain non-ASCII characters.
-			// Example: <i>Lawful</i> units -> <i><span ...>L</span>awful</i> units
-			const std::string& script_font = font::get_font_families(font::FONT_SCRIPT);
-			std::string tip_text = tip.text().str();
-			std::size_t pos = 0;
-			while (pos < tip_text.size() && tip_text.at(pos) == '<') {
-				pos = tip_text.find_first_of(">", pos) + 1;
-			}
-			utf8::insert(tip_text, pos+1, "</span>");
-			utf8::insert(tip_text, pos, "<span font_family='" + script_font + "' font_size='xx-large'>");
-
-			widget["label"] = tip_text;
-
-			page.emplace("tip", widget);
-
-			widget["label"] = tip.source();
-			page.emplace("source", widget);
-
-			tip_pages->add_page(page);
+	if(auto tip_pages = find_widget<multi_page>("tips", false, false)) {
+		for(const game_tip& tip : tip_of_the_day::shuffle(settings::tips))	{
+			tip_pages->add_page({
+				{ "tip", {
+					{ "use_markup", "true" },
+					{ "label", tip.text }
+				}},
+				{ "source", {
+					{ "use_markup", "true" },
+					{ "label", tip.source }
+				}}
+			});
 		}
 
 		update_tip(true);
@@ -244,16 +224,22 @@ void title_screen::init_callbacks()
 
 	// Tip panel visiblity and close button
 	panel& tip_panel = find_widget<panel>("tip_panel");
-	if (!prefs::get().show_tips()) {
-		tip_panel.set_visible(false);
-	} else {
-		auto close = find_widget<button>("close", false, false);
-		if (close) {
-			connect_signal_mouse_left_click(*close, [&](auto&&...) {
-				prefs::get().set_show_tips(false);
-				tip_panel.set_visible(false);
-			});
-		}
+
+	tip_panel.set_visible(prefs::get().show_tips()
+		? widget::visibility::visible
+		: widget::visibility::hidden);
+
+	if(auto toggle_tips = find_widget<button>("toggle_tip_panel", false, false)) {
+		connect_signal_mouse_left_click(*toggle_tips, [&tip_panel](auto&&...) {
+			const bool currently_hidden = tip_panel.get_visible() == widget::visibility::hidden;
+
+			tip_panel.set_visible(currently_hidden
+				? widget::visibility::visible
+				: widget::visibility::hidden);
+
+			// If previously hidden, will now be visible, so we can reuse the same value
+			prefs::get().set_show_tips(currently_hidden);
+		});
 	}
 
 	//
@@ -267,7 +253,7 @@ void title_screen::init_callbacks()
 	//
 	// About
 	//
-	register_button("about", hotkey::HOTKEY_NULL, std::bind(&game_version::display<>));
+	register_button("about", hotkey::HOTKEY_NULL, [] { game_version::display(); });
 
 	//
 	// Campaign
@@ -318,12 +304,6 @@ void title_screen::init_callbacks()
 	register_button("editor", hotkey::TITLE_SCREEN__EDITOR, [this]() { set_retval(MAP_EDITOR); });
 
 	//
-	// Cores
-	//
-	register_hotkey(hotkey::TITLE_SCREEN__CORES,
-		std::bind(&title_screen::button_callback_cores, this));
-
-	//
 	// Language
 	//
 	register_button("language", hotkey::HOTKEY_LANGUAGE, [this]() {
@@ -347,13 +327,13 @@ void title_screen::init_callbacks()
 	// Achievements
 	//
 	register_button("achievements", hotkey::HOTKEY_ACHIEVEMENTS,
-		std::bind(&title_screen::show_achievements, this));
+		[] { dialogs::achievements_dialog::display(); });
 
 	//
 	// Community
 	//
 	register_button("community", hotkey::HOTKEY_NULL,
-		std::bind(&title_screen::show_community, this));
+		[] { dialogs::game_version::display(4); }); // shows the 5th tab, community
 
 	//
 	// Quit
@@ -377,7 +357,7 @@ void title_screen::init_callbacks()
 	// GUI Test and Debug Window
 	//
 	register_button("test_dialog", hotkey::HOTKEY_NULL,
-		std::bind(&title_screen::show_gui_test_dialog, this));
+		[] { dialogs::gui_test_dialog::display(); });
 
 	auto test_dialog = find_widget<button>("test_dialog", false, false);
 	if(test_dialog) {
@@ -401,7 +381,7 @@ void title_screen::update_static_labels()
 		version_label->set_label(version_string);
 	}
 
-	get_canvas(0).set_variable("revision_number", wfl::variant(version_string));
+	get_canvas(1).set_variable("revision_number", wfl::variant(version_string));
 
 	//
 	// Language menu label
@@ -496,24 +476,6 @@ void title_screen::hotkey_callback_select_tests()
 		game_.set_test(options[choice]);
 		set_retval(LAUNCH_GAME);
 	}
-}
-
-void title_screen::show_achievements()
-{
-	achievements_dialog ach;
-	ach.show();
-}
-
-void title_screen::show_community()
-{
-	game_version dlg;
-	// shows the 5th tab, community, when the dialog is shown
-	dlg.display(4);
-}
-
-void title_screen::show_gui_test_dialog()
-{
-	gui2::dialogs::gui_test_dialog::execute();
 }
 
 void title_screen::show_preferences()

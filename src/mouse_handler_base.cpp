@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2006 - 2024
+	Copyright (C) 2006 - 2025
 	by Joerg Hinrichs <joerg.hinrichs@alice-dsl.de>
 	Copyright (C) 2003 by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
@@ -156,14 +156,9 @@ bool mouse_handler_base::mouse_motion_default(int x, int y, bool /*update*/)
 	return false;
 }
 
-bool mouse_handler_base::mouse_button_event(const SDL_MouseButtonEvent& event, uint8_t button,
-											map_location loc, bool click)
+bool mouse_handler_base::mouse_button_event(
+	const SDL_MouseButtonEvent& /*event*/, uint8_t /*button*/, map_location /*loc*/, bool /*click*/)
 {
-	(void)event;
-	(void)button;
-	(void)loc;
-	(void)click;
-
 	return false;
 }
 

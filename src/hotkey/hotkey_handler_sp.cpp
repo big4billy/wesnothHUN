@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2014 - 2024
+	Copyright (C) 2014 - 2025
 	by Chris Beck <render787@gmail.com>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -193,11 +193,11 @@ void playsingle_controller::hotkey_handler::whiteboard_suppose_dead()
 	whiteboard_manager_->save_suppose_dead(*curr_unit,loc);
 }
 
-hotkey::ACTION_STATE playsingle_controller::hotkey_handler::get_action_state(const hotkey::ui_command& cmd) const
+hotkey::action_state playsingle_controller::hotkey_handler::get_action_state(const hotkey::ui_command& cmd) const
 {
 	switch(cmd.hotkey_command) {
 	case hotkey::HOTKEY_WB_TOGGLE:
-		return whiteboard_manager_->is_active() ? hotkey::ACTION_ON : hotkey::ACTION_OFF;
+		return hotkey::on_if(whiteboard_manager_->is_active());
 	default:
 		return play_controller::hotkey_handler::get_action_state(cmd);
 	}
