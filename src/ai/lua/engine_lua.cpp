@@ -30,6 +30,7 @@
 #include "resources.hpp"
 #include "ai/lua/core.hpp"
 #include "ai/lua/lua_object.hpp"
+#include "game_config.hpp"
 #include "game_board.hpp"
 #include "scripting/game_lua_kernel.hpp"
 #include "units/unit.hpp"
@@ -374,13 +375,6 @@ void engine_lua::do_parse_goal_from_config(const config &cfg, std::back_insert_i
 		return;
 	}
 	*b = new_goal;
-}
-
-std::string engine_lua::evaluate(const std::string &/*str*/)
-{
-	// TODO: this is not mandatory, but if we want to allow lua to evaluate
-	// something 'in context' of this ai, this will be useful
-	return "";
 }
 
 void engine_lua::apply_micro_ai(const config &cfg)

@@ -712,7 +712,7 @@ void window::render()
 	draw::clear();
 
 	draw();
-	awaiting_rerender_ = sdl::empty_rect;
+	awaiting_rerender_ = {};
 }
 
 bool window::expose(const rect& region)
@@ -1199,6 +1199,14 @@ void window::mouse_capture(const bool capture)
 }
 
 void window::keyboard_capture(widget* widget)
+{
+	assert(event_distributor_);
+#ifndef __ANDROID__
+	event_distributor_->keyboard_capture(widget);
+#endif
+}
+
+void window::capture_and_show_keyboard(widget* widget)
 {
 	assert(event_distributor_);
 	event_distributor_->keyboard_capture(widget);

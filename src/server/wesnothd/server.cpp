@@ -961,7 +961,7 @@ template<class SocketPtr> bool server::is_login_allowed(boost::asio::yield_conte
 		auth_ban = user_handler_->user_is_banned(username, client_address(socket));
 	}
 
-	if(auth_ban.type) {
+	if(auth_ban.type != user_handler::BAN_NONE) {
 		std::string ban_type_desc;
 		std::string ban_reason;
 		const char* msg_numeric;
@@ -1567,40 +1567,6 @@ void server::cleanup_game(game* game_ptr)
 void server::handle_join_game(player_iterator player, simple_wml::node& join)
 {
 	int game_id = join["id"].to_int();
-
-	// this is a game defined in an [mp_queue] in the client
-	// if there is no mp_queue defined game already existing with empty slots, tell the client to create one
-	// else update game_id to the game that already exists and have the client join that game
-	if(game_id < 0) {
-		for(const auto& game : games()) {
-			if(game->q_type() == queue_type::type::client_preset &&
-			   !game->started() &&
-			   join["mp_scenario"].to_string() == game->get_scenario_id() &&
-			   game->description()->child("slot_data")->attr("vacant").to_int() != 0) {
-				game_id = game->id();
-			}
-		}
-
-		// if it's still negative, then there's no existing game to join
-		if(game_id < 0) {
-			simple_wml::document create_game_doc;
-			simple_wml::node& create_game_node = create_game_doc.root().add_child("create_game");
-			create_game_node.set_attr_dup("mp_scenario", join["mp_scenario"].to_string().c_str());
-			create_game_node.set_attr_int("is_preset", 1);
-
-			// tell the client to create a game since there is no suitable existing game to join
-			send_to_player(player, create_game_doc);
-			return;
-		} else {
-			simple_wml::document join_game_doc;
-			simple_wml::node& join_game_node = join_game_doc.root().add_child("join_game");
-			join_game_node.set_attr_int("id", game_id);
-
-			// tell the client to create a game since there is no suitable existing game to join
-			send_to_player(player, join_game_doc);
-			return;
-		}
-	}
 
 	const bool observer = join.attr("observe").to_bool();
 	const std::string& password = join["password"].to_string();

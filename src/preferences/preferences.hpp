@@ -369,6 +369,11 @@ public:
 	bool is_campaign_completed(const std::string& campaign_id);
 	bool is_campaign_completed(const std::string& campaign_id, const std::string& difficulty_level);
 
+	void add_game_preset(config&& preset_data);
+	void remove_game_preset(int id);
+	config::child_itors get_game_presets();
+	optional_const_config get_game_preset(int id);
+
 	const std::vector<game_config::server_info>& builtin_servers_list();
 	std::vector<game_config::server_info> user_servers_list();
 	void set_user_servers_list(const std::vector<game_config::server_info>& value);
@@ -607,6 +612,7 @@ public:
 	PREF_GETTER_SETTER(game_created_lobby, bool, desktop::notifications::available())
 	PREF_GETTER_SETTER(game_created_notif, bool, true)
 	PREF_GETTER_SETTER(editor_help_text_shown, bool, true)
+	PREF_GETTER_SETTER(show_attack_miss_indicator, bool, false)
 #undef PREF_GETTER_SETTER
 	void clear_mp_alert_prefs();
 
@@ -819,6 +825,7 @@ private:
 		prefs_list::show_all_units_in_help,
 		prefs_list::show_combat,
 		prefs_list::show_deprecation,
+		prefs_list::show_attack_miss_indicator,
 		prefs_list::use_twelve_hour_clock_format,
 		prefs_list::mp_era,
 		prefs_list::mp_level,
@@ -840,6 +847,7 @@ private:
 		prefs_list::history,
 		prefs_list::options,
 		prefs_list::server,
+		prefs_list::game_preset,
 	};
 	static constexpr std::array unsynced_attributes_{
 		prefs_list::auto_pixel_scale,

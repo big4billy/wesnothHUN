@@ -198,6 +198,14 @@ int find_direction(const map_location& loc, const map_location& from_loc, std::s
 	return 0;
 }
 
+/**
+ * This function return true if locations checked are the same, or if units have same id.
+ */
+bool same_unit(const unit& u, const unit& unit)
+{
+	return (u.get_location() == unit.get_location() || u.id() == unit.id());
+}
+
 }
 
 bool unit::get_ability_bool(const std::string& tag_name, const map_location& loc) const
@@ -220,7 +228,7 @@ bool unit::get_ability_bool(const std::string& tag_name, const map_location& loc
 	// different from the central unit, that the ability is of the right type, detailed verification of each ability),
 	// if so return true.
 	for(const unit& u : units) {
-		if(!u.has_ability_distant() || u.incapacitated() || &u == this || !u.affect_distant(tag_name)) {
+		if(!u.has_ability_distant() || u.incapacitated() || same_unit(u, *this) || !u.affect_distant(tag_name)) {
 			continue;
 		}
 		const map_location& from_loc = u.get_location();
@@ -262,7 +270,7 @@ unit_ability_list unit::get_abilities(const std::string& tag_name, const map_loc
 	// different from the central unit, that the ability is of the right type, detailed verification of each ability),
 	// If so, add to unit_ability_list.
 	for(const unit& u : units) {
-		if(!u.has_ability_distant() || u.incapacitated() || &u == this || !u.affect_distant(tag_name)) {
+		if(!u.has_ability_distant() || u.incapacitated() || same_unit(u, *this) || !u.affect_distant(tag_name)) {
 			continue;
 		}
 		const map_location& from_loc = u.get_location();
@@ -311,17 +319,17 @@ namespace {
 	 *
 	 * @returns Whether name was resolved and quadruple added.
 	 */
-	bool add_ability_tooltip(const config& ab, unit_race::GENDER gender, std::vector<std::tuple<std::string, t_string,t_string,t_string>>& res, bool active)
+	bool add_ability_tooltip(const config& ab, const std::string& tag_name, unit_race::GENDER gender, std::vector<std::tuple<std::string, t_string,t_string,t_string>>& res, bool active)
 	{
-		if (active) {
+		if(active) {
 			const t_string& name = gender_value(ab, gender, "name", "female_name", "name").t_str();
 
-			if (!name.empty()) {
+			if(!name.empty()) {
 				res.emplace_back(
 						ab["id"],
 						ab["name"].t_str(),
-						name,
-						ab["description"].t_str() );
+						unit_abilities::substitute_variables(name, tag_name, ab),
+						unit_abilities::substitute_variables(ab["description"].t_str(), tag_name, ab));
 				return true;
 			}
 		} else {
@@ -331,13 +339,14 @@ namespace {
 						"female_name_inactive", "name_inactive");
 			const t_string& name = !inactive_value.blank() ? inactive_value.t_str() :
 				gender_value(ab, gender, "name", "female_name", "name").t_str();
+			const t_string& desc = ab.get_or("description_inactive", "description").t_str();
 
-			if (!name.empty()) {
+			if(!name.empty()) {
 				res.emplace_back(
 						ab["id"],
 						ab.get_or("name_inactive", "name").t_str(),
-						name,
-						ab.get_or("description_inactive", "description").t_str() );
+						unit_abilities::substitute_variables(name, tag_name, ab),
+						unit_abilities::substitute_variables(desc, tag_name, ab));
 				return true;
 			}
 		}
@@ -350,9 +359,9 @@ std::vector<std::tuple<std::string, t_string, t_string, t_string>> unit::ability
 {
 	std::vector<std::tuple<std::string, t_string,t_string,t_string>> res;
 
-	for(const auto [_, cfg] : this->abilities_.all_children_view())
+	for(const auto [tag_name, cfg] : abilities_.all_children_view())
 	{
-		add_ability_tooltip(cfg, gender_, res, true);
+		add_ability_tooltip(cfg, tag_name, gender_, res, true);
 	}
 
 	return res;
@@ -363,10 +372,10 @@ std::vector<std::tuple<std::string, t_string, t_string, t_string>> unit::ability
 	std::vector<std::tuple<std::string, t_string,t_string,t_string>> res;
 	active_list.clear();
 
-	for(const auto [key, cfg] : this->abilities_.all_children_view())
+	for(const auto [tag_name, cfg] : abilities_.all_children_view())
 	{
-		bool active = ability_active(key, cfg, loc);
-		if (add_ability_tooltip(cfg, gender_, res, active))
+		bool active = ability_active(tag_name, cfg, loc);
+		if(add_ability_tooltip(cfg, tag_name, gender_, res, active))
 		{
 			active_list.push_back(active);
 		}
@@ -475,7 +484,7 @@ static bool ability_active_adjacent_helper(const unit& self, bool illuminates, c
 		for(const unit& u : units) {
 			const map_location& from_loc = u.get_location();
 			std::size_t distance = distance_between(from_loc, loc);
-			if(distance > radius || !ufilt(u, self)) {
+			if(same_unit(u, self) || distance > radius || !ufilt(u, self)) {
 				continue;
 			}
 			int dir = 0;
@@ -644,7 +653,7 @@ std::vector<std::string> unit::halo_or_icon_abilities(const std::string& image_t
 	const unit_map& units = get_unit_map();
 
 	for(const unit& u : units) {
-		if(!u.has_ability_distant_image() || u.incapacitated() || &u == this) {
+		if(!u.has_ability_distant_image() || u.incapacitated() || same_unit(u, *this)) {
 			continue;
 		}
 		const map_location& from_loc = u.get_location();
@@ -820,6 +829,7 @@ bool attack_type::has_special(const std::string& special, bool simple_check) con
 	if(simple_check && specials().has_child(special)) {
 		return true;
 	}
+
 	for(const config &i : specials().child_range(special)) {
 		if(special_active(i, AFFECT_SELF, special)) {
 			return true;
@@ -886,38 +896,27 @@ std::vector<std::pair<t_string, t_string>> attack_type::special_tooltips(
 	}
 
 	for(const auto [key, cfg] : specials_.all_children_view()) {
-		if(!active_list || special_active(cfg, AFFECT_EITHER, key)) {
-			std::string name = cfg["name"];
-			std::string desc = cfg["description"];
+		bool active = !active_list || special_active(cfg, AFFECT_EITHER, key);
 
-			if(name.empty()) {
-				continue;
-			}
+		std::string name = active
+			? cfg["name"].str()
+			: cfg.get_or("name_inactive", "name").str();
 
-			const auto iter = key == "plague" // Only [plague] supports a type key
-				? unit_types.types().find(cfg["type"].str())
-				: unit_types.types().end();
+		if(name.empty()) {
+			continue;
+		}
 
-			// TODO: warn if an invalid type is specified?
-			if(iter != unit_types.types().end()) {
-				const unit_type& type = iter->second;
-				utils::string_map symbols{{ "type", type.type_name() }};
+		std::string desc = active
+			? cfg["description"].str()
+			: cfg.get_or("description_inactive", "description").str();
 
-				name = utils::interpolate_variables_into_string(name, &symbols);
-				desc = utils::interpolate_variables_into_string(desc, &symbols);
-			}
+		res.emplace_back(
+			unit_abilities::substitute_variables(name, key, cfg),
+			unit_abilities::substitute_variables(desc, key, cfg)
+		);
 
-			res.emplace_back(name, desc);
-
-			if(active_list) {
-				active_list->push_back(true);
-			}
-		} else {
-			const t_string& name = cfg.get_or("name_inactive", "name").t_str();
-			if(!name.empty()) {
-				res.emplace_back(name, cfg.get_or("description_inactive", "description").t_str() );
-				active_list->push_back(false);
-			}
+		if(active_list) {
+			active_list->push_back(active);
 		}
 	}
 	return res;
@@ -950,7 +949,7 @@ std::vector<std::pair<t_string, t_string>> attack_type::abilities_special_toolti
 		}
 	}
 	for(const unit& u : get_unit_map()) {
-		if(!u.has_ability_distant() || u.incapacitated() || &u == self_.get()) {
+		if(!u.has_ability_distant() || u.incapacitated() || same_unit(u, *self_)) {
 			continue;
 		}
 		const map_location& from_loc = u.get_location();
@@ -988,12 +987,10 @@ std::vector<std::pair<t_string, t_string>> attack_type::abilities_special_toolti
  */
 static void add_name(std::string& temp_string, bool active, const std::string& name, std::set<std::string>& checking_name)
 {
-	if (active) {
-		if (!name.empty() && checking_name.count(name) == 0) {
-			checking_name.insert(name);
-			if (!temp_string.empty()) temp_string += ", ";
-			temp_string += markup::span_color(font::TITLE_COLOR, name);
-		}
+	if (active && !name.empty() && checking_name.count(name) == 0) {
+		checking_name.insert(name);
+		if (!temp_string.empty()) temp_string += ", ";
+		temp_string += markup::span_color(font::TITLE_COLOR, name);
 	}
 }
 
@@ -1007,38 +1004,35 @@ static void add_name(std::string& temp_string, bool active, const std::string& n
 std::string attack_type::weapon_specials() const
 {
 	//log_scope("weapon_specials");
-	std::string res;
-	for(const auto [key, cfg] : specials_.all_children_view())
-	{
+	std::vector<std::string> specials;
+
+	for(const auto [key, cfg] : specials_.all_children_view()) {
 		const bool active = special_active(cfg, AFFECT_EITHER, key);
 
-		const std::string& name =
-			active
+		std::string name = active
 			? cfg["name"].str()
 			: cfg.get_or("name_inactive", "name").str();
-		if (!name.empty()) {
-			if (!res.empty()) {
-				res += ", ";
-			}
 
-			if (!active) {
-				res += markup::span_color(font::INACTIVE_COLOR, name);
-			} else {
-				res += name;
-			}
+		if(name.empty()) {
+			continue;
 		}
+
+		name = unit_abilities::substitute_variables(name, key, cfg);
+
+		specials.push_back(active ? std::move(name) : markup::span_color(font::INACTIVE_COLOR, name));
 	}
+
+	// FIXME: clean this up...
 	std::string temp_string;
 	std::set<std::string> checking_name;
 	weapon_specials_impl_self(temp_string, self_, shared_from_this(), other_attack_, self_loc_, AFFECT_SELF, checking_name);
 	weapon_specials_impl_adj(temp_string, self_, shared_from_this(), other_attack_, self_loc_, AFFECT_SELF, checking_name, {}, "affect_allies");
-	if(!temp_string.empty() && !res.empty()) {
-		temp_string = ", \n" + temp_string;
-		res += temp_string;
-	} else if (!temp_string.empty()){
-		res = temp_string;
+
+	if(!temp_string.empty()) {
+		specials.push_back("\n" + std::move(temp_string));
 	}
-	return res;
+
+	return utils::join(specials, ", ");
 }
 
 static void add_name_list(std::string& temp_string, std::string& weapon_abilities, std::set<std::string>& checking_name, const std::string& from_str)
@@ -1060,7 +1054,7 @@ std::string attack_type::weapon_specials_value(const std::set<std::string>& chec
 	for(const auto [key, cfg] : specials_.all_children_view()) {
 		if(checking_tags.count(key) != 0) {
 			const bool active = special_active(cfg, AFFECT_SELF, key);
-			add_name(temp_string, active, cfg.get_or("name_affected", "name").str(), checking_name);
+			add_name(temp_string, active, cfg["name"].str(), checking_name);
 		}
 	}
 	add_name_list(temp_string, weapon_abilities, checking_name, "");
@@ -1081,7 +1075,7 @@ std::string attack_type::weapon_specials_value(const std::set<std::string>& chec
 		for(const auto [key, cfg] : other_attack_->specials_.all_children_view()) {
 			if((checking_tags.count(key) != 0)){
 				const bool active = other_attack_->special_active(cfg, AFFECT_OTHER, key);
-				add_name(temp_string, active, cfg.get_or("name_affected", "name").str(), checking_name);
+				add_name(temp_string, active, cfg["name"].str(), checking_name);
 			}
 		}
 	}
@@ -1127,7 +1121,7 @@ void attack_type::weapon_specials_impl_adj(
 	const unit_map& units = get_unit_map();
 	if(self){
 		for(const unit& u : units) {
-			if(!u.has_ability_distant() || u.incapacitated() || &u == self.get()) {
+			if(!u.has_ability_distant() || u.incapacitated() || same_unit(u, *self)) {
 				continue;
 			}
 			const map_location& from_loc = u.get_location();
@@ -1799,7 +1793,7 @@ bool attack_type::has_special_or_ability(const std::string& special) const
 		}
 
 		for(const unit& u : units) {
-			if(!u.affect_distant(special) || u.incapacitated() || &u == self_.get()) {
+			if(!u.affect_distant(special) || u.incapacitated() || same_unit(u, *self_)) {
 				continue;
 			}
 			const map_location& from_loc = u.get_location();
@@ -1824,7 +1818,7 @@ bool attack_type::has_special_or_ability(const std::string& special) const
 		}
 
 		for(const unit& u : units) {
-			if(!u.affect_distant(special) || u.incapacitated() || &u == other_.get()) {
+			if(!u.affect_distant(special) || u.incapacitated() || same_unit(u, *other_)) {
 				continue;
 			}
 			const map_location& from_loc = u.get_location();
@@ -1904,7 +1898,7 @@ bool attack_type::has_filter_special_or_ability(const config& filter, bool simpl
 			}
 		}
 		for(const unit& u : units) {
-			if(!u.has_ability_distant() || u.incapacitated() || &u == self_.get()) {
+			if(!u.has_ability_distant() || u.incapacitated() || same_unit(u, *self_)) {
 				continue;
 			}
 			const map_location& from_loc = u.get_location();
@@ -1930,7 +1924,7 @@ bool attack_type::has_filter_special_or_ability(const config& filter, bool simpl
 		}
 
 		for(const unit& u : units) {
-			if(!u.has_ability_distant() || u.incapacitated() || &u == other_.get()) {
+			if(!u.has_ability_distant() || u.incapacitated() || same_unit(u, *other_)) {
 				continue;
 			}
 			const map_location& from_loc = u.get_location();
@@ -2193,7 +2187,7 @@ bool attack_type::has_special_or_ability_with_filter(const config & filter) cons
 		}
 		if(check_adjacent) {
 			for(const unit& u : units) {
-				if(!u.has_ability_distant() || u.incapacitated() || &u == self_.get()) {
+				if(!u.has_ability_distant() || u.incapacitated() || same_unit(u, *self_)) {
 					continue;
 				}
 				const map_location& from_loc = u.get_location();
@@ -2221,7 +2215,7 @@ bool attack_type::has_special_or_ability_with_filter(const config & filter) cons
 
 		if(check_adjacent) {
 			for(const unit& u : units) {
-				if(!u.has_ability_distant() || u.incapacitated() || &u == other_.get()) {
+				if(!u.has_ability_distant() || u.incapacitated() || same_unit(u, *other_)) {
 					continue;
 				}
 				const map_location& from_loc = u.get_location();
@@ -2422,6 +2416,26 @@ bool filter_base_matches(const config& cfg, int def)
 			(cond_le.empty() || def <= cond_le.to_int());
 	}
 	return true;
+}
+
+// TODO add more [specials] keys
+// Currently supports only [plague]type= -> $type
+std::string substitute_variables(const std::string& str, const std::string& tag_name, const config& ability_or_special) {
+	if(tag_name == "plague") {
+		// Substitute [plague]type= as $type
+		const auto iter = unit_types.types().find(ability_or_special["type"]);
+
+		// TODO: warn if an invalid type is specified?
+		if(iter == unit_types.types().end()) {
+			return str;
+		}
+
+		const unit_type& type = iter->second;
+		utils::string_map symbols{{ "type", type.type_name() }};
+		return utils::interpolate_variables_into_string(str, &symbols);
+	}
+
+	return str;
 }
 
 effect::effect(const unit_ability_list& list, int def, const const_attack_ptr& att, EFFECTS wham) :

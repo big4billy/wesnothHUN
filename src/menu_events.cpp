@@ -25,11 +25,11 @@
 #include "actions/create.hpp"
 #include "actions/move.hpp"
 #include "actions/undo.hpp"
-#include "ai/manager.hpp"
 #include "chat_command_handler.hpp"
 #include "color.hpp"
 #include "display_chat_manager.hpp"
 #include "font/standard_colors.hpp"
+#include "formula/callable_objects.hpp"
 #include "formula/string_utils.hpp"
 #include "game_board.hpp"
 #include "game_config_manager.hpp"
@@ -340,6 +340,7 @@ bool menu_handler::do_recruit(const std::string& name, int side_num, map_locatio
 	if(res.empty() && (!pc_.get_whiteboard() || !pc_.get_whiteboard()->save_recruit(name, side_num, loc))) {
 		// MP_COUNTDOWN grant time bonus for recruiting
 		current_team.set_action_bonus_count(1 + current_team.action_bonus_count());
+		current_team.last_recruit(name);
 
 		// Do the recruiting.
 		synced_context::run_and_throw("recruit", replay_helper::get_recruit(name, loc, recruited_from));
@@ -684,7 +685,7 @@ type_gender_variation choose_unit()
 
 	const auto& create_dlg = units_dialog::build_create_dialog(types_list);
 	// Restore saved choices
-	for (size_t i = 0; i < types_list.size(); i++) {
+	for (std::size_t i = 0; i < types_list.size(); i++) {
 		if (types_list[i]->id() == last_created_unit) {
 			create_dlg->set_selected_index(i);
 			create_dlg->set_gender(last_gender);
@@ -716,9 +717,6 @@ type_gender_variation choose_unit()
  * (Intended for use with any units created via debug mode.)
  */
 void create_and_place(
-	game_display&,
-	const gamemap&,
-	unit_map&,
 	const map_location& loc,
 	const unit_type& u_type,
 	unit_race::GENDER gender = unit_race::NUM_GENDERS,
@@ -745,12 +743,11 @@ void menu_handler::create_unit(mouse_handler& mousehandler)
 	// Save the current mouse location before popping up the choice menu (which
 	// gives time for the mouse to move, changing the location).
 	const map_location destination = mousehandler.get_last_hex();
-	assert(gui_ != nullptr);
 
 	// Let the user select the kind of unit to create.
 	if(const auto& [type, gender, variation] = choose_unit(); type != nullptr) {
 		// Make it so.
-		create_and_place(*gui_, pc_.get_map(), pc_.get_units(), destination, *type, gender, variation);
+		create_and_place(destination, *type, gender, variation);
 	}
 }
 
@@ -2029,7 +2026,7 @@ void console_handler::do_create()
 		}
 
 		// Create the unit.
-		create_and_place(*menu_handler_.gui_, menu_handler_.pc_.get_map(), menu_handler_.pc_.get_units(), loc, *ut);
+		create_and_place(loc, *ut);
 	} else {
 		command_failed(_("Invalid location"));
 	}
@@ -2092,10 +2089,12 @@ void console_handler::do_whiteboard_options()
 	}
 }
 
-void menu_handler::do_ai_formula(const std::string& str, int side_num, mouse_handler& /*mousehandler*/)
+// TODO: rename this function - it only does general wfl now
+void menu_handler::do_ai_formula(const std::string& str, int /*side_num*/, mouse_handler& /*mousehandler*/)
 {
 	try {
-		add_chat_message(std::chrono::system_clock::now(), "wfl", 0, ai::manager::get_singleton().evaluate_command(side_num, str));
+		wfl::variant result = wfl::formula(str).evaluate(wfl::gamestate_callable());
+		add_chat_message(std::chrono::system_clock::now(), "wfl", 0, result.to_debug_string());
 	} catch(const wfl::formula_error&) {
 	} catch(...) {
 		add_chat_message(std::chrono::system_clock::now(), "wfl", 0, "UNKNOWN ERROR IN FORMULA: "+utils::get_unknown_exception_type());

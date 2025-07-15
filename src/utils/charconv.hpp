@@ -76,7 +76,7 @@ namespace utils::charconv
 
 	// the maximum size of a string that to_chars produces for type T, with the default chars_format
 	template<class T>
-	constexpr size_t buffer_size = 50;
+	constexpr std::size_t buffer_size = 50;
 }
 
 namespace utils
@@ -98,7 +98,7 @@ namespace utils
 	struct charconv_buffer
 	{
 		std::array<char, utils::charconv::buffer_size<TNum>> buffer;
-		size_t size;
+		std::size_t size;
 
 		charconv_buffer()
 			: size(0)
@@ -143,12 +143,13 @@ namespace utils
 		double res;
 		auto [ptr, ec] = utils::charconv::from_chars(str.data(), str.data() + str.size(), res);
 		if(ec == std::errc::invalid_argument) {
-			throw std::invalid_argument("");
-		} else if(ec == std::errc::result_out_of_range) {
-			throw std::out_of_range("");
+			throw std::invalid_argument("Failed to convert string to double: input contains invalid characters or is not a valid number.");
+		} else  if(ec == std::errc::result_out_of_range) {
+			throw std::out_of_range("Failed to convert string to double: input value is out of the representable range for a double.");
 		}
 		return res;
 	}
+
 	/// Same interface as std::stoi and meant as a drop in replacement, except:
 	/// - It takes a std::string_view
 	inline int stoi(std::string_view str) {
@@ -156,9 +157,9 @@ namespace utils
 		int res;
 		auto [ptr, ec] = utils::charconv::from_chars(str.data(), str.data() + str.size(), res);
 		if(ec == std::errc::invalid_argument) {
-			throw std::invalid_argument("");
-		} else if(ec == std::errc::result_out_of_range) {
-			throw std::out_of_range("");
+			throw std::invalid_argument("Failed to convert string to int: input contains invalid characters or is not a valid number.");
+		} else  if(ec == std::errc::result_out_of_range) {
+			throw std::out_of_range("Failed to convert string to int: input value is out of the representable range for an int.");
 		}
 		return res;
 	}
