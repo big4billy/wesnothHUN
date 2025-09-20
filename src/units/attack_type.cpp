@@ -290,7 +290,7 @@ bool attack_type::apply_modification(const config& cfg)
 
 	set_changed(true);
 	const std::string& set_name = cfg["set_name"];
-	const t_string& set_desc = cfg["set_description"];
+	const t_string& set_desc = cfg["set_description"].t_str();
 	const std::string& set_type = cfg["set_type"];
 	const std::string& set_range = cfg["set_range"];
 	const std::string& set_attack_alignment = cfg["set_alignment"];
@@ -347,9 +347,7 @@ bool attack_type::apply_modification(const config& cfg)
 		const std::vector<std::string>& dsl = utils::split(del_specials);
 		config new_specials;
 		for(const auto [key, cfg] : specials_.all_children_view()) {
-			std::vector<std::string>::const_iterator found_id =
-				std::find(dsl.begin(), dsl.end(), cfg["id"].str());
-			if (found_id == dsl.end()) {
+			if(!utils::contains(dsl, cfg["id"].str())) {
 				new_specials.add_child(key, cfg);
 			}
 		}

@@ -194,8 +194,8 @@ void unit_type::build_help_index(
 
 	const config& cfg = get_cfg();
 
-	type_name_ = cfg["name"];
-	description_ = cfg["description"];
+	type_name_ = cfg["name"].t_str();
+	description_ = cfg["description"].t_str();
 	hitpoints_ = cfg["hitpoints"].to_int(1);
 	level_ = cfg["level"].to_int();
 	recall_cost_ = cfg["recall_cost"].to_int(-1);
@@ -213,7 +213,7 @@ void unit_type::build_help_index(
 	do_not_list_ = cfg["do_not_list"].to_bool(false);
 
 	for(const config& sn : cfg.child_range("special_note")) {
-		special_notes_.push_back(sn["note"]);
+		special_notes_.push_back(sn["note"].t_str());
 	}
 
 	adjust_profile(profile_);
@@ -456,8 +456,7 @@ static void append_special_note(std::vector<t_string>& notes, const t_string& ne
 	std::string_view note_plain = new_note.c_str();
 	utils::trim(note_plain);
 	if(note_plain.empty()) return;
-	auto iter = std::find(notes.begin(), notes.end(), new_note);
-	if(iter != notes.end()) return;
+	if(utils::contains(notes, new_note)) return;
 	notes.push_back(new_note);
 }
 
@@ -649,9 +648,7 @@ bool unit_type::musthave_status(const std::string& status_name) const
 			const std::string& ut = effect["unit_type"];
 
 			if(!ut.empty()) {
-				const std::vector<std::string>& types = utils::split(ut);
-
-				if(std::find(types.begin(), types.end(), id()) == types.end()) {
+				if(!utils::contains(utils::split(ut), id())) {
 					continue;
 				}
 			}
@@ -697,6 +694,11 @@ bool unit_type::has_random_traits() const
 	}
 
 	return false;
+}
+
+bool unit_type::has_gender_variation(const unit_race::GENDER gender) const
+{
+	return utils::contains(genders_, gender);
 }
 
 std::vector<std::string> unit_type::variations() const
@@ -773,9 +775,7 @@ bool unit_type::resistance_filter_matches(
 	if(!apply_to.empty()) {
 		if(damage_name != apply_to) {
 			if(apply_to.find(',') != std::string::npos && apply_to.find(damage_name) != std::string::npos) {
-				const std::vector<std::string>& vals = utils::split(apply_to);
-
-				if(std::find(vals.begin(), vals.end(), damage_name) == vals.end()) {
+				if(!utils::contains(utils::split(apply_to), damage_name)) {
 					return false;
 				}
 			} else {
@@ -959,7 +959,7 @@ void unit_type_data::apply_base_unit(unit_type& type, std::vector<std::string>& 
 	}
 
 	// Detect recursion so the WML author is made aware of an error.
-	if(std::find(base_tree.begin(), base_tree.end(), type.base_unit_id_) != base_tree.end()) {
+	if(utils::contains(base_tree, type.base_unit_id_)) {
 		throw_base_unit_recursion_error(base_tree, type.base_unit_id_);
 	}
 
@@ -1379,9 +1379,9 @@ void unit_type::apply_scenario_fix(const config& cfg)
 		// Make sure the variations are created.
 		unit_types.build_unit_type(*this, VARIATIONS);
 		for (auto& cv : cfg.child_range("variation")){
-			for(auto& v : variations_) {
-				if(v.first == cv["variation_id"]){
-					v.second.apply_scenario_fix(cv);
+			for(auto& [variation_id, variation_type] : variations_) {
+				if(cv["variation_id"] == variation_id) {
+					variation_type.apply_scenario_fix(cv);
 				}
 			}
 		}

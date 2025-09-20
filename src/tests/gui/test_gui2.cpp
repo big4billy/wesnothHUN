@@ -144,16 +144,16 @@ struct test_gui2_fixture {
 	: config_manager()
 	, dummy_args({"wesnoth", "--noaddons"})
 	{
-		/** The main config, which contains the entire WML tree. */
-		game_config_view game_config_view_ = game_config_view::wrap(main_config);
 		config_manager.reset(new game_config_manager(dummy_args));
-
 		game_config::config_cache& cache = game_config::config_cache::instance();
 
 		cache.clear_defines();
 		cache.add_define("EDITOR");
 		cache.add_define("MULTIPLAYER");
-		cache.get_config(game_config::path +"/data", main_config);
+
+		/** The main config, which contains the entire WML tree. */
+		main_config = cache.get_config(game_config::path +"/data");
+		game_config_view game_config_view_ = game_config_view::wrap(main_config);
 
 		const filesystem::binary_paths_manager bin_paths_manager(game_config_view_);
 
@@ -736,7 +736,7 @@ BOOST_AUTO_TEST_CASE(test_make_test_fake)
 		message dlg("title", "message", true, false, false);
 		dlg.show(1);
 	} catch(const wml_exception& e) {
-		BOOST_CHECK(e.user_message == _("Failed to show a dialog, which doesn’t fit on the screen."));
+		BOOST_CHECK(e.type == wml_exception::error_type::GUI_LAYOUT_FAILURE);
 		return;
 	} catch(...) {
 		BOOST_ERROR("Didn't catch the wanted exception, instead caught " << utils::get_unknown_exception_type() << ".");
@@ -989,7 +989,6 @@ template<>
 struct dialog_tester<game_load>
 {
 	config cfg;
-	game_config_view view;
 	// It would be good to have a test directory instead of using the same directory as the player,
 	// however this code will support that - default_saves_dir() will respect --userdata-dir.
 	savegame::load_game_metadata data{savegame::save_index_class::default_saves_dir()};
@@ -999,10 +998,8 @@ struct dialog_tester<game_load>
 	}
 	game_load* create()
 	{
-		view = game_config_view::wrap(cfg);
-		return new game_load(view, data);
+		return new game_load(data);
 	}
-
 };
 
 template<>

@@ -5,13 +5,14 @@ plugins {
 android {
     namespace 'org.wesnoth.Wesnoth'
     compileSdk 35
+    ndkVersion '26.3.11579264'
 
     defaultConfig {
         applicationId "org.wesnoth.Wesnoth"
         minSdk 23
         targetSdk 35
-        versionCode 11914
-        versionName "1.19.14+dev"
+        versionCode 11915
+        versionName "1.19.15+dev"
     }
 
     buildFeatures {
@@ -61,5 +62,6 @@ android {
 
     dependencies {
         implementation "androidx.core:core:1.16.0"
+        implementation "androidx.documentfile:documentfile:1.1.0"
     }
 }

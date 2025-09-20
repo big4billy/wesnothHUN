@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Battle for Wesnoth\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2025-03-17 04:21 UTC\n"
-"PO-Revision-Date: 2025-04-16 22:41+0200\n"
+"POT-Creation-Date: 2025-08-19 15:14 UTC\n"
+"PO-Revision-Date: 2025-08-29 22:38+0200\n"
 "Last-Translator: Septim <septim@centrum.cz>\n"
 "Language-Team: Czech https://wiki.wesnoth.org/CzechTranslation\n"
 "Language: cs\n"
@@ -125,8 +125,8 @@ msgstr "Lovec gryfů"
 
 #. [achievement]: id=gryphon_hunter
 #: data/campaigns/The_Hammer_of_Thursagan/achievements.cfg:9
-msgid "Kill the Gryphon leader in High Pass"
-msgstr "Zabij ve Vysokém průsmyku vůdce gryfů"
+msgid "Kill the Gryphon leader in <i>High Pass</i>."
+msgstr "Zabij ve <i>Vysokém průsmyku</i> vůdce gryfů."
 
 #. [achievement]: id=conqueror_of_the_forest
 #: data/campaigns/The_Hammer_of_Thursagan/achievements.cfg:16
@@ -135,8 +135,8 @@ msgstr "Dobyvatel lesa"
 
 #. [achievement]: id=conqueror_of_the_forest
 #: data/campaigns/The_Hammer_of_Thursagan/achievements.cfg:17
-msgid "Defeat an enemy leader in Forbidden Forest"
-msgstr "Poraz v Zapovězeném lese vůdce nepřátel"
+msgid "Defeat an enemy leader in <i>Forbidden Forest</i>."
+msgstr "Poraz v <i>Zapovězeném lese</i> vůdce nepřátel."
 
 #. [achievement]: id=new_thursagan
 #: data/campaigns/The_Hammer_of_Thursagan/achievements.cfg:23
@@ -145,8 +145,8 @@ msgstr "Nový Thursagan"
 
 #. [achievement]: id=new_thursagan
 #: data/campaigns/The_Hammer_of_Thursagan/achievements.cfg:24
-msgid "Complete The Underlevels on challenging difficulty"
-msgstr "Dokonči Podzemí na náročnou obtížnost"
+msgid "Complete <i>The Underlevels</i> on challenging difficulty."
+msgstr "Dokonči <i>Podzemí</i> na náročnou obtížnost."
 
 #. [scenario]: id=01_At_the_East_Gate
 #: data/campaigns/The_Hammer_of_Thursagan/scenarios/01_At_the_East_Gate.cfg:5

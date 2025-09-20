@@ -84,7 +84,6 @@ test_config/add_child_NonEmptyThis_newOrExistingKey_lOrRValue_AppendAndReturnNew
 test_preproc_defines
 test_config_cache_defaults
 config_cache/test_load_config
-config_cache/test_non_clean_config_loading
 config_cache/test_macrosubstitution
 config_cache/test_transaction
 config_cache/test_define_loading
@@ -187,6 +186,7 @@ test_lexical_arethmetic_signed<double>
 test_lexical_arethmetic_signed<long double>
 test_lexical_cast_bool
 test_lexical_cast_result
+test_lua_ptr
 test_map_location/map_location_characterization_test_radial_mode
 test_map_location/reality_check_vector_negation
 test_map_location/reality_check_get_direction

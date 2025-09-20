@@ -51,7 +51,6 @@
 #include "variable.hpp" // for vconfig, etc
 
 #include <cassert>                     // for assert
-#include <cstdlib>                     // for rand
 #include <exception>                    // for exception
 #include <iterator>                     // for back_insert_iterator, etc
 #include <string_view>
@@ -324,10 +323,10 @@ unit::unit(const unit& o)
 	, small_profile_(o.small_profile_)
 	, changed_attributes_(o.changed_attributes_)
 	, invisibility_cache_()
-	, has_ability_distant_(o.has_ability_distant_)
-	, has_ability_distant_image_(o.has_ability_distant_image_)
+	, max_ability_radius_(o.max_ability_radius_)
+	, max_ability_radius_image_(o.max_ability_radius_image_)
 {
-	affect_distant_ = o.affect_distant_;
+	max_ability_radius_type_ = o.max_ability_radius_type_;
 	// Copy the attacks rather than just copying references
 	for(auto& a : attacks_) {
 		a.reset(new attack_type(*a));
@@ -407,31 +406,31 @@ unit::unit(unit_ctor_t)
 	, upkeep_(upkeep_full{})
 	, changed_attributes_(0)
 	, invisibility_cache_()
-	, has_ability_distant_(utils::nullopt)
-	, has_ability_distant_image_(utils::nullopt)
+	, max_ability_radius_(0)
+	, max_ability_radius_image_(0)
 {
-	affect_distant_.clear();
+	max_ability_radius_type_.clear();
 }
 
 void unit::set_has_ability_distant()
 {
 	// check if unit own abilities with [affect_adjacent/distant]
 	// else variables are false or erased.
-	affect_distant_.clear();
-	has_ability_distant_ = utils::nullopt;
-	has_ability_distant_image_ = utils::nullopt;
+	max_ability_radius_type_.clear();
+	max_ability_radius_ = 0;
+	max_ability_radius_image_ = 0;
 	for(const auto [key, ability] : abilities_.all_children_view()) {
 		for (const config &i : ability.child_range("affect_adjacent")) {
 			// if 'radius' = "all_map" then radius is to maximum.
 			unsigned int radius = i["radius"] != "all_map" ? i["radius"].to_int(1) : INT_MAX;
-			if(!affect_distant_[key] || *affect_distant_[key] < radius) {
-				affect_distant_[key] = radius;
+			if(!max_ability_radius_type_[key] || max_ability_radius_type_[key] < radius) {
+				max_ability_radius_type_[key] = radius;
 			}
-			if(!has_ability_distant_ || *has_ability_distant_ < radius) {
-				has_ability_distant_ =  radius;
+			if(!max_ability_radius_ || max_ability_radius_ < radius) {
+				max_ability_radius_ =  radius;
 			}
-			if((!has_ability_distant_image_ || *has_ability_distant_image_ < radius) && (ability.has_attribute("halo_image") || ability.has_attribute("overlay_image"))) {
-				has_ability_distant_image_ = radius;
+			if((!max_ability_radius_image_ || max_ability_radius_image_ < radius) && (ability.has_attribute("halo_image") || ability.has_attribute("overlay_image"))) {
+				max_ability_radius_image_ = radius;
 			}
 		}
 	}
@@ -572,7 +571,7 @@ void unit::init(const config& cfg, bool use_traits, const vconfig* vcfg)
 	}
 
 	if(const config::attribute_value* v = cfg.get("description")) {
-		description_ = *v;
+		description_ = v->t_str();
 	}
 
 	if(const config::attribute_value* v = cfg.get("cost")) {
@@ -1751,18 +1750,17 @@ void unit::set_loyal(bool loyal)
 	}
 }
 
-int unit::defense_modifier(const t_translation::terrain_code & terrain) const
+int unit::defense_modifier(const t_translation::terrain_code & terrain, const map_location& loc) const
 {
 	int def = movement_type_.defense_modifier(terrain);
-#if 0
+
 	// A [defense] ability is too costly and doesn't take into account target locations.
 	// Left as a comment in case someone ever wonders why it isn't a good idea.
-	unit_ability_list defense_abilities = get_abilities("defense");
+	unit_ability_list defense_abilities = get_abilities("defense", loc);
 	if(!defense_abilities.empty()) {
-		unit_abilities::effect defense_effect(defense_abilities, def);
-		def = defense_effect.get_composite_value();
+		unit_abilities::effect defense_effect(defense_abilities, 100 - def);
+		def = 100 - defense_effect.get_composite_value();
 	}
-#endif
 	return def;
 }
 
@@ -1771,10 +1769,8 @@ bool unit::resistance_filter_matches(const config& cfg, const std::string& damag
 	const std::string& apply_to = cfg["apply_to"];
 	if(!apply_to.empty()) {
 		if(damage_name != apply_to) {
-			if(apply_to.find(',') != std::string::npos  &&
-			     apply_to.find(damage_name) != std::string::npos) {
-				const std::vector<std::string>& vals = utils::split(apply_to);
-				if(std::find(vals.begin(),vals.end(),damage_name) == vals.end()) {
+			if(apply_to.find(',') != std::string::npos && apply_to.find(damage_name) != std::string::npos) {
+				if(!utils::contains(utils::split(apply_to), damage_name)) {
 					return false;
 				}
 			} else {
@@ -2078,7 +2074,7 @@ void unit::apply_builtin_effect(const std::string& apply_to, const config& effec
 		}
 
 		if(const config::attribute_value* v = effect.get("description")) {
-			description_ = *v;
+			description_ = v->t_str();
 		}
 
 		if(config::const_child_itors cfg_range = effect.child_range("special_note")) {
@@ -2258,7 +2254,7 @@ void unit::apply_builtin_effect(const std::string& apply_to, const config& effec
 		{
 			set_state(to_remove, false);
 		}
-	} else if(std::find(movetype::effects.cbegin(), movetype::effects.cend(), apply_to) != movetype::effects.cend()) {
+	} else if(utils::contains(movetype::effects, apply_to)) {
 		// "movement_costs", "vision_costs", "jamming_costs", "defense", "resistance"
 		if(auto ap = effect.optional_child(apply_to)) {
 			set_attr_changed(UA_MOVEMENT_TYPE);
@@ -2378,7 +2374,7 @@ void unit::apply_builtin_effect(const std::string& apply_to, const config& effec
 		temp_advances = utils::parenthetical_split(amlas, ',');
 
 		for(int i = advancements_.size() - 1; i >= 0; i--) {
-			if(std::find(temp_advances.begin(), temp_advances.end(), advancements_[i]["id"]) != temp_advances.end()) {
+			if(utils::contains(temp_advances, advancements_[i]["id"].str())) {
 				advancements_.erase(advancements_.begin() + i);
 			}
 		}
@@ -2546,7 +2542,7 @@ void unit::add_modification(const std::string& mod_type, const config& mod, bool
 
 	t_string description;
 
-	const t_string& mod_description = mod["description"];
+	const t_string& mod_description = mod["description"].t_str();
 	if(!mod_description.empty()) {
 		description = mod_description;
 	}
@@ -2576,7 +2572,9 @@ void unit::add_trait_description(const config& trait, const t_string& descriptio
 	const std::string& gender_string = gender_ == unit_race::FEMALE ? "female_name" : "male_name";
 	const auto& gender_specific_name = trait[gender_string];
 
-	const t_string name = gender_specific_name.empty() ? trait["name"] : gender_specific_name;
+	const t_string name = gender_specific_name.empty()
+		? trait["name"].t_str()
+		: gender_specific_name.t_str();
 
 	if(!name.empty()) {
 		trait_names_.push_back(name);

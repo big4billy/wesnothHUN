@@ -36,10 +36,10 @@ config read_and_validate(const std::string& path)
 try {
 	preproc_map defines;
 #ifdef __ANDROID__
-	defines["ANDROID"] = preproc_define();
+	defines.try_emplace("ANDROID");
 #endif
 	schema_validation::schema_validator validator{filesystem::get_wml_location("schema/gui.cfg").value()};
-	return io::read(*preprocess_file(path, &defines), &validator);
+	return io::read(*preprocess_file(path, defines), &validator);
 
 } catch(const utils::bad_optional_access&) {
 	FAIL("GUI2: schema/gui.cfg not found.");
