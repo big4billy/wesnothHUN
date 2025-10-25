@@ -188,9 +188,11 @@ public:
 	bool operator==(const std::string& o) const { return get() == o; }
 	bool operator==(const char* o) const { return get() == o; }
 
+#ifndef __cpp_impl_three_way_comparison
 	bool operator!=(const t_string& o) const { return !operator==(o); }
 	bool operator!=(const std::string& o) const { return !operator==(o); }
 	bool operator!=(const char* o) const { return !operator==(o); }
+#endif
 
 	bool operator<(const t_string& o) const { return get() < o.get(); }
 
@@ -209,7 +211,7 @@ public:
 	static void reset_translations();
 
 	const t_string_base& get() const { return *val_; }
-	void swap(t_string& other) { val_.swap(other.val_); }
+	void swap(t_string& other) noexcept { val_.swap(other.val_); }
 
 private:
 	//never null
@@ -217,12 +219,16 @@ private:
 };
 
 /** Implement non-member swap function for std::swap (calls @ref t_string::swap). */
-void swap(t_string& lhs, t_string& rhs);
+void swap(t_string& lhs, t_string& rhs) noexcept;
 
 inline std::ostream& operator<<(std::ostream& os, const t_string& str) { return os << str.get(); }
+
+#ifndef __cpp_impl_three_way_comparison
 inline bool operator==(const std::string &a, const t_string& b)    { return b == a; }
 inline bool operator==(const char *a, const t_string& b)           { return b == a; }
 inline bool operator!=(const std::string &a, const t_string& b)    { return b != a; }
 inline bool operator!=(const char *a, const t_string& b)           { return b != a; }
+#endif
+
 inline t_string operator+(const std::string &a, const t_string& b) { return t_string(a) + b; }
 inline t_string operator+(const char *a, const t_string& b)        { return t_string(a) + b; }

@@ -21,6 +21,7 @@
 #include "serialization/string_utils.hpp"
 #include "serialization/unicode.hpp"
 #include "serialization/unicode_cast.hpp"  // for unicode_cast
+#include "utils/general.hpp"
 
 #include <algorithm>
 
@@ -93,6 +94,12 @@ It is possible to have empty text spans in some cases, for example given a run o
 or a character entity directly followed by a paragraph break.
 
 */
+
+namespace
+{
+using namespace std::string_literals;
+const std::array old_style_tags{ "bold"s, "italic"s, "header"s, "format"s, "img"s, "ref"s, "jump"s };
+}
 
 static std::string position_info(const std::string::const_iterator& text_start, const std::string::const_iterator& error_position)
 {
@@ -247,21 +254,24 @@ static std::string parse_name(std::string::const_iterator& beg, std::string::con
 
 static std::pair<std::string, std::string> parse_attribute(std::string::const_iterator& beg, std::string::const_iterator end, bool allow_empty)
 {
-	std::string attr = parse_name(beg, end), value;
+	std::string attr = parse_name(beg, end);
 	if(attr.empty()) {
 		throw parse_error(beg, "missing attribute name");
 	}
 	while(isspace(*beg)) ++beg;
+
 	if(*beg != '=') {
 		if(allow_empty) {
 			// The caller expects beg to point to the last character of the attribute upon return.
 			// But in this path, we're now pointing to the character AFTER that.
 			--beg;
-			return {attr, value};
+			return {attr, ""};
 		} else throw parse_error(beg, "attribute missing value in old-style tag");
 	}
 	++beg;
 	while(isspace(*beg)) ++beg;
+
+	std::string value;
 	if(*beg == '\'' || *beg == '"') {
 		config res = parse_text_until(beg, end, *beg++);
 		if(res.has_child("character_entity")) {
@@ -330,6 +340,11 @@ static config parse_tag_contents(std::string::const_iterator& beg, std::string::
 {
 	assert(*beg == '>');
 	++beg;
+
+	if(!utils::contains(old_style_tags, match)) {
+		check_for_attributes = false;
+	}
+
 	// This also parses the matching closing tag!
 	config res;
 	for(; check_for_attributes && beg != end && *beg != '<'; ++beg) {

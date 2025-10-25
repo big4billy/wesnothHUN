@@ -1,4 +1,4 @@
-## Version 1.19.15+dev
+## Version 1.19.17+dev
 ### Add-ons client
 ### Add-ons server
 ### Campaigns
@@ -8,13 +8,63 @@
 ### Packaging
 ### Terrain
 ### Translations
-   * Updated translations: Bengali, British English, Chinese (Simplified), Czech, Spanish
+   * Updated translations: British English, Finnish, Spanish
 ### Units
 ### User interface
-   * On Android, back button now works similarly to Escape on desktop.
 ### WML Engine
 ### Miscellaneous and Bug Fixes
+   * Build System:
+     * Changed CMake to not directly pull in boost-system (fixing build issues on archlinux using boost-libs >1.89.0-2)
+
+## Version 1.19.17
+### Editor
+   * Move items/unit/labels when map is resized
+### Translations
+   * Updated translations: Bengali, British English, Czech, Polish, Spanish
+### Units
+   * Sergeant:
+     * Crossbow damage changed from 4-3 to 6-2
+   * Lieutenant:
+     * Crossbow damage changed from 5-3 to 7-2
+   * General:
+     * Crossbow damage changed from 7-3 to 10-2
+   * Grand Marshal:
+     * Crossbow damage changed from 8-3 to 12-2
+### WML Engine
+   * ~PAD() added as an IPF (image path function). It allows the sides of an image to be padded with transparent pixels. Can be used to artificially offset images.
+   * WML formulas can be used in abilities/specials 'max_value' and 'min_value'.
+   * Add [clear_chat], [store_zoom], and optional scrolling support to [scroll_to] and [scroll_to_unit]
+
+## Version 1.19.16
+### Campaigns
+   * Liberty
+     * Changed some of Maddock's dialogue to stay consistent with The Deceiver's Gambit.
+     * Difficulty scaling now follows the same pattern as the other beginner campaigns: 1x enemies, 2x enemies, 3x enemies.
+     * Use the new Elensefar map from the revised Heir to the Throne.
+     * Various minor bugfixes and tweaks.
+   * Son of the Black Eye
+     * Units now have access to customized AMLA.
+     * Units granted AMLA: Orcish Sovereign, Great Troll, Orcish Warlord, Orcish Slurbow, Direwolf Rider, Goblin Pillager, Troll Warrior, Troll Rocklobber, Orcish Nightblade, Saurian Flanker, Saurian Javelineer, Saurian Seer, Saurian Prophet
+     * Please note that the AMLAs are only active inside the campaign.
+   * The Deceiver's Gambit
+     * S11x, S13, S14: Eldred's dialogue is now "small" instead of "x-small"
+     * S13: tweaked the opening cutscene to give Garard and Eldred more privacy.
+     * S13: changed some of Eldred and the orcs' dialogue.
+     * S14: revert ruffians to orcs.
+     * Credits: "Story continued in" changed from "Asheviere's Dogs" to "Liberty"
+### Multiplayer
+   * 5p - The Wilderlands:
+     * Fixed lag during AI turn (issue #10419)
+### Translations
+   * Updated translations: Bengali, British English, Chinese (Simplified), Czech, Spanish
+### User interface
+   * On Android, back button now works similarly to Escape on desktop.
+   * Updated the load-game dialog support for other versions' files, ready for 1.20
+### WML Engine
+   * Changing the weapon special [defense] into an ability which modifies the value of [defense] in certain exceptional situations.
+### Miscellaneous and Bug Fixes
    * On Android, in-game command prompt now correctly shows on-screen keyboard.
+   * Fixed delays and visual glitches when animated terrain scrolls onto screen (issue #9220)
 
 ## Version 1.19.15
 ### Lua API

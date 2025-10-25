@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: en_GB\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2025-08-19 15:14 UTC\n"
-"PO-Revision-Date: 2025-08-20 13:41+1000\n"
+"POT-Creation-Date: 2025-10-21 01:10 UTC\n"
+"PO-Revision-Date: 2025-10-22 10:49+1100\n"
 "Last-Translator: Wedge009 <wedge009@wedge009.net>\n"
 "Language-Team: English (British) <http://wiki.wesnoth.org/"
 "EnglishGBTranslation>\n"
@@ -16206,23 +16206,19 @@ msgstr ""
 "Compared to the elves of the Great Continent around the time of Wesnoth, the "
 "Quenoth Elves are far more suited to life in the desert."
 
-#. [race]: id=hidden_race, description=<img>src=units/unknown-unit.png~RC(magenta>red) align=left float=yes</img>
+#. [race]: id=hidden_race
 #: data/campaigns/Under_the_Burning_Suns/units/units.cfg:16
 #: data/campaigns/Under_the_Burning_Suns/units/units.cfg:17
 #: data/campaigns/Under_the_Burning_Suns/units/units.cfg:18
 msgid "Unknown"
 msgstr "Unknown"
 
-#. [race]: id=hidden_race, description=<img>src=units/unknown-unit.png~RC(magenta>red) align=left float=yes</img>
-#: data/campaigns/Under_the_Burning_Suns/units/units.cfg:20
+#. [race]: id=hidden_race
+#: data/campaigns/Under_the_Burning_Suns/units/units.cfg:22
 msgid ""
-"\n"
-"\n"
 "The race of this unit cannot be revealed yet. You must discover it in the "
 "game to be allowed to see its description."
 msgstr ""
-"\n"
-"\n"
 "The race of this unit cannot be revealed yet. You must discover it in the "
 "game to be allowed to see its description."
 
@@ -16637,33 +16633,25 @@ msgstr "dazed"
 msgid "female^dazed"
 msgstr "dazed"
 
-#. [defense]: id=enemy_dazed
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:973
-msgid "parry:"
-msgstr "parry:"
-
-#. [defense]: id=enemy_dazed
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:974
-msgid "Because this unit is dazed, its defense is decreased by 10%"
-msgstr "Because this unit is dazed, its defence is decreased by 10%"
-
 #. [chance_to_hit]: id=self_dazed
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:982
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:980
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:997
 msgid "accuracy:"
 msgstr "accuracy:"
 
 #. [chance_to_hit]: id=self_dazed
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:983
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:981
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:998
 msgid "Because this unit is dazed, its accuracy is decreased by 10%"
 msgstr "Because this unit is dazed, its accuracy is decreased by 10%"
 
 #. [dummy]: id=opportunist
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1366
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1378
 msgid "opportunist"
 msgstr "opportunist"
 
 #. [dummy]: id=opportunist
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1367
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1379
 msgid ""
 "This ability makes Kaleh attack enemies with single strike of bolas when "
 "they leave his zone of control."
@@ -16672,37 +16660,37 @@ msgstr ""
 "they leave his zone of control."
 
 #. [dummy]: id=taunt
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1441
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1453
 msgid "taunt"
 msgstr "taunt"
 
 #. [dummy]: id=taunt
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1442
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1454
 msgid "Taunts the enemy making them try to attack Kaleh for one turn."
 msgstr "Taunts the enemy making them try to attack Kaleh for one turn."
 
 #. [dummy]: id=taunted
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1479
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1491
 msgid "taunted"
 msgstr "taunted"
 
 #. [dummy]: id=taunted
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1480
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1492
 msgid "This unit is taunted by Kaleh, it will try to attack him for one turn."
 msgstr "This unit is taunted by Kaleh, it will try to attack him for one turn."
 
 #. [leadership]: id=inspire
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1489
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1501
 msgid "inspire"
 msgstr "inspire"
 
 #. [leadership]: id=inspire
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1490
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1502
 msgid "female^inspire"
 msgstr "inspire"
 
 #. [leadership]: id=inspire
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1491
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1503
 msgid ""
 "This unit can inspire own units that are next to it, making them fight "
 "better. Adjacent own units of lower or equal level will deal 25% more damage "
@@ -16713,7 +16701,7 @@ msgstr ""
 "plus 25% for each level they are below the inspiring unit."
 
 #. [leadership]: id=inspire
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1492
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1504
 msgid ""
 "The presence of this unit inspires own units next to it to deal more damage "
 "in combat, though this only applies to units of lower or equal level."
@@ -16721,29 +16709,29 @@ msgstr ""
 "The presence of this unit inspires own units next to it to deal more damage "
 "in combat, though this only applies to units of lower or equal level."
 
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1503
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1515
 msgid "cooldown 1"
 msgstr "cool-down 1"
 
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1506
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1518
 msgid "cooldown 2"
 msgstr "cool-down 2"
 
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1509
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1521
 msgid "After using this attack, you can’t use it during your next turn."
 msgstr "After using this attack, you can’t use it during your next turn."
 
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1512
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1524
 msgid "After using this attack, you can’t use it during your next two turns."
 msgstr "After using this attack, you can’t use it during your next two turns."
 
 #. [dummy]: id=pierce
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1573
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1585
 msgid "pierce"
 msgstr "pierce"
 
 #. [dummy]: id=pierce
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1574
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1586
 msgid ""
 "This weapon, when used offensively, can also deal damage to a unit behind "
 "the target."
@@ -16752,12 +16740,12 @@ msgstr ""
 "the target."
 
 #. [dummy]: id=puncture
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1644
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1656
 msgid "puncture"
 msgstr "puncture"
 
 #. [dummy]: id=puncture
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1645
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1657
 msgid ""
 "This weapon, when used offensively, can also deal damage to two units behind "
 "the target."
@@ -16766,12 +16754,12 @@ msgstr ""
 "the target."
 
 #. [dummy]: id=rain_of_arrows
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1728
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1740
 msgid "rain of arrows"
 msgstr "rain of arrows"
 
 #. [dummy]: id=rain_of_arrows
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1729
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1741
 msgid ""
 "This weapon, when used offensively, can also deal damage to a unit behind "
 "the target and all units adjacent to the unit behind the target."
@@ -16780,12 +16768,12 @@ msgstr ""
 "the target and all units adjacent to the unit behind the target."
 
 #. [dummy]: id=sword_dance
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1850
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1862
 msgid "sword dance"
 msgstr "sword dance"
 
 #. [dummy]: id=sword_dance
-#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1851
+#: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:1863
 msgid ""
 "Every time Nym hits an enemy she gains +10% accuracy and 10% parry until the "
 "end of the combat."
@@ -17881,6 +17869,12 @@ msgstr "Phantom Castle"
 #: data/campaigns/Under_the_Burning_Suns/utils/terrain.cfg:64
 msgid "Phantom Keep"
 msgstr "Phantom Keep"
+
+#~ msgid "parry:"
+#~ msgstr "parry:"
+
+#~ msgid "Because this unit is dazed, its defense is decreased by 10%"
+#~ msgstr "Because this unit is dazed, its defence is decreased by 10%"
 
 #~ msgid "<span color='#DD6F6F'>accuracy: -10%</span>"
 #~ msgstr "<span color='#DD6F6F'>accuracy: -10%</span>"
