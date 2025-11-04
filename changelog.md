@@ -8,8 +8,9 @@
 ### Packaging
 ### Terrain
 ### Translations
-   * Updated translations: British English, Finnish, Spanish
+   * Updated translations: Bengali, British English, Finnish, Hungarian, Italian, Polish, Spanish
 ### Units
+   * A registry for abilities has been added as `[units][abilities]`. Any ability defined there can be added to a `[unit_type]` by just specifying their `unique_id` in the new key `[unit_type]abilities`, like this: `abilities=heals_8,cures`. The unique id for an ability is the value of its new `unique_id` key which falls back to `id` if unspecified. The `abilities` key is also supported under `[effect]apply_to=new_ability`.
 ### User interface
    * New key `title_position` added to `[part]` that allows changing the position of the title text.
 ### WML Engine
@@ -53,6 +54,20 @@
      * S13: changed some of Eldred and the orcs' dialogue.
      * S14: revert ruffians to orcs.
      * Credits: "Story continued in" changed from "Asheviere's Dogs" to "Liberty"
+   * Winds of Fate
+     * Full redesign of recall costs (most importantly this brings down the recall cost for level 3 veterans to two-thirds of what it was)
+     * Add random walk to spawned wildlife AI
+     * replace leopard with forest lion
+     * replace dolphin with core monsters
+     * S2: slightly more gold for a bigger battle
+     * S3: simplify win and lose conditions
+     * S4: give naga side same gold as either mermish side and give player side some more gold on easier difficulties
+     * S6: more gold on all sides for a much bigger battle
+     * S7: move sapphire of ice beside diary
+     * S8: quicker elf spawning on easy to better depict the story events
+     * S9: Full rebalance
+     * S10: smaller dwarf castle for fewer gryphons
+     * S10 + S11: cut all level 2 recruits
 ### Multiplayer
    * 5p - The Wilderlands:
      * Fixed lag during AI turn (issue #10419)

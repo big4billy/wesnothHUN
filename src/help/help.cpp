@@ -27,8 +27,6 @@
 #include "game_config_manager.hpp"
 #include "gettext.hpp"                  // for _
 #include "gui/dialogs/help_browser.hpp"
-#include "gui/widgets/settings.hpp"
-#include "help/help_impl.hpp"           // for hidden_symbol, toplevel, etc
 #include "log.hpp"                      // for LOG_STREAM, log_domain
 #include "terrain/terrain.hpp"          // for terrain_type
 #include "units/unit.hpp"               // for unit
@@ -46,21 +44,6 @@ static lg::log_domain log_help("help");
 #define ERR_HELP LOG_STREAM(err, log_help)
 
 namespace help {
-/**
- * Open a help dialog using a specified toplevel.
- *
- * This would allow for complete customization of the contents, although not in a
- * very easy way. It's used as the internal implementation of the other help*
- * functions.
- *
- *@pre The help_manager must already exist; this is different to the functions
- * declared in help.hpp, which is why this one's declaration is in the .cpp
- * file. Because this takes a section as an argument, it wouldn't make sense
- * for it to call ensure_cache_lifecycle() internally - if the help_manager
- * doesn't already exist, that would likely destroy the referenced object at
- * the point that this function exited.
- */
-void show_with_toplevel(const section& toplevel, const std::string& show_topic = "");
 
 void show_terrain_description(const terrain_type& t)
 {
@@ -103,73 +86,50 @@ void show_unit_description(const unit_type& t)
 	show_help(get_unit_type_help_id(t));
 }
 
-help_manager::help_manager(const game_config_view *cfg)
+std::shared_ptr<help_manager> help_manager::get_instance()
 {
-	assert(!game_cfg);
-	assert(cfg);
-	// This is a global rawpointer in the help:: namespace.
-	game_cfg = cfg;
+	if(!singleton_) {
+		singleton_.reset(new help_manager);
+	}
+
+	assert(singleton_);
+	return singleton_;
 }
 
-std::unique_ptr<help_manager> ensure_cache_lifecycle()
+void help_manager::verify_cache()
 {
-	// The internals of help_manager are that this global raw pointer is
-	// non-null if and only if an instance of help_manager already exists.
-	if(game_cfg)
-		return nullptr;
-	return std::make_unique<help_manager>(&game_config_manager::get()->game_config());
-}
-
-help_manager::~help_manager()
-{
-	game_cfg = nullptr;
-	default_toplevel.clear();
-	hidden_sections.clear();
-	// These last numbers must be reset so that the content is regenerated.
-	// Upon next start.
-	last_num_encountered_units = -1;
-	last_num_encountered_terrains = -1;
-}
-
-/**
- * Open the help browser, show topic with id show_topic.
- *
- * If show_topic is the empty string, the default topic will be shown.
- */
-void show_help(const std::string& show_topic)
-{
-	auto cache_lifecycle = ensure_cache_lifecycle();
-	show_with_toplevel(default_toplevel, show_topic);
-}
-
-void init_help() {
 	// Find all unit_types that have not been constructed yet and fill in the information
 	// needed to create the help topics
 	unit_types.build_all(unit_type::HELP_INDEXED);
 
-	auto& enc_units = prefs::get().encountered_units();
-	auto& enc_terrains = prefs::get().encountered_terrains();
-	if(enc_units.size() != std::size_t(last_num_encountered_units) ||
-		enc_terrains.size() != std::size_t(last_num_encountered_terrains) ||
-		last_debug_state != game_config::debug ||
-		last_num_encountered_units < 0) {
-		// More units or terrains encountered, update the contents.
-		last_num_encountered_units = enc_units.size();
-		last_num_encountered_terrains = enc_terrains.size();
-		last_debug_state = game_config::debug;
-		generate_contents();
+	const auto& enc_units = prefs::get().encountered_units();
+	const auto& enc_terrains = prefs::get().encountered_terrains();
+
+	if(enc_units.size() != std::size_t(last_num_encountered_units_) ||
+		enc_terrains.size() != std::size_t(last_num_encountered_terrains_) ||
+		last_debug_state_ != game_config::debug ||
+		last_num_encountered_units_ < 0
+	) {
+		// More units or terrains encountered
+		last_num_encountered_units_ = enc_units.size();
+		last_num_encountered_terrains_ = enc_terrains.size();
+		last_debug_state_ = game_config::debug;
+
+		// Update the contents
+		std::tie(default_toplevel_, hidden_sections_) = generate_contents();
 	}
 }
 
-/**
- * Open a help dialog using a toplevel other than the default.
- *
- * This allows for complete customization of the contents, although not in a
- * very easy way.
- */
-void show_with_toplevel(const section &toplevel_sec, const std::string& show_topic)
+void show_with_toplevel(const section& toplevel_sec, const std::string& show_topic)
 {
 	gui2::dialogs::help_browser::display(toplevel_sec, show_topic);
+}
+
+void show_help(const std::string& show_topic)
+{
+	auto manager = help_manager::get_instance();
+	manager->verify_cache();
+	show_with_toplevel(manager->toplevel_section(), show_topic);
 }
 
 } // End namespace help.

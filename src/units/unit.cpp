@@ -2103,8 +2103,10 @@ void unit::apply_builtin_effect(const std::string& apply_to, const config& effec
 		utils::erase_if(attacks_, [&effect](const attack_ptr& a) { return a->matches_filter(effect); });
 	} else if(apply_to == "attack") {
 		set_attr_changed(UA_ATTACKS);
-		for(attack_ptr a : attacks_) {
-			a->apply_effect(effect);
+		for(const attack_ptr& a : attacks_) {
+			if(a->matches_filter(effect)) {
+				a->apply_effect(effect);
+			}
 			for(const config& specials : effect.child_range("set_specials")) {
 				for(const auto [key, special] : specials.all_children_view()) {
 					for(const config& special_event : special.child_range("event")) {
@@ -2265,10 +2267,11 @@ void unit::apply_builtin_effect(const std::string& apply_to, const config& effec
 			emit_zoc_ = v->to_bool();
 		}
 	} else if(apply_to == "new_ability") {
-		if(auto ab_effect = effect.optional_child("abilities")) {
+		auto abilities = unit_type_data::add_registry_entries(effect, "abilities", unit_types.abilities());
+		if(!abilities.empty()) {
 			set_attr_changed(UA_ABILITIES);
 			config to_append;
-			for(const auto [key, cfg] : ab_effect->all_children_view()) {
+			for(const auto [key, cfg] : abilities.all_children_view()) {
 				if(!has_ability_by_id(cfg["id"])) {
 					to_append.add_child(key, cfg);
 					for(const config& event : cfg.child_range("event")) {

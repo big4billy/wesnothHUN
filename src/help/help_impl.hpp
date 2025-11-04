@@ -47,7 +47,6 @@
 #include <string>                       // for string, allocator, etc
 #include <utility>                      // for pair, make_pair
 #include <vector>                       // for vector, etc
-#include <boost/logic/tribool.hpp>
 #include "config.hpp"
 
 class game_config_view;
@@ -55,12 +54,6 @@ class unit_type;
 class terrain_type_data;
 
 namespace help {
-
-/**
- * Generate the help contents from the configurations given to the manager.
- */
-void generate_contents();
-
 
 /** Generate a topic text on the fly. */
 class topic_generator
@@ -272,6 +265,12 @@ std::vector<topic> generate_era_topics(const bool, const std::string & era_id);
 std::vector<topic> generate_trait_topics(const bool);
 
 /**
+ * Generate the help contents from the configurations given to the manager.
+ * @returns A pair consisting of the toplevel section and any hidden sections.
+ */
+std::pair<section, section> generate_contents();
+
+/**
  * Parse a help config, return the top level section. Return an empty
  * section if cfg is nullptr.
  */
@@ -306,34 +305,10 @@ const topic *find_topic(const section &sec, const std::string &id);
 const section *find_section(const section &sec, const std::string &id);
 section *find_section(section &sec, const std::string &id);
 
-std::string remove_first_space(const std::string& text);
-
-/** Return the first word in s, not removing any spaces in the start of it. */
-std::string get_first_word(const std::string &s);
-
 /** Load the appropriate terrain types data to use */
 std::shared_ptr<terrain_type_data> load_terrain_types_data();
 
-extern const game_config_view *game_cfg;
-// The default toplevel.
-extern help::section default_toplevel;
-// All sections and topics not referenced from the default toplevel.
-extern help::section hidden_sections;
-
-extern int last_num_encountered_units;
-extern int last_num_encountered_terrains;
-extern boost::tribool last_debug_state;
-
-extern std::vector<std::string> empty_string_vector;
 extern const int max_section_level;
-extern const int title_size;
-extern const int title2_size;
-extern const int box_width;
-extern const int normal_font_size;
-extern const unsigned max_history;
-extern const std::string topic_img;
-extern const std::string closed_section_img;
-extern const std::string open_section_img;
 // The topic to open by default when opening the help dialog.
 extern const std::string default_show_topic;
 extern const std::string unknown_unit_topic;

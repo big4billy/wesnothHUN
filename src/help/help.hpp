@@ -18,13 +18,16 @@
 class terrain_type;
 class unit;
 class unit_type;
-class game_config_view;
+
+#include "help/help_impl.hpp"
+
+#include <boost/logic/tribool.hpp>
 
 #include <memory>
 #include <string>
 
-namespace help {
-
+namespace help
+{
 /**
  * The help implementation caches data parsed from the game_config. This class
  * is used to control the lifecycle of that cache, so that the cache will be
@@ -36,35 +39,49 @@ namespace help {
  *
  * Creating two instances of this will cause an assert.
  */
-struct help_manager {
-	help_manager(const game_config_view *game_config);
+class help_manager
+{
+public:
 	help_manager(const help_manager&) = delete;
 	help_manager& operator=(const help_manager&) = delete;
-	~help_manager();
+
+	/** Returns the existing help_manager instance, or a newly allocated object otherwise. */
+	static std::shared_ptr<help_manager> get_instance();
+
+	/** Regenerates the cached help topics if necessary. */
+	void verify_cache();
+
+	const section& toplevel_section() const
+	{
+		return default_toplevel_;
+	}
+
+private:
+	/**
+	 * Private default constructor.
+	 *
+	 * Use @ref get_instance to get a managed instance instead.
+	 */
+	help_manager() = default;
+
+	int last_num_encountered_units_{-1};
+	int last_num_encountered_terrains_{-1};
+
+	boost::tribool last_debug_state_{boost::indeterminate};
+
+	/** The default toplevel. */
+	section default_toplevel_;
+
+	/** All sections and topics not referenced from the default toplevel. */
+	section hidden_sections_;
+
+	static inline std::shared_ptr<help_manager> singleton_;
 };
-
-/**
- * Helper function for any of the show_help functions to control the cache's
- * lifecycle; can also be used by any other caller that wants to ensure the
- * cache is reused over multiple show_help calls.
- *
- * Treat the return type as opaque, it can return nullptr on success. Also
- * don't extend the cache lifecycle beyond the lifecycle of the
- * game_config_manager or over a reload of the game config.
- *
- *@pre game_config_manager has been initialised
- */
-std::unique_ptr<help_manager> ensure_cache_lifecycle();
-
-void init_help();
 
 /**
  * Open the help browser. The help browser will have the topic with id
  * show_topic open if it is not the empty string. The default topic
  * will be shown if show_topic is the empty string.
- *
- *@pre game_config_manager has been initialised, or the instance of help_manager
- * has been created with an alternative config.
  */
 void show_help(const std::string& show_topic = "");
 
