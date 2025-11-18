@@ -367,6 +367,7 @@
 0 firststrike_and_laststrike
 0 backstab_active_with_accomplice_behind_bob
 0 backstab_active_with_free_for_all
+0 backstab_active_with_bob_also_backstab
 0 backstab_inactive_with_triangular_formation
 0 backstab_inactive_with_statue_behind_bob
 0 backstab_inactive_with_bobs_ally_behind_bob
@@ -421,8 +422,6 @@
 0 filter_adjacent_location_count_zero_inactive
 0 filter_adjacent_active
 0 filter_adjacent_inactive
-0 filter_adjacent_student_active
-0 filter_adjacent_student_inactive
 0 filter_adjacent_direction_active
 0 filter_adjacent_direction_inactive
 0 filter_special_id_active

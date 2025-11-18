@@ -119,9 +119,9 @@ variant attack_type_callable::get_value(const std::string& key) const
 	} else if(key == "specials" || key == "special") {
 		std::vector<variant> res;
 
-		for(const auto [_, special_cfg] : att_->specials().all_children_view()) {
-			if(!special_cfg["id"].empty()) {
-				res.emplace_back(special_cfg["id"].str());
+		for(const auto& p_ab : att_->specials()) {
+			if(!p_ab->id().empty()) {
+				res.emplace_back(p_ab->id());
 			}
 		}
 		return variant(res);
@@ -183,16 +183,16 @@ int attack_type_callable::do_compare(const formula_callable* callable) const
 		return att_->alignment_str().compare(att_callable->att_->alignment_str());
 	}
 
-	const auto self_specials = att_->specials().all_children_range();
-	const auto other_specials = att_callable->att_->specials().all_children_range();
+	const auto& self_specials = att_->specials();
+	const auto& other_specials = att_callable->att_->specials();
 	if(self_specials.size() != other_specials.size()) {
 		return self_specials.size() < other_specials.size() ? -1 : 1;
 	}
 	for(std::size_t i = 0; i < self_specials.size(); ++i) {
-		const auto& s = self_specials[i].cfg["id"];
-		const auto& o = other_specials[i].cfg["id"];
+		const auto& s = self_specials[i]->id();
+		const auto& o = other_specials[i]->id();
 		if(s != o) {
-			return s.str().compare(o.str());
+			return s.compare(o);
 		}
 	}
 
@@ -250,7 +250,7 @@ variant unit_callable::get_value(const std::string& key) const
 
 		return variant(res);
 	} else if(key == "abilities") {
-		return formula_callable::convert_vector(u_.get_ability_list());
+		return formula_callable::convert_vector(u_.get_ability_id_list());
 	} else if(key == "hitpoints") {
 		return variant(u_.hitpoints());
 	} else if(key == "max_hitpoints") {
@@ -440,7 +440,7 @@ variant unit_type_callable::get_value(const std::string& key) const
 	} else if(key == "race") {
 		return variant(u_.race_id());
 	} else if(key == "abilities") {
-		return formula_callable::convert_vector(u_.get_ability_list());
+		return formula_callable::convert_vector(u_.get_ability_id_list());
 	} else if(key == "traits") {
 		std::vector<variant> res;
 		for(const auto& config : u_.possible_traits()) {

@@ -32,99 +32,6 @@ class unit_animation_component;
 class vconfig;
 struct color_t;
 
-/** Data typedef for unit_ability_list. */
-struct unit_ability
-{
-	unit_ability(const config* ability_cfg, map_location student_loc, map_location teacher_loc)
-		: student_loc(student_loc)
-		, teacher_loc(teacher_loc)
-		, ability_cfg(ability_cfg)
-	{
-	}
-
-	/**
-	 * Used by the formula in the ability.
-	 * The REAL location of the student (not the 'we are assuming the student is at this position' location)
-	 * once unit_ability_list can contain abilities from different 'students', as it contains abilities from
-	 * a unit aswell from its opponents (abilities with apply_to= opponent)
-	 */
-	map_location student_loc;
-	/**
-	 * The location of the teacher, that is the unit who owns the ability tags
-	 * (different from student because of [affect_adjacent])
-	 */
-	map_location teacher_loc;
-	/** The contents of the ability tag, never nullptr. */
-	const config* ability_cfg;
-};
-
-class unit_ability_list
-{
-public:
-	unit_ability_list(const map_location& loc = map_location()) : cfgs_() , loc_(loc) {}
-
-	// Implemented in unit_abilities.cpp
-	std::pair<int, map_location> highest(const std::string& key, int def=0) const
-	{
-		return get_extremum(key, def, std::less<int>());
-	}
-	std::pair<int, map_location> lowest(const std::string& key, int def=0) const
-	{
-		return get_extremum(key, def, std::greater<int>());
-	}
-
-	template<typename TComp>
-	std::pair<int, map_location> get_extremum(const std::string& key, int def, const TComp& comp) const;
-
-	// The following make this class usable with standard library algorithms and such
-	typedef std::vector<unit_ability>::iterator       iterator;
-	typedef std::vector<unit_ability>::const_iterator const_iterator;
-
-	iterator       begin()        { return cfgs_.begin(); }
-	const_iterator begin() const  { return cfgs_.begin(); }
-	iterator       end()          { return cfgs_.end();   }
-	const_iterator end()   const  { return cfgs_.end();   }
-
-	// Vector access
-	bool                empty() const  { return cfgs_.empty(); }
-	unit_ability&       front()        { return cfgs_.front(); }
-	const unit_ability& front() const  { return cfgs_.front(); }
-	unit_ability&       back()         { return cfgs_.back();  }
-	const unit_ability& back()  const  { return cfgs_.back();  }
-	std::size_t         size()         { return cfgs_.size();  }
-
-	iterator erase(const iterator& erase_it)  { return cfgs_.erase(erase_it); }
-	iterator erase(const iterator& first, const iterator& last)  { return cfgs_.erase(first, last); }
-
-	template<typename... T>
-	void emplace_back(T&&... args) { cfgs_.emplace_back(args...); }
-
-	const map_location& loc() const { return loc_; }
-
-	/** Appends the abilities from @a other to @a this, ignores other.loc() */
-	void append(const unit_ability_list& other)
-	{
-		std::copy(other.begin(), other.end(), std::back_inserter(cfgs_ ));
-	}
-
-	/**
-	 * Appends any abilities from @a other for which the given condition returns true to @a this, ignores other.loc().
-	 *
-	 * @param other where to copy the elements from
-	 * @param predicate a single-argument function that takes a reference to an element and returns a bool
-	 */
-	template<typename Predicate>
-	void append_if(const unit_ability_list& other, const Predicate& predicate)
-	{
-		std::copy_if(other.begin(), other.end(), std::back_inserter(cfgs_ ), predicate);
-	}
-
-private:
-	// Data
-	std::vector<unit_ability> cfgs_;
-	map_location loc_;
-};
-
 /**
  * This class represents a *single* unit of a specific type.
  */
@@ -1050,7 +957,7 @@ public:
 	 * @param damage_name The name of the damage type, for example "blade".
 	 * @return The resistance value for a unit with the provided resistance abilities to the provided damage type.
 	 */
-	int resistance_value(unit_ability_list resistance_list, const std::string& damage_name) const;
+	int resistance_value(active_ability_list resistance_list, const std::string& damage_name) const;
 
 	/**
 	 * The unit's resistance against a given damage type
@@ -1789,35 +1696,31 @@ public:
 
 	/** Checks whether this unit currently possesses a given ability, and that that ability is active.
 	 * @return True if the ability @a tag_name is active.
-	 * @param cfg the const config to one of abilities @a tag_name checked.
-	 * @param ability name of ability type checked.
+	 * @param ab the ability checked
 	 * @param loc location of the unit checked.
 	 */
-	bool get_self_ability_bool(const config& cfg, const std::string& ability, const map_location& loc) const;
+	bool get_self_ability_bool(const unit_ability_t& ab, const map_location& loc) const;
 	/** Checks whether this unit currently possesses a given ability of leadership type
 	 * @return True if the ability @a tag_name is active.
-	 * @param special the const config to one of abilities @a tag_name checked.
-	 * @param tag_name name of ability type checked.
+	 * @param ab the ability checked
 	 * @param loc location of the unit checked.
 	 * @param weapon the attack used by unit checked in this function.
 	 * @param opp_weapon the attack used by opponent to unit checked.
 	 */
-	bool get_self_ability_bool_weapon(const config& special, const std::string& tag_name, const map_location& loc, const const_attack_ptr& weapon = nullptr, const const_attack_ptr& opp_weapon = nullptr) const;
+	bool get_self_ability_bool_weapon(const unit_ability_t& ab, const map_location& loc, const const_attack_ptr& weapon = nullptr, const const_attack_ptr& opp_weapon = nullptr) const;
 	/** Checks whether this unit is affected by a given ability, and that that ability is active.
 	 * @return True if the ability @a tag_name is active.
-	 * @param cfg the const config to one of abilities @a ability checked.
-	 * @param ability name of ability type checked.
+	 * @param ab the ability checked
 	 * @param loc location of the unit checked.
 	 * @param from unit distant to @a this is checked in case of [affect_adjacent] abilities.
 	 * @param from_loc the 'other unit' location.
 	 * @param dist distance between unit distant and @a this.
 	 * @param dir direction to research a unit distant to @a this.
 	 */
-	bool get_adj_ability_bool(const config& cfg, const std::string& ability, std::size_t dist, int dir, const map_location& loc, const unit& from, const map_location& from_loc) const;
+	bool get_adj_ability_bool(const unit_ability_t& ab, std::size_t dist, int dir, const map_location& loc, const unit& from, const map_location& from_loc) const;
 	/** Checks whether this unit is affected by a given ability of leadership type
 	 * @return True if the ability @a tag_name is active.
-	 * @param special the const config to one of abilities @a tag_name checked.
-	 * @param tag_name name of ability type checked.
+	 * @param ab the ability checked
 	 * @param loc location of the unit checked.
 	 * @param from unit adjacent to @a this is checked in case of [affect_adjacent] abilities.
 	 * @param from_loc location of the @a from unit.
@@ -1826,7 +1729,7 @@ public:
 	 * @param dist distance between unit distant and @a this.
 	 * @param dir direction to research a unit distant to @a this.
 	 */
-	bool get_adj_ability_bool_weapon(const config& special, const std::string& tag_name, std::size_t dist, int dir, const map_location& loc, const unit& from, const map_location& from_loc, const const_attack_ptr& weapon, const const_attack_ptr& opp_weapon) const;
+	bool get_adj_ability_bool_weapon(const unit_ability_t& ab, std::size_t dist, int dir, const map_location& loc, const unit& from, const map_location& from_loc, const const_attack_ptr& weapon, const const_attack_ptr& opp_weapon) const;
 
 	/**
 	 * Gets the unit's active abilities of a particular type if it were on a specified location.
@@ -1834,26 +1737,37 @@ public:
 	 * @param loc The location to use for resolving abilities
 	 * @return A list of active abilities, paired with the location they are active on
 	 */
-	unit_ability_list get_abilities(const std::string& tag_name, const map_location& loc) const;
+	active_ability_list get_abilities(const std::string& tag_name, const map_location& loc) const;
 
 	/**
 	 * Gets the unit's active abilities of a particular type.
 	 * @param tag_name The type of ability to check for
 	 * @return A list of active abilities, paired with the location they are active on
 	 */
-	unit_ability_list get_abilities(const std::string& tag_name) const
+	active_ability_list get_abilities(const std::string& tag_name) const
 	{
 		return get_abilities(tag_name, loc_);
 	}
 
-	unit_ability_list get_abilities_weapons(const std::string& tag_name, const map_location& loc, const_attack_ptr weapon = nullptr, const_attack_ptr opp_weapon = nullptr) const;
+	active_ability_list get_abilities_weapons(const std::string& tag_name, const map_location& loc, const_attack_ptr weapon = nullptr, const_attack_ptr opp_weapon = nullptr) const;
 
-	unit_ability_list get_abilities_weapons(const std::string& tag_name, const_attack_ptr weapon = nullptr, const_attack_ptr opp_weapon = nullptr) const
+	active_ability_list get_abilities_weapons(const std::string& tag_name, const_attack_ptr weapon = nullptr, const_attack_ptr opp_weapon = nullptr) const
 	{
 		return get_abilities_weapons(tag_name, loc_, weapon, opp_weapon);
 	}
 
-	const config &abilities() const { return abilities_; }
+	config abilities_cfg() const {
+
+		return unit_ability_t::vector_to_cfg(abilities_);
+	}
+
+	const ability_vector& abilities() const {
+		return abilities_;
+	}
+
+	ability_vector abilities(const std::string& tag) const {
+		return unit_ability_t::filter_tag(abilities_, tag);
+	}
 
 	/**
 	 * Gets the names and descriptions of this unit's abilities. Location-independent variant
@@ -1880,7 +1794,7 @@ public:
 	ability_tooltips(boost::dynamic_bitset<>& active_list, const map_location& loc) const;
 
 	/** Get a list of all abilities by ID. */
-	std::vector<std::string> get_ability_list() const;
+	std::vector<std::string> get_ability_id_list() const;
 
 	/**
 	 * Check if the unit has an ability of a specific type.
@@ -1910,11 +1824,10 @@ public:
 
 	/**
 	 * Verify what abilities attributes match with filter.
-	 * @param cfg the config of ability to check.
-	 * @param tag_name the tag name of ability to check.
+	 * @param ab the ability checked
 	 * @param filter the filter used for checking.
 	 */
-	bool ability_matches_filter(const config & cfg, const std::string& tag_name, const config & filter) const;
+	bool ability_matches_filter(const unit_ability_t& ab, const config & filter) const;
 
 
 private:
@@ -1959,44 +1872,40 @@ private:
 
 	/**
 	 * Check if an ability is active. Includes checks to prevent excessive recursion.
-	 * @param ability The type (tag name) of the ability
-	 * @param cfg an ability WML structure
+	 * @param ab the ability checked
 	 * @param loc The location on which to resolve the ability
 	 * @returns true if it is active
 	 */
-	bool ability_active(const std::string& ability, const config& cfg, const map_location& loc) const;
+	bool ability_active(const unit_ability_t& ab, const map_location& loc) const;
 	/**
 	 * Check if an ability is active. The caller is responsible for preventing excessive recursion, so must hold a recursion_guard.
-	 * @param ability The type (tag name) of the ability
-	 * @param cfg an ability WML structure
+	 * @param ab the ability checked
 	 * @param loc The location on which to resolve the ability
 	 * @returns true if it is active
 	 */
-	bool ability_active_impl(const std::string& ability, const config& cfg, const map_location& loc) const;
+	bool ability_active_impl(const unit_ability_t& ab, const map_location& loc) const;
 
 	/**
 	 * Check if an ability affects distant units.
-	 * @param ability The type (tag name) of the ability
-	 * @param cfg an ability WML structure
+	 * @param ab the ability checked
 	 * @param loc The location on which to resolve the ability
 	 * @param from The "other unit" for filter matching
 	 * @param dist distance between unit distant and @a this.
 	 * @param dir direction to research a unit distant to @a this.
 	 */
-	bool ability_affects_adjacent(const std::string& ability, const config& cfg, std::size_t dist, int dir, const map_location& loc, const unit& from) const;
+	bool ability_affects_adjacent(const unit_ability_t& ab, std::size_t dist, int dir, const map_location& loc, const unit& from) const;
 	/**
 	 * Check if an ability affects the owning unit.
-	 * @param ability The type (tag name) of the ability
-	 * @param cfg an ability WML structure
+	 * @param ab the ability checked
 	 * @param loc The location on which to resolve the ability
 	 */
-	bool ability_affects_self(const std::string& ability, const config& cfg, const map_location& loc) const;
+	bool ability_affects_self(const unit_ability_t& ab, const map_location& loc) const;
 
 	/**
 	 * filters the weapons that condition the use of abilities for combat ([resistance],[leadership] or abilities used like specials
 	 * (deprecated in two last cases)
 	 */
-	bool ability_affects_weapon(const config& cfg, const const_attack_ptr& weapon, bool is_opp) const;
+	bool ability_affects_weapon(const unit_ability_t& ab, const const_attack_ptr& weapon, bool is_opp) const;
 
 public:
 	/** Generates a random race-appropriate name if one has not already been provided. */
@@ -2147,7 +2056,7 @@ private:
 	mutable bool hidden_;
 
 	config modifications_;
-	config abilities_;
+	ability_vector abilities_;
 
 	std::vector<config> advancements_;
 

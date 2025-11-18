@@ -84,8 +84,9 @@ unit_type::unit_type(default_ctor_t, const config& cfg, const std::string & pare
 	, default_variation_()
 	, variation_name_()
 	, race_(&unit_race::null_race)
+	, abilities_infos_()
+	, adv_abilities_infos_()
 	, abilities_()
-	, adv_abilities_()
 	, zoc_(false)
 	, hide_help_(false)
 	, do_not_list_()
@@ -254,14 +255,17 @@ void unit_type::build_help_index(
 
 	auto abilities = abilities_cfg();
 	for(const auto [key, cfg] : abilities.all_children_view()) {
+		//TODO: std::move
+		auto p_ab = unit_ability_t::create(key, cfg, false);
+		abilities_.emplace_back(p_ab);
 		config subst_cfg(cfg);
-		subst_cfg["name"] = unit_abilities::substitute_variables(cfg["name"], key, cfg);
-		subst_cfg["female_name"] = unit_abilities::substitute_variables(cfg["female_name"], key, cfg);
-		subst_cfg["description"] = unit_abilities::substitute_variables(cfg["description"], key, cfg);
-		subst_cfg["name_inactive"] = unit_abilities::substitute_variables(cfg["name_inactive"], key, cfg);
-		subst_cfg["female_name_inactive"] = unit_abilities::substitute_variables(cfg["female_name_inactive"], key, cfg);
-		subst_cfg["description_inactive"] = unit_abilities::substitute_variables(cfg["description_inactive"], key, cfg);
-		abilities_.emplace_back(subst_cfg);
+		subst_cfg["name"] = unit_abilities::substitute_variables(cfg["name"], *p_ab);
+		subst_cfg["female_name"] = unit_abilities::substitute_variables(cfg["female_name"], *p_ab);
+		subst_cfg["description"] = unit_abilities::substitute_variables(cfg["description"], *p_ab);
+		subst_cfg["name_inactive"] = unit_abilities::substitute_variables(cfg["name_inactive"], *p_ab);
+		subst_cfg["female_name_inactive"] = unit_abilities::substitute_variables(cfg["female_name_inactive"], *p_ab);
+		subst_cfg["description_inactive"] = unit_abilities::substitute_variables(cfg["description_inactive"], *p_ab);
+		abilities_infos_.emplace_back(subst_cfg);
 	}
 
 	for(const config& adv : cfg.child_range("advancement")) {
@@ -272,7 +276,7 @@ void unit_type::build_help_index(
 			}
 
 			for(const auto [key, cfg] : abil_cfg.all_children_view()) {
-				adv_abilities_.emplace_back(cfg);
+				adv_abilities_infos_.emplace_back(cfg);
 			}
 		}
 	}
@@ -473,9 +477,9 @@ std::vector<t_string> combine_special_notes(const std::vector<t_string>& direct,
 		}
 	}
 	for(const auto& attack : attacks) {
-		for(const auto [key, cfg] : attack.specials().all_children_view()) {
-			if(cfg.has_attribute("special_note")) {
-				append_special_note(notes, cfg["special_note"].t_str());
+		for(const auto& p_ab : attack.specials()) {
+			if(p_ab->cfg().has_attribute("special_note")) {
+				append_special_note(notes, p_ab->cfg()["special_note"].t_str());
 			}
 		}
 		if(auto attack_type_note = string_table.find("special_note_damage_type_" + attack.type()); attack_type_note != string_table.end()) {
@@ -547,29 +551,21 @@ int unit_type::experience_needed(bool with_acceleration) const
 
 bool unit_type::has_ability_by_id(const std::string& ability) const
 {
-	auto abil = abilities_cfg();
-	if(!abil.empty()) {
-		for(const auto [key, cfg] : abil.all_children_view()) {
-			if(cfg["id"] == ability) {
-				return true;
-			}
+	for(const auto& p_ab : abilities()) {
+		if(p_ab->id() == ability) {
+			return true;
 		}
 	}
 
 	return false;
 }
 
-std::vector<std::string> unit_type::get_ability_list() const
+std::vector<std::string> unit_type::get_ability_id_list() const
 {
 	std::vector<std::string> res;
 
-	auto abilities = abilities_cfg();
-	if(abilities.empty()) {
-		return res;
-	}
-
-	for(const auto [key, cfg] : abilities.all_children_view()) {
-		std::string id = cfg["id"];
+	for(const auto& p_ab : abilities()) {
+		std::string id = p_ab->id();
 		if(!id.empty()) {
 			res.push_back(std::move(id));
 		}
@@ -737,19 +733,21 @@ bool unit_type::show_variations_in_help() const
 int unit_type::resistance_against(const std::string& damage_name, bool attacker) const
 {
 	int resistance = movement_type_.resistance_against(damage_name);
-	unit_ability_list resistance_abilities;
-	auto abilities = abilities_cfg();
-
-	for(const config& cfg : abilities.child_range("resistance")) {
-		if(!cfg["affect_self"].to_bool(true)) {
+	active_ability_list resistance_abilities;
+	for(const auto& p_ab : abilities()) {
+		if (p_ab->tag() != "resistance") {
 			continue;
 		}
 
-		if(!resistance_filter_matches(cfg, attacker, damage_name, 100 - resistance)) {
+		if (!p_ab->cfg()["affect_self"].to_bool(true)) {
 			continue;
 		}
 
-		resistance_abilities.emplace_back(&cfg, map_location::null_location(), map_location::null_location());
+		if(!resistance_filter_matches(p_ab->cfg(), attacker, damage_name, 100 - resistance)) {
+			continue;
+		}
+
+		resistance_abilities.emplace_back(p_ab, map_location::null_location(), map_location::null_location());
 	}
 
 	if(!resistance_abilities.empty()) {
@@ -1065,9 +1063,9 @@ config unit_type_data::add_registry_entries(
 	const std::map<std::string, config>& registry
 )
 {
-	config to_append = base_cfg.child_or_empty("abilities");
-	if(base_cfg.has_attribute(registry_name)) {
-		std::vector<std::string> abil_ids_list = utils::split(base_cfg[registry_name].str());
+	config to_append = base_cfg.child_or_empty(registry_name);
+	if(base_cfg.has_attribute(registry_name + "_list")) {
+		std::vector<std::string> abil_ids_list = utils::split(base_cfg[registry_name + "_list"].str());
 		for(const std::string& id : abil_ids_list) {
 			auto registry_entry = registry.find(id);
 			if(registry_entry != registry.end()) {
@@ -1109,9 +1107,22 @@ void unit_type_data::set_config(const game_config_view& cfg)
 		for(const auto& [key, child_cfg] : abil_cfg.get().all_children_range()) {
 			const std::string& id = child_cfg["unique_id"].str(child_cfg["id"]);
 			if(abilities_registry_.find(id) == abilities_registry_.end()) {
+				DBG_UT << "Adding ability ‘" << id << "’ to registry.";
 				abilities_registry_.try_emplace(id, config(key, child_cfg));
 			} else {
-				WRN_UT << "Ability with id ‘" << id << "’ already exists, not adding.";
+				WRN_UT << "Ability with id ‘" << id << "’ already exists in registry, not adding.";
+			}
+		}
+	}
+
+	for(const auto& sp_cfg : cfg.child_range("weapon_specials")) {
+		for(const auto& [key, child_cfg] : sp_cfg.get().all_children_range()) {
+			const std::string& id = child_cfg["unique_id"].str(child_cfg["id"]);
+			if(specials_registry_.find(id) == specials_registry_.end()) {
+				DBG_UT << "Adding weapon special ‘" << id << "’ to registry.";
+				specials_registry_.try_emplace(id, config(key, child_cfg));
+			} else {
+				WRN_UT << "Weapon special with id ‘" << id << "’ already exists in registry, not adding.";
 			}
 		}
 	}
@@ -1294,6 +1305,7 @@ void unit_type_data::clear()
 	movement_types_.clear();
 	races_.clear();
 	abilities_registry_.clear();
+	specials_registry_.clear();
 	build_status_ = unit_type::NOT_BUILT;
 
 	hide_help_all_ = false;

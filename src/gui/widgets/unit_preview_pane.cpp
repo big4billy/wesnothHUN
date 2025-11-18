@@ -30,7 +30,6 @@
 #include "preferences/preferences.hpp"
 #include "gettext.hpp"
 #include "help/help.hpp"
-#include "help/help_impl.hpp"
 #include "play_controller.hpp"
 #include "resources.hpp"
 #include "serialization/markup.hpp"
@@ -150,8 +149,7 @@ static inline std::string get_mp_tooltip(int total_movement, const std::function
 	std::ostringstream tooltip;
 	tooltip << markup::tag("big", _("Movement Costs:"));
 
-	std::shared_ptr<terrain_type_data> tdata = help::load_terrain_types_data();
-
+	std::shared_ptr tdata = terrain_type_data::get();
 	if(!tdata) {
 		return "";
 	}
@@ -285,8 +283,8 @@ void unit_preview_pane::print_attack_details(
 			add_name_tree_node(
 				subsection,
 				"item",
-				markup::span_color(font::weapon_details_color, pair.first),
-				markup::span_size("x-large", pair.first) + "\n" + pair.second
+				markup::span_color(font::weapon_details_color, pair.name),
+				markup::span_size("x-large", pair.name) + "\n" + pair.description
 			);
 		}
 	}
@@ -543,7 +541,7 @@ void unit_preview_pane::set_display_data(const unit& u)
 			}
 		}
 
-		if(!u.get_ability_list().empty()) {
+		if(!u.get_ability_id_list().empty()) {
 			auto& header_node = add_name_tree_node(tree_details_->get_root_node(), "header", markup::bold(_("Abilities")));
 
 			for(const auto& ab : u.ability_tooltips()) {

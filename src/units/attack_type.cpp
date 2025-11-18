@@ -19,6 +19,7 @@
  */
 
 #include "units/attack_type.hpp"
+#include "units/types.hpp"
 #include "units/unit.hpp"
 #include "formula/callable_objects.hpp"
 #include "formula/formula.hpp"
@@ -47,6 +48,10 @@ static lg::log_domain log_unit("unit");
 static lg::log_domain log_wml("wml");
 #define ERR_WML LOG_STREAM(err, log_wml)
 
+static lg::log_domain log_engine("engine");
+#define ERR_NG LOG_STREAM(err, log_engine)
+
+
 attack_type::attack_type(const config& cfg)
 	: self_loc_()
 	, other_loc_()
@@ -68,9 +73,12 @@ attack_type::attack_type(const config& cfg)
 	, movement_used_(cfg["movement_used"].to_int(100000))
 	, attacks_used_(cfg["attacks_used"].to_int(1))
 	, parry_(cfg["parry"].to_int())
-	, specials_(cfg.child_or_empty("specials"))
+	, specials_()
 	, changed_(true)
 {
+	config specials_cfg = unit_type_data::add_registry_entries(cfg, "specials", unit_types.specials());
+	unit_ability_t::parse_vector(specials_cfg, specials_, true);
+
 	if (description_.empty())
 		description_ = translation::egettext(id_.c_str());
 
@@ -266,9 +274,9 @@ bool attack_type::matches_filter(const config& filter, const std::string& check_
 
 void attack_type::remove_special_by_filter(const config& filter)
 {
-	config::all_children_iterator i = specials_.ordered_begin();
-	while (i != specials_.ordered_end()) {
-		if(special_matches_filter(i->cfg, i->key, filter)) {
+	auto i = specials_.begin();
+	while (i != specials_.end()) {
+		if(special_matches_filter(**i, filter)) {
 			i = specials_.erase(i);
 		} else {
 			++i;
@@ -335,10 +343,10 @@ void attack_type::apply_effect(const config& cfg)
 
 	if(del_specials.empty() == false) {
 		const std::vector<std::string>& dsl = utils::split(del_specials);
-		config new_specials;
-		for(const auto [key, cfg] : specials_.all_children_view()) {
-			if(!utils::contains(dsl, cfg["id"].str())) {
-				new_specials.add_child(key, cfg);
+		ability_vector new_specials;
+		for(ability_ptr& p_ab : specials_) {
+			if(!utils::contains(dsl, p_ab->id())) {
+				new_specials.emplace_back(std::move(p_ab));
 			}
 		}
 		specials_ = new_specials;
@@ -354,8 +362,15 @@ void attack_type::apply_effect(const config& cfg)
 		if(mode != "append") {
 			specials_.clear();
 		}
+		// expand and add registry weapon specials
+		config registry_specials = unit_type_data::add_registry_entries(
+					config{"specials_list", set_specials["specials_list"]}, "specials", unit_types.specials());
+		for(const auto [key, cfg] : registry_specials.all_children_view()) {
+			specials_.push_back(unit_ability_t::create(key, cfg, true));
+		}
+
 		for(const auto [key, cfg] : set_specials->all_children_view()) {
-			specials_.add_child(key, cfg);
+			specials_.push_back(unit_ability_t::create(key, cfg, true));
 		}
 	}
 
@@ -666,5 +681,170 @@ void attack_type::write(config& cfg) const
 	cfg["movement_used"] = movement_used_;
 	cfg["attacks_used"] = attacks_used_;
 	cfg["parry"] = parry_;
-	cfg.add_child("specials", specials_);
+	cfg.add_child("specials", specials_cfg());
+}
+
+
+
+int attack_type::composite_value(const active_ability_list& abil_list, int base_value) const
+{
+	return unit_abilities::effect(abil_list, base_value, shared_from_this()).get_composite_value();
+}
+
+
+/**
+ * Calculates the number of attacks this weapon has, considering specials.
+ * This returns two numbers because of the swarm special. The actual number of
+ * attacks depends on the unit's health and should be:
+ *   min_attacks + (max_attacks - min_attacks) * (current hp) / (max hp)
+ * c.f. swarm_blows()
+ */
+void attack_type::modified_attacks(unsigned& min_attacks,
+	unsigned& max_attacks) const
+{
+	// Apply [attacks].
+	int attacks_value = composite_value(get_specials_and_abilities("attacks"), num_attacks());
+
+	if (attacks_value < 0) {
+		attacks_value = 0;
+		ERR_NG << "negative number of strikes after applying weapon specials";
+	}
+
+	// Apply [swarm].
+	active_ability_list swarm_specials = get_specials_and_abilities("swarm");
+	if (!swarm_specials.empty()) {
+		min_attacks = std::max<int>(0, swarm_specials.highest("swarm_attacks_min").first);
+		max_attacks = std::max<int>(0, swarm_specials.highest("swarm_attacks_max", attacks_value).first);
+	}
+	else {
+		min_attacks = max_attacks = attacks_value;
+	}
+}
+
+std::string attack_type::select_replacement_type(const active_ability_list& damage_type_list) const
+{
+	std::map<std::string, unsigned int> type_count;
+	unsigned int max = 0;
+	for (auto& i : damage_type_list) {
+		const config& c = i.ability_cfg();
+		if (c.has_attribute("replacement_type")) {
+			std::string type = c["replacement_type"].str();
+			unsigned int count = ++type_count[type];
+			if ((count > max)) {
+				max = count;
+			}
+		}
+	}
+
+	if (type_count.empty()) return type();
+
+	std::vector<std::string> type_list;
+	for (auto& i : type_count) {
+		if (i.second == max) {
+			type_list.push_back(i.first);
+		}
+	}
+
+	if (type_list.empty()) return type();
+
+	return type_list.front();
+}
+
+std::pair<std::string, int> attack_type::select_alternative_type(const active_ability_list& damage_type_list, const active_ability_list& resistance_list) const
+{
+	std::map<std::string, int> type_res;
+	int max_res = INT_MIN;
+	if (other_) {
+		for (auto& i : damage_type_list) {
+			const config& c = i.ability_cfg();
+			if (c.has_attribute("alternative_type")) {
+				std::string type = c["alternative_type"].str();
+				if (type_res.count(type) == 0) {
+					type_res[type] = (*other_).resistance_value(resistance_list, type);
+					max_res = std::max(max_res, type_res[type]);
+				}
+			}
+		}
+	}
+
+	if (type_res.empty()) return { "", INT_MIN };
+
+	std::vector<std::string> type_list;
+	for (auto& i : type_res) {
+		if (i.second == max_res) {
+			type_list.push_back(i.first);
+		}
+	}
+	if (type_list.empty()) return { "", INT_MIN };
+
+	return { type_list.front(), max_res };
+}
+
+/**
+ * The type of attack used and the resistance value that does the most damage.
+ */
+std::pair<std::string, int> attack_type::effective_damage_type() const
+{
+	if (attack_empty()) {
+		return { "", 100 };
+	}
+	active_ability_list resistance_list;
+	if (other_) {
+		resistance_list = (*other_).get_abilities_weapons("resistance", other_loc_, other_attack_, shared_from_this());
+		utils::erase_if(resistance_list, [&](const active_ability& i) {
+			return (!(i.ability_cfg()["active_on"].empty() || (!is_attacker_ && i.ability_cfg()["active_on"] == "offense") || (is_attacker_ && i.ability_cfg()["active_on"] == "defense")));
+			});
+	}
+	active_ability_list damage_type_list = get_specials_and_abilities("damage_type");
+	int res = other_ ? (*other_).resistance_value(resistance_list, type()) : 100;
+	if (damage_type_list.empty()) {
+		return { type(), res };
+	}
+	std::string replacement_type = select_replacement_type(damage_type_list);
+	std::pair<std::string, int> alternative_type = select_alternative_type(damage_type_list, resistance_list);
+
+	if (other_) {
+		res = replacement_type != type() ? (*other_).resistance_value(resistance_list, replacement_type) : res;
+		replacement_type = alternative_type.second > res ? alternative_type.first : replacement_type;
+		res = std::max(res, alternative_type.second);
+	}
+	return { replacement_type, res };
+}
+
+/**
+ * Return a type()/replacement_type and a list of alternative_types that should be displayed in the selected unit's report.
+ */
+std::pair<std::string, std::set<std::string>> attack_type::damage_types() const
+{
+	active_ability_list damage_type_list = get_specials_and_abilities("damage_type");
+	std::set<std::string> alternative_damage_types;
+	if (damage_type_list.empty()) {
+		return { type(), alternative_damage_types };
+	}
+	std::string replacement_type = select_replacement_type(damage_type_list);
+	for (auto& i : damage_type_list) {
+		const config& c = i.ability_cfg();
+		if (c.has_attribute("alternative_type")) {
+			alternative_damage_types.insert(c["alternative_type"].str());
+		}
+	}
+
+	return { replacement_type, alternative_damage_types };
+}
+
+/**
+ * Returns the damage per attack of this weapon, considering specials.
+ */
+double attack_type::modified_damage() const
+{
+	double damage_value = unit_abilities::effect(get_specials_and_abilities("damage"), damage(), shared_from_this()).get_composite_double_value();
+	return damage_value;
+}
+
+int attack_type::modified_chance_to_hit(int cth) const
+{
+	int parry = other_attack_ ? other_attack_->parry() : 0;
+	active_ability_list chance_to_hit_list = get_specials_and_abilities("chance_to_hit");
+	cth = std::clamp(cth + accuracy_ - parry, 0, 100);
+	return composite_value(chance_to_hit_list, cth);
 }

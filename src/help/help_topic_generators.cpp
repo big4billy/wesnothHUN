@@ -219,8 +219,7 @@ std::string terrain_topic_generator::operator()() const {
 		ss << type_.help_topic_text().str() << "\n";
 	}
 
-	std::shared_ptr<terrain_type_data> tdata = load_terrain_types_data();
-
+	std::shared_ptr tdata = terrain_type_data::get();
 	if(!tdata) {
 		WRN_HP << "When building terrain help topics, we couldn't acquire any terrain types data";
 		return ss.str();
@@ -739,15 +738,15 @@ std::string unit_topic_generator::operator()() const {
 
 			// special
 			if(has_special) {
-				std::vector<std::pair<t_string, t_string>> specials = attack.special_tooltips();
+				auto specials = attack.special_tooltips();
 				if(!specials.empty()) {
 					std::stringstream specials_ss;
 					std::string lang_special = "";
 					const std::size_t specials_size = specials.size();
 					for(std::size_t i = 0; i != specials_size; ++i) {
 						const std::string ref_id = std::string("weaponspecial_")
-							+ specials[i].first.base_str();
-						lang_special = (specials[i].first);
+							+ specials[i].name.base_str();
+						lang_special = (specials[i].name);
 						specials_ss << markup::make_link(lang_special, ref_id);
 						if(i+1 != specials_size) {
 							specials_ss << ", "; //comma placed before next special
@@ -825,7 +824,7 @@ std::string unit_topic_generator::operator()() const {
 	// Terrain Modifiers table
 	//
 	std::stringstream().swap(table_ss);
-	if(std::shared_ptr<terrain_type_data> tdata = load_terrain_types_data()) {
+	if(std::shared_ptr tdata = terrain_type_data::get()) {
 		// Print the terrain modifier table of the unit.
 		ss << "\n" << markup::tag("header", _("Terrain Modifiers"));
 
