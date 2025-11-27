@@ -38,9 +38,33 @@ namespace gui2
 
 REGISTER_WIDGET(tab_container)
 
+struct tab_container_implementation
+{
+	template<typename W>
+	static W* find(utils::const_clone_ref<tab_container, W> stack,
+			const std::string_view id,
+			const bool must_be_active)
+	{
+		for(unsigned i = 0; i < stack.get_tab_count(); ++i) {
+			auto* tab_grid = stack.get_tab_grid(i);
+			if(!tab_grid) {
+				continue;
+			}
+
+			if(W* res = tab_grid->find(id, must_be_active)) {
+				return res;
+			}
+		}
+
+		return stack.container_base::find(id, must_be_active);
+	}
+};
+
 tab_container::tab_container(const implementation::builder_tab_container& builder)
 	: container_base(builder, type())
 	, state_(ENABLED)
+	, tab_count_(0)
+	, generator_(nullptr)
 {
 	const auto conf = cast_config_to<tab_container_definition>();
 	assert(conf);
@@ -65,9 +89,10 @@ tab_container::tab_container(const implementation::builder_tab_container& builde
 	for (const widget_data& row : builder.list_items) {
 		add_tab_entry(row);
 	}
-	get_internal_list().connect_signal<event::NOTIFY_MODIFIED>(std::bind(&tab_container::change_selection, this));
 
-	select_tab(0);
+	tab_count_ = builder.builders.size();
+
+	get_internal_list().connect_signal<event::NOTIFY_MODIFIED>(std::bind(&tab_container::change_selection, this));
 }
 
 void tab_container::set_self_active(const bool active)
@@ -117,6 +142,16 @@ void tab_container::change_selection() {
 	fire(event::NOTIFY_MODIFIED, *this, nullptr);
 }
 
+widget* tab_container::find(const std::string_view id, const bool must_be_active)
+{
+	return tab_container_implementation::find<widget>(*this, id, must_be_active);
+}
+
+const widget* tab_container::find(const std::string_view id, const bool must_be_active) const
+{
+	return tab_container_implementation::find<const widget>(*this, id, must_be_active);
+}
+
 // }---------- DEFINITION ---------{
 
 tab_container_definition::tab_container_definition(const config& cfg)
@@ -147,8 +182,7 @@ builder_tab_container::builder_tab_container(const config& cfg)
 	: implementation::builder_styled_widget(cfg)
 {
 	if(cfg.has_child("tab")) {
-		for(const config& tab : cfg.child_range("tab"))
-		{
+		for(const config& tab : cfg.child_range("tab")) {
 			list_items.emplace_back(widget_data{
 				{ "image", {{"label", tab["image"].str()}} },
 				{ "name", {{"label", tab["name"].t_str()}} }

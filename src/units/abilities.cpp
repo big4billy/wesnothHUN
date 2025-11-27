@@ -1753,8 +1753,15 @@ namespace
 		if(!string_matches_if_present(filter, cfg, "active_on", "both"))
 			return false;
 
-		if(!double_matches_if_present(filter, cfg, "priority"))
-			return false;
+		if(abilities_list::weapon_math_tags().count(tag_name) != 0 || abilities_list::ability_value_tags().count(tag_name) != 0) {
+			if(!double_matches_if_present(filter, cfg, "priority", 0.00)) {
+				return false;
+			}
+		} else {
+			if(!double_matches_if_present(filter, cfg, "priority")) {
+				return false;
+			}
+		}
 
 		//value, add, sub multiply and divide check values of attribute used in engines abilities(default value of 'value' can be checked when not specified)
 		//who return numericals value but can also check in non-engine abilities(in last case if 'value' not specified none value can matches)
@@ -2102,7 +2109,7 @@ bool filter_base_matches(const config& cfg, int def)
 	return true;
 }
 
-int individual_value_int(const config::attribute_value *v, int def, const active_ability & ability, const map_location& loc, const const_attack_ptr& att) {
+static int individual_value_int(const config::attribute_value *v, int def, const active_ability & ability, const map_location& loc, const const_attack_ptr& att) {
 	int value = std::round(get_single_ability_value(*v, static_cast<double>(def), ability, loc, att, [&](const wfl::formula& formula, wfl::map_formula_callable& callable) {
 		callable.add("base_value", wfl::variant(def));
 		return std::round(formula.evaluate(callable).as_int());
@@ -2110,7 +2117,7 @@ int individual_value_int(const config::attribute_value *v, int def, const active
 	return value;
 }
 
-int individual_value_double(const config::attribute_value *v, int def, const active_ability & ability, const map_location& loc, const const_attack_ptr& att) {
+static int individual_value_double(const config::attribute_value *v, int def, const active_ability & ability, const map_location& loc, const const_attack_ptr& att) {
 	int value = std::round(get_single_ability_value(*v, static_cast<double>(def), ability, loc, att, [&](const wfl::formula& formula, wfl::map_formula_callable& callable) {
 		callable.add("base_value", wfl::variant(def));
 		return formula.evaluate(callable).as_decimal() / 1000.0 ;
