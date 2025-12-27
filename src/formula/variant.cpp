@@ -144,37 +144,46 @@ variant::variant()
 variant::variant(int n)
 	: value_(std::make_shared<variant_int>(n))
 {
-	assert(value_.get());
 }
 
 variant::variant(int n, variant::DECIMAL_VARIANT_TYPE)
 	: value_(std::make_shared<variant_decimal>(n))
 {
-	assert(value_.get());
 }
 
 variant::variant(double n, variant::DECIMAL_VARIANT_TYPE)
 	: value_(std::make_shared<variant_decimal>(n))
 {
-	assert(value_.get());
 }
 
 variant::variant(const std::vector<variant>& vec)
-	: value_((std::make_shared<variant_list>(vec)))
+	: value_(std::make_shared<variant_list>(vec))
 {
-	assert(value_.get());
+}
+
+variant::variant(std::vector<variant>&& vec)
+	: value_(std::make_shared<variant_list>(std::move(vec)))
+{
 }
 
 variant::variant(const std::string& str)
 	: value_(std::make_shared<variant_string>(str))
 {
-	assert(value_.get());
 }
 
-variant::variant(const std::map<variant,variant>& map)
-	: value_((std::make_shared<variant_map>(map)))
+variant::variant(std::string&& str)
+	: value_(std::make_shared<variant_string>(std::move(str)))
 {
-	assert(value_.get());
+}
+
+variant::variant(const std::map<variant, variant>& map)
+	: value_(std::make_shared<variant_map>(map))
+{
+}
+
+variant::variant(std::map<variant, variant>&& map)
+	: value_(std::make_shared<variant_map>(std::move(map)))
+{
 }
 
 variant variant::operator[](std::size_t n) const
@@ -214,7 +223,7 @@ variant variant::operator[](const variant& v) const
 				slice.push_back((*this)[v[i]]);
 			}
 
-			return variant(slice);
+			return variant(std::move(slice));
 		} else if(v.as_int() < 0) {
 			return operator[](num_elements() + v.as_int());
 		}
@@ -234,7 +243,7 @@ variant variant::get_keys() const
 		tmp.push_back(i.first);
 	}
 
-	return variant(tmp);
+	return variant(std::move(tmp));
 }
 
 variant variant::get_values() const
@@ -246,7 +255,7 @@ variant variant::get_values() const
 		tmp.push_back(i.second);
 	}
 
-	return variant(tmp);
+	return variant(std::move(tmp));
 }
 
 variant_iterator variant::begin() const
@@ -350,7 +359,7 @@ variant variant::operator+(const variant& v) const
 			res.push_back(member);
 		}
 
-		return variant(res);
+		return variant(std::move(res));
 	}
 
 	if(is_map() && v.is_map()) {
@@ -360,7 +369,7 @@ variant variant::operator+(const variant& v) const
 			res[member.first] = member.second;
 		}
 
-		return variant(res);
+		return variant(std::move(res));
 	}
 
 	if(is_decimal() || v.is_decimal()) {
@@ -573,7 +582,7 @@ variant variant::concatenate(const variant& v) const
 			res.push_back(v[i]);
 		}
 
-		return variant(res);
+		return variant(std::move(res));
 	} else if(is_string()) {
 		v.must_be(formula_variant::type::string);
 		std::string res = as_string() + v.as_string();
@@ -695,7 +704,7 @@ variant variant::execute_variant(const variant& var)
 		vars.pop();
 	}
 
-	return variant(made_moves);
+	return variant(std::move(made_moves));
 }
 
 }

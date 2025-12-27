@@ -44,7 +44,7 @@ variant variant_int::build_range_variant(int limit) const
 		res.emplace_back(i);
 	}
 
-	return variant(res);
+	return variant(std::move(res));
 }
 
 std::string variant_decimal::to_string_impl(const bool sign_value) const
@@ -294,7 +294,12 @@ template class variant_container<variant_vector>;
 template class variant_container<variant_map_raw>;
 
 variant_list::variant_list(const variant_vector& vec)
-	: variant_container<variant_vector>(vec)
+	: variant_container(vec)
+{
+}
+
+variant_list::variant_list(variant_vector&& vec)
+	: variant_container(std::move(vec))
 {
 }
 
@@ -313,7 +318,7 @@ variant variant_list::list_op(value_base_ptr second, const std::function<variant
 		res.push_back(op_func(get_container()[i], other_list->get_container()[i]));
 	}
 
-	return variant(res);
+	return variant(std::move(res));
 }
 
 bool variant_list::equals(variant_value_base& other) const

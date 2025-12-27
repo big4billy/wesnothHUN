@@ -130,10 +130,9 @@ public:
 	}
 
 	/** Returns the id of the variant type */
-	virtual const formula_variant::type& get_type() const
+	virtual formula_variant::type get_type() const
 	{
-		static formula_variant::type type = formula_variant::type::null;
-		return type;
+		return formula_variant::type::null;
 	}
 
 	/**
@@ -244,10 +243,9 @@ public:
 		return string_cast();
 	}
 
-	virtual const formula_variant::type& get_type() const override
+	virtual formula_variant::type get_type() const override
 	{
-		static formula_variant::type type = formula_variant::type::integer;
-		return type;
+		return formula_variant::type::integer;
 	}
 };
 
@@ -285,10 +283,9 @@ public:
 		return to_string_impl(true);
 	}
 
-	virtual const formula_variant::type& get_type() const override
+	virtual formula_variant::type get_type() const override
 	{
-		static formula_variant::type type = formula_variant::type::decimal;
-		return type;
+		return formula_variant::type::decimal;
 	}
 
 private:
@@ -329,10 +326,9 @@ public:
 	virtual bool equals(variant_value_base& other) const override;
 	virtual bool less_than(variant_value_base& other) const override;
 
-	virtual const formula_variant::type& get_type() const override
+	virtual formula_variant::type get_type() const override
 	{
-		static formula_variant::type type = formula_variant::type::object;
-		return type;
+		return formula_variant::type::object;
 	}
 
 	virtual boost::iterator_range<variant_iterator> make_iterator() const override;
@@ -357,6 +353,7 @@ class variant_string : public variant_value_base
 {
 public:
 	explicit variant_string(const std::string& str) : string_(str) {}
+	explicit variant_string(std::string&& str) : string_(std::move(str)) {}
 
 	virtual bool is_empty() const override
 	{
@@ -395,10 +392,9 @@ public:
 		return string_ < value_ref_cast<variant_string>(other).string_;
 	}
 
-	virtual const formula_variant::type& get_type() const override
+	virtual formula_variant::type get_type() const override
 	{
-		static formula_variant::type type = formula_variant::type::string;
-		return type;
+		return formula_variant::type::string;
 	}
 
 private:
@@ -414,13 +410,19 @@ private:
 template<typename T>
 class variant_container : public variant_value_base
 {
+	// NOTE: add more conditions if this changes.
+	static_assert((std::is_same_v<variant_vector, T> || std::is_same_v<variant_map_raw, T>),
+		"variant_container only accepts vector or map specifications.");
+
 public:
 	explicit variant_container(const T& container)
 		: container_(container)
 	{
-		// NOTE: add more conditions if this changes.
-		static_assert((std::is_same_v<variant_vector, T> || std::is_same_v<variant_map_raw, T>),
-			"variant_container only accepts vector or map specifications.");
+	}
+
+	explicit variant_container(T&& container)
+		: container_(std::move(container))
+	{
 	}
 
 	virtual bool is_empty() const override
@@ -489,6 +491,7 @@ class variant_list : public variant_container<variant_vector>
 {
 public:
 	explicit variant_list(const variant_vector& vec);
+	explicit variant_list(variant_vector&& vec);
 
 	/**
 	 * Applies the provided function to the corresponding variants in this and another list.
@@ -498,10 +501,9 @@ public:
 	virtual bool equals(variant_value_base& other) const override;
 	virtual bool less_than(variant_value_base& other) const override;
 
-	virtual const formula_variant::type& get_type() const override
+	virtual formula_variant::type get_type() const override
 	{
-		static formula_variant::type type = formula_variant::type::list;
-		return type;
+		return formula_variant::type::list;
 	}
 
 	virtual variant deref_iterator(const utils::any&) const override;
@@ -518,16 +520,19 @@ class variant_map : public variant_container<variant_map_raw>
 {
 public:
 	explicit variant_map(const variant_map_raw& map)
-		: variant_container<variant_map_raw>(map)
+		: variant_container(map)
+	{}
+
+	explicit variant_map(variant_map_raw&& map)
+		: variant_container(std::move(map))
 	{}
 
 	virtual bool equals(variant_value_base& other) const override;
 	virtual bool less_than(variant_value_base& other) const override;
 
-	virtual const formula_variant::type& get_type() const override
+	virtual formula_variant::type get_type() const override
 	{
-		static formula_variant::type type = formula_variant::type::map;
-		return type;
+		return formula_variant::type::map;
 	}
 
 	virtual variant deref_iterator(const utils::any&) const override;
