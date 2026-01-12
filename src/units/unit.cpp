@@ -953,7 +953,7 @@ void unit::generate_traits(bool must_have_only)
 			const std::string& avl = t["availability"];
 			// The trait is still available, mark it as a candidate for randomizing.
 			// For leaders, only traits with availability "any" are considered.
-			if(!must_have_only && (!can_recruit() || avl == "any")) {
+			if(!can_recruit() || avl == "any") {
 				candidate_traits.push_back(&t);
 			}
 		}
@@ -1269,6 +1269,14 @@ void unit::set_recruits(const std::vector<std::string>& recruits)
 {
 	unit_types.check_types(recruits);
 	std::set<std::string> recruits_set(recruits.begin(), recruits.end());
+	if(resources::gameboard) {
+		if(resources::gameboard->get_team(side_).is_local_human()) {
+			auto& encountered_units = prefs::get().encountered_units();
+			for(const auto& recruit : recruits_set) {
+				encountered_units.insert(recruit);
+			}
+		}
+	}
 	recruit_list_ = recruits_set;
 }
 
