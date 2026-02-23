@@ -10,10 +10,11 @@
      * Shortened turn limits on several long scenarios.
      * Decreased player gold from 100 to 80 on most scenarios.
      * S08 "The Siege of Kal Kartha": increased enemy gold.
-     * S10 "The Underlevels": reduced number of villages, and increased Karrag's income.
+     * S10 "The Underlevels": Karrag can now be optionally fought before you kill all other leaders, and the scenario has been rebalanced accordingly.
    * Heir to the Throne
      * Fixed a serious issue where the "Replacement Weapons" tweak would trigger on all sides' recruits, not just Konrad's.
      * Moremirmu: significantly increased hitpoints, but decreased speed and damage.
+     * S01 "The Elves Besieged": added a turn limit and rebalanced enemies.
      * S02 "Flight of the Elves": fixed Konrad winning after killing only 2 enemy leaders, instead of all of them.
      * S07 "Muff Malal's Peninsula": Moremirmu is now in a safer position, and much less likely to get bad RNG and die early.
      * S22 "Glamdrol": allying with the Stoneskins now costs less gold, but Konrad will lose if he doesn't pillage enough gold to meet his pledge.
@@ -34,7 +35,7 @@
 ### Packaging
 ### Terrain
 ### Translations
-   * Updated translations: Bengali, British English, Chinese (Simplified), French, Greek, Hungarian, Italian, Spanish
+   * Updated translations: Bengali, British English, Chinese (Simplified), Czech, French, Greek, Hungarian, Italian, Spanish
 ### Units
    * Ships:
      * Adjusted gold costs for most ships.
