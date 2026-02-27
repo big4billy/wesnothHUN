@@ -733,9 +733,9 @@ std::vector<topic> generate_trait_topics(const bool sort_generated)
 				auto it = trait_races.find(trait["id"]);
 				const bool is_not_racial_trait = it == trait_races.end() || it->second.find(type.race_id()) == it->second.end();
 
-				if(!utils::contains(global_traits, trait["id"])
-					&& is_not_racial_trait
-					&& desc_type != HIDDEN_BUT_SHOW_MACROS)
+				if(desc_type != HIDDEN_BUT_SHOW_MACROS
+					&& !utils::contains(global_traits, trait["id"])
+					&& is_not_racial_trait)
 				{
 					const std::string link_unittype = markup::make_link(type.type_name(), unit_prefix + type.id());
 					trait_units[trait["id"]].insert(link_unittype);
@@ -1205,6 +1205,11 @@ std::vector<topic> generate_unit_topics(const std::string& race, const bool sort
 
 UNIT_DESCRIPTION_TYPE description_type(const unit_type& type)
 {
+	// See the docs of HIDDEN_BUT_SHOW_MACROS
+	if(type.id() == "Fog Clearer") {
+		return HIDDEN_BUT_SHOW_MACROS;
+	}
+
 	if(game_config::debug || prefs::get().show_all_units_in_help()	||
 			hotkey::is_scope_active(hotkey::SCOPE_EDITOR) ) {
 		return FULL_DESCRIPTION;
@@ -1213,11 +1218,6 @@ UNIT_DESCRIPTION_TYPE description_type(const unit_type& type)
 	const std::set<std::string>& encountered_units = prefs::get().encountered_units();
 	if(encountered_units.find(type.id()) != encountered_units.end()) {
 		return FULL_DESCRIPTION;
-	}
-
-	// See the docs of HIDDEN_BUT_SHOW_MACROS
-	if(type.id() == "Fog Clearer") {
-		return HIDDEN_BUT_SHOW_MACROS;
 	}
 
 	return NO_DESCRIPTION;
