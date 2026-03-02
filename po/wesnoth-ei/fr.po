@@ -24,6 +24,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.6.10\n"
 
+# Mise en fuzzy pour informer l'utilisateur de la traduction partielle.
+# Supprimer le fuzzy (sans changement) quand la traduction est complète.
 #. [campaign]: id=Eastern_Invasion
 #. [achievement_group]
 #. [scenario]: id=01_Eastern_Invasion
@@ -1187,8 +1189,9 @@ msgstr "Pour aller à l'est, battre Mal-Kallat. <i>(normal)</i>"
 
 #. [message]: speaker=Dacyn
 #: data/campaigns/Eastern_Invasion/scenarios/03_An_Unexpected_Appearance.cfg:207
+#, fuzzy
 msgid "Quick, I must collapse the tunnels behind us."
-msgstr "Dépêchez-vous ! Je dois bloquer les tunnels après vous."
+msgstr "Dépêchez-vous ! Je dois bloquer les tunnels derrière vous."
 
 #. [message]: speaker=Dacyn
 #: data/campaigns/Eastern_Invasion/scenarios/03_An_Unexpected_Appearance.cfg:236
@@ -1272,8 +1275,9 @@ msgstr ""
 #. [message]: speaker=Dacyn
 #. "their leader" being Mal-Ravanal, who's neither male nor female
 #: data/campaigns/Eastern_Invasion/scenarios/03_An_Unexpected_Appearance.cfg:290
+#, fuzzy
 msgid "Yes. I have history with their leader."
-msgstr "Oui, j'ai une longue histoire avec leur chef."
+msgstr "Oui. J’ai un passif avec leur chef."
 
 #. [message]: speaker=Mal-Tar
 #: data/campaigns/Eastern_Invasion/scenarios/03_An_Unexpected_Appearance.cfg:313
@@ -1307,12 +1311,13 @@ msgstr "Je lui avais dit de se concentrer plus sur ses études."
 
 #. [message]: speaker=Mal-Kallat
 #: data/campaigns/Eastern_Invasion/scenarios/03_An_Unexpected_Appearance.cfg:348
+#, fuzzy
 msgid ""
 "I wanted to avoid as much battle as I could, but it seems like we have no "
 "choice..."
 msgstr ""
 "Je voulais rester aussi loin que possible des champs de bataille mais le "
-"sort a décidé pour nous..."
+"sort en a décidé pour nous..."
 
 # Surnom pour "Skraat" quand il meurt.
 #. [message]: speaker=Mal-Kallat
@@ -3955,10 +3960,14 @@ msgstr ""
 #. [message]: speaker=Gweddry
 #. there were originally 4 of them, and 3 are now defeated
 #: data/campaigns/Eastern_Invasion/scenarios/06b_Soradoc.cfg:764
+#, fuzzy
 msgid ""
 "That’s almost all the undead leaders defeated! If time remains, we should "
 "introduce Owaec to the city garrison before we continue north."
 msgstr ""
+"Presque tous les chefs morts-vivants ont été vaincus ! S’il nous reste du "
+"temps, nous devrions présenter Owaec à la garnison de la cité avant de "
+"poursuivre notre marche vers le nord."
 
 #. [message]: speaker=Gweddry
 #. there were originally 4 of them, and 3 are now defeated
@@ -4217,8 +4226,9 @@ msgstr "Ogres"
 #. [message]: race=ogre
 #. The ogre is trying to escape, but Gweddry's units keep forcing him to change directions.
 #: data/campaigns/Eastern_Invasion/scenarios/07a_Capturing_the_Ogres.cfg:66
+#, fuzzy
 msgid "Gah! Raa! Get out of my way!!"
-msgstr ""
+msgstr "Gah ! Raa ! Dégagez !!"
 
 #. [objective]: condition=win
 #: data/campaigns/Eastern_Invasion/scenarios/07a_Capturing_the_Ogres.cfg:160
@@ -4448,7 +4458,7 @@ msgstr "Atteindre la rive Nord avant la mort de Grug"
 #. "any human" specifically excludes undead, who don't count. It's not possible for the player to control dwarves, merfolk, etc at this point in the campaign.
 #: data/campaigns/Eastern_Invasion/scenarios/07b_Ogre_Crossing.cfg:213
 msgid "The ogres will join you once any human reaches the north shore."
-msgstr ""
+msgstr "Les ogres se joindront à vous dès qu’un humain atteindra la rive nord."
 
 #. [message]: speaker=Gweddry
 #: data/campaigns/Eastern_Invasion/scenarios/07b_Ogre_Crossing.cfg:259
@@ -4534,11 +4544,16 @@ msgstr "Tarek"
 #. The pronoun "we" here is exclusive, meaning "we, not including you".
 #. The speaker is a horseman, a unit type that’s always male.
 #: data/campaigns/Eastern_Invasion/scenarios/07b_Ogre_Crossing.cfg:395
+#, fuzzy
 msgid ""
 "Hail, Owaec and company! We retreat from Soradoc, but Yannic sent me to "
 "bring a prize we took from one of the necromancers we slew during our "
 "retreat. The temple healers have blessed it so that it may be used safely."
 msgstr ""
+"Salutations, Owaec et compagnie ! Nous battons en retraite depuis Soradoc, "
+"mais Yannic m’a envoyé vous porter un trophée pris à l’un des nécromanciens "
+"que nous avons abattus. Les guérisseurs du temple l’ont béni afin qu’il "
+"puisse être utilisé sans danger."
 
 #. [message]: speaker=Dacyn
 #. About the plague staff.
@@ -4615,8 +4630,9 @@ msgstr "Ne croyez pas que vous pourrez vous en tirer aussi facilement !"
 
 #. [message]
 #: data/campaigns/Eastern_Invasion/scenarios/07b_Ogre_Crossing.cfg:746
+#, fuzzy
 msgid "Run away!"
-msgstr ""
+msgstr "Fuyez !"
 
 #. [message]: speaker=Izziasch
 #: data/campaigns/Eastern_Invasion/scenarios/07b_Ogre_Crossing.cfg:754
@@ -5147,8 +5163,9 @@ msgstr "Les nains ont une bourse de 10 pièces d'or!"
 #. [scenario]: id=08_Xenophobia
 #. (said by an ogre)
 #: data/campaigns/Eastern_Invasion/scenarios/08_Xenophobia.cfg:660
+#, fuzzy
 msgid "Dwarf have 10 gold!"
-msgstr ""
+msgstr "Nain avoir 10 pièces d’or !"
 
 #. [scenario]: id=08_Xenophobia
 #: data/campaigns/Eastern_Invasion/scenarios/08_Xenophobia.cfg:661
@@ -5171,13 +5188,16 @@ msgstr "Les nagas ont une bourse de 20 pièces d'or!"
 #. [scenario]: id=08_Xenophobia
 #. (said by a dwarf) Oi, this is 20 gold! Where do these reptiles even get it?
 #: data/campaigns/Eastern_Invasion/scenarios/08_Xenophobia.cfg:666
+#, fuzzy
 msgid "Oi, this be 20 gold! Wher’ do these reptiles even get it?"
 msgstr ""
+"Eh ben ! 20 pièces d’or ! Mais où diable ces reptiles vont-ils les chercher ?"
 
 #. [scenario]: id=08_Xenophobia
 #: data/campaigns/Eastern_Invasion/scenarios/08_Xenophobia.cfg:668
+#, fuzzy
 msgid "Snake have 20 gold!"
-msgstr ""
+msgstr "Serpent avoir 20 pièces d’or !"
 
 #. [scenario]: id=08_Xenophobia
 #: data/campaigns/Eastern_Invasion/scenarios/08_Xenophobia.cfg:669
@@ -5195,14 +5215,16 @@ msgstr "Les orcs ont une bourse de 20 pièces d'or!"
 #. [scenario]: id=08_Xenophobia
 #. (said by a dwarf) Look at that, 20 gold pieces these orcs have stolen from dwarves!
 #: data/campaigns/Eastern_Invasion/scenarios/08_Xenophobia.cfg:674
+#, fuzzy
 msgid "Look a’ that, 20 gold pieces these orcs done steal from dwarves!"
-msgstr ""
+msgstr "Regarde ça ! Ces orcs ont piqué 20 pièces d’or aux nains !"
 
 #. [scenario]: id=08_Xenophobia
 #. (said by an ogre)
 #: data/campaigns/Eastern_Invasion/scenarios/08_Xenophobia.cfg:676
+#, fuzzy
 msgid "Orc have 20 gold!"
-msgstr ""
+msgstr "Orc avoir 20 pièces d’or !"
 
 #. [message]: speaker=Bagork
 #: data/campaigns/Eastern_Invasion/scenarios/08_Xenophobia.cfg:694
@@ -5553,8 +5575,9 @@ msgstr ""
 #. [floating_text]
 #. other units are taking damage from the cold, but this unit is immune (through the elixir or yetiburger)
 #: data/campaigns/Eastern_Invasion/scenarios/09_Castle_in_the_Ice.cfg:769
+#, fuzzy
 msgid "resist"
-msgstr ""
+msgstr "résistant"
 
 #. [message]: id=Gweddry,Owaec
 #: data/campaigns/Eastern_Invasion/scenarios/09_Castle_in_the_Ice.cfg:825
@@ -5626,15 +5649,18 @@ msgstr ""
 #. [else]
 #. (said by a dwarf) Oi, do you see old castle ruin over there? It’s the one we’re looking for, isn’t it?
 #: data/campaigns/Eastern_Invasion/scenarios/09_Castle_in_the_Ice.cfg:893
+#, fuzzy
 msgid ""
 "Oi, do ya ken ol’ castle ruin o’er yonder? It be one we lookin’ fer, eh?"
 msgstr ""
+"Mate un peu la ruine au loin, c'est celle que tu voulais dégoter, hein?"
 
 #. [else]
 #. (said by an ogre) I see a castle. It is very broken. Does the magic man want the broken castle?
 #: data/campaigns/Eastern_Invasion/scenarios/09_Castle_in_the_Ice.cfg:895
+#, fuzzy
 msgid "Me see castle. Very broken. Magic man want broken castle?"
-msgstr ""
+msgstr "Moi voir château. Très cassé. Magicien veut château cassé ?"
 
 #. [message]: speaker=Dacyn
 #: data/campaigns/Eastern_Invasion/scenarios/09_Castle_in_the_Ice.cfg:904
@@ -5897,18 +5923,24 @@ msgstr ""
 #. (said by an ogre) I see a shipwreck. I see a lot of gold in the ice. I cannot take it. $gold gold pieces are not deep. I can take them.
 #. circa 25 gold pieces
 #: data/campaigns/Eastern_Invasion/scenarios/09_Castle_in_the_Ice.cfg:1442
+#, fuzzy
 msgid ""
 "Me see ship break. Me see in ice lot gold. No can take. $gold gold no deep. "
 "Can take."
 msgstr ""
+"Moi voir navire cassé. Moi voir plein d’or dans la glace. Pas possible de "
+"prendre. $gold pièces d'or pas profond. Peut prendre."
 
 #. [event]
 #. circa 25 gold pieces
 #: data/campaigns/Eastern_Invasion/scenarios/09_Castle_in_the_Ice.cfg:1444
+#, fuzzy
 msgid ""
 "The zombie finds an old shipwreck and manages to scratch out $gold gold "
 "pieces frozen in the ice. The rest of the chests are too deep."
 msgstr ""
+"Le zombie découvre une vieille épave et parvient à récupérer $gold pièces "
+"d’or coincées dans la glace. Les autres coffres sont trop profonds."
 
 #. [event]
 #. circa 30 gold pieces
@@ -5924,23 +5956,24 @@ msgstr ""
 #. (said by a dwarf) This town is a ruin, though I’ve found some baubles worth $gold gold.
 #. circa 30 gold pieces
 #: data/campaigns/Eastern_Invasion/scenarios/09_Castle_in_the_Ice.cfg:1471
+#, fuzzy
 msgid "This town’s a ruin, tho’ I done find some baubles worth $gold gold."
 msgstr ""
+"Cette ville est en ruines, mais j’ai trouvé quelques babioles valant $gold "
+"pièces d’or."
 
 #. [event]
 #. (said by an ogre) This town is very empty. I have found some shiny things. They are worth $gold gold pieces.
 #. circa 30 gold pieces
 #: data/campaigns/Eastern_Invasion/scenarios/09_Castle_in_the_Ice.cfg:1474
+#, fuzzy
 msgid "Town very empty. Me find shinies. Shinies for $gold gold."
-msgstr ""
+msgstr "Ville très vide. Moi, trouvé des brillants pour $gold pièces d'or."
 
 #. [event]
 #. circa 30 gold pieces
 #: data/campaigns/Eastern_Invasion/scenarios/09_Castle_in_the_Ice.cfg:1476
 #, fuzzy
-#| msgid ""
-#| "This ruined town still has some valuables! I count enough to be worth "
-#| "$gold gold pieces."
 msgid ""
 "The zombie searches the ruined town and finds some valuables worth $gold "
 "gold pieces."
@@ -5962,23 +5995,26 @@ msgstr ""
 #. (said by a dwarf) Meh, this drake got just $gold gold. I would expect more from a bunch of walking furnaces.
 #. circa 15 gold pieces
 #: data/campaigns/Eastern_Invasion/scenarios/09_Castle_in_the_Ice.cfg:1503
+#, fuzzy
 msgid ""
 "Meh, this drake got just $gold gold. Woulda expect more from a bunch o’ "
 "walkin’ furnaces."
 msgstr ""
+"Bof, ce dracan n’avait que $gold pièces d’or. J’en attendais plus de ces "
+"fours ambulants."
 
 #. [event]
 #. (said by an ogre) The drake has $gold gold pieces. The drake is mean. I am going to take the gold.
 #. circa 15 gold pieces
 #: data/campaigns/Eastern_Invasion/scenarios/09_Castle_in_the_Ice.cfg:1506
+#, fuzzy
 msgid "Hot lizard have $gold gold. Lizard mean. Me take gold."
-msgstr ""
+msgstr "Lézard brûlant a $gold pièces d’or. Lézard méchant. Moi prendre l’or."
 
 #. [event]
 #. circa 15 gold pieces
 #: data/campaigns/Eastern_Invasion/scenarios/09_Castle_in_the_Ice.cfg:1508
 #, fuzzy
-#| msgid "The zombie finds a pile of 10 gold pieces!"
 msgid "The zombie finds $gold gold pieces in the drake camp."
 msgstr "Les nains ont une bourse de 10 pièces d'or!"
 
@@ -7536,8 +7572,9 @@ msgstr ""
 
 #. [floating_text]
 #: data/campaigns/Eastern_Invasion/scenarios/11_Captured.cfg:934
+#, fuzzy
 msgid "weapons restored"
-msgstr ""
+msgstr "armes remises en état"
 
 #. [message]: speaker=unit
 #: data/campaigns/Eastern_Invasion/scenarios/11_Captured.cfg:955
@@ -7887,7 +7924,6 @@ msgstr "Oh, comme tu brilles, mon précieux... Quel cadeau de notre chef..."
 #. goblin with a ring of invisibility (although not enough sense to wear it when running away)
 #: data/campaigns/Eastern_Invasion/scenarios/11_Captured.cfg:1705
 #, fuzzy
-#| msgid "Aaah! Humans! Run away run away!"
 msgid "Aaah! Who’re you?! Run away run away!"
 msgstr "Aaah, des humains ! Fuyons, fuyons !"
 
@@ -7899,10 +7935,13 @@ msgstr "Hé, il a laissé tomber quelque chose."
 
 #. [message]: speaker=unit
 #: data/campaigns/Eastern_Invasion/scenarios/11_Captured.cfg:1730
+#, fuzzy
 msgid ""
 "This looks like a disused mineshaft. I don’t feel any fresh air, so we "
 "shouldn’t expect to escape this way."
 msgstr ""
+"On dirait une galerie de mine abandonnée. Je ne sens pas d’air frais, donc "
+"on ne devrait pas espérer pouvoir s’échapper par ici."
 
 #. [message]: speaker=unit
 #. if the disguised unit runs out of the caves alone, without rescuing any other prisoners
@@ -8022,6 +8061,7 @@ msgstr ""
 
 #. [message]: speaker=Grug
 #: data/campaigns/Eastern_Invasion/scenarios/12_Evacuation.cfg:319
+#, fuzzy
 msgid "(nodding) Gruuhhh... Grug tired. Leg hurt..."
 msgstr "(hochement de tête) Gruuhhh... Grug fatigué. Mal jambe..."
 
@@ -8512,8 +8552,9 @@ msgstr "Butins de guerre"
 
 #. [part]
 #: data/campaigns/Eastern_Invasion/scenarios/13_Spoils_of_War.cfg:27
+#, fuzzy
 msgid "Part III: Wesnoth at War"
-msgstr ""
+msgstr "Partie III : Wesnoth en guerre"
 
 #. [part]
 #: data/campaigns/Eastern_Invasion/scenarios/13_Spoils_of_War.cfg:40
@@ -9466,8 +9507,9 @@ msgstr "J'ai perdu le contrôle de l'amulette ! Je dois-"
 #. [message]
 #. up to 6 ghosts or wraiths come out of the chasms, depending on difficulty and how many auto-recalled loyals the player has
 #: data/campaigns/Eastern_Invasion/scenarios/14_The_Drowned_Plains.cfg:1067
+#, fuzzy
 msgid "And most importantly..."
-msgstr ""
+msgstr "Et surtout…"
 
 #. [event]
 #: data/campaigns/Eastern_Invasion/scenarios/14_The_Drowned_Plains.cfg:1074
@@ -9840,8 +9882,9 @@ msgstr "... mourir... mieux que te servir... nécromancien."
 
 #. [effect]: type=impact
 #: data/campaigns/Eastern_Invasion/scenarios/14_The_Drowned_Plains.cfg:1786
+#, fuzzy
 msgid "tail"
-msgstr ""
+msgstr "queue"
 
 # Traduction plutôt libre (« souvenir »)
 #. [message]: speaker=unit
@@ -10845,14 +10888,18 @@ msgstr "À la lumière de tout ce qui nous est sacré, nous devons vaincre !"
 #. [message]: speaker=Dacyn
 #. speaker is one of the voices from the amulet, speaking to Dacyn
 #: data/campaigns/Eastern_Invasion/scenarios/16_Eleventh_Hour.cfg:1558
+#, fuzzy
 msgid "You see? Mal-Ravanal has grown too powerful. Wesnoth is helpless!"
 msgstr ""
+"Tu vois ? Mal-Ravanal est devenu trop puissant. Wesnoth ne peut plus rien "
+"contre lui !"
 
 #. [message]: speaker=Dacyn
 #. speaker is one of the voices from the amulet, speaking to Dacyn
 #: data/campaigns/Eastern_Invasion/scenarios/16_Eleventh_Hour.cfg:1566
+#, fuzzy
 msgid "Use the Amulet. There is no other way! Use us!"
-msgstr ""
+msgstr "Utilise l’Amulette. Il n’y a pas d’autre solution ! Utilise-nous !"
 
 #. [message]: speaker=Dacyn
 #. after this, Dacyn gets unpoisonable, undrainable, unplagueable and changes to a Fallen Mage
@@ -12803,12 +12850,17 @@ msgstr "Reine fourmi"
 
 #. [unit_type]: id=Ant Queen, gender=female, race=monster
 #: data/campaigns/Eastern_Invasion/units/Ant_Queen.cfg:20
+#, fuzzy
 msgid ""
 "At the heart of each giant ant burrow lies a queen. Much like their "
 "miniature cousins, a well-fed giant Ant Queen will continually lay eggs, "
 "ensuring that the colony never lacks workers for scavenging or soldiers for "
 "defense."
 msgstr ""
+"Au cœur de chaque nid de fourmi géante se trouve une reine. Comme leurs "
+"cousines miniatures, une reine de fourmi géante bien nourrie pondra en "
+"continu, garantissant que la colonie ne manque jamais d’ouvrières pour le "
+"butin ou de soldats pour la défense."
 
 #. [dummy]
 #: data/campaigns/Eastern_Invasion/units/Ant_Queen.cfg:26
@@ -12827,12 +12879,18 @@ msgstr "Poche d'œufs"
 
 #. [unit_type]: id=Egg Sac, race=monster
 #: data/campaigns/Eastern_Invasion/units/Egg_Sac.cfg:17
+#, fuzzy
 msgid ""
 "Each of these enormous Egg Sacs contains up to a dozen ant larvae, "
 "sheltering and nourishing them while they develop into worker drones. When "
 "the burrow is threatened, an ant queen can release pheromones that cause "
 "each sac to rapidly develop into a single large warrior ant."
 msgstr ""
+"Chacun de ces immenses sacs ovigères contient jusqu’à une douzaine de larves "
+"de fourmi, les abritant et les nourrissant jusqu’à ce qu’elles deviennent "
+"des ouvrières. Lorsque le nid est menacé, une reine peut libérer des "
+"phéromones qui transforment rapidement chaque sac en une fourmi guerrière de "
+"grande taille."
 
 #. [dummy]
 #: data/campaigns/Eastern_Invasion/units/Egg_Sac.cfg:22
@@ -13125,6 +13183,7 @@ msgstr "Centurion naga"
 
 #. [unit_type]: id=Naga Centurion, race=naga, gender=male,female
 #: data/campaigns/Eastern_Invasion/units/Naga_Centurion.cfg:20
+#, fuzzy
 msgid ""
 "The leaders of the naga have mastered the serpentine arts of their kind, "
 "striking faster than a lightning bolt and dancing away more gracefully than "
@@ -13132,6 +13191,11 @@ msgid ""
 "these naga are honored by their clutch and bestowed the rare title of "
 "Centurion."
 msgstr ""
+"Les chefs des naga ont maîtrisé les arts serpentins de leur espèce, frappant "
+"plus vite qu’un éclair et se mouvant avec plus de grâce qu’un ruisseau "
+"forestier. Maîtres incontestés à la fois de l’épée et du commandement, ces "
+"naga sont honorés par leur couvée et se voient conférer le prestigieux titre "
+"de Centurion."
 
 #. [attack]: type=blade
 #: data/campaigns/Eastern_Invasion/units/Naga_Centurion.cfg:32
@@ -13155,11 +13219,16 @@ msgstr "Ogre ancestral"
 
 #. [unit_type]: id=Ancient Ogre, race=ogre
 #: data/campaigns/Eastern_Invasion/units/Ogre_Ancient.cfg:30
+#, fuzzy
 msgid ""
 "Ancient Ogres possess legendary strength and stand taller than even many "
 "woses. They usually live among their own kind in the wilderness, but can be "
 "highly loyal to those few they trust."
 msgstr ""
+"Les Ogres anciens possèdent une force légendaire et sont plus grands que de "
+"nombreux woses. Ils vivent généralement entre eux, dans la nature sauvage, "
+"mais peuvent se montrer très loyaux envers les rares personnes en qui ils "
+"ont confiance."
 
 #. [unit_type]: id=Great Ogre, race=ogre
 #: data/campaigns/Eastern_Invasion/units/Ogre_Great.cfg:4
@@ -13477,29 +13546,41 @@ msgstr ""
 #. [damage_type]: id=arcane_damage_ranged_blessing
 #: data/campaigns/Eastern_Invasion/utils/abilities.cfg:524
 #: data/campaigns/Eastern_Invasion/utils/abilities.cfg:536
+#, fuzzy
 msgid "arcane blessing"
-msgstr ""
+msgstr "bénédiction arcanique"
 
 #. [damage_type]: id=arcane_damage_blessing
 #: data/campaigns/Eastern_Invasion/utils/abilities.cfg:525
+#, fuzzy
 msgid ""
 "All attacks combine the arcane type with the type of the weapon used, so "
 "that resistance to arcane does not penalize the user."
 msgstr ""
+"Toutes les attaques combinent le type arcanique avec le type de l’arme "
+"utilisée, de sorte que la résistance à la magie ne pénalise pas "
+"l’utilisateur."
 
 #. [damage_type]: id=arcane_damage_blessing
 #: data/campaigns/Eastern_Invasion/utils/abilities.cfg:526
+#, fuzzy
 msgid ""
 "This unit’s weapons are treated as arcane instead of the declared damage "
 "type if that would increase the damage."
 msgstr ""
+"Les armes de cette unité sont considérées comme arcaniques si cela permet "
+"d’augmenter les dégâts."
 
 #. [damage_type]: id=arcane_damage_ranged_blessing
 #: data/campaigns/Eastern_Invasion/utils/abilities.cfg:537
+#, fuzzy
 msgid ""
 "All bow or crossbow attacks combine the arcane type with the type of the "
 "weapon used, so that resistance to arcane does not penalize the user."
 msgstr ""
+"Toutes les attaques à l’arc ou à l’arbalète combinent le type arcanique avec "
+"le type de l’arme utilisée, de sorte que la résistance à la magie "
+"n’handicape pas l’utilisateur."
 
 #. [damage_type]: id=arcane_damage_ranged_blessing
 #: data/campaigns/Eastern_Invasion/utils/abilities.cfg:538
@@ -13507,6 +13588,8 @@ msgid ""
 "This unit’s bow or crossbow attacks are treated as arcane instead of the "
 "declared damage type if that would increase the damage."
 msgstr ""
+"Les attaques de cette unité à l’arc ou à l’arbalète sont considérées comme "
+"arcanique si cela augmente les dégâts."
 
 #. [trait]: id=loyal_dummy
 #: data/campaigns/Eastern_Invasion/utils/character-definitions.cfg:16
@@ -14086,24 +14169,35 @@ msgstr ""
 
 #. [message]: speaker=Dacyn
 #: data/campaigns/Eastern_Invasion/utils/final_battle/final_battle.cfg:779
+#, fuzzy
 msgid ""
 "—I... —I am no necromancer! Everything I have done is for the good of "
 "Wesnoth."
 msgstr ""
+"—Je… —Je ne suis pas un nécromancien ! Tout ce que j’ai entrepris, c’était "
+"pour le bien de Wesnoth."
 
 #. [message]: speaker=spirit
 #: data/campaigns/Eastern_Invasion/utils/final_battle/final_battle.cfg:783
+#, fuzzy
 msgid ""
 "Was it? Was it for the good of all Wesnoth when you took Iliah-Malal’s "
 "Amulet of the Veil, turning to the darkness and letting us into your soul?"
 msgstr ""
+"Était-ce vraiment pour le bien de Wesnoth que vous vous êtes approprié "
+"l’Amulette du Voile d’Iliah-Malal, sombrant dans les ténèbres et nous "
+"ouvrant votre âme ?"
 
 #. [message]: speaker=spirit
 #: data/campaigns/Eastern_Invasion/utils/final_battle/final_battle.cfg:787
+#, fuzzy
 msgid ""
 "Was it for the good of Wesnoth when you enslaved the seer Eryssa’s senile "
 "mind, so the King would choose you as his advisor over Ravan?"
 msgstr ""
+"Était-ce pour le bien de Wesnoth que vous ayez asservi l’esprit sénile de la "
+"voyante Eryssa, afin que le Roi vous choisisse comme conseiller plutôt que "
+"Ravan ?"
 
 #. [message]: speaker=Dacyn
 #: data/campaigns/Eastern_Invasion/utils/final_battle/final_battle.cfg:791
@@ -14441,32 +14535,44 @@ msgstr ""
 #. [message]: speaker=Owaec
 #. said by Owaec, when the player tries to give them a necromancer's staff
 #: data/campaigns/Eastern_Invasion/utils/items.cfg:796
+#, fuzzy
 msgid "Do not insult me! No clansman will ever stoop to such black magic."
 msgstr ""
+"Ne m’insultez pas ! Aucun homme de notre clan ne s’abaissera jamais à "
+"pratiquer une telle magie noire."
 
 #. [message]: speaker=Gweddry
 #. said by Gweddry, when the player tries to give them a necromancer's staff
 #: data/campaigns/Eastern_Invasion/utils/items.cfg:804
+#, fuzzy
 msgid ""
 "I already have an army of human soldiers — living soldiers. Let someone else "
 "use this staff."
 msgstr ""
+"J'ai déjà une armée de soldats — des soldats vivants. Laissez ce bâton à "
+"quelqu'un d'autre."
 
 #. [message]: speaker=Dacyn
 #. said by Dacyn, when the player tries to give them a necromancer's staff
 #: data/campaigns/Eastern_Invasion/utils/items.cfg:812
+#, fuzzy
 msgid ""
 "Tempting! Most tempting... but I fear it would be unwise for me to wield "
 "such a thing. That privilege passes onto another."
 msgstr ""
+"Tentant ! Très tentant… mais je crains qu’il ne soit imprudent pour moi de "
+"manier une telle chose. Ce privilège reviendra à un autre."
 
 #. [message]: speaker=Hahid al-Ali
 #. said by Hahid al-Ali, a Dune Herbalist, when the player tries to give them a necromancer's staff
 #: data/campaigns/Eastern_Invasion/utils/items.cfg:820
+#, fuzzy
 msgid ""
 "Ha! Good joke! I’m not about to mess around with any of your foul northerner "
 "magic; necromancy was the cause of all this trouble in the first place."
 msgstr ""
+"Ha ! La bonne blague ! Je ne compte pas m’adonner à votre immonde magie "
+"nordique ; la nécromancie est la cause première de tous ces ennuis."
 
 #. [message]: speaker=Terraent
 #. said by Terraent, a Paladin, when the player tries to give them a necromancer's staff
@@ -14475,6 +14581,8 @@ msgid ""
 "I serve the light, not this staff of foul darkness! We should cast away this "
 "thing and be done with it."
 msgstr ""
+"Je suis au service de la Lumière, et non de cet immonde bâton des ténèbres ! "
+"Nous devrions nous en débarrasser pour en finir une bonne fois pour toutes."
 
 #. [message]: speaker=Konrad
 #. said by King Konrad, when the player tries to give them a necromancer's staff
@@ -14483,6 +14591,8 @@ msgid ""
 "...what foul thing is this? Remove it from my presence; necromancy shall not "
 "take root in Wesnoth, not under my watch."
 msgstr ""
+"…Quelle chose immonde est-ce ? Éloignez-la de ma présence ; jamais la "
+"nécromancie ne s’implantera à Wesnoth, tant que je serai de ce monde."
 
 #. [message]: speaker=unit
 #. said by a White Mage, Mage of Light, or Paladin, when the player tries to give them a necromancer's staff
@@ -14491,14 +14601,20 @@ msgid ""
 "No. I serve that which is good and light, and will not wield such a dark "
 "magical artifact."
 msgstr ""
+"Non. Je suis au service du Bien et de la Lumière, et je je ne manierai pas "
+"un artefact d’une magie si ténébreuse."
 
 #. [message]: speaker=unit
 #. said by a dunefolk, when the player tries to give them a necromancer's staff
 #: data/campaigns/Eastern_Invasion/utils/items.cfg:858
+#, fuzzy
 msgid ""
 "Fighting your northerners’ foul magic is bad enough. Don’t expect me to "
 "wield that — civilized cultures don’t mess around with magic."
 msgstr ""
+"Affronter la magie immonde de vos gens du Nord est déjà bien assez pénible. "
+"N’espérez pas me voir manier ça — les peuples civilisés ne se compromettent "
+"pas avec la magie."
 
 #. [message]: speaker=unit
 #. said by one of the player's units, when the player tries to give them a necromancer's staff

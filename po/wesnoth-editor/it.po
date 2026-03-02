@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
 "POT-Creation-Date: 2026-02-25 19:03-0600\n"
-"PO-Revision-Date: 2026-01-21 18:51+0100\n"
+"PO-Revision-Date: 2026-02-26 18:17+0100\n"
 "Last-Translator: Antonio 'Antro' Rosella <arosella@yahoo.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -483,38 +483,30 @@ msgid "File does not have .map, .cfg, or .mask extension"
 msgstr "Il file non ha una estensione .map o .cfg o .mask"
 
 #: src/editor/map/map_context.cpp:227
-#, fuzzy
-#| msgid "Failed to load the scenario, attempting to load only the map."
 msgid ""
 "Failed to load the scenario: $error\n"
 "\n"
 "Attempting to load only the map."
 msgstr ""
-"Impossibile caricare lo scenario, tentativo di caricamento della sola mappa."
+"Impossibile caricare lo scenario: $error\n"
+"\n"
+"Tentativo di caricamento della sola mappa."
 
 #: src/editor/map/map_context.cpp:253
-#, fuzzy
-#| msgid ""
-#| "The map file looks like a scenario, but the map_data value does not point "
-#| "to an existing file"
 msgid ""
 "The file looks like a scenario, but the map_data attribute does not point to "
 "an existing file"
 msgstr ""
-"Il file della mappa assomiglia a uno scenario, ma il valore map_data non "
-"indica un file esistente"
+"Il file assomiglia a uno scenario, ma il valore di map_data non indica un "
+"file esistente"
 
 #: src/editor/map/map_context.cpp:268
-#, fuzzy
-#| msgid ""
-#| "The map file looks like a scenario, but the map_file value does not point "
-#| "to an existing file"
 msgid ""
 "The file looks like a scenario, but the map_file attribute does not point to "
 "an existing file"
 msgstr ""
-"Il file della mappa assomiglia a uno scenario, ma il valore map_file non "
-"indica un file esistente"
+"Il file assomiglia a uno scenario, ma il valore di map_file non indica un "
+"file esistente"
 
 #: src/editor/map/map_context.cpp:448
 msgid "Confirm"

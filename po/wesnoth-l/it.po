@@ -1,11 +1,11 @@
 # translation of it.po to Italian
-# Antonio Rosella <arosella@yahoo.com>, 2010-2025
+# Antonio Rosella <arosella@yahoo.com>, 2010-2026
 msgid ""
 msgstr ""
 "Project-Id-Version: wescamp-i 18n\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
 "POT-Creation-Date: 2026-02-26 01:04 UTC\n"
-"PO-Revision-Date: 2025-10-31 22:04+0100\n"
+"PO-Revision-Date: 2026-02-27 17:09+0100\n"
 "Last-Translator: Antonio 'Antro' Rosella <arosella@yahoo.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.6\n"
 
 #. [campaign]: id=Liberty
 #. [achievement_group]
@@ -77,16 +77,12 @@ msgstr "(Livello per principianti, 7 scenari.)"
 #. [campaign]: id=Liberty
 #. this campaign is not a direct continuation of the story and characters, but is next chronologically and is the recommended next campaign
 #: data/campaigns/Liberty/_main.cfg:32
-#, fuzzy
-#| msgid ""
-#| "Story continued in:\n"
-#| "Heir to the Throne"
 msgid ""
 "The saga continues in\n"
 "<i>Heir to the Throne</i>"
 msgstr ""
 "La storia prosegue in:\n"
-"“L’erede al trono”"
+"<i>“L’erede al trono”</i>"
 
 #. [about]
 #: data/campaigns/Liberty/_main.cfg:36

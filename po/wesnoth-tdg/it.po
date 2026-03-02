@@ -1,12 +1,12 @@
 # translation of it.po to Italian
-# Antonio Rosella <arosella@yahoo.com>, 2011-2026
+# Antonio 'Antro' Rosella <arosella@yahoo.com>, 2011-2026
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: wescamp-i 18n\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
 "POT-Creation-Date: 2026-02-26 01:04 UTC\n"
-"PO-Revision-Date: 2026-01-30 18:10+0100\n"
+"PO-Revision-Date: 2026-02-27 17:46+0100\n"
 "Last-Translator: Antonio 'Antro' Rosella <arosella@yahoo.com>\n"
 "Language-Team: Italiano <wesnoth-l10n-it@cirulla.net>\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-Basepath: ../../../../..\n"
 "X-Poedit-SearchPath-0: Dropbox/Sources/wesnoth/.\n"
 "X-Poedit-SearchPath-1: Sources/wesnoth\n"
@@ -111,15 +111,11 @@ msgstr "(Livello intermedio, 7 scenari.)"
 
 #. [campaign]: id=The Deceivers Gambit 1
 #: data/campaigns/The_Deceivers_Gambit/_main.cfg:152
-#, fuzzy
-#| msgid ""
-#| "Story continued in:\n"
-#| "The Deceiver’s Gambit II"
 msgid ""
 "The saga continues in\n"
 "<i>The Deceiver’s Gambit II</i>"
 msgstr ""
-"La storia prosegue in:\n"
+"La saga prosegue in:\n"
 "“Il Gambetto dell’Ingannatore, Parte II”"
 
 #. [campaign]: id=The Deceivers Gambit 2
@@ -152,6 +148,8 @@ msgid ""
 "The saga continues in\n"
 "<i>Liberty</i>"
 msgstr ""
+"La saga continua in\n"
+"<i>Libertà</i>"
 
 #. [achievement_group]
 #: data/campaigns/The_Deceivers_Gambit/achievements.cfg:21
@@ -341,10 +339,6 @@ msgid "Shield"
 msgstr "Scutum"
 
 #: data/campaigns/The_Deceivers_Gambit/lua/skill_set.lua:31
-#, fuzzy
-#| msgid ""
-#| "Spend <span color='#00bbe6' style='italic'>8 XP</span> to gain <i>+20% "
-#| "dodge chance</i> until the start of your next turn or until cancelled."
 msgid ""
 "Spend <span color='#00bbe6' style='italic'>8 XP</span> to gain an additional "
 "<i>20% terrain defense</i> (chance to evade) until the start\n"
@@ -352,8 +346,7 @@ msgid ""
 msgstr ""
 "Consuma <span color='#00bbe6' style='italic'>8 PE</span> per guadagnare un "
 "bonus <i>+20% schivata</i>\n"
-"              fino all’inizio del prossimo turno o finché non viene "
-"cancellato."
+"          fino all’inizio del prossimo turno o finché non viene cancellato."
 
 #: data/campaigns/The_Deceivers_Gambit/lua/skill_set.lua:39
 msgid "Panacea"
@@ -405,21 +398,14 @@ msgid "Levitate"
 msgstr "Lævita"
 
 #: data/campaigns/The_Deceivers_Gambit/lua/skill_set.lua:74
-#, fuzzy
-#| msgid ""
-#| "Spend <span color='#00bbe6' style='italic'>8 XP</span> to gain <i>flight</"
-#| "i> and the <i><ref dst='ability_skirmisherskirmisher'>skirmisher</ref></"
-#| "i> ability until the start of your next turn or until cancelled."
 msgid ""
 "Spend <span color='#00bbe6' style='italic'>8 XP</span> to gain <i>flight</i> "
 "and the <i><ref dst='ability_skirmisher'>skirmisher</ref></i> ability until "
 "the start of your next turn or until cancelled."
 msgstr ""
 "Consuma <span color='#00bbe6' style='italic'>8 PE</span> per ottenere le "
-"abilità <i>volare</i> e <i><ref "
-"dst='ability_skirmisherskirmisher'>incursore</ref></i>\n"
-"               fino all’inizio del prossimo scenario o fino alla loro "
-"cancellazione."
+"abilità <i>volare</i> e <i><ref dst='ability_skirmisher'>incursore</ref></i> "
+"fino all’inizio del prossimo scenario o fino alla loro cancellazione."
 
 #: data/campaigns/The_Deceivers_Gambit/lua/skill_set.lua:82
 msgid "Find Familiar"
@@ -532,14 +518,8 @@ msgid "Glamour"
 msgstr "Splendor"
 
 #: data/campaigns/The_Deceivers_Gambit/lua/skill_set.lua:159
-#, fuzzy
-#| msgid ""
-#| "Gain the <i><ref dst='ability_leadershipleadership'>leadership</ref></i> "
-#| "ability."
 msgid "Gain the <i><ref dst='ability_leadership'>leadership</ref></i> ability."
-msgstr ""
-"Ottieni l’abilità <i><ref dst='ability_leadershipleadership'>comando</ref></"
-"i>."
+msgstr "Ottieni l’abilità <i><ref dst='ability_leadership'>comando</ref></i>."
 
 #: data/campaigns/The_Deceivers_Gambit/lua/skill_set.lua:173
 msgid ""
@@ -563,13 +543,6 @@ msgid "Enthrall"
 msgstr "Charme"
 
 #: data/campaigns/The_Deceivers_Gambit/lua/skill_set.lua:191
-#, fuzzy
-#| msgid ""
-#| "Spend <span color='#00bbe6' style='italic'>48 XP</span> and <span "
-#| "color='#c06a61' style='italic'>your attack</span> to magically disguise "
-#| "yourself as an awe-inspiring drake,\n"
-#| "          reducing accuracy and dodge by 10% for enemies in a 2 hex "
-#| "radius. Lasts until cancelled."
 msgid ""
 "Spend <span color='#00bbe6' style='italic'>48 XP</span> and <span "
 "color='#c06a61' style='italic'>your attack</span> to magically disguise "
@@ -582,8 +555,10 @@ msgstr ""
 "Consuma <span color='#00bbe6' style='italic'>48 PE</span> e <span "
 "color='#c06a61' style='italic'>il tuo attacco</span> per travestirti "
 "magicamente da imponente drago,\n"
-"          riducendo l’accuratezza e le schivata del 10% per i nemici in un "
-"raggio di 2 esagoni. Persiste finché non cancellato."
+"          I nemici in un raggio di 2 esagoni avranno un malus 10% sia in "
+"difesa su terreni terrestri\n"
+"          (possibilità di schivare) che in attacco (ad eccezione degli "
+"attacchi magici). Persiste finché non cancellato."
 
 #: data/campaigns/The_Deceivers_Gambit/lua/skill_set.lua:199
 msgid "Animate Fire"
@@ -1083,8 +1058,8 @@ msgid ""
 "(sigh) Not again! I suppose you’ll have to retry the exam next year... for "
 "the sixth time."
 msgstr ""
-"(sigh) Non di nuovo! Suppongo che dovrò riprovare l’esame il prossimo anno..."
-"per la sesta volta."
+"(sigh) Non di nuovo! Suppongo che dovrò riprovare l’esame il prossimo "
+"anno...per la sesta volta."
 
 #. [scenario]
 #: data/campaigns/The_Deceivers_Gambit/scenarios/01_Stirrings_of_War.cfg:8
@@ -1222,9 +1197,9 @@ msgid ""
 "“Kill the stragglers”, they says. “You’ll have our best warriors”, they "
 "says. N’ all I get are a bunch o’ lousy goblins? Lousy lazy lying—"
 msgstr ""
-"“Uccidete i ritardatari”, dicono. “Avrai i nostri guerrieri migliori”,"
-"dicono. E tutto quello che ottengo sono un branco di schifosi goblin? "
-"Schifosi pigri bugiardi—"
+"“Uccidete i ritardatari”, dicono. “Avrai i nostri guerrieri "
+"migliori”,dicono. E tutto quello che ottengo sono un branco di schifosi "
+"goblin? Schifosi pigri bugiardi—"
 
 #. [message]: role=gobbo1
 #: data/campaigns/The_Deceivers_Gambit/scenarios/01_Stirrings_of_War.cfg:215
@@ -1359,11 +1334,6 @@ msgstr ""
 
 #. [object]
 #: data/campaigns/The_Deceivers_Gambit/scenarios/01_Stirrings_of_War.cfg:392
-#, fuzzy
-#| msgid ""
-#| "Mages are deadly ranged attackers, with accurate <i>magical</i> attacks "
-#| "that are difficult to dodge. They have few hitpoints and are highly "
-#| "vulnerable in melee combat, so take good care of them!"
 msgid ""
 "Mages are deadly ranged attackers, with accurate <i>magical</i> attacks that "
 "are difficult to evade. They have few hitpoints and are highly vulnerable in "
@@ -9296,13 +9266,6 @@ msgstr ""
 
 #. [message]: speaker=Eldred
 #: data/campaigns/The_Deceivers_Gambit/scenarios/14_Long_Live_the_Queen.cfg:837
-#, fuzzy
-#| msgid ""
-#| "They say this elixir came all the way from the old continent, Delfador. "
-#| "Persuading Malal to give it up wasn’t easy.\n"
-#| "\n"
-#| "You like magic so much? Once I drink from Jevyan’s Cup, I’ll have enough "
-#| "magic to turn you all to dust!"
 msgid ""
 "They say this elixir came all the way from the Old Continent, Delfador. "
 "Persuading Malal to give it up wasn’t easy.\n"

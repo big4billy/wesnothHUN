@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
 "POT-Creation-Date: 2026-02-26 01:03 UTC\n"
-"PO-Revision-Date: 2026-01-30 17:06+0100\n"
+"PO-Revision-Date: 2026-02-27 17:04+0100\n"
 "Last-Translator: Antonio 'Antro' Rosella <arosella@yahoo.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-Basepath: ../../../../Sources/wesnoth\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -1943,10 +1943,6 @@ msgid "The dunefolk will not follow you to the next scenario."
 msgstr "Gli Uomini delle Dune non ti seguiranno nel prossimo scenario."
 
 #: data/campaigns/Eastern_Invasion/scenarios/04b_Ill_Humors.cfg:650
-#, fuzzy
-#| msgid ""
-#| "I’ve found a sprig of alswdan and am now immune to the swamp’s poison! "
-#| "We’ll need 6 more (and $gold_cost gold) to travel east."
 msgid ""
 "I’ve found a sprig of alswdan and am now immune to the swamp’s poison! We "
 "only need one more (and $gold_cost gold) to travel east."
@@ -1955,16 +1951,14 @@ msgid_plural ""
 "need $herbs_needed more (and $gold_cost gold) to travel east."
 msgstr[0] ""
 "Ho trovato un rametto di alswdan e ora sono immune al veleno della palude! "
-"Ne serviranno altri sei (e $gold_cost pezzi d’oro) per proseguire verso est."
+"Ne servirà soltanto un altro (e $gold_cost pezzi d’oro) per poter poi "
+"proseguire verso est."
 msgstr[1] ""
 "Ho trovato un rametto di alswdan e ora sono immune al veleno della palude! "
-"Ne serviranno altri sei (e $gold_cost pezzi d’oro) per proseguire verso est."
+"Ne serviranno altri $herbs_needed (e $gold_cost pezzi d’oro) per poter poi "
+"proseguire verso est."
 
 #: data/campaigns/Eastern_Invasion/scenarios/04b_Ill_Humors.cfg:654
-#, fuzzy
-#| msgid ""
-#| "female^I’ve found a sprig of alswdan and am now immune to the swamp’s "
-#| "poison! We’ll need 6 more (and $gold_cost gold) to travel east."
 msgid ""
 "female^I’ve found a sprig of alswdan and am now immune to the swamp’s "
 "poison! We only need one more (and $gold_cost gold) to travel east."
@@ -1973,10 +1967,12 @@ msgid_plural ""
 "poison! We’ll need $herbs_needed more (and $gold_cost gold) to travel east."
 msgstr[0] ""
 "Ho trovato un rametto di alswdan e ora sono immune al veleno della palude! "
-"Ne serviranno altri sei (e $gold_cost pezzi d’oro) per proseguire verso est."
+"Ne servirà soltanto un altro (e $gold_cost pezzi d’oro) per poter poi "
+"proseguire verso est."
 msgstr[1] ""
 "Ho trovato un rametto di alswdan e ora sono immune al veleno della palude! "
-"Ne serviranno altri sei (e $gold_cost pezzi d’oro) per proseguire verso est."
+"Ne serviranno altri $herbs_needed (e $gold_cost pezzi d’oro) per poter poi "
+"proseguire verso est."
 
 #. [message]: speaker=unit
 #: data/campaigns/Eastern_Invasion/scenarios/04b_Ill_Humors.cfg:676
@@ -6039,10 +6035,10 @@ msgstr "Sopravvivi all’assalto degli orchi"
 
 #. [note]
 #: data/campaigns/Eastern_Invasion/scenarios/10_Dark_Sanctuary.cfg:728
-#, fuzzy
-#| msgid "To enter the castle, move Dacyn into the gated area."
 msgid "To enter the castle, move Dacyn into the gated area and end your turn."
-msgstr "Per entrare nel castello, sposta Dacyn nell’area recintata."
+msgstr ""
+"Per entrare nel castello, sposta Dacyn nell’area recintata e termina il "
+"turno."
 
 #. [note]
 #: data/campaigns/Eastern_Invasion/scenarios/10_Dark_Sanctuary.cfg:734
@@ -7005,7 +7001,7 @@ msgstr ""
 #. [dummy]: id=amla_dummy
 #: data/campaigns/Eastern_Invasion/scenarios/10_Dark_Sanctuary.cfg:2668
 msgid "AMLAs"
-msgstr ""
+msgstr "AOLM"
 
 #. [dummy]: id=amla_dummy
 #: data/campaigns/Eastern_Invasion/scenarios/10_Dark_Sanctuary.cfg:2669
@@ -7013,6 +7009,8 @@ msgid ""
 "This veteran fighter has advanced one or more times past his maximum level, "
 "gaining increased damage each time."
 msgstr ""
+"Questo veterano ha superato una o più volte il suo livello massimo, "
+"aumentando ogni volta il danno che può infliggere."
 
 #. [message]
 #. Medium-sized groups of orcs are arriving every 2 days to attack the player. This is one message they might say when they arrive.
@@ -8232,10 +8230,6 @@ msgstr ""
 #. [message]
 #. Said by any left-behind unit except ogres (they can't speak fluently) and Hahid al-Ali (it would be very out of character for him).
 #: data/campaigns/Eastern_Invasion/scenarios/12_Evacuation.cfg:702
-#, fuzzy
-#| msgid ""
-#| "At least you three commanders are safe. From here, we must ride swift, "
-#| "ride strong, and ride to save all of Wesnoth!"
 msgid ""
 "At least you three commanders are safe. From here, you must ride swift, ride "
 "strong, and ride to save all of Wesnoth!"
@@ -8552,6 +8546,9 @@ msgid ""
 "Alas, my long days of riding have been for naught. I could not catch the "
 "undead scout before it could report back to its mistress!"
 msgstr ""
+"Ahimè, le mie lunghe giornate a cavallo sono state inutili. Non sono "
+"riuscito a catturare la sentinella non-morta prima che potesse riferire alla "
+"sua padrona!"
 
 #. [message]: id=Owaec,Terraent
 #: data/campaigns/Eastern_Invasion/scenarios/13_Spoils_of_War.cfg:598
@@ -8560,6 +8557,9 @@ msgid ""
 "she is alerted, and with the rest of our army yet weeks away, she will have "
 "more than enough time to prepare for our arrival."
 msgstr ""
+"Gweddry sperava che potessimo cogliere di sorpresa questa negromante. Ma ora "
+"che è all’erta, e con il resto del nostro esercito ancora a settimane di "
+"distanza, avrà tutto il tempo necessario per prepararsi al nostro arrivo."
 
 #. [message]: speaker=Mal-Yrna
 #. speaking to a bat

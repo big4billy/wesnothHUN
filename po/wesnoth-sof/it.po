@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
 "POT-Creation-Date: 2026-02-26 01:04 UTC\n"
-"PO-Revision-Date: 2026-01-30 17:25+0100\n"
+"PO-Revision-Date: 2026-02-27 17:25+0100\n"
 "Last-Translator: Antonio 'Antro' Rosella <arosella@yahoo.com>\n"
 "Language-Team: Italian <>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.6\n"
 
 #. [campaign]: id=Sceptre_of_Fire
 #: data/campaigns/Sceptre_of_Fire/_main.cfg:11
@@ -1704,11 +1704,6 @@ msgstr ""
 
 #. [message]: speaker=Alanin
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:263
-#, fuzzy
-#| msgid ""
-#| "Elves may not challenge us, but I've heard of many other dangers lurking "
-#| "in the far Northlands. Wolves and trolls, but even the snow and ice "
-#| "itself comes alive!  We should be careful!"
 msgid ""
 "Elves may not challenge us, but I’ve heard of many other dangers lurking in "
 "the far Northlands. Wolves and trolls, but even the snow and ice itself "
@@ -1824,17 +1819,11 @@ msgstr "Thursagan"
 
 #. [message]: speaker=narrator
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:362
-#, fuzzy
-#| msgid "Ah!  Go away!"
 msgid "Ah! Go away!"
-msgstr "Ah!  Vattene!"
+msgstr "Ah! Vattene!"
 
 #. [message]: speaker=Rugnur
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:372
-#, fuzzy
-#| msgid ""
-#| "Was that Thursagan?  Finding him wasn't as difficult as I thought it "
-#| "would be."
 msgid ""
 "Was that Thursagan? Finding him wasn’t as difficult as I thought it would be."
 msgstr ""
@@ -1849,22 +1838,16 @@ msgstr "Oh, ma non servirà a molto se lui continua a scappare da noi."
 
 #. [message]: speaker=$unit.id
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:395
-#, fuzzy
-#| msgid ""
-#| "This is just an empty shack, where could that old Runecrafter be "
-#| "hiding...  Wait, this scrap of wood is actually a trap door!"
 msgid ""
 "This is just an empty shack, where could that old Runecrafter be hiding... "
 "Wait, this scrap of wood is actually a trap door!"
 msgstr ""
 "Questa è solo una baracca vuota, dove potrebbe nascondersi quel vecchio "
-"mastro di rune...  Aspetta, questo pezzo di legno è in realtà una botola!"
+"mastro di rune... Aspetta, questo pezzo di legno è in realtà una botola!"
 
 #. [message]: speaker=Baglur
 #. "Come on out, Thursagan!  We need your help with some serious business!"
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:400
-#, fuzzy
-#| msgid "C'mon out, Thursagan!  We need'ya help with some serious business!"
 msgid "C’mon out, Thursagan! We need’ya help with some serious business!"
 msgstr ""
 "Vieni fuori, Thursagan! Abbiamo bisogno del tuo aiuto per una questione "
@@ -1872,10 +1855,6 @@ msgstr ""
 
 #. [message]: speaker=$unit.id
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:404
-#, fuzzy
-#| msgid ""
-#| "It's no good, he's not hiding under it, there's just this collapsed "
-#| "tunnel."
 msgid ""
 "It’s no good, he’s not hiding under it, there’s just this collapsed tunnel."
 msgstr ""
@@ -1884,24 +1863,16 @@ msgstr ""
 
 #. [message]: speaker=Rugnur
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:408
-#, fuzzy
-#| msgid "We have to find him!  Fan out!"
 msgid "We have to find him! Fan out!"
-msgstr "Dobbiamo trovarlo!  Sparpagliatevi!"
+msgstr "Dobbiamo trovarlo! Sparpagliatevi!"
 
 #. [message]: speaker=Alanin
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:412
-#, fuzzy
-#| msgid "I don't like this, we should stick together."
 msgid "I don’t like this, we should stick together."
 msgstr "Non mi piace questa situazione, dovremmo restare uniti."
 
 #. [message]: speaker=$unit.id
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:445
-#, fuzzy
-#| msgid ""
-#| "An empty shack...  I thought I'd found the Runecrafter, but there's no "
-#| "sign of anyone having been here recently."
 msgid ""
 "An empty shack... I thought I’d found the Runecrafter, but there’s no sign "
 "of anyone having been here recently."
@@ -1911,16 +1882,12 @@ msgstr ""
 
 #. [message]: speaker=$unit.id
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:476
-#, fuzzy
-#| msgid ""
-#| "Another empty shack...  But there is this suspicious slab of wood.  Let's "
-#| "see what's underneath, shall we?"
 msgid ""
 "Another empty shack... But there is this suspicious slab of wood. Let’s see "
 "what’s underneath, shall we?"
 msgstr ""
-"Un’altra baracca vuota...  Ma questa tavola di legno qui è sospetta.  "
-"Vediamo cosa c’è sotto, va bene?"
+"Un’altra baracca vuota... Ma questa tavola di legno qui è sospetta. Vediamo "
+"cosa c’è sotto, va bene?"
 
 #. [message]: speaker=narrator
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:486
@@ -1971,15 +1938,11 @@ msgstr "Si è semplicemente nascosto di nuovo sottoterra..."
 #. [message]: speaker=$unit.id
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:515
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:571
-#, fuzzy
-#| msgid "... and collapsed the tunnel.  He got away!"
 msgid "... and collapsed the tunnel. He got away!"
 msgstr "... e ha fatto crollare il tunnel. È scappato!"
 
 #. [message]: speaker=Rugnur
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:519
-#, fuzzy
-#| msgid "He can't get far, can he?"
 msgid "He can’t get far, can he?"
 msgstr "Non può andare lontano, vero?"
 
@@ -1990,14 +1953,11 @@ msgstr "Sì, la ricerca continua."
 
 #. [message]: speaker=narrator
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:532
-#, fuzzy
-#| msgid ""
-#| "You are playing a dangerous game!  I gave you my answer, now leave me be!"
 msgid ""
 "You are playing a dangerous game! I gave you my answer, now leave me be!"
 msgstr ""
-"Stai giocando un gioco pericoloso! Ti ho dato la mia risposta, ora lasciami "
-"stare!"
+"Stai giocando a un gioco pericoloso! Ti ho dato la mia risposta, ora "
+"lasciami stare!"
 
 #. [message]: speaker=Rugnur
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:536
@@ -2049,10 +2009,6 @@ msgstr ""
 
 #. [message]: speaker=narrator
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:580
-#, fuzzy
-#| msgid ""
-#| "You people just don't seem to understand!  I'm out here because I want no "
-#| "part of the nonsense of kings and those who crave power!"
 msgid ""
 "You people just don’t seem to understand! I’m out here because I want no "
 "part of the nonsense of kings and those who crave power!"
@@ -2071,10 +2027,6 @@ msgstr ""
 
 #. [message]: speaker=Alanin
 #: data/campaigns/Sceptre_of_Fire/scenarios/3_Searching_for_the_Runecrafter.cfg:588
-#, fuzzy
-#| msgid ""
-#| "The Ruby causes madness, it is said.  A magical cage that could protect "
-#| "the King would help us all."
 msgid ""
 "The Ruby causes madness, it is said. A magical cage that could protect the "
 "King would help us all."
@@ -2449,18 +2401,13 @@ msgstr "Oro"
 
 #. [message]: speaker=Rugnur
 #: data/campaigns/Sceptre_of_Fire/scenarios/4_Gathering_Materials.cfg:701
-#, fuzzy
-#| msgid ""
-#| "Well, these are the eastern mines, rich in quality minerals, but also "
-#| "home to trolls and other denizens of the darkness.  Mining can take a "
-#| "while, this won't be easy."
 msgid ""
 "Well, these are the eastern mines, rich in quality minerals, but also home "
 "to trolls and other denizens of the darkness. Mining can take a while, this "
 "won’t be easy."
 msgstr ""
 "Beh, queste sono le miniere orientali, ricche di minerali di alta qualità, "
-"ma anche dimora di troll e altri abitanti delle tenebre.  L’estrazione "
+"ma anche dimora di troll e altri abitanti delle tenebre. L’estrazione "
 "mineraria può richiedere molto tempo, non sarà facile."
 
 #. [message]: speaker=Thursagan
@@ -2485,10 +2432,6 @@ msgstr ""
 
 #. [message]: speaker=Rugnur
 #: data/campaigns/Sceptre_of_Fire/scenarios/4_Gathering_Materials.cfg:713
-#, fuzzy
-#| msgid ""
-#| "So we’re down here to get both the gold and coal.  Simple enough, even if "
-#| "we have to fight for it."
 msgid ""
 "So we’re down here to get both the gold and coal. Simple enough, even if we "
 "have to fight for it."
@@ -2507,11 +2450,6 @@ msgstr ""
 
 #. [message]: speaker=Rugnur
 #: data/campaigns/Sceptre_of_Fire/scenarios/4_Gathering_Materials.cfg:721
-#, fuzzy
-#| msgid ""
-#| "Hrmm, that's a good point... Well, these are old mines, not frontier "
-#| "caverns, we should be able to use the rails and carts, if we're smart "
-#| "about it."
 msgid ""
 "Hrmm, that’s a good point... Well, these are old mines, not frontier "
 "caverns, we should be able to use the rails and carts, if we’re smart about "
@@ -2523,9 +2461,6 @@ msgstr ""
 
 #. [message]: speaker=Rugnur
 #: data/campaigns/Sceptre_of_Fire/scenarios/4_Gathering_Materials.cfg:745
-#, fuzzy
-#| msgid ""
-#| "We're not facing a united enemy, maybe we can use that to our advantage."
 msgid ""
 "We’re not facing a united enemy, maybe we can use that to our advantage."
 msgstr ""
@@ -3986,11 +3921,6 @@ msgstr "E quale dei grandi draghi saresti tu?"
 
 #. [message]: speaker=Khrakrahs
 #: data/campaigns/Sceptre_of_Fire/scenarios/8_The_Dragon.cfg:400
-#, fuzzy
-#| msgid ""
-#| "I am Khrakrahs, greatest dragon of all time! Haldric killed Shek’kahan my "
-#| "rival, but he was weaker than me, and you will not find me so easy to "
-#| "defeat. Now get out of my volcano!"
 msgid ""
 "I am Khrakrahs, greatest dragon of all time! Haldric killed Shek’kahan my "
 "brother, but he was weaker than me, and you will not find me so easy to "
@@ -4050,23 +3980,17 @@ msgstr "Aww... Sciolto, bloccato!"
 
 #. [message]: speaker=$unit.id
 #: data/campaigns/Sceptre_of_Fire/scenarios/8_The_Dragon.cfg:486
-#, fuzzy
-#| msgid "I can't pick this up, the gold is stuck!"
 msgid "I can’t pick this up, the gold is stuck!"
 msgstr "Non riesco a raccoglierlo, l’oro è incastrato!"
 
 #. [message]: speaker=Rugnur
 #: data/campaigns/Sceptre_of_Fire/scenarios/8_The_Dragon.cfg:492
-#, fuzzy
-#| msgid ""
-#| "Hrm, I see what you mean.  The dragon's hoard melted into the rock, we "
-#| "can't just grab those gold coins.  Too bad."
 msgid ""
 "Hrm, I see what you mean. The dragon’s hoard melted into the rock, we can’t "
 "just grab those gold coins. Too bad."
 msgstr ""
-"Hmm, capisco cosa intendi. Il tesoro del dragone si è fuso con la roccia, "
-"non possiamo semplicemente prendere quelle monete d’oro. Peccato."
+"Hmm, capisco cosa intendi. Il tesoro del dragone si è fuso con la roccia, e "
+"quindi semplicemente non possiamo prendere quelle monete d’oro. Peccato."
 
 #. [message]: speaker=Thursagan
 #: data/campaigns/Sceptre_of_Fire/scenarios/8_The_Dragon.cfg:513
@@ -5061,14 +4985,6 @@ msgstr "Babau Grigio"
 #. [unit_type]: id=Cave Goblin, race=monster
 #: data/campaigns/Sceptre_of_Fire/units/Cave_Bogeyman.cfg:28
 #: data/campaigns/Sceptre_of_Fire/units/Cave_Goblin.cfg:24
-#, fuzzy
-#| msgid ""
-#| "For reasons long forgotten, some cursed lineage of elves or orcs "
-#| "retreated into the dark caverns of the deep mines, losing their "
-#| "civilization and dignity in the process, to subsist as little more than "
-#| "beasts.  They have lost the ability to craft tools or weapons, but their "
-#| "adaptation to the gloomy caves gives them large, clawed hands with which "
-#| "to dig or hunt."
 msgid ""
 "For reasons long forgotten, some cursed lineage of elves or orcs retreated "
 "into the dark caverns of the deep mines, losing their civilization and "
@@ -5218,20 +5134,6 @@ msgstr "Golem di Neve"
 
 #. [unit_type]: id=Snow Golem, race=monster
 #: data/campaigns/Sceptre_of_Fire/units/Snow_Golem.cfg:38
-#, fuzzy
-#| msgid ""
-#| "Snow Golems are loosely humanoid forms that wander the frozen north, "
-#| "without any apparent role in nature, being neither predator nor prey. "
-#| "Many say they are forgotten constructs of forgotten battles, due to their "
-#| "relation to the weaker Snow Imps. Others say the far north is a hostile "
-#| "land, and these monsters are simply a manifestation of that danger.\n"
-#| "\n"
-#| "As they are constructs of snow and ice, they can repair and regenerate "
-#| "when in a favorable envirnoment.  However, the icy regrowth seems prone "
-#| "to errors, so while they were likely formed in the image of ideal "
-#| "warriors, they have become mishapen and their movement thus compromised.  "
-#| "This malformation is most obvious in their hand and arms, which take the "
-#| "most damage."
 msgid ""
 "Snow Golems are loosely humanoid forms that wander the frozen north, without "
 "any apparent role in nature, being neither predator nor prey. Many say they "
@@ -5244,31 +5146,10 @@ msgstr ""
 "prede. Molti sostengono che siano costrutti dimenticati di battaglie "
 "dimenticate, data la loro somiglianza con i più deboli Folletti delle Nevi. "
 "Altri sostengono che l’estremo nord sia una terra ostile e che questi mostri "
-"siano semplicemente una manifestazione di tale pericolo.\n"
-"\n"
-"Essendo creature fatte di neve e ghiaccio, possono ripararsi e rigenerarsi "
-"quando si trovano in un ambiente favorevole. Tuttavia, la ricrescita "
-"ghiacciata sembra soggetta a errori, quindi, sebbene siano stati "
-"probabilmente creati a immagine dei guerrieri ideali, sono diventati deformi "
-"e i loro movimenti risultano compromessi. Questa malformazione è più "
-"evidente nelle mani e nelle braccia, che subiscono i danni maggiori."
+"siano semplicemente una manifestazione di tale pericolo."
 
 #. [unit_type]: id=Snow Golem, race=monster
 #: data/campaigns/Sceptre_of_Fire/units/Snow_Golem.cfg:40
-#, fuzzy
-#| msgid ""
-#| "Snow Golems are loosely humanoid forms that wander the frozen north, "
-#| "without any apparent role in nature, being neither predator nor prey. "
-#| "Many say they are forgotten constructs of forgotten battles, due to their "
-#| "relation to the weaker Snow Imps. Others say the far north is a hostile "
-#| "land, and these monsters are simply a manifestation of that danger.\n"
-#| "\n"
-#| "As they are constructs of snow and ice, they can repair and regenerate "
-#| "when in a favorable envirnoment.  However, the icy regrowth seems prone "
-#| "to errors, so while they were likely formed in the image of ideal "
-#| "warriors, they have become mishapen and their movement thus compromised.  "
-#| "This malformation is most obvious in their hand and arms, which take the "
-#| "most damage."
 msgid ""
 "As they are constructs of snow and ice, they can repair and regenerate when "
 "in a favorable environment. However, the icy regrowth seems prone to errors, "
@@ -5276,13 +5157,6 @@ msgid ""
 "become misshapen and their movement thus compromised. This malformation is "
 "most obvious in their hand and arms, which take the most damage."
 msgstr ""
-"I golem di neve sono creature vagamente umanoidi che vagano per il gelido "
-"nord, senza alcun ruolo apparente nella natura, non essendo né predatori né "
-"prede. Molti sostengono che siano costrutti dimenticati di battaglie "
-"dimenticate, data la loro somiglianza con i più deboli Folletti delle Nevi. "
-"Altri sostengono che l’estremo nord sia una terra ostile e che questi mostri "
-"siano semplicemente una manifestazione di tale pericolo.\n"
-"\n"
 "Essendo creature fatte di neve e ghiaccio, possono ripararsi e rigenerarsi "
 "quando si trovano in un ambiente favorevole. Tuttavia, la ricrescita "
 "ghiacciata sembra soggetta a errori, quindi, sebbene siano stati "

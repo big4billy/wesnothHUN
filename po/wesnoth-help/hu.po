@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: hu-wesnoth\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
 "POT-Creation-Date: 2026-02-25 19:03-0600\n"
-"PO-Revision-Date: 2026-02-26 00:21+0100\n"
+"PO-Revision-Date: 2026-02-28 01:01+0100\n"
 "Last-Translator: Berda Jenő <big4billy@gmail.com>\n"
 "Language-Team: Hungarian <>\n"
 "Language: hu\n"
@@ -228,15 +228,6 @@ msgstr "gyógyítás +12"
 #. [heals]: id=healing
 #. only exists in UtBS, but is the same wording as heals+8 with a bigger number
 #: data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg:784
-#, fuzzy
-#| msgid ""
-#| "This unit combines herbal remedies with magic to heal units more quickly "
-#| "than is normally possible on the battlefield.\n"
-#| "\n"
-#| "A unit cared for by this healer may heal up to 8 HP per turn, or stop "
-#| "poison from taking effect for that turn.\n"
-#| "This ability will not cure an affected unit of poison, however, only "
-#| "delay its effect."
 msgid ""
 "This unit combines herbal remedies with magic to heal units more quickly "
 "than is normally possible on the battlefield.\n"
@@ -249,9 +240,9 @@ msgstr ""
 "Ez az egység ötvözi a gyógynövények erejét a mágiával, ezáltal sokkal "
 "gyorsabban gyógyít, mint az a csatatéren általában lehetséges.\n"
 "\n"
-"A gyógyító által kezelt egység akár 8 életerőpontot is gyógyulhat körönként, "
-"illetve ha az ellátott egység meg van mérgezve, akkor az adott körben "
-"megfékezi a méreg hatását.\n"
+"A gyógyító által kezelt egység akár 12 életerőpontot is gyógyulhat "
+"körönként, illetve az adott körben gátolja a méreg hatását mérgezett "
+"egységen.\n"
 "Mérgezett egységet a gyógyító nem képes kigyógyítani a mérgezésből, csak "
 "késleltetni tudja a hatását."
 
@@ -752,12 +743,6 @@ msgstr "Terepmagasság grafikák"
 
 #. [topic]: id=editor_terrain_elevation
 #: data/core/editor/help.cfg:165
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "A cosmetic elevation effect that looks a little different in the editor "
-#| "than in the game due to visual aids in the editor; all the overlays "
-#| "described here are found in the terrain palette’s “elevation” group.\n"
 msgid ""
 "A cosmetic elevation effect that looks a little different in the editor than "
 "in the game due to visual aids in the editor; all the overlays described "
@@ -765,7 +750,7 @@ msgid ""
 msgstr ""
 "Kozmetikai magassági hatás, amely kissé másképp néz ki a szerkesztőben, mint "
 "a játékban a szerkesztő vizuális segédeszközei miatt; Az itt leírt összes "
-"átfedés megtalálható a tereppaletta \"magasság\" csoportjában.\n"
+"átfedés megtalálható a tereppaletta \"magasság\" csoportjában."
 
 #. [topic]: id=editor_terrain_elevation
 #: data/core/editor/help.cfg:166
@@ -2918,15 +2903,6 @@ msgstr ""
 
 #. [topic]: id=movement
 #: data/core/help.cfg:264
-#, fuzzy
-#| msgid ""
-#| "Another thing to keep in mind while moving is <i>zones of control</i>. "
-#| "Each unit — except for level 0 units — generates a zone of control in the "
-#| "hexes immediately surrounding it, and any enemy unit entering those hexes "
-#| "immediately ends its movement. Learning how to use zones of control to "
-#| "your advantage is an important part of Wesnoth, as only <ref "
-#| "dst='ability_skirmisherskirmisher'>skirmishers</ref> can ignore zones of "
-#| "control."
 msgid ""
 "Another thing to keep in mind while moving is <i>zones of control</i>. Each "
 "unit — except for level 0 units — generates a zone of control in the hexes "
@@ -3793,20 +3769,14 @@ msgstr ""
 
 #. [topic]: id=time_of_day
 #: data/core/help.cfg:501
-#, fuzzy
-#| msgid ""
-#| "Finally, units with the <ref "
-#| "dst='ability_illuminationilluminates'>illuminates</ref> ability and "
-#| "terrain features such as <ref dst='terrain_lava'>lava</ref> change the "
-#| "time of day bonus around them."
 msgid ""
 "Finally, units with the <ref dst='ability_illumination'>illuminates</ref> "
 "ability and terrain features such as <ref dst='terrain_lava'>lava</ref> "
 "change the time of day bonus around them."
 msgstr ""
-"Végül a <ref dst='ability_illuminationilluminates'>megvilágító</ref> "
-"képességgel rendelkező egységek, és például a <ref dst='terrain_lava'>láva</"
-"ref> terep megváltoztatják a napszak bónuszát körülöttük."
+"Végül a <ref dst='ability_illumination'>megvilágító</ref> képesség és "
+"például a <ref dst='terrain_lava'>láva</ref> terep megváltoztatják a napszak "
+"bónuszát körülöttük."
 
 #. [topic]: id=healing
 #: data/core/help.cfg:508
@@ -3845,57 +3815,38 @@ msgstr ""
 
 #. [topic]: id=healing
 #: data/core/help.cfg:513
-#, fuzzy
-#| msgid ""
-#| "• <ref dst='ability_regeneratesregenerates'>Regeneration</ref>: Certain "
-#| "units (such as trolls) will automatically heal 8HP every turn. If the "
-#| "unit is poisoned, the poison will be cured instead."
 msgid ""
 "• <ref dst='ability_regenerates_8'>Regeneration</ref>: Certain units (such "
 "as trolls) will automatically heal 8HP every turn. If the unit is poisoned, "
 "the poison will be cured instead."
 msgstr ""
-"• <ref dst='ability_regeneratesregenerates'>Regenerálódás</ref>: Bizonyos "
-"egységek (mint a trollok) minden körben automatikusan 8 életpontot "
-"gyógyulnak. Ha az egység meg van mérgezve, akkor a mérgezésből gyógyul ki."
+"• <ref dst='ability_regenerates_8'>Regenerálódás</ref>: Bizonyos egységek "
+"(mint a trollok) minden körben automatikusan 8 életpontot gyógyulnak. Ha az "
+"egység meg van mérgezve, akkor a mérgezésből gyógyul ki."
 
 #. [topic]: id=healing
 #: data/core/help.cfg:514
-#, fuzzy
-#| msgid ""
-#| "• <b>Healing units</b>: Units with the <ref dst='ability_healingheals "
-#| "+4'>Heals</ref> ability will heal each allied adjacent unit, usually <ref "
-#| "dst='ability_healingheals +4'>4HP</ref> or <ref dst='ability_healingheals "
-#| "+8'>8HP</ref> per turn, or prevent Poison from causing that unit damage."
 msgid ""
 "• <b>Healing units</b>: Units with the <ref dst='ability_heals_4'>Heals</"
 "ref> ability will heal each allied adjacent unit, usually <ref "
 "dst='ability_heals_4'>4HP</ref> or <ref dst='ability_heals_8'>8HP</ref> per "
 "turn, or prevent Poison from causing that unit damage."
 msgstr ""
-"• <b>Gyógyító egységek</b>: A <ref dst='ability_healingheals +4'>gyógyítás</"
-"ref> képességgel rendelkező egységek minden szövetséges szomszédos egységet "
-"meggyógyítanak, általában <ref dst='ability_healingheals +4'>4 ÉP</ref> vagy "
-"<ref dst='ability_healingheals +8'>8 ÉP</ref> körönként, vagy "
-"megakadályozzák, hogy a mérgezés sebzést okozzon az egységnek."
+"• <b>Gyógyító egységek</b>: A <ref dst='ability_heals_4'>gyógyítás</ref> "
+"képesség minden szövetséges szomszédos egységet meggyógyít. Ez általában "
+"<ref dst='ability_heals_4'>4 ÉP</ref> vagy <ref dst='ability_heals_8'>8 ÉP</"
+"ref> körönként, vagy gátolják, hogy a mérgezés sebzést okozzon az egységnek."
 
 #. [topic]: id=healing
 #: data/core/help.cfg:515
-#, fuzzy
-#| msgid ""
-#| "• <b>Curing units</b>: Units with the <ref "
-#| "dst='ability_curingcures'>cures</ref> ability will cure Poison in all "
-#| "allied adjacent units (in preference to healing, if it has that ability "
-#| "as well)."
 msgid ""
 "• <b>Curing units</b>: Units with the <ref dst='ability_cures'>cures</ref> "
 "ability will cure Poison in all allied adjacent units (in preference to "
 "healing, if it has that ability as well)."
 msgstr ""
-"• <b>Méregűző egységek</b>: A <ref dst='ability_curingcures'>méregűzés</ref> "
-"képességgel rendelkező egységek minden szövetséges szomszédos egységben "
-"meggyógyítják a mérgezést (előnyben részesítve a gyógyítást, ha ezzel a "
-"képességgel is rendelkezik)."
+"• <b>Méregűző egységek</b>: A <ref dst='ability_cures'>méregűzés</ref> "
+"képesség minden szomszédos szövetséges egységben meggyógyítja a mérgezést "
+"(előnyben részesítve a gyógyítást, ha ezzel a képességgel is rendelkezik)."
 
 #. [topic]: id=healing
 #: data/core/help.cfg:516

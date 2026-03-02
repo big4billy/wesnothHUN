@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
 "POT-Creation-Date: 2026-02-26 01:03 UTC\n"
-"PO-Revision-Date: 2026-01-25 09:06+0100\n"
+"PO-Revision-Date: 2026-02-27 18:24+0100\n"
 "Last-Translator: Antonio 'Antro' Rosella <arosella@yahoo.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: data/campaigns/Dusk_of_Dawn/_main.cfg:11
 #: data/campaigns/Dusk_of_Dawn/achievements.cfg:4
 msgid "Dusk of Dawn"
-msgstr "Il Crepuscolo dell’Alba"
+msgstr "Il Crepuscolo dell'Alba"
 
 #. [campaign]: id=Dusk_of_Dawn
 #: data/campaigns/Dusk_of_Dawn/_main.cfg:12
@@ -33,8 +33,8 @@ msgid ""
 "Deep underneath the Heart Mountains, a new tribe of trolls awakens. Help "
 "them grow and eventually fulfill Ougl Firstborn’s biggest dream."
 msgstr ""
-"Nelle profondità delle Montagne Centrali, una nuova tribù di troll si "
-"risveglia. Aiutali a crescere e a realizzare il sogno più grande di Ougl il "
+"Una nuova tribù di troll si risveglia nelle profondità delle Montagne "
+"Centrali. Aiutali a crescere e a realizzare il sogno più grande di Ougl il "
 "Primogenito."
 
 #. [campaign]: id=Dusk_of_Dawn
@@ -545,30 +545,22 @@ msgstr ""
 
 #. [message]: speaker=narrator
 #: data/campaigns/Dusk_of_Dawn/scenarios/01_First_Steps.cfg:877
-#, fuzzy
-#| msgid ""
-#| "There is an open trapdoor in the ruined dwarven castle. Do you want to go "
-#| "through it and play the bonus level?"
 msgid ""
 "There is an open trapdoor in the ruined dwarven castle. Do you want to go "
 "through it and play the bonus puzzle level?"
 msgstr ""
-"Nel castello in rovina dei nani c’è una botola aperta. Vuoi attraversarla e "
-"giocare il livello bonus?"
+"Nel castello dei nani in rovina c’è una botola aperta. Vuoi attraversarla e "
+"giocare il livello bonus rompicapo?"
 
 #. [option]
 #: data/campaigns/Dusk_of_Dawn/scenarios/01_First_Steps.cfg:879
-#, fuzzy
-#| msgid "I will play the bonus scenario."
 msgid "I will play the bonus puzzle scenario."
-msgstr "Giocherò lo scenario bonus."
+msgstr "Giocherò lo scenario bonus rompicapo."
 
 #. [option]
 #: data/campaigns/Dusk_of_Dawn/scenarios/01_First_Steps.cfg:890
-#, fuzzy
-#| msgid "I don’t want to play the bonus scenario."
 msgid "I don’t want to play the bonus puzzle scenario."
-msgstr "Non voglio giocare lo scenario bonus."
+msgstr "Non voglio giocare lo scenario bonus rompicapo."
 
 #. [scenario]: id=02_A_Dream
 #: data/campaigns/Dusk_of_Dawn/scenarios/02_A_Dream.cfg:5
@@ -1237,16 +1229,13 @@ msgstr "Il troll improvvisamente fu preso da una rabbia travolgente."
 
 #. [note]
 #: data/campaigns/Dusk_of_Dawn/scenarios/03_Fateful_Day.cfg:669
-#, fuzzy
-#| msgid ""
-#| "Trolls who move onto mushroom terrain will destroy the mushrooms and gain "
-#| "the <i>berserk</i> special on melee attacks."
 msgid ""
 "In this scenario, trolls entering mushroom terrain will destroy the "
 "mushrooms and gain berserk on their melee attacks."
 msgstr ""
-"I troll che raggiungono un campo di funghi lo devasteranno ed otterranno "
-"l’abilità speciale <i>furia berserk</i> negli attacchi in mischia."
+"In questo scenario, i troll che entreranno in un campo di funghi lo "
+"devasteranno ed otterranno l’abilità speciale furia berserk negli attacchi "
+"in mischia."
 
 #. [message]: speaker=narrator
 #: data/campaigns/Dusk_of_Dawn/scenarios/03_Fateful_Day.cfg:686
@@ -1857,35 +1846,39 @@ msgstr "Ougl...!"
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:47
 msgid "Potion grants steadfast ability and 20% resistance to impact."
 msgstr ""
+"Pozione che conferisce l’abilità “fermezza” e un bonus del 20% di resistenza "
+"agli attacchi da impatto."
 
 #. [option]
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:26
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:102
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:173
 msgid "Yes"
-msgstr ""
+msgstr "Sì"
 
 #. [object]: id={ID}
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:30
 msgid "Blue Potion"
-msgstr ""
+msgstr "Pozione Blu"
 
 #. [object]: id={ID}
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:32
 msgid "A potion of unknown origin."
-msgstr ""
+msgstr "Una pozione dalle origini sconosciute."
 
 #. [message]: speaker=$unit.id|
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:48
 msgid "female^Potion grants steadfast ability and 20% resistance to impact."
 msgstr ""
+"Pozione che conferisce l’abilità “fermezza” e un bonus del 20% di resistenza "
+"agli attacchi da impatto."
 
 #. [option]
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:71
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:142
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:214
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #. [message]: speaker=$unit.id|
 #. [message]: speaker=narrator
@@ -1893,36 +1886,39 @@ msgstr ""
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:123
 msgid "This magical branch grants +2 damage to melee attacks."
 msgstr ""
+"Questo tralcio magico dona un bonus +2 danni negli attacchi in mischia."
 
 #. [object]: id={ID}
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:106
 msgid "Wose Branch"
-msgstr ""
+msgstr "Tralcio di Wose"
 
 #. [object]: id={ID}
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:108
 msgid "The magical branch of some great Wose."
-msgstr ""
+msgstr "Il magico tralcio di un qualche antico Wose."
 
 #. [message]: speaker=narrator
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:171
 msgid "This unit will gain the stun weapon special on melee attacks."
 msgstr ""
+"Questa unità otterrà l’abilità speciale “stordire” negli attacchi in mischia."
 
 #. [object]: id={ID}
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:177
 msgid "Echoes of the Earth"
-msgstr ""
+msgstr "Boati della Terra"
 
 #. [object]: id={ID}
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:179
 msgid "Powerful echoes from the bowels of the earth."
-msgstr ""
+msgstr "Potenti rimbombi dalle viscere della terra."
 
 #. [message]: speaker=$unit.id|
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:191
 msgid "The unit gains the stun weapon special on melee attacks."
 msgstr ""
+"L’unità ottiene l’abilità speciale “stordire” negli attacchi in mischia."
 
 #. [message]: speaker=narrator
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:209
@@ -1930,6 +1926,8 @@ msgid ""
 "After $unit.name| absorbed the stone’s power, the monolith lost its magical "
 "properties."
 msgstr ""
+"Dopo che $unit.name| abbia assorbito il potere della pietra, il monolite "
+"perde le sue proprietà magiche."
 
 #. [time]: id=lava
 #: data/campaigns/Dusk_of_Dawn/utils/schedules.cfg:6
@@ -1944,12 +1942,12 @@ msgstr "Luce Magica"
 #. [chance_to_hit]: id=unerring
 #: data/campaigns/Dusk_of_Dawn/utils/weapon_specials.cfg:6
 msgid "unerring"
-msgstr ""
+msgstr "infallibile"
 
 #. [chance_to_hit]: id=unerring
 #: data/campaigns/Dusk_of_Dawn/utils/weapon_specials.cfg:7
 msgid "This attack never misses."
-msgstr ""
+msgstr "Questo attacco va sempre a segno."
 
 #~ msgid ""
 #~ "Units recruited by an enemy leader are always assigned the fearless trait."

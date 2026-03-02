@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
 "POT-Creation-Date: 2026-02-26 01:03 UTC\n"
-"PO-Revision-Date: 2026-01-30 18:11+0100\n"
+"PO-Revision-Date: 2026-02-27 16:44+0100\n"
 "Last-Translator: Antonio 'Antro' Rosella <arosella@yahoo.com>\n"
 "Language-Team: Italian <>\n"
 "Language: it\n"
@@ -22,8 +22,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Poedit 3.4.2\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ../../../../Sources/wesnoth\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #. [attack]: type=impact
 #: data/campaigns/Dead_Water/units/Soldier_King.cfg:30
@@ -549,10 +551,8 @@ msgstr "maledizione"
 
 #. [unit_type]: id=Pirate Flagship, race=ship
 #: data/campaigns/Of_Pearls_and_Pirates/units/Pirate_Flagship.cfg:9
-#, fuzzy
-#| msgid "Pirate Ship"
 msgid "Pirate Flagship"
-msgstr "Nave Pirata"
+msgstr "Ammiraglia Pirata"
 
 #. [unit_type]: id=Pirate Flagship, race=ship
 #. [unit_type]: id=Pirate Carrack, race=ship
@@ -604,10 +604,8 @@ msgstr "rampino"
 
 #. [unit_type]: id=Pirate Skiff, race=ship
 #: data/campaigns/Of_Pearls_and_Pirates/units/Pirate_Skiff.cfg:9
-#, fuzzy
-#| msgid "Pirate Ship"
 msgid "Pirate Skiff"
-msgstr "Nave Pirata"
+msgstr "Schifo Pirata"
 
 #. [unit_type]: id=Pirate Skiff, race=ship
 #. [unit_type]: id=Skiff, race=ship
@@ -617,7 +615,7 @@ msgid ""
 "Propelled by oars or small sails, Skiffs are used to travel short distances "
 "and in shallows where large ships cannot navigate."
 msgstr ""
-"Spinte da remi o da piccole vele, gli schifi vengono impiegati per "
+"Spinti da remi o da piccole vele, gli schifi vengono impiegati per "
 "percorrere brevi distanze o per gli spostamenti nelle acque basse dove le "
 "grandi navi non riescono a navigare."
 
@@ -1836,19 +1834,6 @@ msgstr "Galea Rinforzata"
 
 #. [unit_type]: id=Iron Raider, race=ship
 #: data/core/units/boats/Raider_Iron.cfg:26
-#, fuzzy
-#| msgid ""
-#| "While Carracks and Cogs rely on impressive sails to harness the power of "
-#| "the wind, galleys and raiders are propelled by muscle-power of the crew "
-#| "manning the oars. This has the disadvantage of requiring a larger crew, "
-#| "and it does limit the speed and efficiency of transport. But these "
-#| "seeming weaknesses also make the vessel less vulnerable to the whims of "
-#| "weather and the predations of pirates.\n"
-#| "\n"
-#| "Iron Raiders are veteran Coastal Raiders that have been hardened to "
-#| "become tougher targets and harder hitters. They are often used as front-"
-#| "line escorts of slower cargo ships in rivers and coasts, where their "
-#| "heavy iron ram proves the most effective."
 msgid ""
 "While Carracks and Cogs rely on impressive sails to harness the power of the "
 "wind, galleys and raiders are propelled by muscle-power of the crew manning "
@@ -1863,13 +1848,7 @@ msgstr ""
 "lo svantaggio di richiedere l’utilizzo di ciurme più numerose e, di "
 "conseguenza, di limitare la velocità e la capacità di carico. Ma quello che "
 "sembra essere uno svantaggio rende anche il vascello meno vulnerabile ai "
-"capricci delle condizioni meteorologiche e agli assalti dei pirati.\n"
-"\n"
-"Le Galee Rinforzate sono dei vecchi Dromoni Costieri irrobustiti in modo da "
-"diventare dei bersagli più difficili da colpire e più resistenti ai colpi. "
-"Vengono usate spesso come prima linea di scorta delle lente navi mercantili "
-"lungo i fiumi e le coste, dove il loro pesante ariete di ferro si rivela più "
-"efficace."
+"capricci delle condizioni meteorologiche e agli assalti dei pirati."
 
 #. [unit_type]: id=Iron Raider, race=ship
 #: data/core/units/boats/Raider_Iron.cfg:28
@@ -1879,6 +1858,12 @@ msgid ""
 "escorts of slower cargo ships in rivers and coasts, where their heavy iron "
 "bow allows them to ram foes without fear of self-inflicted damage."
 msgstr ""
+"Le Galee Rinforzate non sono altro che dei vecchi Dromoni Costieri "
+"rinforzati in modo da diventare dei bersagli più difficili da colpire e più "
+"resistenti ai colpi. Vengono usate spesso come prima linea di scorta delle "
+"lente navi mercantili lungo i fiumi e le coste, dove il loro pesante rostro "
+"di ferro permette loro di speronare i nemici senza temere di auto-"
+"infliggersi danni."
 
 #. [unit_type]: id=Skiff, race=ship
 #: data/core/units/boats/Skiff.cfg:5
@@ -5832,18 +5817,6 @@ msgstr "Mago Bianco"
 
 #. [unit_type]: id=White Mage, race=human, gender=male,female
 #: data/core/units/humans/Mage_White.cfg:19
-#, fuzzy
-#| msgid ""
-#| "Some magi, as they learn about the world around them, and learn the truth "
-#| "of the suffering and squalor in which humanity too often lives, find that "
-#| "they cannot bring themselves to be cloistered into a life of study. These "
-#| "men and women give up the life of a mage, and join monastic orders, "
-#| "dedicating the skills they have been given to the good of all. After "
-#| "their ordination, they often travel the world, ministering to sickness "
-#| "and injury.\n"
-#| "\n"
-#| "Though not trained for combat, they are a potent ally against magical or "
-#| "unnatural things."
 msgid ""
 "Some magi, as they learn about the world and the truth of the suffering and "
 "squalor in which humanity too often lives, find that they cannot bring "
@@ -5860,10 +5833,13 @@ msgstr ""
 "Alcuni maghi, non appena vengono a sapere del mondo che li circonda e della "
 "realtà fatta di sofferenza e squallore in cui versa troppo spesso l’umanità, "
 "scoprono di non essere in grado di condurre una vita di studi "
-"nell’isolamento più totale. Tali uomini e donne abbandonano la vita da maghi "
-"e si uniscono agli ordini monastici, mettendo le loro abilità a servizio del "
-"bene comune. Dopo essere entrati nell’ordine prescelto, compiono frequenti "
-"pellegrinaggi in giro per il mondo, curando malattie e ferite.\n"
+"nell’isolamento più totale. Tali uomini e donne metteono piuttosto le loro "
+"abilità a servizio del bene comune, studiando la guarigione e la "
+"purificazione per affinare la loro magia e trasformarla in uno strumento di "
+"vita.. Compiono frequenti pellegrinaggi in giro per il mondo, assistendo i "
+"malati e i feriti. L’utilizzo ripetuto degli stessi incantesimi fa sì che la "
+"loro magia diventi lentamente bianca, guadagnandosi il titolo con cui sono "
+"conosciuti.\n"
 "\n"
 "Nonostante non siano addestrati al combattimento, i maghi bianchi si "
 "rivelano potenti alleati contro le entità magiche o innaturali."
@@ -5889,15 +5865,6 @@ msgstr "Mago della Luce"
 
 #. [unit_type]: id=Mage of Light, race=human, gender=male,female
 #: data/core/units/humans/Mage_of_Light.cfg:20
-#, fuzzy
-#| msgid ""
-#| "After years of experience, the most devout of white magi develop vast "
-#| "spiritual powers. By strict devotion to the path of the light, they can "
-#| "call upon its aid to chase away the shadows of the night.\n"
-#| "\n"
-#| "Following a strict code of piety and honor, these men and women work "
-#| "tirelessly to bring life and order to the troubled world in which they "
-#| "live."
 msgid ""
 "After years of experience, the most devout of white magi develop vast "
 "magical powers related to healing and purification. By strict devotion to "
@@ -5910,8 +5877,12 @@ msgid ""
 "tirelessly to bring life and order to the troubled world in which they live."
 msgstr ""
 "Dopo anni di esperienza, i maghi bianchi più devoti sviluppano enormi poteri "
-"spirituali. Grazie alla loro ferrea devozione verso la via della luce, essi "
-"sono in grado di chiamarla in aiuto per scacciare le ombre della notte.\n"
+"magici correlati alla cura e alla purificazione. Grazie alla loro ferrea "
+"devozione verso la via della luce, essi sono in grado di chiamarla in aiuto "
+"per scacciare le ombre della notte. La loro grande dedizione alla via della "
+"magia buona o “bianca” è spesso visibile come un alone luminoso che circonda "
+"i loro corpi; un simbolo di speranza verso cui le persone spesso si "
+"rivolgono quando tutto il resto fallisce nel bandire gli orrori della vita.\n"
 "\n"
 "Seguendo un rigoroso codice di pietà e onore, tali uomini e donne lavorano "
 "incessantemente per riportare la vita e l’ordine nel travagliato mondo in "
@@ -7123,7 +7094,7 @@ msgstr ""
 #. [unit_type]: id=Redtail Cat, race=cats
 #: data/core/units/monsters/Cat_Redtail.cfg:4
 msgid "Redtail Cat"
-msgstr ""
+msgstr "Gatto Codarossa"
 
 #. [unit_type]: id=Redtail Cat, race=cats
 #: data/core/units/monsters/Cat_Redtail.cfg:33
@@ -7136,6 +7107,14 @@ msgid ""
 "maneuvering, common folklore says these cats are actually malevolent fire "
 "spirits, and heralds of bad luck."
 msgstr ""
+"I Gatti Codarossa sono formidabili predatori che generalmente si nascondono "
+"ai piedi delle colline e nelle foreste, ma che vagano molto durante la "
+"caccia. Sono quindi stati avvistati in molti luoghi inaspettati. La loro "
+"caratteristica più distintiva è la colorazione della coda, simile a una "
+"fiamma, che distrae dall’aspetto scuro del corpo e dai pericolosi denti e "
+"artigli. Probabilmente a causa della loro colorazione e della loro agilità, "
+"secondo la tradizione popolare questi felini sono in realtà spiriti maligni "
+"del fuoco e portatori di sfortuna."
 
 #. [unit_type]: id=Swamp Lizard, race=monster
 #: data/core/units/monsters/Crocodile.cfg:13

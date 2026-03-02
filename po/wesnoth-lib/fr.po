@@ -2416,7 +2416,7 @@ msgstr "Afficher l'astuce du jour suivante"
 #, fuzzy
 #| msgid "Next Tip of the Day"
 msgid "Tip of the Day"
-msgstr "Astuce du jour suivante"
+msgstr "Astuce du jour"
 
 #. [button]: id=toggle_tip_panel
 #. [toggle_button]: id=show_tips
@@ -2425,7 +2425,7 @@ msgstr "Astuce du jour suivante"
 #, fuzzy
 #| msgid "Show next tip of the day"
 msgid "Show tip of the day"
-msgstr "Afficher l'astuce du jour suivante"
+msgstr "Afficher l'astuce du jour"
 
 #. [button]: id=about
 #: data/gui/themes/celes/dialogs/title_screen.cfg:229
@@ -3050,7 +3050,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Select the add-on version"
 msgid "Delete selected add-on (admin)"
-msgstr "Sélectionne la version de l'extension"
+msgstr "Supprimer l'extension sélectionnée (admin)"
 
 #. [button]: id=admin_hide_addon
 #: data/gui/themes/default/dialogs/addon_server_info.cfg:113
@@ -4385,7 +4385,7 @@ msgstr "Quitter l'éditeur"
 #, fuzzy
 #| msgid "Game Stats"
 msgid "Main Stats"
-msgstr "Statistiques du jeu"
+msgstr "Stats essentielles"
 
 #. [tab]
 #: data/gui/themes/default/dialogs/editor_edit_unit.cfg:1199
@@ -4858,8 +4858,9 @@ msgstr ""
 
 #. [label]
 #: data/gui/themes/default/dialogs/game_version.cfg:150
+#, fuzzy
 msgid "<span font_family='DejaVu Sans'>✦</span> <b>Running on:</b>"
-msgstr ""
+msgstr "<span font_family='DejaVu Sans'>✦</span> <b>Propulsé par:</b>"
 
 #. [label]
 #: data/gui/themes/default/dialogs/game_version.cfg:179
@@ -4869,48 +4870,59 @@ msgstr ""
 #. [label]
 #: data/gui/themes/default/dialogs/game_version.cfg:207
 msgid "<span font_family='DejaVu Sans'>✦</span> <b>Homepage:</b>"
-msgstr ""
+msgstr "<span font_family='DejaVu Sans'>✦</span> <b>Site officiel :</b>"
 
 #. [label]
 #: data/gui/themes/default/dialogs/game_version.cfg:239
 msgid "<span font_family='DejaVu Sans'>✦</span> <b>Wiki:</b>"
-msgstr ""
+msgstr "<span font_family='DejaVu Sans'>✦</span> <b>Wiki:</b>"
 
 #. [label]
 #: data/gui/themes/default/dialogs/game_version.cfg:279
 msgid ""
 "<i><span font_family='DejaVu Sans'>➤</span> Copy a full report here:</i>"
 msgstr ""
+"<i><span font_family='DejaVu Sans'>➤</span> Copier ici le rapport complet:</"
+"i>"
 
 #. [label]
 #: data/gui/themes/default/dialogs/game_version.cfg:299
+#, fuzzy
 msgid ""
 "<i><span font_family='DejaVu Sans'>➤</span> Report an issue or request a "
 "feature:</i>"
 msgstr ""
+"<i><span font_family='DejaVu Sans'>➤</span> Signaler un problème ou demander "
+"une fonctionnalité:</i>"
 
 #. [button]: id=issue
 #: data/gui/themes/default/dialogs/game_version.cfg:312
+#, fuzzy
 msgid "Report Issue"
-msgstr ""
+msgstr " Signaler un incident"
 
 #. [label]
 #: data/gui/themes/default/dialogs/game_version.cfg:321
+#, fuzzy
 msgid "<i><span font_family='DejaVu Sans'>➤</span> View Game Manual:</i>"
-msgstr ""
+msgstr "<i><span font_family='DejaVu Sans'>➤</span> Voir le manuel du jeu:</i>"
 
 #. [button]: id=view_manual
 #. button to open the game manual in the platform's browser.
 #: data/gui/themes/default/dialogs/game_version.cfg:334
+#, fuzzy
 msgid "View Manual"
-msgstr ""
+msgstr "Voir le manuel"
 
 #. [label]
 #: data/gui/themes/default/dialogs/game_version.cfg:342
+#, fuzzy
 msgid ""
 "<i><span font_family='DejaVu Sans'>➤</span> Re-open the version migrator "
 "dialog:</i>"
 msgstr ""
+"<i><span font_family='DejaVu Sans'>➤</span> Réouvrir l’assistant de "
+"migration:</i>"
 
 #. [button]: id=run_migrator
 #. button to open the version migration dialog manually to re-migrate add-ons and the preferences file
@@ -5028,8 +5040,10 @@ msgstr "Donations"
 
 #. [label]: id=description
 #: data/gui/themes/default/dialogs/game_version.cfg:844
+#, fuzzy
 msgid "An open source, turn-based strategy game with a high fantasy theme."
 msgstr ""
+"Un jeu libre de stratégie au tour par tour sur un thème midiéval fantastique"
 
 #. #-#-#-#-#  wesnoth-lib.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [tab]
@@ -5064,8 +5078,9 @@ msgstr "Crédits"
 
 #. [button]: id=license
 #: data/gui/themes/default/dialogs/game_version.cfg:972
+#, fuzzy
 msgid "License"
-msgstr ""
+msgstr " Licence "
 
 #. [label]
 #: data/gui/themes/default/dialogs/gamestate_inspector.cfg:16
@@ -6302,8 +6317,9 @@ msgstr "Ne pas autoriser les mouvements automatiques en début de tour"
 
 #. [toggle_button]: id=show_turn_dialog
 #: data/gui/themes/default/dialogs/preferences/01_general.cfg:114
+#, fuzzy
 msgid "Turn prompt"
-msgstr ""
+msgstr "Notification de début de tour"
 
 #. [toggle_button]: id=show_turn_dialog
 #: data/gui/themes/default/dialogs/preferences/01_general.cfg:115
@@ -9443,20 +9459,16 @@ msgid "New Scenario"
 msgstr "Nouveau scénario"
 
 #: src/hotkey/hotkey_command.cpp:184
-#, fuzzy
-#| msgid "Edit Scenario"
 msgid "Load Map/Scenario"
-msgstr "Modifier le scénario"
+msgstr "Charger Carte/Scénario"
 
 #: src/hotkey/hotkey_command.cpp:186
 msgid "Save Map As"
 msgstr "Sauvegarder la carte sous"
 
 #: src/hotkey/hotkey_command.cpp:187
-#, fuzzy
-#| msgid "Choose Test Scenario"
 msgid "Convert To Scenario"
-msgstr "Choisissez le scénario de test"
+msgstr "Convertir en scénario"
 
 #: src/hotkey/hotkey_command.cpp:188
 msgid "Save Scenario As"
@@ -9812,16 +9824,12 @@ msgid "Change Add-on ID"
 msgstr "Changer l'identifiant de l'extension"
 
 #: src/hotkey/hotkey_command.cpp:279
-#, fuzzy
-#| msgid "Select the add-on version"
 msgid "Select active Add-on"
-msgstr "Sélectionne la version de l'extension"
+msgstr "Sélectionne l'extension"
 
 #: src/hotkey/hotkey_command.cpp:280
-#, fuzzy
-#| msgid "Open saves folder"
 msgid "Open Add-on folder"
-msgstr "Ouvrir le répertoire des sauvegardes"
+msgstr "Ouvrir le répertoire des extensions"
 
 #: src/hotkey/hotkey_command.cpp:283
 msgid "Edit Side"

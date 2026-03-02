@@ -1,12 +1,12 @@
 # translation of it.po to Italian
 # Luciano Montanaro <mikelima@cirulla.net>, 2006, 2008.
-# Antonio 'Antro' Rosella <arosella@yahoo.com>, 2008-2025
+# Antonio 'Antro' Rosella <arosella@yahoo.com>, 2008-2026
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
 "POT-Creation-Date: 2026-02-26 01:03 UTC\n"
-"PO-Revision-Date: 2025-10-31 22:44+0100\n"
+"PO-Revision-Date: 2026-02-27 17:35+0100\n"
 "Last-Translator: Antonio 'Antro' Rosella <arosella@yahoo.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.6\n"
 
 #. [campaign]: id=Two_Brothers
 #. [achievement_group]
@@ -109,27 +109,27 @@ msgstr ""
 #. [achievement]: id=heroes_of_maghre
 #: data/campaigns/Two_Brothers/achievements.cfg:8
 msgid "Heroes of Maghre"
-msgstr ""
+msgstr "Eroi di Maghre"
 
 #. [achievement]: id=heroes_of_maghre
 #: data/campaigns/Two_Brothers/achievements.cfg:9
 msgid "Complete <i>Rooting Out a Mage</i> without recruiting."
-msgstr ""
+msgstr "Completa <i>Stanare un mago</i> senza alcun reclutamento."
 
 #. [achievement]: id=treasure
 #: data/campaigns/Two_Brothers/achievements.cfg:15
 msgid "Treasure"
-msgstr ""
+msgstr "Tesoro"
 
 #. [achievement]: id=treasure
 #: data/campaigns/Two_Brothers/achievements.cfg:16
 msgid "Find the chest of gold in <i>Guarded Castle</i>."
-msgstr ""
+msgstr "Trova la cassa con l’oro in <i>Castello protetto</i>."
 
 #. [achievement]: id=baran_returns
 #: data/campaigns/Two_Brothers/achievements.cfg:22
 msgid "Baran Returns"
-msgstr ""
+msgstr "Il ritorno di Baran"
 
 #. [achievement]: id=baran_returns
 #: data/campaigns/Two_Brothers/achievements.cfg:23
@@ -137,17 +137,20 @@ msgid ""
 "Complete <i>Return to the Village</i> by defeating the enemy leader with "
 "Baran."
 msgstr ""
+"Completa <i>Ritorno al villaggio</i> sconfiggendo il condottiero nemico con "
+"Baran."
 
 #. [achievement]: id=arvith_the_great_knight
 #: data/campaigns/Two_Brothers/achievements.cfg:29
 msgid "Arvith the Great Knight"
-msgstr ""
+msgstr "Arvith il Gran Cavaliere"
 
 #. [achievement]: id=arvith_the_great_knight
 #: data/campaigns/Two_Brothers/achievements.cfg:30
 msgid ""
 "Advance Arvith into a Grand Knight or a Paladin before the campaign ends."
 msgstr ""
+"Arvith avanza come Gran Cavaliere o Paladino prima della fine della campagna."
 
 #. [scenario]: id=01_Rooting_Out_a_Mage
 #: data/campaigns/Two_Brothers/scenarios/01_Rooting_Out_a_Mage.cfg:5
