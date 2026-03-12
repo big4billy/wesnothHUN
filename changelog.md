@@ -2,13 +2,15 @@
 ### Add-ons client
 ### Add-ons server
 ### Campaigns
+   * Heir to the Throne
+     * S22 "Glamdrol": fixed a lua error that would occur if Konrad completed the scenario without pledging any gold to the Stoneskins.
 ### Editor
 ### Multiplayer
 ### Lua API
 ### Packaging
 ### Terrain
 ### Translations
-   * Updated translations: British English, French, Hungarian, Italian
+   * Updated translations: Bengali, British English, French, Hungarian, Italian, Spanish
 ### Units
 ### User interface
 ### WML Engine
