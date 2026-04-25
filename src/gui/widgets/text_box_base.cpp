@@ -26,9 +26,7 @@
 #include "gui/widgets/window.hpp"
 #include "serialization/unicode.hpp"
 
-#ifdef __ANDROID__
 #include <SDL2/SDL_keyboard.h>
-#endif
 
 #include <functional>
 #include <limits>
@@ -688,7 +686,7 @@ void text_box_base::signal_handler_sdl_key_down(const event::ui_event event,
 void text_box_base::signal_handler_receive_keyboard_focus(const event::ui_event event)
 {
 	DBG_GUI_E << LOG_HEADER << ' ' << event << ".";
-#ifdef __ANDROID__
+#if defined(__ANDROID__) || defined(__IPHONEOS__)
 	SDL_StartTextInput();
 #endif
 	set_state(FOCUSED);
@@ -697,7 +695,7 @@ void text_box_base::signal_handler_receive_keyboard_focus(const event::ui_event 
 void text_box_base::signal_handler_lose_keyboard_focus(const event::ui_event event)
 {
 	DBG_GUI_E << LOG_HEADER << ' ' << event << ".";
-#ifdef __ANDROID__
+#if defined(__ANDROID__) || defined(__IPHONEOS__)
 	SDL_StopTextInput();
 #endif
 	set_state(ENABLED);

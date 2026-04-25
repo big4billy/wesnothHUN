@@ -5697,10 +5697,6 @@ msgstr "Ma hache n'arrive pas à couper ce papier. C'est protégé par la magie�
 #. [message]: role=speakinghero
 #. regular english: Yes, but the lich still seems to be hurt. Let's take it and retreat. Maybe the forge can destroy it.
 #: data/campaigns/Descent_Into_Darkness/scenarios/10_Endless_Night.cfg:1266
-#, fuzzy
-#| msgid ""
-#| "Aye, but the lich still seems ta be hurtin’. Let’s take it ’n retreat. "
-#| "Maybe tha forge ken destroy it."
 msgid ""
 "Aye, but the lich still seems ta be hurtin’. Let’s take it ’n retreat. Maybe "
 "tha forge can destroy it."
@@ -6139,8 +6135,6 @@ msgstr ""
 #. [message]: role=second
 #. regular english - I don't know. You think the lich's castle can be useful
 #: data/campaigns/Descent_Into_Darkness/scenarios/10_Endless_Night.cfg:1895
-#, fuzzy
-#| msgid "I dinna know. Ye think tha lich’s castle ken be useful?"
 msgid "I dinna know. Ye think tha lich’s castle can be useful?"
 msgstr ""
 "Je ne sais pas. Tu penses que le château de la liche pourrait être utile ?"
@@ -7365,9 +7359,7 @@ msgstr "estropiée"
 #: data/campaigns/Descent_Into_Darkness/utils/traits.cfg:8
 msgid ""
 "<italic>text='Maimed'</italic> units have 3 less movement points than usual."
-msgstr ""
-"Les unités <italic>text='estropiées'</italic> ont 3 points de déplacement en "
-"moins."
+msgstr "Les unités <i>estropiées</i> ont 3 points de déplacement en moins."
 
 #, fuzzy
 #~ msgid "Dark blue"

@@ -2788,32 +2788,6 @@ msgstr ""
 msgid "At least I die with my axe in my hand..."
 msgstr ""
 
-#~ msgid "I found some gold!"
-#~ msgstr "我找到了一些金币！"
-
-#~ msgid "This must be one of the runic keys!"
-#~ msgstr "这肯定是符文钥匙之一！"
-
-#~ msgid "We still need to find the other one!"
-#~ msgstr "我们还得要找到另一把！"
-
-#~ msgid "Find and activate the runic keys (one remaining)"
-#~ msgstr "找到并激活符文钥匙（还剩一把）"
-
-#~ msgid ""
-#~ "You may teleport units between matching runes (the destination must be "
-#~ "clear)"
-#~ msgstr "你可以在相匹配的符文之间传送单位（目的地必须无人占据）"
-
-#~ msgid "We’ve found a runic key!"
-#~ msgstr "我们找到了一把符文钥匙！"
-
-#~ msgid "The keys have been found. The door should open..."
-#~ msgstr "我们找到了钥匙，这门该开了……"
-
-#~ msgid "Find and activate the runic keys to the sealed door"
-#~ msgstr "找到并激活可以打开门的符文钥匙"
-
 #~ msgid "Fighter"
 #~ msgstr "战士"
 
@@ -2831,9 +2805,6 @@ msgstr ""
 
 #~ msgid "Orcs"
 #~ msgstr "兽人"
-
-#~ msgid "Movrur"
-#~ msgstr "摩夫鲁尔"
 
 #~ msgid ""
 #~ "Hail, kinsmen of Knalga. I have been tracking that orc for several days. "
@@ -3368,6 +3339,32 @@ msgstr ""
 #~ msgid "Find and defeat Karrag"
 #~ msgstr "找到并击败卡拉格"
 
+#~ msgid "I found some gold!"
+#~ msgstr "我找到了一些金币！"
+
+#~ msgid "This must be one of the runic keys!"
+#~ msgstr "这肯定是符文钥匙之一！"
+
+#~ msgid "We still need to find the other one!"
+#~ msgstr "我们还得要找到另一把！"
+
+#~ msgid "Find and activate the runic keys (one remaining)"
+#~ msgstr "找到并激活符文钥匙（还剩一把）"
+
+#~ msgid ""
+#~ "You may teleport units between matching runes (the destination must be "
+#~ "clear)"
+#~ msgstr "你可以在相匹配的符文之间传送单位（目的地必须无人占据）"
+
+#~ msgid "We’ve found a runic key!"
+#~ msgstr "我们找到了一把符文钥匙！"
+
+#~ msgid "The keys have been found. The door should open..."
+#~ msgstr "我们找到了钥匙，这门该开了……"
+
+#~ msgid "Find and activate the runic keys to the sealed door"
+#~ msgstr "找到并激活可以打开门的符文钥匙"
+
 #~ msgid ""
 #~ "I have been on your track for weeks. Word of your rout of Tan-Morgh and "
 #~ "his allies spread, and reached Tallin. You did the Alliance better "
@@ -3385,14 +3382,6 @@ msgstr ""
 #~ msgstr ""
 #~ "艾格隆达，守护王授予您联盟共事王之职。他吩咐您尽快返回纳尔迦，为你进行授"
 #~ "职。"
-
-#~ msgid ""
-#~ "More experienced dwarvish fighters wear heavy chain mail and plate armor, "
-#~ "for which they are rightly famous. In the dark dreams of dwarvenkind, "
-#~ "some conceal their faces behind riveted masks."
-#~ msgstr ""
-#~ "更有经验的矮人战士们穿着沉重的锁子甲和板甲，他们因此而闻名并名副其实。在矮"
-#~ "人们黑暗的梦境之中，有些人用铆接的面具把自己的脸隐藏起来。"
 
 #~ msgid "inspire"
 #~ msgstr "鼓舞"
@@ -3413,6 +3402,9 @@ msgstr ""
 #~ "此单位的存在使周围的友方单位在战斗中造成更多伤害，虽然这只对比其低等级或与"
 #~ "其同等级的单位有效。"
 
+#~ msgid "Movrur"
+#~ msgstr "摩夫鲁尔"
+
 #~ msgid "We needed Movrur to accompany us to Kal Kartha!"
 #~ msgstr "我们需要莫夫鲁尔陪我们去卡尔·卡萨！"
 
@@ -3422,3 +3414,11 @@ msgstr ""
 #~ msgstr ""
 #~ "没有杜尔卡图洛斯来向卡尔·卡萨族人解释我们的行动，那我们就也得和他们开战。"
 #~ "我们的任务失败了。"
+
+#~ msgid ""
+#~ "More experienced dwarvish fighters wear heavy chain mail and plate armor, "
+#~ "for which they are rightly famous. In the dark dreams of dwarvenkind, "
+#~ "some conceal their faces behind riveted masks."
+#~ msgstr ""
+#~ "更有经验的矮人战士们穿着沉重的锁子甲和板甲，他们因此而闻名并名副其实。在矮"
+#~ "人们黑暗的梦境之中，有些人用铆接的面具把自己的脸隐藏起来。"

@@ -1,20 +1,84 @@
-## Version 1.19.21+dev
+## Version 1.19.23+dev
 ### Add-ons client
 ### Add-ons server
 ### Campaigns
-   * Heir to the Throne
-     * S22 "Glamdrol": fixed a lua error that would occur if Konrad completed the scenario without pledging any gold to the Stoneskins.
 ### Editor
 ### Multiplayer
 ### Lua API
 ### Packaging
 ### Terrain
 ### Translations
-   * Updated translations: Bengali, British English, French, Hungarian, Italian, Spanish
+   * Updated translations: British English, French, German, Italian, Spanish
 ### Units
 ### User interface
 ### WML Engine
 ### Miscellaneous and Bug Fixes
+
+## Version 1.19.23
+### Campaigns
+   * Heir to the Throne
+     * Granite Golem: added "regenerates +4" ability, cost reduced from 35 -> 30, damage reduced from 35 -> 32
+     * Fix Elrian's Tath event triggering even if you hadn't yet completed Isle of Alduin.
+     * Fix Elrian's Tath event not trigering after completing The Sceptre of Fire.
+     * S06 "Isle of Alduin": fix Konrad and Elrian discussing Seimus too early.
+     * S22 "Glamdrol": end when turns run out, not when side 1's last turn ends.
+     * S30 "The Sceptre of Fire": made Giant Spider AI more predictable.
+     * S43 "Cliffs of Thoria": fix the Horn of Glamdrol healing Warven before he's been spotted.
+     * S50 "The Battle For Wesnoth": rebalanced to encourage dominating the map rather than rushing Asheviere.
+### Translations
+   * Updated translations: Bengali, British English, Chinese (Simplified), Czech, Finnish, French, German, Italian, Portuguese (Brazil), Spanish
+### WML Engine
+   * WFL: fixed serialization of empty map literals
+   * WFL: fixed double multiplication when converting a config attribute to a decimal value
+   * Removed deprecated macros
+     * `EARLY_FINISH_BONUS_NOTE`
+     * `NO_EARLY_FINISH_BONUS_NOTE`
+     * `NO_GOLD_CARRYOVER_NOTE`
+     * `NEW_GOLD_CARRYOVER_NOTE_100`
+     * `NEW_GOLD_CARRYOVER_NOTE_40`
+     * `NEW_GOLD_CARRYOVER_NOTE_20`
+     * `MISSILE_FRAME_FIREBALL`
+     * `MESSAGE`
+     * `STORY_PART_SPEECH`
+     * `LOYAL_UNDEAD_UNIT`
+     * `ON_SIGHTING`
+     * `MAKE_AI_SIDE_PERSISTENT`
+     * `DRAKE_FLYING_ANIM`
+     * `NO_INTERRUPT_NO_UNDO`
+     * `ENABLE_NIGHTBLADE`
+### Miscellaneous and Bug Fixes
+   * Fixed crashes when starting some campaigns when playing on Steam+Linux
+
+## Version 1.19.22
+### Campaigns
+   * Heir to the Throne
+     * S22 "Glamdrol": fixed a lua error that would occur if Konrad completed the scenario without pledging any gold to the Stoneskins.
+   * Liberty
+     * S04 "Unlawful Orders": Kestrel's keep no longer gets blocked by his Lieutenant on turn 4.
+     * S04 "Unlawful Orders": fix enemy soldiers having names.
+   * The Deceivers Gambit
+     * S04 "The Sylvan Seer": Silverback image is now smaller at lower difficulties.
+     * S04 "The Sylvan Seer": fix Delfador being counterspelled even when outside the counterspell AOE.
+     * S04 "The Sylvan Seer": mirror Kalenz now transforms into a Lich when you move adjacent, not after your first attack (fixes an issue with inconsistent strikes/attack type).
+     * S04 "The Sylvan Seer": fix Delfador's familiar retaining 100% hit / 0% defense even after this scenario had ended.
+     * S04 "The Sylvan Seer": fix final kill not awarding XP.
+     * S04 "The Sylvan Seer": fix mirror magical attacks not displaying 100% hit chance.
+     * S05 "The Deceiver": fix your first recall being non-undoable.
+     * S05 "The Deceiver": Garard now waits one more turn before attacking the orcs.
+     * S10 "Houses of the Dead": Malal's zombie spawns now scale over time.
+     * S14 "Long Live the Queen": Wesnoth now autosaves at the start of the boss fight.
+     * S14 "Long Live the Queen": boss fight terrain now uses cobble instead of tile hexes, to be easier to distinguish through the red tint.
+     * S14 "Long Live the Queen": fix Delfador's first move being non-undoable.
+     * S14 "Long Live the Queen": fix Delfador's magical attacks sometimes being usable with 0% accuracy even when counterspelled.
+     * Spells: fix Blizzard freezing chasm hexes.
+     * Spells: fix Time Dilation affecting units on your recall list.
+### Translations
+   * Updated translations: Bengali, British English, Czech, French, Hungarian, Italian, Portuguese (Brazil), Spanish
+### Miscellaneous and Bug Fixes
+   * Fixed the minimap not displaying on absurdly large maps.
+   * Fixed AI behavior when fighting a unit with 0 max XP.
+   * Fixed the :fps command causing Wesnoth to crash.
+   * Fixed multiple bugs in [set_variables] caused by replacing its C++ implementation with a lua implementation.
 
 ## Version 1.19.21
 ### Campaigns

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wescamp-i 18n\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2026-02-26 01:04 UTC\n"
+"POT-Creation-Date: 2026-04-20 03:20 UTC\n"
 "PO-Revision-Date: 2024-11-03 13:41+0100\n"
 "Last-Translator: YbeRn00b <asgeiraakre@gmail.com>\n"
 "Language-Team: none\n"
@@ -14,21 +14,19 @@ msgstr ""
 "X-Generator: Poedit 3.4.4\n"
 
 #. [campaign]: id=The_South_Guard
-#. Adding “Start Here” is meant to attract players looking for a tutorial, without dissuading players who'd skip something that’s purely a tutorial.
-#. Translations can’t be much longer than the English string, otherwise the left column of the campaign dialog becomes noticeably wide.
-#: data/campaigns/The_South_Guard/_main.cfg:34
-#, fuzzy
-#| msgid "The South Guard"
-msgid "The South Guard — Start Here"
+#. [achievement_group]
+#: data/campaigns/The_South_Guard/_main.cfg:32
+#: data/campaigns/The_South_Guard/achievements.cfg:16
+msgid "The South Guard"
 msgstr "Sørgarden"
 
 #. [campaign]: id=The_South_Guard
-#: data/campaigns/The_South_Guard/_main.cfg:35
+#: data/campaigns/The_South_Guard/_main.cfg:33
 msgid "TSG"
 msgstr "SG"
 
 #. [campaign]: id=The_South_Guard
-#: data/campaigns/The_South_Guard/_main.cfg:44
+#: data/campaigns/The_South_Guard/_main.cfg:42
 #, fuzzy
 #| msgid ""
 #| "A young knight, Deoran, is dispatched to the southern Wesnoth province of "
@@ -52,7 +50,7 @@ msgstr ""
 "\n"
 
 #. [campaign]: id=The_South_Guard
-#: data/campaigns/The_South_Guard/_main.cfg:48
+#: data/campaigns/The_South_Guard/_main.cfg:46
 #, fuzzy
 #| msgid "(Novice level, 8 scenarios.)"
 msgid "(Novice level, 6 scenarios.)"
@@ -60,68 +58,63 @@ msgstr "(Nybegynnernivå, 8 scenarier.)"
 
 #. [campaign]: id=The_South_Guard
 #. this campaign is not a direct continuation of the story and characters, but is next chronologically and is the recommended next campaign
-#: data/campaigns/The_South_Guard/_main.cfg:53
+#: data/campaigns/The_South_Guard/_main.cfg:51
 msgid ""
 "The saga continues in\n"
 "<i>Of Pearls and Pirates</i>"
 msgstr ""
 
 #. [campaign]: id=The_South_Guard
-#: data/campaigns/The_South_Guard/_main.cfg:57
+#: data/campaigns/The_South_Guard/_main.cfg:55
 msgid "1x enemies, 70% XP"
 msgstr ""
 
 #. [campaign]: id=The_South_Guard
-#: data/campaigns/The_South_Guard/_main.cfg:57
+#: data/campaigns/The_South_Guard/_main.cfg:55
 msgid "Easy"
 msgstr "Lett"
 
 #. [campaign]: id=The_South_Guard
-#: data/campaigns/The_South_Guard/_main.cfg:58
+#: data/campaigns/The_South_Guard/_main.cfg:56
 msgid "2x enemies, 90% XP"
 msgstr ""
 
 #. [campaign]: id=The_South_Guard
-#: data/campaigns/The_South_Guard/_main.cfg:58
+#: data/campaigns/The_South_Guard/_main.cfg:56
 msgid "Normal"
 msgstr "Normal"
 
 #. [campaign]: id=The_South_Guard
-#: data/campaigns/The_South_Guard/_main.cfg:59
+#: data/campaigns/The_South_Guard/_main.cfg:57
 msgid "4x enemies, 100% XP"
 msgstr ""
 
 #. [campaign]: id=The_South_Guard
-#: data/campaigns/The_South_Guard/_main.cfg:59
+#: data/campaigns/The_South_Guard/_main.cfg:57
 msgid "Hard"
 msgstr ""
 
 #. [about]
-#: data/campaigns/The_South_Guard/_main.cfg:66
+#: data/campaigns/The_South_Guard/_main.cfg:64
 #, fuzzy
 #| msgid "Latest Campaign Revision"
 msgid "Newest Campaign Version Rewrite"
 msgstr "Siste revisjon av kampanjen"
 
 #. [about]
-#: data/campaigns/The_South_Guard/_main.cfg:72
+#: data/campaigns/The_South_Guard/_main.cfg:70
 msgid "Campaign Design"
 msgstr "Kampanjeutforming"
 
 #. [about]
-#: data/campaigns/The_South_Guard/_main.cfg:82
+#: data/campaigns/The_South_Guard/_main.cfg:80
 msgid "Campaign Maintenance"
 msgstr "Vedlikehold av kampanjen"
 
 #. [about]
-#: data/campaigns/The_South_Guard/_main.cfg:101
+#: data/campaigns/The_South_Guard/_main.cfg:99
 msgid "Artwork and Graphics Design"
 msgstr "Kunstverk og grafisk design"
-
-#. [achievement_group]
-#: data/campaigns/The_South_Guard/achievements.cfg:16
-msgid "The South Guard"
-msgstr "Sørgarden"
 
 #. [achievement_group]
 #: data/campaigns/The_South_Guard/achievements.cfg:19
@@ -215,94 +208,89 @@ msgstr ""
 msgid "Scenario 6b: Man Stands Alone"
 msgstr ""
 
-#. [lua]: display_tip
-#: data/campaigns/The_South_Guard/lua/popups.lua:52
-msgid "Tip: "
-msgstr ""
-
-#. [lua]: display_tip
-#: data/campaigns/The_South_Guard/lua/popups.lua:80
-#, fuzzy
-#| msgid "Undead"
-msgid "Understood"
-msgstr "Vandød"
-
-#. [lua]: display_tip
-#: data/campaigns/The_South_Guard/lua/popups.lua:85
-msgid "Disable Tip Popups &amp; Dialogue"
-msgstr ""
-
-#. [lua]: choose_companion
-#: data/campaigns/The_South_Guard/lua/popups.lua:137
+#. [label]
+#: data/campaigns/The_South_Guard/gui/choose_companion.cfg:54
 msgid "Choose an officer to accompany Deoran:"
 msgstr ""
 
-#. [lua]: choose_companion
+#. [widget]: id=name
 #. [event]
-#: data/campaigns/The_South_Guard/lua/popups.lua:160
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:472
+#: data/campaigns/The_South_Guard/gui/choose_companion.cfg:117
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:467
 #: data/campaigns/The_South_Guard/utils/sg_characters.cfg:77
 msgid "Sir Gerrick"
 msgstr "Sir Gerrikk"
 
-#. [lua]: choose_companion
+#. [widget]: id=name
 #. [unit_type]: id=Veteran Infantryman, race=human
-#: data/campaigns/The_South_Guard/lua/popups.lua:160
+#: data/campaigns/The_South_Guard/gui/choose_companion.cfg:118
 #: data/campaigns/The_South_Guard/units/Gerrick2_Veteran_Infantryman.cfg:4
 msgid "Veteran Infantryman"
 msgstr ""
 
-#. [lua]: choose_companion
+#. [widget]: id=name
 #. [event]
-#: data/campaigns/The_South_Guard/lua/popups.lua:164
+#: data/campaigns/The_South_Guard/gui/choose_companion.cfg:130
 #: data/campaigns/The_South_Guard/scenarios/01_Born_to_the_Banner.cfg:139
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:424
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:419
 #: data/campaigns/The_South_Guard/utils/sg_characters.cfg:89
 #, fuzzy
 #| msgid "Campaign Maintenance"
 msgid "Captain Mari"
 msgstr "Vedlikehold av kampanjen"
 
-#. [lua]: choose_companion
+#. [widget]: id=name
 #. [unit_type]: id=Veteran Fencer, race=human, gender=female
-#: data/campaigns/The_South_Guard/lua/popups.lua:164
+#: data/campaigns/The_South_Guard/gui/choose_companion.cfg:131
 #: data/campaigns/The_South_Guard/units/Mari2.cfg:4
 msgid "Veteran Fencer"
 msgstr ""
 
-#. [lua]: choose_companion
+#. [widget]: id=name
 #. [event]
-#: data/campaigns/The_South_Guard/lua/popups.lua:168
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:448
+#: data/campaigns/The_South_Guard/gui/choose_companion.cfg:143
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:443
 #: data/campaigns/The_South_Guard/utils/sg_characters.cfg:67
 msgid "Minister Hylas"
 msgstr "Minister Hylas"
 
-#. [lua]: choose_companion
-#: data/campaigns/The_South_Guard/lua/popups.lua:168
+#. [widget]: id=name
+#: data/campaigns/The_South_Guard/gui/choose_companion.cfg:144
 msgid "White Mage"
 msgstr ""
 
-#. [lua]: choose_companion
-#: data/campaigns/The_South_Guard/lua/popups.lua:178
+#. [button]: id=leave_with_gerrick
+#: data/campaigns/The_South_Guard/gui/choose_companion.cfg:163
 #, fuzzy
 #| msgid "Sir Gerrick"
 msgid "Leave with Sir Gerrick"
 msgstr "Sir Gerrikk"
 
-#. [lua]: choose_companion
-#: data/campaigns/The_South_Guard/lua/popups.lua:179
+#. [button]: id=leave_with_mari
+#: data/campaigns/The_South_Guard/gui/choose_companion.cfg:170
 #, fuzzy
 #| msgid "Campaign Maintenance"
 msgid "Leave with Captain Mari"
 msgstr "Vedlikehold av kampanjen"
 
-#. [lua]: choose_companion
-#: data/campaigns/The_South_Guard/lua/popups.lua:180
+#. [button]: id=leave_with_hylas
+#: data/campaigns/The_South_Guard/gui/choose_companion.cfg:177
 #, fuzzy
 #| msgid "Minister Hylas"
 msgid "Leave with Minister Hylas"
 msgstr "Minister Hylas"
+
+#. [button]
+#: data/campaigns/The_South_Guard/gui/display_tip.cfg:146
+#, fuzzy
+#| msgid "Undead"
+msgid "Understood"
+msgstr "Vandød"
+
+#. [button]
+#: data/campaigns/The_South_Guard/gui/display_tip.cfg:163
+msgid "Disable Tip Popups &amp; Dialogue"
+msgstr ""
 
 #. [scenario]: id=01_Born_to_the_Banner
 #: data/campaigns/The_South_Guard/scenarios/01_Born_to_the_Banner.cfg:11
@@ -401,7 +389,7 @@ msgstr ""
 #: data/campaigns/The_South_Guard/scenarios/05b_Pebbles_in_the_Flood.cfg:27
 #: data/campaigns/The_South_Guard/scenarios/05c_Into_the_Depths.cfg:40
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:41
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:32
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:38
 #: data/campaigns/The_South_Guard/scenarios/06x_Epilogue.cfg:177
 msgid "South Guard"
 msgstr "Den sørlige garden"
@@ -851,8 +839,8 @@ msgstr "Beseire Urza Mattin"
 #: data/campaigns/The_South_Guard/scenarios/02_Proven_by_the_Sword.cfg:298
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:494
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:688
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:516
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:939
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:526
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:949
 msgid "Death of Deoran"
 msgstr "Deorans død"
 
@@ -1455,18 +1443,13 @@ msgstr "Vestin"
 msgid "Westin"
 msgstr "Vestin"
 
-#. [event]
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:95
-msgid "Town Crier"
-msgstr ""
-
 #. [message]: speaker=Minister Hylas
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:144
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:139
 msgid "The Vale of Blossoming Trees."
 msgstr ""
 
 #. [message]: speaker=Minister Hylas
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:149
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:144
 msgid ""
 "Other than that singular piece of information, I regret to report that Urza "
 "Fastik remains as recalcitrant as the day we first arrived.\n"
@@ -1477,7 +1460,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:155
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:150
 msgid ""
 "The vale... isn’t that an Aethenwood exclave? I can’t imagine the Aethenwood "
 "elves would have anything to do with necromancy, or ever offer aid to "
@@ -1486,7 +1469,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Sir Gerrick
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:159
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:154
 msgid ""
 "I say we’re treatin’ him too gentle. Man like Fastik — he’s plenty used to "
 "roughing it. Lives are at stake, an’ too much coddling ain’t getting us "
@@ -1494,7 +1477,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Minister Hylas
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:163
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:158
 msgid ""
 "I fear there is a corruption in his soul, darker than even my light can "
 "illuminate. Now deprived of the dark magic that once suffused him, his very "
@@ -1502,28 +1485,28 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Minister Hylas
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:167
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:162
 msgid ""
 "Even were he willing, I am not sure he remembers anything other than what he "
 "has already told us."
 msgstr ""
 
 #. [message]: speaker=Mari
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:181
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:176
 msgid ""
 "Hey, everyone. I’m done cleaning up the last of Fastik’s mess, but no trace "
 "of the other two brothers."
 msgstr ""
 
 #. [message]: speaker=Mari
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:201
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:196
 msgid ""
 "Thanks, Hylas. Shouldn’t there be a duke or prince or something around here? "
 "How did things get this bad?"
 msgstr ""
 
 #. [message]: speaker=Sir Gerrick
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:205
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:200
 msgid ""
 "Aye, officially these lands belong to Prince Arand; King Garard’s younger "
 "brother. Arand’s been tryin’ to build the place up. Last time he visited, "
@@ -1531,7 +1514,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Sir Gerrick
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:209
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:204
 msgid ""
 "But the kingdom is large, the prince has many holdings, an’ today Westin be "
 "but a small town. These Urza outlaws ha’ always been a nuisance, but once "
@@ -1539,7 +1522,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Minister Hylas
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:213
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:208
 msgid ""
 "We dispatched messengers carrying word of our plight, only to have them "
 "intercepted on the road or waylaid at river crossings. You are the first "
@@ -1548,7 +1531,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:221
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:216
 msgid ""
 "Well, if we don’t have any other leads, then we’ll need to investigate this "
 "“Vale of Blossoming Trees” and hope it’s neither misdirection nor a trap. "
@@ -1556,7 +1539,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Sir Gerrick
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:227
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:222
 msgid ""
 "Offerin’ to command the mission? Brave lad, but you shan’t have to go alone. "
 "Two o’ us officers will need to stay here and watch th’ town, but at least "
@@ -1564,40 +1547,40 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Sir Gerrick
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:231
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:226
 msgid ""
 "Take yer pick — either me, Minister Hylas, or tha’ Mari o’ yers. You don’t "
 "know much about how each of us fight yet, so ask and we’ll tell!"
 msgstr ""
 
 #. [message]: speaker=Mari
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:250
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:245
 msgid ""
 "Hey, rookie. I’m all out of quintains, so if you want more bruises you’ll "
 "have to find another inanimate object to fight."
 msgstr ""
 
 #. [message]: speaker=Mari
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:255
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:250
 msgid ""
 "...but I guess you’re asking about my skills, not yours. You never did get a "
 "chance to see me fight."
 msgstr ""
 
 #. [message]: speaker=Mari
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:261
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:256
 msgid "Hey, rookie. Yeah, you never did get a chance to see me fight."
 msgstr ""
 
 #. [message]: speaker=Mari
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:267
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:262
 msgid ""
 "Well, I’m a survivor. Fast-moving, light on my feet; good at evading, good "
 "at stabbing. Hard to pin down, whether in an attack or in an escape."
 msgstr ""
 
 #. [message]
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:271
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:266
 msgid ""
 "Mari has unusually high terrain defenses (her chance to evade enemy "
 "attacks). Her <i><b>skirmisher</b></i> ability lets her ignore enemies’ Zone "
@@ -1605,7 +1588,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Mari
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:275
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:270
 msgid ""
 "Got a pretty good sling too, ’cuz there aren’t many ranged weapons that can "
 "be loaded one-handed. Altogether, I’ll bet I could outlast both Hylas and "
@@ -1613,14 +1596,14 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:279
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:274
 msgid ""
 "And... if you come with me you’ll actually help fight? No more training, or "
 "observing, or running off right before the battle starts?"
 msgstr ""
 
 #. [message]: speaker=Mari
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:283
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:278
 msgid ""
 "Of course. Highwaymen are one thing, but necromancy is serious business. I "
 "just thought... well, after losing one arm to undead in the Estmarks, I "
@@ -1628,7 +1611,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Mari
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:292
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:287
 msgid ""
 "I already told you, didn’t I? Pay attention this time — I’ve got a sword and "
 "sling, skill at evading attacks, and can move freely around enemies without "
@@ -1636,7 +1619,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Minister Hylas
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:317
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:312
 msgid ""
 "I am a man of medicine, Lieutenant Deoran. The light within me can "
 "<i><b>heal adjacent units</b></i> just as quickly as can resting in a "
@@ -1645,7 +1628,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Minister Hylas
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:321
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:316
 msgid ""
 "In ranged combat, I also wield a highly accurate <i><b>magical</b></i> "
 "attack. Magical attacks always have a high chance to hit and are unaffected "
@@ -1653,14 +1636,14 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:325
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:320
 msgid ""
 "I don’t mean to be rude, but... your leg looks badly injured. If you have "
 "healing magic, shouldn’t you have been able to cure it?"
 msgstr ""
 
 #. [message]: speaker=Minister Hylas
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:329
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:324
 msgid ""
 "Born twisted, I’m afraid. At the time there was no healer in Westin, and the "
 "bones set poorly.\n"
@@ -1671,7 +1654,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Minister Hylas
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:335
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:330
 msgid ""
 "I’ve long-ago accepted my impairment. But as my potential commander, you "
 "should know that it does somewhat slow my movement on the battlefield, even "
@@ -1679,7 +1662,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Minister Hylas
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:344
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:339
 msgid ""
 "Forgotten already? I can heal adjacent units for a moderate amount every "
 "turn. I wield a ranged magical attack that is highly accurate, irrespective "
@@ -1687,7 +1670,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Sir Gerrick
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:369
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:364
 msgid ""
 "Well lad, I’m a monster in melee, if you’ll forgive me the brag. My glaive "
 "hits harder than any spear, an’ my crushin’ shield bash can <i><b>slow</b></"
@@ -1695,14 +1678,14 @@ msgid ""
 msgstr ""
 
 #. [message]
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:373
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:368
 msgid ""
 "Slowed enemies move at <i><b>half speed</b></i> and deal <i><b>half damage</"
 "b></i>."
 msgstr ""
 
 #. [message]: speaker=Sir Gerrick
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:377
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:372
 msgid ""
 "An’ while my armor may be heavy an’ cumbersome, it also gives me great "
 "<i><b>resistance</b></i> against bladed or piercing weapons. If you need "
@@ -1710,12 +1693,12 @@ msgid ""
 msgstr ""
 
 #. [display_tip]
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:380
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:375
 msgid "Resistances and Damage Types"
 msgstr ""
 
 #. [display_tip]
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:382
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:377
 msgid ""
 "Each attack in Wesnoth has a damage type:\n"
 "blade, pierce, impact, fire, cold, or arcane.\n"
@@ -1729,7 +1712,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Sir Gerrick
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:399
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:394
 msgid ""
 "Well, like I said, I’ve got great damage resistance on account o’ me heavy "
 "armor, an’ I can slow enemies t’ halve both their speed an’ damage. Try not "
@@ -1737,42 +1720,42 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:417
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:412
 msgid ""
 "I’ve decided: Captain Mari, I’d like you to accompany me on our mission to "
 "the elven vale. Make ready the men — we leave at next dawn!"
 msgstr ""
 
 #. [message]: speaker=Sir Gerrick
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:421
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:416
 msgid ""
 "Good luck, Deoran an’ Mari. We’re countin’ on you to stop the bandits an’ "
 "undead!"
 msgstr ""
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:441
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:436
 msgid ""
 "I’ve decided: Minister Hylas, I’d like you to accompany me on our mission to "
 "the elven vale. Make ready the men — we leave at next dawn!"
 msgstr ""
 
 #. [message]: speaker=Sir Gerrick
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:445
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:440
 msgid ""
 "Good luck, Deoran an’ Hylas. We’re countin’ on you to stop the bandits an’ "
 "undead!"
 msgstr ""
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:465
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:460
 msgid ""
 "I’ve decided: Sir Gerrick, I’d like you to accompany me on our mission to "
 "the elven vale. Make ready the men — we leave at next dawn!"
 msgstr ""
 
 #. [message]: speaker=Mari
-#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:469
+#: data/campaigns/The_South_Guard/scenarios/02x_Westin.cfg:464
 msgid ""
 "Good luck, rookie. We’re counting on you to stop the bandits and undead!"
 msgstr ""
@@ -2260,6 +2243,7 @@ msgstr ""
 
 #. [objective]: condition=win
 #: data/campaigns/The_South_Guard/scenarios/03_Vale_of_Tears.cfg:744
+#: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:550
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:680
 #, fuzzy
 #| msgid "Survive until end of turns"
@@ -2658,7 +2642,7 @@ msgstr "Urza Afalas"
 #: data/campaigns/The_South_Guard/scenarios/04_Choice_in_the_Fog.cfg:96
 #: data/campaigns/The_South_Guard/scenarios/05b_Pebbles_in_the_Flood.cfg:46
 #: data/campaigns/The_South_Guard/scenarios/05c_Into_the_Depths.cfg:55
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:74
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:80
 msgid "Undead"
 msgstr "Vandød"
 
@@ -3503,7 +3487,7 @@ msgstr ""
 
 #. [message]: speaker=Mebrin
 #: data/campaigns/The_South_Guard/scenarios/04_Choice_in_the_Fog.cfg:974
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:729
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:739
 #, fuzzy
 #| msgid ""
 #| "You dare strike me?! Puny humans, I am darkness incarnate! I am power "
@@ -4237,7 +4221,7 @@ msgstr ""
 
 #. [objective]: condition=win
 #: data/campaigns/The_South_Guard/scenarios/05b_Pebbles_in_the_Flood.cfg:282
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:931
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:941
 msgid "Defeat Mal M’Brin"
 msgstr "Bekjemp Mal M'Brin"
 
@@ -4680,7 +4664,7 @@ msgstr ""
 #. [companion_message]
 #. [message]: speaker=Deoran
 #: data/campaigns/The_South_Guard/scenarios/05b_Pebbles_in_the_Flood.cfg:771
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:990
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:1000
 #, fuzzy
 #| msgid ""
 #| "These worthless humans just bested you and your armies. Your time has "
@@ -5017,7 +5001,7 @@ msgstr "Gjengjeldelse"
 
 #. [side]
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:63
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:47
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:53
 msgid "Aethenwood"
 msgstr ""
 
@@ -5150,8 +5134,8 @@ msgstr ""
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:490
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:554
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:684
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:512
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:935
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:522
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:945
 msgid "The town cellars are breached"
 msgstr ""
 
@@ -5159,7 +5143,7 @@ msgstr ""
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:498
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:558
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:692
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:943
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:953
 msgid "Death of Ethiliel"
 msgstr "Ethiliels død"
 
@@ -5221,8 +5205,8 @@ msgstr ""
 #. [message]: speaker=Sir Gerrick
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:532
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:615
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:372
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:434
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:378
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:440
 msgid ""
 "Aye... I’ve got most o’ the civilians safe underground in th’ cellars, with "
 "our trapdoor shut an’ barred. If we’re lucky, we can clean up this mess "
@@ -5234,7 +5218,7 @@ msgstr ""
 #. [message]: speaker=Mari
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:533
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:616
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:403
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:409
 msgid ""
 "Yeah... I’ve got most of the civilians safely underground in the cellars, "
 "with the trapdoor shut and barred. If we’re lucky, we can clean us this mess "
@@ -5256,13 +5240,6 @@ msgid ""
 "cut us down. Can’t attack, or we provoke an all-out war. Guess our only "
 "option is to hold the town and hope the elves see sense."
 msgstr ""
-
-#. [objective]: condition=win
-#: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:550
-#, fuzzy
-#| msgid "Survive until end of turns"
-msgid "Survive until turns runs out"
-msgstr "Overlev alle rundene"
 
 #. [message]: speaker=unit
 #. highlight that the similar-sounding Westin and Weldyn are different places
@@ -5404,7 +5381,7 @@ msgstr ""
 
 #. [event]
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:734
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:570
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:580
 msgid ""
 "That’s assuming Weldyn would even bother to help out a podunk like this. "
 "Capital of the southern province, sure, but that’s not saying much. Without "
@@ -5414,7 +5391,7 @@ msgstr ""
 
 #. [event]
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:735
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:571
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:581
 msgid ""
 "Even then, Westin is small and remote, and thus easy for others to overlook. "
 "Prince Arand’s ambitions for this place are the better part of the reason we "
@@ -5424,7 +5401,7 @@ msgstr ""
 
 #. [event]
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:738
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:574
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:584
 msgid ""
 "O’ course, if th’ prince had actually come here himself instead o’ spendin’ "
 "all ’is time up in Weldyn with the king, we might’ve not gotten in such "
@@ -5433,7 +5410,7 @@ msgstr ""
 
 #. [event]
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:739
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:575
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:585
 msgid ""
 "Of course, if the prince had actually come here himself instead of spending "
 "all his time up at Weldyn with the king, we might’ve not gotten in such "
@@ -5443,7 +5420,7 @@ msgstr ""
 #. [message]
 #. [message]: speaker=Deoran
 #: data/campaigns/The_South_Guard/scenarios/06a_Vengeance.cfg:811
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:666
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:676
 msgid "They’ve come around behind us! Stand fast, soldiers of the South Guard!"
 msgstr ""
 
@@ -5661,13 +5638,18 @@ msgid ""
 "Vengeance only begets more vengeance. Our attack against Westin is over."
 msgstr ""
 
+#. [objective]: condition=win
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:8
+msgid "Survive until reinforcements arrive on turn 13, then defeat Mal M’Brin"
+msgstr ""
+
 #. [scenario]: id=06b_The_Tides_of_War
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:10
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:16
 msgid "The Tides of War"
 msgstr "Krigen bølger opp"
 
 #. [message]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:359
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:365
 #, fuzzy
 #| msgid ""
 #| "Look there! The undead have broken through Sir Gerrick’s line! Alas, he "
@@ -5678,22 +5660,22 @@ msgid ""
 msgstr "Se! De vandøde har brutt gjennom Sir Gerrikks linjer! Han må ha falt!"
 
 #. [message]: speaker=Sir Gerrick
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:363
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:369
 msgid ""
 "It takes one hell of a soldier to keep on fighting’ after losin’ an arm. I "
 "wish I’d gotten to know ’er better. Now I’ll never get the chance."
 msgstr ""
 
 #. [event]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:366
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:397
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:372
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:403
 msgid ""
 "Another poor soul claimed by the spreading darkness. If only we’d had more "
 "time to prepare... but we’ve done our best."
 msgstr ""
 
 #. [event]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:367
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:373
 msgid ""
 "Another poor soul claimed by the spreading darkness. At least her sacrifice "
 "was not in vain: we’ve had sufficient time to gather most of the region’s "
@@ -5702,7 +5684,7 @@ msgid ""
 msgstr ""
 
 #. [event]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:368
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:374
 msgid ""
 "Another poor soul claimed by the spreading darkness. At least her sacrifice "
 "was not in vain: we’ve had sufficient time to gather most of the region’s "
@@ -5711,7 +5693,7 @@ msgid ""
 msgstr ""
 
 #. [event]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:369
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:375
 msgid ""
 "Another poor soul claimed by the spreading darkness. At least her sacrifice "
 "was not in vain: we’ve had sufficient time to gather, train, and equip most "
@@ -5720,7 +5702,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:376
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:382
 #, fuzzy
 #| msgid ""
 #| "So, this is it. Sir Gerrick has bought us enough time to rally our forces "
@@ -5741,16 +5723,16 @@ msgstr ""
 "våre! Vi kjemper for Sir Gerrikk! Vi kjemper for Wesnoth!"
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:380
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:411
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:442
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:386
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:417
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:448
 msgid ""
 "We must stand fast against the undead and defend our homes! We fight for the "
 "fallen! We fight for Wesnoth!"
 msgstr ""
 
 #. [message]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:390
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:396
 #, fuzzy
 #| msgid ""
 #| "Look there! The undead have broken through Sir Gerrick’s line! Alas, he "
@@ -5761,14 +5743,14 @@ msgid ""
 msgstr "Se! De vandøde har brutt gjennom Sir Gerrikks linjer! Han må ha falt!"
 
 #. [message]: speaker=Mari
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:394
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:400
 msgid ""
 "Shame. I didn’t really get a chance to know him, but I know you don’t "
 "survive to his age unless you’re one hell of a soldier. He’ll be missed."
 msgstr ""
 
 #. [event]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:398
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:404
 msgid ""
 "Another poor soul claimed by the spreading darkness. At least his sacrifice "
 "was not in vain: we’ve had sufficient time to gather most of the region’s "
@@ -5777,7 +5759,7 @@ msgid ""
 msgstr ""
 
 #. [event]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:399
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:405
 msgid ""
 "Another poor soul claimed by the spreading darkness. At least his sacrifice "
 "was not in vain: we’ve had sufficient time to gather most of the region’s "
@@ -5786,7 +5768,7 @@ msgid ""
 msgstr ""
 
 #. [event]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:400
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:406
 msgid ""
 "Another poor soul claimed by the spreading darkness. At least his sacrifice "
 "was not in vain: we’ve had sufficient time to gather, train, and equip most "
@@ -5795,7 +5777,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:407
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:413
 #, fuzzy
 #| msgid ""
 #| "So, this is it. Sir Gerrick has bought us enough time to rally our forces "
@@ -5816,7 +5798,7 @@ msgstr ""
 "våre! Vi kjemper for Sir Gerrikk! Vi kjemper for Wesnoth!"
 
 #. [message]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:421
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:427
 #, fuzzy
 #| msgid ""
 #| "Look there! The undead have broken through Sir Gerrick’s line! Alas, he "
@@ -5827,21 +5809,21 @@ msgid ""
 msgstr "Se! De vandøde har brutt gjennom Sir Gerrikks linjer! Han må ha falt!"
 
 #. [message]: speaker=Sir Gerrick
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:425
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:431
 msgid ""
 "Th’ good minister turned down the luxurious life o’ a city mage to come down "
 "’ere an’ care for us rural folk. ’e was a good man."
 msgstr ""
 
 #. [event]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:428
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:434
 msgid ""
 "Me, I’d have taken the life of luxury — but maybe the world needs crazy "
 "people like Hylas. If only we’d had more time... but we’ve done our best."
 msgstr ""
 
 #. [event]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:429
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:435
 msgid ""
 "Me, I’d have taken the life of luxury. But maybe the world needs crazy "
 "people like him — Hylas’s sacrifice bought us enough time to gather most of "
@@ -5850,7 +5832,7 @@ msgid ""
 msgstr ""
 
 #. [event]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:430
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:436
 msgid ""
 "Me, I’d have taken the life of luxury. But maybe the world needs crazy "
 "people like him — Hylas’s sacrifice bought us enough time to gather most of "
@@ -5859,7 +5841,7 @@ msgid ""
 msgstr ""
 
 #. [event]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:431
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:437
 msgid ""
 "Me, I’d have taken the life of luxury. But maybe the world needs crazy "
 "people like him — Hylas’s sacrifice bought us enough time to gather, train, "
@@ -5868,7 +5850,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:438
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:444
 #, fuzzy
 #| msgid ""
 #| "So, this is it. Sir Gerrick has bought us enough time to rally our forces "
@@ -5890,7 +5872,7 @@ msgstr ""
 
 #. [then]
 #. $pebbles_defense_length will be 11 or greater. $peasants.length and $soldiers.length will be 3 or greater
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:466
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:479
 msgid ""
 "You survived $pebbles_defense_length turns last scenario! Deoran starts\n"
 "   with $peasants.length peasants/woodsmen and $soldiers.length extra "
@@ -5899,7 +5881,7 @@ msgstr ""
 
 #. [else]
 #. $pebbles_defense_length will be between 3 and 10. $peasants.length will be 3 or greater
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:471
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:484
 msgid ""
 "You survived $pebbles_defense_length turns last scenario!\n"
 "   Deoran starts this scenario with $peasants.length extra peasants/woodsmen!"
@@ -5907,7 +5889,7 @@ msgstr ""
 
 #. [then]
 #. $pebbles_defense_length will be 37 or greater. $soldiers.length will be around 12-14 or greater
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:482
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:495
 msgid ""
 "You survived $pebbles_defense_length turns last scenario! Deoran starts\n"
 "   with $soldiers.length extra soldiers and "
@@ -5916,7 +5898,7 @@ msgstr ""
 
 #. [else]
 #. $pebbles_defense_length will be 3 or greater. $soldiers.length will be 3 or greater
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:487
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:500
 msgid ""
 "You survived $pebbles_defense_length turns last scenario!\n"
 "   Deoran starts this scenario with $soldiers.length extra soldiers."
@@ -5924,21 +5906,14 @@ msgstr ""
 
 #. [else]
 #. $pebbles_defense_length will be less than 3
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:494
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:507
 msgid ""
 "You survived only $pebbles_defense_length turns last scenario.\n"
 "   Deoran has not had time to prepare additional defenders."
 msgstr ""
 
-#. [objective]: condition=win
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:508
-msgid ""
-"Survive until reinforcements arrive on turn {TURN_LIMIT}, then defeat Mal "
-"M’Brin"
-msgstr ""
-
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:532
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:542
 #, fuzzy
 #| msgid ""
 #| "So, the fleshbags have managed to mount a defense. It would seem that the "
@@ -5952,7 +5927,7 @@ msgstr ""
 "likevel."
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:536
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:546
 #, fuzzy
 #| msgid ""
 #| "Slay them all! Even if we sustain heavy losses here, the city’s "
@@ -5965,22 +5940,22 @@ msgstr ""
 "enn nok til å fylle opp rekkene våre."
 
 #. [event]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:548
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:558
 msgid "For mistress Mari! For all the fallen!"
 msgstr ""
 
 #. [event]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:549
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:559
 msgid "For master Gerrick! For all the fallen!"
 msgstr ""
 
 #. [event]
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:550
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:560
 msgid "For master Hylas! For all the fallen!"
 msgstr ""
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:566
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:576
 msgid ""
 "If only Ethiliel had not fled! I curse our isolation, so far removed from "
 "the great cities of the north. The capital garrison alone would make short "
@@ -5988,7 +5963,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:586
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:596
 #, fuzzy
 #| msgid ""
 #| "The shroud of darkness descends once more. Night seeps through the cracks "
@@ -6009,7 +5984,7 @@ msgstr ""
 "trelldom."
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:590
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:600
 #, fuzzy
 #| msgid ""
 #| "We do not fear your unholy power, lich. We will not succumb to your dark "
@@ -6022,12 +5997,12 @@ msgstr ""
 "din mørke magi, og vi vil ikke bli forvandlet til dine vandøde slaver."
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:594
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:604
 msgid "Believe what you will, human. We shall see if you survive the night."
 msgstr "Tro hva du vil, menneske. Vi får se om du overlever natten."
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:601
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:611
 #, fuzzy
 #| msgid ""
 #| "Dawn breaks over the horizon! We have weathered the night and can now "
@@ -6038,7 +6013,7 @@ msgstr ""
 "motangrepet mot de vandøde!"
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:683
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:693
 msgid ""
 "Hold fast, men of the South Guard! No matter how daunting the evil that "
 "opposes us, we must weather this darkness and defend our homes!"
@@ -6047,7 +6022,7 @@ msgstr ""
 "imot oss er, må vi stå imot dette mørket og forsvare våre hjem!"
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:687
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:697
 msgid ""
 "Fool boy, you overestimate the strength of these decrepit peasants that you "
 "call soldiers. The rivers will run red with your blood! The smoke and ashes "
@@ -6060,7 +6035,7 @@ msgstr ""
 "deres knokler reise seg igjen for å tjene meg!"
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:704
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:714
 #, fuzzy
 #| msgid ""
 #| "So, you have defeated my lackey. A great accomplishment, for ones so "
@@ -6071,7 +6046,7 @@ msgstr ""
 "Så du har beseiret håndlangeren min. En stor bragd, for en som er så ynkelig."
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:708
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:718
 #, fuzzy
 #| msgid ""
 #| "What is truly pitiful is the plight you have put yourself in, once wise "
@@ -6095,7 +6070,7 @@ msgstr ""
 "slutt på lidelsene dine."
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:712
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:722
 #, fuzzy
 #| msgid ""
 #| "How little you understand. Such pompous words do not befit such an "
@@ -6111,31 +6086,31 @@ msgstr ""
 "dere, mine krigere!"
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:742
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:752
 msgid ""
 "Ungrateful elves! I offer you secrets beyond your comprehension! I offer you "
 "immortality itself!"
 msgstr ""
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:796
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:806
 msgid "Did you hear that!? There are horns blowing in the west!"
 msgstr ""
 
 #. [message]: speaker=Ethiliel
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:821
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:831
 msgid "Mebrin! This has gone far enough."
 msgstr ""
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:825
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:835
 msgid ""
 "Ethiliel, my student... How pleased am I to see you again! What wonderful "
 "secrets have I to share..."
 msgstr ""
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:829
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:839
 msgid ""
 "I have touched the void at the heart of all things, and I have begun to "
 "probe the mystic arts far beyond what any living elf knows. There is "
@@ -6144,7 +6119,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Ethiliel
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:833
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:843
 #, fuzzy
 #| msgid ""
 #| "Surely you see it! Take a good look at yourself! Your servants are "
@@ -6164,7 +6139,7 @@ msgstr ""
 "vismennene. Hvordan kunne du bli noe sånt som dette? Mebrin, svar meg!"
 
 #. [message]: speaker=Ethiliel
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:837
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:847
 #, fuzzy
 #| msgid ""
 #| "No... No. The sage Mebrin is dead. You are not the master I once revered. "
@@ -6177,7 +6152,7 @@ msgstr ""
 "æret. Jeg skal rense din sjel og gi deg hvile, min elskede lærer."
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:841
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:851
 msgid ""
 "Is that why you returned? Bah, I see you still have much foolishness to be "
 "rid of. I shall deal with you personally. You were always more of a hands-on "
@@ -6185,7 +6160,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Ethiliel
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:912
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:922
 msgid ""
 "Deoran, Mebrin is as much my people’s fault as he is yours. Forgive me for "
 "my cowardice at the river. With me come warriors of the Aethenwood — "
@@ -6193,7 +6168,7 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:958
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:968
 #, fuzzy
 #| msgid ""
 #| "Join me! Stand by my side! We shall rise and eradicate the humans from "
@@ -6212,7 +6187,7 @@ msgstr ""
 "fortjener å være!"
 
 #. [message]: speaker=Ethiliel
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:962
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:972
 #, fuzzy
 #| msgid ""
 #| "And when that is done, what will we have become? Naught but hungering "
@@ -6225,7 +6200,7 @@ msgstr ""
 "som sluker alt vi en gang verdsatte."
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:966
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:976
 #, fuzzy
 #| msgid ""
 #| "Even a mere human can see that you have become a mockery of all that you "
@@ -6241,7 +6216,7 @@ msgstr ""
 "idealer, selv om det koster meg livet!"
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:970
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:980
 #, fuzzy
 #| msgid ""
 #| "You? Destroy me? Your flesh will provide a fine feast for my ghouls, and "
@@ -6256,7 +6231,7 @@ msgstr ""
 "evighet!"
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:986
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:996
 #, fuzzy
 #| msgid ""
 #| "Fools! Imbeciles! You humans are a worthless blight upon this wretched "
@@ -6271,19 +6246,19 @@ msgstr ""
 "må..."
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:994
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:1004
 msgid ""
 "I curse you, Deoran of Wesnoth! I curse you... may you one day know the same "
 "pain that your kind have inflicted on me..."
 msgstr ""
 
 #. [message]: speaker=Deoran
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:1000
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:1010
 msgid "At long last, it is done."
 msgstr "Omsider er det gjort."
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:1021
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:1031
 #, fuzzy
 #| msgid ""
 #| "Ethiliel! Wait... think about it! Think of everything you are throwing "
@@ -6299,7 +6274,7 @@ msgstr ""
 "udødelige herskere!"
 
 #. [message]: speaker=Ethiliel
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:1025
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:1035
 #, fuzzy
 #| msgid ""
 #| "It would only be an empire of misery, Mebrin. I wish it had not come to "
@@ -6315,7 +6290,7 @@ msgstr ""
 "verdsette minnene jeg hadde med den gamle deg."
 
 #. [message]: speaker=Mebrin
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:1029
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:1039
 #, fuzzy
 #| msgid ""
 #| "You wouldn’t dare strike me! I am the darkness incarnate! I am your "
@@ -6328,7 +6303,7 @@ msgstr ""
 "adlyde meg!"
 
 #. [message]: speaker=Ethiliel
-#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:1035
+#: data/campaigns/The_South_Guard/scenarios/06b_The_Tides_of_War.cfg:1045
 msgid "Goodbye, Mebrin."
 msgstr "Farvel, Merbin."
 
@@ -7285,7 +7260,7 @@ msgid ""
 "Wesnoth is a game about flexible strategy,\n"
 "not deterministic calculation.\n"
 "Anyone can win when things go as planned.\n"
-"Wesnoth’s skill & mastery lie in creating\n"
+"Wesnoth’s skill &amp; mastery lie in creating\n"
 "a strategy that <i><b>mitigates bad luck</b></i>, while\n"
 "simultaneously <i><b>exploits good luck</b></i>. Both\n"
 "bad and good luck are inevitable, so be \n"
@@ -7497,6 +7472,16 @@ msgstr ""
 "dem spredte den dunkle skyggen seg utover fra skogen, en unaturlig "
 "forlengelse av kreftene som lå der inne. Den kom raskt nærmere, og det "
 "uhyggelige mørket krøp mot mennene i sørgarden."
+
+#, fuzzy
+#~| msgid "The South Guard"
+#~ msgid "The South Guard — Start Here"
+#~ msgstr "Sørgarden"
+
+#, fuzzy
+#~| msgid "Survive until end of turns"
+#~ msgid "Survive until turns runs out"
+#~ msgstr "Overlev alle rundene"
 
 #, fuzzy
 #~| msgid "Sir Gerrick"

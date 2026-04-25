@@ -1,11 +1,11 @@
-# Michal Žejdl <lachim@emer.cz>, 2025
+# Michal Žejdl <lachim@emer.cz>, 2025, 2026
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Battle for Wesnoth\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2026-02-26 01:03 UTC\n"
-"PO-Revision-Date: 2025-12-24 08:28+0100\n"
+"POT-Creation-Date: 2026-04-20 03:20 UTC\n"
+"PO-Revision-Date: 2026-03-15 19:16+0100\n"
 "Last-Translator: Michal Žejdl <lachim@emer.cz>\n"
 "Language-Team: Czech https://wiki.wesnoth.org/CzechTranslation\n"
 "Language: cs\n"
@@ -37,8 +37,12 @@ msgstr ""
 
 #. [campaign]: id=Dusk_of_Dawn
 #: data/campaigns/Dusk_of_Dawn/_main.cfg:20
+#, fuzzy
+#| msgid ""
+#| "This is an exerpt from the Book of Crelanu, as transcribed by the Weldyn "
+#| "Royal Scholars Society."
 msgid ""
-"This is an exerpt from the Book of Crelanu, as transcribed by the Weldyn "
+"This is an excerpt from the Book of Crelanu, as transcribed by the Weldyn "
 "Royal Scholars Society."
 msgstr ""
 "Toto je úryvek z Krelanovy knihy, jak jej přepsala Weldynská královská "
@@ -1611,12 +1615,17 @@ msgstr ""
 msgid "Ougl...!"
 msgstr ""
 
+#. [message]: speaker=narrator
+#: data/campaigns/Dusk_of_Dawn/utils/items.cfg:23
+msgid "Should $unit.name| drink the potion?"
+msgstr ""
+
 #. [message]: speaker=$unit.id|
 #. [message]: speaker=narrator
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:24
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:47
 msgid "Potion grants steadfast ability and 20% resistance to impact."
-msgstr ""
+msgstr "Lektvar poskytuje schopnost vytrvalosti a 20% odolnost proti úderu."
 
 #. [option]
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:26
@@ -1633,7 +1642,7 @@ msgstr ""
 #. [object]: id={ID}
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:32
 msgid "A potion of unknown origin."
-msgstr ""
+msgstr "Lektvar neznámého původu."
 
 #. [message]: speaker=$unit.id|
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:48
@@ -1647,42 +1656,52 @@ msgstr ""
 msgid "No"
 msgstr ""
 
+#. [message]: speaker=narrator
+#: data/campaigns/Dusk_of_Dawn/utils/items.cfg:99
+msgid "Should $unit.name| take the branch?"
+msgstr ""
+
 #. [message]: speaker=$unit.id|
 #. [message]: speaker=narrator
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:100
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:123
 msgid "This magical branch grants +2 damage to melee attacks."
-msgstr ""
+msgstr "Tato kouzelná větev dává +2 ke zranění při útocích zblízka."
 
 #. [object]: id={ID}
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:106
 msgid "Wose Branch"
-msgstr ""
+msgstr "Stromova větev"
 
 #. [object]: id={ID}
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:108
 msgid "The magical branch of some great Wose."
+msgstr "Kouzelná větev nějakého velkého stromového muže."
+
+#. [message]: speaker=narrator
+#: data/campaigns/Dusk_of_Dawn/utils/items.cfg:170
+msgid "Should $unit.name| touch the monolith?"
 msgstr ""
 
 #. [message]: speaker=narrator
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:171
 msgid "This unit will gain the stun weapon special on melee attacks."
-msgstr ""
+msgstr "Tato jednotka získá pro zbraň zvláštnost omráčení při útocích zblízka."
 
 #. [object]: id={ID}
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:177
 msgid "Echoes of the Earth"
-msgstr ""
+msgstr "Ozvěny země"
 
 #. [object]: id={ID}
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:179
 msgid "Powerful echoes from the bowels of the earth."
-msgstr ""
+msgstr "Mocná ozvěna z útrob země."
 
 #. [message]: speaker=$unit.id|
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:191
 msgid "The unit gains the stun weapon special on melee attacks."
-msgstr ""
+msgstr "Jednotka získává pro zbraň zvláštnost omráčení při útocích zblízka."
 
 #. [message]: speaker=narrator
 #: data/campaigns/Dusk_of_Dawn/utils/items.cfg:209
@@ -1690,6 +1709,8 @@ msgid ""
 "After $unit.name| absorbed the stone’s power, the monolith lost its magical "
 "properties."
 msgstr ""
+"Poté, co $unit.name| vstřebal/a sílu kamene, monolit ztratil své kouzelné "
+"vlastnosti."
 
 #. [time]: id=lava
 #: data/campaigns/Dusk_of_Dawn/utils/schedules.cfg:6
@@ -1704,9 +1725,9 @@ msgstr ""
 #. [chance_to_hit]: id=unerring
 #: data/campaigns/Dusk_of_Dawn/utils/weapon_specials.cfg:6
 msgid "unerring"
-msgstr ""
+msgstr "jistý"
 
 #. [chance_to_hit]: id=unerring
 #: data/campaigns/Dusk_of_Dawn/utils/weapon_specials.cfg:7
 msgid "This attack never misses."
-msgstr ""
+msgstr "Tento útok nikdy nemine."

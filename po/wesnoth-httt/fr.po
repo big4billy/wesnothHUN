@@ -27,44 +27,32 @@ msgstr ""
 #. [achievement_group]
 #: data/campaigns/Heir_To_The_Throne_Classic/_main.cfg:12
 #: data/campaigns/Heir_To_The_Throne_Classic/achievements.cfg:3
-#, fuzzy
 msgid "Heir to the Throne, Classic"
 msgstr "L'Héritier du trône, classique"
 
 #. [campaign]: id=Heir_To_The_Throne_Classic
 #: data/campaigns/Heir_To_The_Throne_Classic/_main.cfg:15
 msgid "HttTC"
-msgstr "HdT"
+msgstr "HdTC"
 
 #. [campaign]: id=Heir_To_The_Throne_Classic
 #: data/campaigns/Heir_To_The_Throne_Classic/_main.cfg:22
-#, fuzzy
-#| msgid ""
-#| "Fight to regain the throne of Wesnoth, of which you are the legitimate "
-#| "heir.\n"
-#| "\n"
 msgid ""
 "Fight to regain the throne of Wesnoth, of which you are the legitimate heir."
 msgstr ""
 "Battez-vous pour reconquérir le trône de Wesnoth qui vous revient "
-"légitimement.\n"
-"\n"
+"légitimement."
 
 #. [campaign]: id=Heir_To_The_Throne_Classic
 #: data/campaigns/Heir_To_The_Throne_Classic/_main.cfg:24
-#, fuzzy
 msgid ""
 "This is the original version of this classic campaign, preserved for "
 "historical reasons. Also optionally includes the old <i>Battle Training</i> "
 "tutorial."
 msgstr ""
-"Combattez pour reconquérir le trône de Wesnoth, dont vous êtes l'héritier "
-"légitime.\n"
-"\n"
 "Voici la version originale de cette campagne classique, conservée pour des "
 "raisons historiques. Inclut également, en option, l'ancien tutoriel "
-"d'<i>entraînement au combat</i>.\n"
-"\n"
+"d'<i>entraînement au combat</i>."
 
 #. [campaign]: id=Heir_To_The_Throne_Classic
 #: data/campaigns/Heir_To_The_Throne_Classic/_main.cfg:26
@@ -117,7 +105,7 @@ msgstr "Maintenance de la campagne"
 #. [about]
 #: data/campaigns/Heir_To_The_Throne_Classic/_main.cfg:56
 msgid "Artwork and Graphics Design"
-msgstr "Conception graphique"
+msgstr "Conception graphique et artistique"
 
 #. [about]
 #: data/campaigns/Heir_To_The_Throne_Classic/_main.cfg:80
@@ -127,12 +115,12 @@ msgstr "Divers"
 #. [achievement]: id=completed
 #: data/campaigns/Heir_To_The_Throne_Classic/achievements.cfg:7
 msgid "Trained for Battle"
-msgstr ""
+msgstr "Formé au combat"
 
 #. [achievement]: id=completed
 #: data/campaigns/Heir_To_The_Throne_Classic/achievements.cfg:8
 msgid "Complete the old <i>Battle Training</i> tutorial."
-msgstr ""
+msgstr "Terminer l’ancien tutoriel d’entraînement au combat."
 
 #. [scenario]: id=01_The_Elves_Besieged
 #: data/campaigns/Heir_To_The_Throne_Classic/scenarios/01_The_Elves_Besieged.cfg:4
@@ -142,7 +130,7 @@ msgstr "Les Elfes assiégés"
 #. [objective]: condition=win
 #: data/campaigns/Heir_To_The_Throne_Classic/scenarios/01_The_Elves_Besieged.cfg:33
 msgid "Move Konrad to the signpost in the northwest"
-msgstr "Déplacer Konrad jusqu'au panneau au nord-ouest"
+msgstr "Déplacer Konrad jusqu'au panneau au Nord-Ouest"
 
 #. [objective]: condition=lose
 #: data/campaigns/Heir_To_The_Throne_Classic/scenarios/01_The_Elves_Besieged.cfg:37
@@ -580,7 +568,7 @@ msgstr ""
 #. [scenario]: id=02_Blackwater_Port
 #: data/campaigns/Heir_To_The_Throne_Classic/scenarios/02_Blackwater_Port.cfg:4
 msgid "scenario name^Blackwater Port"
-msgstr "scenario name^Le Port d'Aiguenoire"
+msgstr "Le Port d'Aiguenoire"
 
 #. [objective]: condition=win
 #: data/campaigns/Heir_To_The_Throne_Classic/scenarios/02_Blackwater_Port.cfg:21
@@ -8805,10 +8793,6 @@ msgstr ""
 
 #. [message]: speaker=Li'sar
 #: data/campaigns/Heir_To_The_Throne_Classic/scenarios/24_Battle_for_Wesnoth.cfg:238
-#, fuzzy
-#| msgid ""
-#| "Surrender, mother. The land’s blood is spent. I have come to take my "
-#| "rightful place."
 msgid ""
 "Surrender, Mother. The land’s blood is spent. I have come to take my "
 "rightful place."
@@ -9240,7 +9224,6 @@ msgstr "Orc des mers"
 
 #. [unit_type]: id=Sea Orc, race=orc
 #: data/campaigns/Heir_To_The_Throne_Classic/units/Sea_Orc.cfg:32
-#, fuzzy
 msgid ""
 "While often viewed as inferior to their land-loving counterparts, Sea Orcs "
 "represent a great leap for all orcs and goblins as they have adapted to "
@@ -9280,13 +9263,11 @@ msgstr ""
 
 #. [firststrike]: id=initiative
 #: data/campaigns/Heir_To_The_Throne_Classic/utils/abilities.cfg:8
-#, fuzzy
 msgid "first strike"
 msgstr "première frappe"
 
 #. [firststrike]: id=initiative
 #: data/campaigns/Heir_To_The_Throne_Classic/utils/abilities.cfg:9
-#, fuzzy
 msgid ""
 "When under initiative influence, this unit always strikes first when "
 "attacked by melee weapon, even if they are defending."
