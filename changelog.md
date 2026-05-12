@@ -2,17 +2,22 @@
 ### Add-ons client
 ### Add-ons server
 ### Campaigns
+   * The South Guard
+     * S04 "Choice in the Fog": both choices should now be more similar in difficulty
+     * S06a "Vengeance": increased the survival turns, but decreased initial enemy gold/units.
 ### Editor
 ### Multiplayer
+   * Added new "Undead Siege" song by Tomek Szczęsny.
 ### Lua API
 ### Packaging
 ### Terrain
 ### Translations
-   * Updated translations: British English, French, German, Italian, Spanish
+   * Updated translations: Bengali, British English, Czech, French, German, Italian, Portuguese (Brazil), Spanish
 ### Units
 ### User interface
 ### WML Engine
 ### Miscellaneous and Bug Fixes
+   * Resolved not all translations being available for selection on Windows builds. (GitHub #11112)
 
 ## Version 1.19.23
 ### Campaigns
