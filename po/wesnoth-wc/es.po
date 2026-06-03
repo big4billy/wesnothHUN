@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wesnoth-wc\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2026-02-26 01:04 UTC\n"
+"POT-Creation-Date: 2026-05-19 02:15 UTC\n"
 "PO-Revision-Date: 2026-03-04 20:21-0300\n"
 "Last-Translator: Sebastián Lecchini <sebas38760@gmail.com>\n"
 "Language-Team: es\n"
@@ -161,7 +161,7 @@ msgid "The Hand"
 msgstr "La mano"
 
 #. [world_conquest_data]
-#: data/campaigns/World_Conquest/era/factions/The_Hand.cfg:17
+#: data/campaigns/World_Conquest/era/factions/The_Hand.cfg:16
 msgid "Dune Rider, Knalgan Alliance and Drakes"
 msgstr "Jinete barján, Alianza Knalga y Dracos"
 
@@ -2468,7 +2468,7 @@ msgid "Enemies"
 msgstr "Enemigos"
 
 #. [lua]: add_player_side
-#: data/campaigns/World_Conquest/lua/map/scenario_utils/side_definitions.lua:60
+#: data/campaigns/World_Conquest/lua/map/scenario_utils/side_definitions.lua:61
 msgid "Allies"
 msgstr "Aliados"
 

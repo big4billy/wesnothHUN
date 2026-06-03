@@ -1,23 +1,52 @@
-## Version 1.19.23+dev
+## Version 1.19.24+dev
 ### Add-ons client
 ### Add-ons server
 ### Campaigns
-   * The South Guard
-     * S04 "Choice in the Fog": both choices should now be more similar in difficulty
-     * S06a "Vengeance": increased the survival turns, but decreased initial enemy gold/units.
+   * Heir to the Throne
+     * S01 "The Elves Besieged": reduced starting gold, but added gold pickups near enemy keeps. Added more swamp hexes.
+     * S03 "Blackwater Port": added a secondary, coastal entry point for this scenario, so Konrad can make better use of Merfolk if he has them.
+     * S10 "The Siege of Elensefar": rebalanced gold, income, and AI. Maddock's AI is now less likely to defend unthreatened bridges or idle his ships.
+     * On the overworld, the waters around Elensefar now better connect to the rest of the passable coast.
+     * After completing either Elensefar scenario, Elensefar now provides Konrad with a port on the overworld.
+     * Slightly increased Li'sar's hitpoints. Li'sar "march" ability is no longer hidden.
+   * The Deceivers Gambit
+     * S08 "Ruins of Saurgrath", S10 "Houses of the Dead": spell selection is now delayed until Delfador learns what kind of enemies he's fighting.
 ### Editor
 ### Multiplayer
-   * Added new "Undead Siege" song by Tomek Szczęsny.
 ### Lua API
 ### Packaging
 ### Terrain
 ### Translations
-   * Updated translations: Bengali, British English, Czech, French, German, Italian, Portuguese (Brazil), Spanish
+   * Updated translations: Bengali, British English, French, German, Italian, Polish, Spanish
 ### Units
 ### User interface
 ### WML Engine
 ### Miscellaneous and Bug Fixes
+### Android
+
+## Version 1.19.24
+### Campaigns
+   * The South Guard
+     * S04 "Choice in the Fog": both choices should now be more similar in difficulty
+     * S06a "Vengeance": increased the survival turns, but decreased initial enemy gold/units.
+   * Heir to the Throne
+     * S07 "Muff Malal's Peninsula": fixed incorrect portrait for Muff Malal in the time over event.
+     * S28 "The Lost General": fixed "Cavefish" achievement triggering if you didn't recruit/recall any units at all.
+     * S50 "The Battle For Wesnoth": Asheviere should now more intelligently resist assassination strategies.
+     * S50 "The Battle For Wesnoth": fix "Canon" achievement being awarded even if you hadn't played "The Dwarven Doors".
+     * Fix replays with Li'sar's Heavy Infantrymen causing desyncs.
+   * The Deceivers Gambit
+     * S04 "The Sylvan Seer": use new Silverback image from Renlie_Cocoa.
+### Multiplayer
+   * Added new "Undead Siege" song by Tomek Szczęsny.
+### Translations
+   * Updated translations: Bengali, British English, Czech, French, German, Italian, Polish, Portuguese (Brazil), Spanish
+### Miscellaneous and Bug Fixes
    * Resolved not all translations being available for selection on Windows builds. (GitHub #11112)
+   * Fixed movement and attacks remaining not being reset after undoing a recall.
+   * Fixed intermittent crashes due to using an invalid cache reference.
+### Android
+   * Fixed automatic language selection not working.
 
 ## Version 1.19.23
 ### Campaigns

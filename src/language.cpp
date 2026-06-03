@@ -35,6 +35,11 @@ extern "C" int _putenv(const char*);
 #include <cerrno>
 #endif
 
+#ifdef __ANDROID__
+#include <SDL2/SDL_system.h> // For SDL Android functions
+#include <jni.h>
+#endif
+
 #define DBG_G LOG_STREAM(debug, lg::general())
 #define LOG_G LOG_STREAM(info, lg::general())
 #define WRN_G LOG_STREAM(warn, lg::general())
@@ -46,6 +51,9 @@ namespace {
 	std::vector<language_def> known_languages;
 	utils::string_map strings_;
 	int min_translation_percent = 80;
+	// a storage for looking up active translation name
+	// corresponding to a locale id for locale ids that Wesnoth supports.
+	std::map<std::string, std::string> translation_names;
 }
 
 bool load_strings(bool complain);
@@ -53,6 +61,17 @@ bool load_strings(bool complain);
 bool language_def::operator== (const language_def& a) const
 {
 	return ((language == a.language) /* && (localename == a.localename) */ );
+}
+
+std::string language_def::short_localename() const {
+	std::string::size_type index = localename.find(
+#ifdef _WIN32
+		'-'
+#else
+		'_'
+#endif
+	);
+	return index == std::string::npos ? localename : localename.substr(0, index);
 }
 
 bool& time_locale_correct()
@@ -111,6 +130,12 @@ language_def::language_def(const config& cfg)
 	, rtl(cfg["dir"] == "rtl")
 	, percent(cfg["percent"].to_int())
 {
+	// entry for main language in the locale id and name map
+	translation_names.emplace(localename, language);
+
+	for(const auto& alternate : alternates) {
+		translation_names.emplace(alternate, language);
+	}
 }
 
 bool load_language_list()
@@ -151,6 +176,12 @@ std::vector<language_def> get_languages(bool all)
 
 	LOG_G << "Found " << result.size() << " sufficiently translated languages";
 	return result;
+}
+
+std::string get_translation_name(const std::string& locale_id)
+{
+	auto itor = translation_names.find(locale_id);
+	return itor != translation_names.end() ? itor->second : "";
 }
 
 int get_min_translation_percent()
@@ -232,16 +263,33 @@ void set_language(const language_def& locale)
 {
 	strings_.clear();
 
-	std::string locale_lc;
-	locale_lc.resize(locale.localename.size());
-	std::transform(locale.localename.begin(), locale.localename.end(), locale_lc.begin(), tolower);
-
 	current_language = locale;
 	time_locale_correct() = true;
 
-	wesnoth_setlocale(LC_COLLATE, locale.localename, &locale.alternates);
-	wesnoth_setlocale(LC_TIME, locale.localename, &locale.alternates);
-	translation::set_language(locale.localename, &locale.alternates);
+	std::string localename = locale.localename;
+
+#ifdef __ANDROID__
+	if (locale.localename.empty()) {
+		JNIEnv* env = reinterpret_cast<JNIEnv*>(SDL_AndroidGetJNIEnv());
+		jobject wesnoth_instance = reinterpret_cast<jobject>(SDL_AndroidGetActivity());
+		jclass wesnoth_activity(env->GetObjectClass(wesnoth_instance));
+		jmethodID locale = env->GetMethodID(wesnoth_activity, "getLocaleCode", "()Ljava/lang/String;");
+		jstring lcode = reinterpret_cast<jstring>(env->CallObjectMethod(wesnoth_instance, locale));
+		localename = env->GetStringUTFChars(lcode, nullptr);
+
+		if(env->ExceptionCheck() == JNI_TRUE) {
+			env->ExceptionDescribe();
+			env->ExceptionClear();
+		}
+
+		env->DeleteLocalRef(wesnoth_instance);
+		env->DeleteLocalRef(wesnoth_activity);
+	}
+#endif
+
+	wesnoth_setlocale(LC_COLLATE, localename, &locale.alternates);
+	wesnoth_setlocale(LC_TIME, localename, &locale.alternates);
+	translation::set_language(localename, &locale.alternates);
 	load_strings(false);
 }
 

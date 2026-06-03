@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wesnoth-1.12\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2026-04-19 22:20-0500\n"
+"POT-Creation-Date: 2026-05-18 21:15-0500\n"
 "PO-Revision-Date: 2024-01-13 10:33+0100\n"
 "Last-Translator: demario\n"
 "Language-Team: French <>\n"
@@ -72,7 +72,6 @@ msgstr "Afficher les icônes dans le gestionnaire d’extensions"
 
 #. [advanced_preference]: type=boolean
 #: data/advanced_preferences.cfg:27
-#, fuzzy
 msgid ""
 "Disabling saves bandwidth by not sending icons for the add-ons list in the "
 "add-ons manager"
@@ -271,19 +270,19 @@ msgstr "Afficher l’indicateur d’échec de l’attaque"
 
 #. [advanced_preference]: type=boolean
 #: data/advanced_preferences.cfg:193
-#, fuzzy
 msgid "Display a visual indicator above a defender when an attack misses."
 msgstr ""
 "Afficher un indicateur visuel sur le défenseur lorsqu’une attaque échoue."
 
+# Voir https://fr.wikipedia.org/wiki/Single_instruction_multiple_data
 #. [advanced_preference]: type=boolean
 #: data/advanced_preferences.cfg:200
+#, fuzzy
 msgid "SIMD acceleration"
-msgstr ""
+msgstr "Accélération SIMD"
 
 #. [advanced_preference]: type=boolean
 #: data/advanced_preferences.cfg:201
-#, fuzzy
 msgid ""
 "Use hardware acceleration (SSE2/NEON) for faster image processing on the "
 "CPU. Try disabling this if you experience graphical glitches or crashes."
@@ -328,43 +327,43 @@ msgstr "Fermer"
 
 #. [language]
 #: data/campaigns/World_Conquest/resources/strings/mainline.cfg:76
-#: data/english.cfg:26
+#: data/english.cfg:31
 msgid "blade"
 msgstr "tranchant"
 
 #. [language]
 #: data/campaigns/World_Conquest/resources/strings/mainline.cfg:79
-#: data/english.cfg:29
+#: data/english.cfg:34
 msgid "fire"
 msgstr "feu"
 
 #. [language]
 #: data/campaigns/World_Conquest/resources/strings/mainline.cfg:82
-#: data/english.cfg:30
+#: data/english.cfg:35
 msgid "cold"
 msgstr "froid"
 
 #. [language]
 #: data/campaigns/World_Conquest/resources/strings/mainline.cfg:85
-#: data/english.cfg:27
+#: data/english.cfg:32
 msgid "pierce"
 msgstr "perforant"
 
 #. [language]
 #: data/campaigns/World_Conquest/resources/strings/mainline.cfg:88
-#: data/english.cfg:28
+#: data/english.cfg:33
 msgid "impact"
 msgstr "contondant"
 
 #. [language]
 #: data/campaigns/World_Conquest/resources/strings/mainline.cfg:91
-#: data/english.cfg:22
+#: data/english.cfg:27
 msgid "melee"
 msgstr "corps à corps"
 
 #. [language]
 #: data/campaigns/World_Conquest/resources/strings/mainline.cfg:94
-#: data/english.cfg:23
+#: data/english.cfg:28
 msgid "ranged"
 msgstr "à distance"
 
@@ -1734,10 +1733,12 @@ msgstr ""
 msgid "This unit has been renamed to: "
 msgstr "Cette unité a été renommée : "
 
+# De #wesnoth-help
 #. [chance_to_hit]: id=deflect
 #: data/core/macros/deprecated-utils.cfg:124
+#, fuzzy
 msgid "deflect"
-msgstr ""
+msgstr "esquive"
 
 #. [chance_to_hit]: id=deflect
 #: data/core/macros/deprecated-utils.cfg:125
@@ -1758,10 +1759,13 @@ msgstr ""
 "Les techniques défensives de cette unité réduisent les chances qu’une "
 "attaque ennemie réussisse."
 
+# De #wesnoth-help
+# Dans #wesnoth-tdg, absorption est la traduction de "consume"
 #. [damage]: id=absorb
 #: data/core/macros/deprecated-utils.cfg:139
+#, fuzzy
 msgid "absorb"
-msgstr ""
+msgstr "amortissement"
 
 #. [damage]: id=absorb
 #: data/core/macros/deprecated-utils.cfg:140
@@ -2745,6 +2749,7 @@ msgstr ""
 
 #. Generator for ship names
 #: data/core/macros/names.cfg:251
+#, fuzzy
 msgid ""
 "\n"
 "main={prefix} {starting_consonnant}{vowel}{consonnant}{vowel}"
@@ -2760,6 +2765,20 @@ msgid ""
 "ending_consonnant=yan|oic|ell|yll|tar|sh\n"
 "ending_vowel=a|ae|o|u\n"
 msgstr ""
+"\n"
+"main={starting_consonnant}{vowel}{consonnant}{vowel}{ending_consonnant} "
+"{prefix}|{starting_vowel}{consonnant}{ending_vowel}|{starting_vowel}"
+"{consonnant}{vowel}{ending_consonnant} {prefix}|{starting_consonnant}{vowel}"
+"{ending_consonnant}|{starting_vowel}{consonnant}{vowel}{consonnant}"
+"{ending_vowel} {prefix}\n"
+"prefix=la Bénie|la Dorée|l'Intrépide|la Puissance|la Chance|la Doyenne|la "
+"Valiance\n"
+"starting_consonnant=B|C|Cr|D|F|G|H|Kh|L|M|N|P|R|S|T|Th|V\n"
+"starting_vowel=A|E|I|O|U\n"
+"consonnant=b|br|ch|d|dr|g|gr|gh|kh|m|n|p|pr|r|s|sh|t|v|ol|z|vr|khr|shn\n"
+"vowel=a|ae|é|i|o|u\n"
+"ending_consonnant=yan|oic|ell|yll|tar|sh\n"
+"ending_vowel=a|ae|o|u\n"
 
 #: data/core/macros/names.cfg:264
 msgid ""
@@ -2832,9 +2851,9 @@ msgstr ""
 msgid "Bal,Cam,Corn,Del,Earl,El,Fox,Fren,Gel,Hel,Hex,Hol,Hox,Il,Kin,Nam,Nes,New,Ol,Old,Olf,Oul,Ox,Rock,Rook,Sal,Sam,Sed,Sel,Sen,Sil,Tal,Water,Wet,York"
 msgstr "Alain,Ange,Ami,Aigle,Ay,Bert,Bleu,Bac,Bec,Boeuf,Bain,Blanc,Beau,Bouc,By,Daim,Dur,Dru,Don,Demi,Croix,Cerf,Dune,Dieu,Eu,Euil,Elfe,Ey,Feu,Frai,Faucon,Fou,Four,Feld,Fût,Franc,Flanc,Gas,Glace,Heim,Hai,Ivry,Ixelle,Joli,Jean,Lai,Luc,Lave,Long,Mâche,Mas,Mire,My,Mesnil,Neuil,Noir,Nasse,Noble,Nain,Orc,Puis,Prie,Pas,Quer,Robert,Rouge,Oul,Oô,Ois,Oï,Oeil,Paul,Pau,Pin,Roc,Ré,Réa,Sô,Roy,Serin,Sire,Serpe,Tot,Ténu,Ter,Tors,Us,Val,Vin,Veau,Vert,Wy,Ys,Yvel,Xavier"
 
-# Je pense que l'ancien système de liste de noms de base a été abandonné, au profit d'une grammaire, plus souple. Pour ces noms de base de village j'ai simplement repris la liste de noms existants, mais si quelqu'un a une idée pour générer des noms de villages à consonnance française, il suffit d'écrire la grammaire ici. En plus des noms prédéfinis sans doute ? Une autre option consiste à enrichir cette liste de noms prédéfinis.
 #. Generator for the base names of features assigned by the random map generator; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax
 #: data/core/macros/names.cfg:291
+#, fuzzy
 msgid ""
 "\n"
 "main={c_prefix}{c_middle}{suffix}|{f_prefix}{f_middle}{suffix}|{other_prefix}"
@@ -2847,6 +2866,16 @@ msgid ""
 "middle=a|e|o|i|u\n"
 "suffix=l|m|rn|x|w|ld|ck|k|rk\n"
 msgstr ""
+"\n"
+"main={c_prefix}{c_middle}{suffix}|{f_prefix}{f_middle}{suffix}|{other_prefix}"
+"{middle}{suffix}\n"
+"c_prefix=C\n"
+"c_middle=a|e|u|i\n"
+"f_prefix=F\n"
+"f_middle=a|e|o|i\n"
+"other_prefix=B|D|E|Fr|Wat|G|H|K|N|O|R|S|T|W|Y|Ro\n"
+"middle=a|e|o|i|u\n"
+"suffix=l|m|rn|x|w|ld|ck|k|rk\n"
 
 #. [objective]: condition=lose
 #: data/core/macros/objective-utils.cfg:7
@@ -2889,168 +2918,168 @@ msgstr ""
 "correctement. Ce camp est prévu pour être contrôlé par un joueur humain."
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:157
+#: data/core/macros/sound-utils.cfg:162
 msgid "Battle Epic"
 msgstr "Bataille épique"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:163
+#: data/core/macros/sound-utils.cfg:168
 msgid "Battle Music"
 msgstr "Musique de combat"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:169
+#: data/core/macros/sound-utils.cfg:174
 msgid "Breaking the Chains"
 msgstr "Briser les chaînes"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:175
+#: data/core/macros/sound-utils.cfg:180
 msgid "Casualties of War"
 msgstr "Les pertes de la guerre"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:181
+#: data/core/macros/sound-utils.cfg:186
 msgid "Elf Land"
 msgstr "Les terres elfiques"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:187
+#: data/core/macros/sound-utils.cfg:192
 msgid "Elvish theme"
 msgstr "Thème elfique"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:193
+#: data/core/macros/sound-utils.cfg:198
 msgid "Frantic"
 msgstr "Frénétique"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:199
+#: data/core/macros/sound-utils.cfg:204
 msgid "Heroes Rite"
 msgstr "Le rite du héros"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:205
+#: data/core/macros/sound-utils.cfg:210
 msgid "Into the Shadows"
 msgstr "Dans l'ombre"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:211
+#: data/core/macros/sound-utils.cfg:216
 msgid "Journey’s End"
 msgstr "La fin de l'aventure"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:217
+#: data/core/macros/sound-utils.cfg:222
 msgid "Knalgan Theme"
 msgstr "Thème knalgan"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:223
+#: data/core/macros/sound-utils.cfg:228
 msgid "The Knolls of Doldesh"
 msgstr "Les tertres de Doldesh"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:229
+#: data/core/macros/sound-utils.cfg:234
 msgid "Legends of the North"
 msgstr "Légendes du Nord"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:235
+#: data/core/macros/sound-utils.cfg:240
 msgid "Love Theme"
 msgstr "Thème romantique"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:241
+#: data/core/macros/sound-utils.cfg:246
 msgid "Loyalists"
 msgstr "Loyalistes"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:247
+#: data/core/macros/sound-utils.cfg:252
 msgid "Over the Northern Mountains"
 msgstr "Au-delà des montagnes septentrionales"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:253
+#: data/core/macros/sound-utils.cfg:258
 msgid "Northerners"
 msgstr "Nordiques"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:259
+#: data/core/macros/sound-utils.cfg:264
 msgid "Nunc Dimittis"
 msgstr "Nunc Dimittis"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:265
+#: data/core/macros/sound-utils.cfg:270
 msgid "Revelation"
 msgstr "Révélation"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:271
+#: data/core/macros/sound-utils.cfg:276
 msgid "Sad"
 msgstr "Triste"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:277
+#: data/core/macros/sound-utils.cfg:282
 msgid "Siege of Laurelmor"
 msgstr "Le siège de Laurelmor"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:283
+#: data/core/macros/sound-utils.cfg:288
 msgid "Silvan Sanctuary"
 msgstr "Sanctuaire silvain"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:289
+#: data/core/macros/sound-utils.cfg:294
 msgid "Suspense"
 msgstr "Suspense"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:295
+#: data/core/macros/sound-utils.cfg:300
 msgid "The City Falls"
 msgstr "La chute de la cité"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:301
+#: data/core/macros/sound-utils.cfg:306
 msgid "The Dangerous Symphony"
 msgstr "La dangereuse symphonie"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:307
+#: data/core/macros/sound-utils.cfg:312
 msgid "The Deep Path"
 msgstr "La voie profonde"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:313
+#: data/core/macros/sound-utils.cfg:318
 msgid "The King is Dead"
 msgstr "Le roi est mort"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:319
+#: data/core/macros/sound-utils.cfg:324
 msgid "Transience"
 msgstr "Transience"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:325
+#: data/core/macros/sound-utils.cfg:330
 msgid "Traveling Minstrels"
 msgstr "Ménestrel en balade"
 
 #. [music]
 #. [time]: id=underground_noweather
-#: data/core/macros/sound-utils.cfg:331 data/internal/Weather/_main.cfg:230
+#: data/core/macros/sound-utils.cfg:336 data/internal/Weather/_main.cfg:230
 msgid "Underground"
 msgstr "Sous la terre"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:337
+#: data/core/macros/sound-utils.cfg:347
 msgid "Vengeful Pursuit"
 msgstr "Poursuite vengeresse"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:343
+#: data/core/macros/sound-utils.cfg:353
 msgid "Still Another Wanderer"
 msgstr "Encore un vagabond"
 
 #. [music]
-#: data/core/macros/sound-utils.cfg:349
+#: data/core/macros/sound-utils.cfg:359
 msgid "Weight of Revenge"
 msgstr "Le poids de la revanche"
 
@@ -3145,14 +3174,14 @@ msgstr "Or"
 
 #. [color_range]: id=yellow
 #: data/core/team-colors.cfg:113
-#, fuzzy
 msgid "Yellow"
 msgstr "Jaune"
 
 #. [color_range]: id=pink
 #: data/core/team-colors.cfg:119
+#, fuzzy
 msgid "Pink"
-msgstr ""
+msgstr "Rose"
 
 #. [color_range]: id=darkblue
 #: data/core/team-colors.cfg:126
@@ -3265,8 +3294,9 @@ msgstr "Voile"
 
 #. [color_range]: id=urbanjungle
 #: data/core/team-colors.cfg:256
+#, fuzzy
 msgid "Urban"
-msgstr ""
+msgstr "Urbain"
 
 #. [core]: id=default
 #: data/cores.cfg:5
@@ -3280,27 +3310,27 @@ msgid "The standard Wesnoth core."
 msgstr "Le noyau standard de Wesnoth."
 
 #. [language]
-#: data/english.cfg:3
+#: data/english.cfg:8
 msgid "Easy"
 msgstr "Facile"
 
 #. [language]
-#: data/english.cfg:4
+#: data/english.cfg:9
 msgid "Medium"
 msgstr "Moyen"
 
 #. [language]
-#: data/english.cfg:5
+#: data/english.cfg:10
 msgid "Hard"
 msgstr "Difficile"
 
 #. [language]
-#: data/english.cfg:6
+#: data/english.cfg:11
 msgid "Nightmare"
 msgstr "Cauchemar"
 
 #. [language]
-#: data/english.cfg:8
+#: data/english.cfg:13
 msgid ""
 "Lawful units fight better during the day, and worse at night.\n"
 "\n"
@@ -3313,7 +3343,7 @@ msgstr ""
 "Nuit : -25 % de dégâts"
 
 #. [language]
-#: data/english.cfg:12
+#: data/english.cfg:17
 msgid ""
 "Neutral units are unaffected by day and night, fighting equally well under "
 "both conditions."
@@ -3322,7 +3352,7 @@ msgstr ""
 "battent aussi bien de jour que de nuit."
 
 #. [language]
-#: data/english.cfg:13
+#: data/english.cfg:18
 msgid ""
 "Chaotic units fight better at night, and worse during the day.\n"
 "\n"
@@ -3335,7 +3365,7 @@ msgstr ""
 "Nuit : +25 % de dégâts"
 
 #. [language]
-#: data/english.cfg:17
+#: data/english.cfg:22
 msgid ""
 "Liminal units fight best during the twilight times of day.\n"
 "\n"
@@ -3346,7 +3376,7 @@ msgstr ""
 "Demi-jour : +25 % de dégâts"
 
 #. [language]
-#: data/english.cfg:31
+#: data/english.cfg:36
 msgid "arcane"
 msgstr "arcane"
 
@@ -3358,7 +3388,7 @@ msgstr "arcane"
 # Noms de ponts
 #. [naming]
 #. Generator for bridge labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:41
+#: data/english.cfg:46
 msgid ""
 "\n"
 "\t\tbridge_type=Bridge|Crossing\n"
@@ -3373,7 +3403,7 @@ msgstr ""
 # Noms de routes
 #. [naming]
 #. Generator for road labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:46
+#: data/english.cfg:51
 msgid ""
 "\n"
 "\t\troad_type=Highway|Pass|Path|Road|Way|Trail\n"
@@ -3389,7 +3419,7 @@ msgstr ""
 # Noms de rivières
 #. [naming]
 #. Generator for river labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:51
+#: data/english.cfg:56
 msgid ""
 "\n"
 "\t\triver_type=River|River|River|Creek|Creek|Stream|Canal\n"
@@ -3405,7 +3435,7 @@ msgstr ""
 # Noms de forêts
 #. [naming]
 #. Generator for forest labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:56
+#: data/english.cfg:61
 msgid ""
 "\n"
 "\t\tforest_type=Forest|Forest|Wood\n"
@@ -3421,7 +3451,7 @@ msgstr ""
 # Noms de lacs
 #. [naming]
 #. Generator for lake labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:61
+#: data/english.cfg:66
 msgid ""
 "\n"
 "\t\tlake_type=Lake|Lake|Lake|Loch|Sea\n"
@@ -3436,7 +3466,7 @@ msgstr ""
 # Noms de montagnes
 #. [naming]
 #. Generator for mountain labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:66
+#: data/english.cfg:71
 msgid ""
 "\n"
 "\t\tmain=$base{!}’s Peak|$base Peak|Mount $base|Mount $base\n"
@@ -3451,7 +3481,7 @@ msgstr ""
 # Noms de marais
 #. [naming]
 #. Generator for swamp labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:70
+#: data/english.cfg:75
 msgid ""
 "\n"
 "\t\tsuffix=’s Swamp|marsh|fen\n"
@@ -3467,7 +3497,7 @@ msgstr ""
 # Noms de villages génériques
 #. [village_naming]
 #. Generator for generic village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:78
+#: data/english.cfg:83
 msgid ""
 "\n"
 "\t\tsuffix=bury|bury|ham|ton|ville\n"
@@ -3484,7 +3514,7 @@ msgstr ""
 # Noms de villages en bord de lac
 #. [village_naming]
 #. Generator for lakeside village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:83
+#: data/english.cfg:88
 msgid ""
 "\n"
 "\t\tprefix=$base{!}|$lake{!}\n"
@@ -3501,7 +3531,7 @@ msgstr ""
 # Noms de villages en bord de rivière
 #. [village_naming]
 #. Generator for riverside village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:89
+#: data/english.cfg:94
 msgid ""
 "\n"
 "\t\tprefix=$base{!}|$river{!}\n"
@@ -3520,7 +3550,7 @@ msgstr ""
 # Noms de villages près d'un pont (et d'une rivière donc)
 #. [village_naming]
 #. Generator for bridge village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:96
+#: data/english.cfg:101
 msgid ""
 "\n"
 "\t\tprefix=$base{!}|$river{!}|$bridge{!}\n"
@@ -3536,7 +3566,7 @@ msgstr ""
 # Noms de villages dans les plaines
 #. [village_naming]
 #. Generator for grassland village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:102
+#: data/english.cfg:107
 msgid ""
 "\n"
 "\t\tsuffix=ham|ton|field\n"
@@ -3553,7 +3583,7 @@ msgstr ""
 # Noms de villages dans les forêts
 #. [village_naming]
 #. Generator for forest village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:107
+#: data/english.cfg:112
 msgid ""
 "\n"
 "\t\tprefix=$base{!}|$forest{!}\n"
@@ -3572,7 +3602,7 @@ msgstr ""
 # Noms de villages dans les collines
 #. [village_naming]
 #. Generator for hill village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:113
+#: data/english.cfg:118
 msgid ""
 "\n"
 "\t\tsuffix=ham|bury|ton|hill|crest\n"
@@ -3588,7 +3618,7 @@ msgstr ""
 # Noms de villages dans les montagnes
 #. [village_naming]
 #. Generator for mountain village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:118
+#: data/english.cfg:123
 msgid ""
 "\n"
 "\t\tprefix=$base{!}|$mountain{!}\n"
@@ -3606,7 +3636,7 @@ msgstr ""
 # Noms de villages dans les montagnes anonymes (le village ne peut pas inclure le nom de la montagne)
 #. [village_naming]
 #. Generator for mountain labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:124
+#: data/english.cfg:129
 msgid ""
 "\n"
 "\t\tsuffix=ham|bury|ton|mont|mont|cliff|cliff\n"
@@ -3622,7 +3652,7 @@ msgstr ""
 # Noms de villages en bordure de routes
 #. [village_naming]
 #. Generator for roadside village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:129
+#: data/english.cfg:134
 msgid ""
 "\n"
 "\t\tprefix=$road{!}|$road{!}|$base{!}\n"
@@ -3640,7 +3670,7 @@ msgstr ""
 # Noms de villages dans les marais
 #. [village_naming]
 #. Generator for swamp village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
-#: data/english.cfg:135
+#: data/english.cfg:140
 msgid ""
 "\n"
 "\t\tprefix=$base{!}|$swamp{!}\n"
@@ -3699,7 +3729,6 @@ msgstr "DejaVu Sans Mono"
 
 #. [fonts]
 #: data/hardwired/fonts.cfg:20
-#, fuzzy
 msgid "WesScript"
 msgstr "WesScript"
 
@@ -3710,7 +3739,6 @@ msgstr "Aube"
 
 #. [time]: id=morning_noweather
 #: data/internal/Weather/_main.cfg:162
-#, fuzzy
 msgid "Morning"
 msgstr "Matin"
 
@@ -3746,13 +3774,11 @@ msgstr "Deuxième quart"
 
 #. [advancement]: id=amla_default
 #: data/internal/resources/AMLAs/_main.cfg:73
-#, fuzzy
 msgid "Max HP bonus +3, Max XP +20%"
 msgstr "Bonus de PV max +3, XP max +20%"
 
 #. [advancement]: id=hitpoints_increase
 #: data/internal/resources/AMLAs/_main.cfg:95
-#, fuzzy
 msgid "Gain +8 hitpoints."
 msgstr "Ajoute 8 points de vie."
 
@@ -3825,7 +3851,6 @@ msgstr ""
 
 #. [option]
 #: data/internal/resources/AMLAs/_main.cfg:365
-#, fuzzy
 msgid "Ok, continue with the game"
 msgstr "D'accord, continuer la partie"
 
@@ -4909,13 +4934,6 @@ msgstr ""
 
 #. [tip]
 #: data/tips.cfg:188
-#, fuzzy
-#| msgid ""
-#| "Instead of leveling up, high-level units gain an <i>After Maximum Level "
-#| "Advancement</i> (AMLA) bonus, which usually increases the unit’s maximum "
-#| "hitpoints by three and fully heals it. This is much less than the normal "
-#| "benefits of advancing a level, so it is generally wiser to advance your "
-#| "lower-level units instead."
 msgid ""
 "Once a unit reaches maximum level, further advancement provides a minor "
 "bonus called an “AMLA” — “After Maximum Level Advancement.” Some campaigns "
@@ -5238,7 +5256,6 @@ msgid "An invalid attacker weapon got selected."
 msgstr "Arme d'attaque sélectionnée non valide."
 
 #: src/actions/attack.cpp:969
-#, fuzzy
 msgid "attack^miss"
 msgstr "manqué"
 
@@ -5350,15 +5367,15 @@ msgstr ""
 "Détails :"
 
 #: src/actions/undo.cpp:342
+#, fuzzy
 msgid "Unhandled choices while redoing"
-msgstr ""
+msgstr "Ré-exécution d'un choix non supporté"
 
 #: src/addon/client.cpp:78
 msgid "Connecting to $server_address|..."
 msgstr "Connexion à $server_address|..."
 
 #: src/addon/client.cpp:124
-#, fuzzy
 msgid "Requesting add-on counts by type..."
 msgstr "Demande du nombre d'extensions de ce type..."
 
@@ -5379,22 +5396,18 @@ msgid "Requesting forum_auth usage..."
 msgstr "Demande pour forum_auth..."
 
 #: src/addon/client.cpp:182
-#, fuzzy
 msgid "Requesting list of admins..."
 msgstr "Demande de la liste des administrateurs..."
 
 #: src/addon/client.cpp:202
-#, fuzzy
 msgid "Getting list of hidden add-ons..."
 msgstr "Téléchargement de la liste des extensions cachées..."
 
 #: src/addon/client.cpp:223
-#, fuzzy
 msgid "Hiding add-on..."
 msgstr "Cacher l'extension..."
 
 #: src/addon/client.cpp:243
-#, fuzzy
 msgid "Unhiding add-on..."
 msgstr "Montrer l'extension..."
 
@@ -5458,8 +5471,6 @@ msgstr ""
 "la connexion au serveur d'extensions n'est pas sécurisée."
 
 #: src/addon/client.cpp:355
-#, fuzzy
-#| msgid "Sending an update pack for the add-on <i>$addon_title</i>..."
 msgid ""
 "The file size for the icon for the add-on <i>$addon_title</i> is too large."
 msgstr ""
@@ -5633,7 +5644,6 @@ msgid "Remote host disconnected."
 msgstr "Serveur distant déconnecté."
 
 #: src/addon/manager_ui.cpp:63
-#, fuzzy
 msgid "Raw network error:"
 msgstr "Erreur brute de réseau :"
 
@@ -6159,50 +6169,58 @@ msgstr "%d %b %y"
 #. translate "timespan^$num years" as "$num ans", thus allowing the game UI to
 #. generate output such as "39 ans" after variable interpolation.
 #: src/formula/format_timespan.hpp:38
+#, fuzzy
 msgid "timespan^$num year"
 msgid_plural "timespan^$num years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "$num an"
+msgstr[1] "$num ans"
 
 #: src/formula/format_timespan.hpp:39
+#, fuzzy
 msgid "timespan^$num month"
 msgid_plural "timespan^$num months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "$num mois"
+msgstr[1] "$num mois"
 
 #: src/formula/format_timespan.hpp:40
+#, fuzzy
 msgid "timespan^$num week"
 msgid_plural "timespan^$num weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "$num semaine"
+msgstr[1] "$num semaines"
 
 #: src/formula/format_timespan.hpp:41
+#, fuzzy
 msgid "timespan^$num day"
 msgid_plural "timespan^$num days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "$num jour"
+msgstr[1] "$num jours"
 
 #: src/formula/format_timespan.hpp:42
+#, fuzzy
 msgid "timespan^$num hour"
 msgid_plural "timespan^$num hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "$num heure"
+msgstr[1] "$num heures"
 
 #: src/formula/format_timespan.hpp:43
+#, fuzzy
 msgid "timespan^$num minute"
 msgid_plural "timespan^$num minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "$num minute"
+msgstr[1] "$num minutes"
 
 #: src/formula/format_timespan.hpp:44
+#, fuzzy
 msgid "timespan^$num second"
 msgid_plural "timespan^$num seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "$num seconde"
+msgstr[1] "$num secondes"
 
 #: src/formula/format_timespan.hpp:89 src/formula/format_timespan.hpp:112
+#, fuzzy
 msgid "timespan^expired"
-msgstr ""
+msgstr "expiré"
 
 #: src/game_config.cpp:536
 msgid "Invalid color in range: "
@@ -6383,7 +6401,6 @@ msgid "Custom map."
 msgstr "Carte personnalisée."
 
 #: src/game_initialization/create_engine.cpp:412
-#, fuzzy
 msgid "multiplayer^MP"
 msgstr "MJ"
 
@@ -6947,16 +6964,15 @@ msgid "No description available."
 msgstr "Aucune description n'est disponible."
 
 #: src/help/help_impl.cpp:755
-#, fuzzy
 msgid "This is a global trait."
-msgstr "Ceci est le trait générique."
+msgstr "Ceci est un trait générique."
 
 #: src/help/help_impl.cpp:763
+#, fuzzy
 msgid "Races with this trait"
-msgstr ""
+msgstr "Races ayant ce trait"
 
 #: src/help/help_impl.cpp:783
-#, fuzzy
 msgid "Units with this trait"
 msgstr "Unités ayant ce trait"
 
@@ -6987,7 +7003,6 @@ msgid "Groups of units within this race"
 msgstr "Groupes d'unités de cette race"
 
 #: src/help/help_impl.cpp:1183
-#, fuzzy
 msgid "Units of this group"
 msgstr "Unités de ce groupe"
 
@@ -7055,7 +7070,7 @@ msgstr "Le fichier chargé ne contient pas d'historique à rejouer."
 msgid "The file you have tried to load is not from the current session."
 msgstr "Le fichier chargé ne correspond pas à la session en cours."
 
-#: src/language.cpp:96
+#: src/language.cpp:101
 msgid "System default language"
 msgstr "Langue par défaut du système"
 
@@ -7728,7 +7743,6 @@ msgid "prompt^Command:"
 msgstr "Commande :"
 
 #: src/menu_events.cpp:2160
-#, fuzzy
 msgid "prompt^Formula:"
 msgstr "Formule :"
 
@@ -7806,13 +7820,13 @@ msgid "Turn changed"
 msgstr "Changement"
 
 #: src/network_download_file.cpp:50
-#, fuzzy
 msgid "Download unavailable"
 msgstr "Téléchargement indisponible"
 
 #: src/network_download_file.cpp:50
+#, fuzzy
 msgid "Standalone file downloads are not currently supported on iOS."
-msgstr ""
+msgstr "Le téléchargement de fichiers isolés n'est pas supporté sur iOS."
 
 #: src/network_download_file.cpp:55
 msgid "Confirm overwrite"
@@ -8172,7 +8186,6 @@ msgstr "Défense :"
 
 #. TRANSLATORS: single-letter abbreviation of "vision", fits in a small space on the sidebar
 #: src/reports.cpp:646
-#, fuzzy
 msgid "vision^V:"
 msgstr "Vi:"
 
@@ -8182,7 +8195,6 @@ msgstr "vision :"
 
 #. TRANSLATORS: single-letter abbreviation of "jamming", fits in a small space on the sidebar
 #: src/reports.cpp:669
-#, fuzzy
 msgid "jamming^J:"
 msgstr "Br:"
 
@@ -8265,10 +8277,11 @@ msgstr[0] "utilise $number attaque"
 msgstr[1] "utilise $number attaques"
 
 #: src/reports.cpp:1010
+#, fuzzy
 msgid "This attack uses $num attack point"
 msgid_plural "This attack uses $num attack points"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Cette attaque consume $num point d'attaque"
+msgstr[1] "Cette attaque consume $num points d'attaque"
 
 #: src/reports.cpp:1048 src/reports.cpp:1088
 msgid "Weapon special:"
@@ -8690,17 +8703,17 @@ msgstr "Y"
 msgid "infix_binary^i"
 msgstr "i"
 
-#: src/synced_commands.cpp:382
+#: src/synced_commands.cpp:379
 msgid "(unknown player)"
 msgstr "(joueur inconnu)"
 
-#: src/synced_commands.cpp:387
+#: src/synced_commands.cpp:384
 msgid "The :$command debug command was used during $player’s turn"
 msgstr ""
 "La commande de débogage :$command a été utilisée lors du tour du joueur "
 "$player"
 
-#: src/synced_commands.cpp:395
+#: src/synced_commands.cpp:392
 msgid ""
 "A player used a debug command during the game. If this is unexpected, it is "
 "possible the player in question is cheating."
@@ -8708,19 +8721,19 @@ msgstr ""
 "Un joueur a utilisé une commande de débogage pendant la partie. Si ce "
 "n'était pas prévu, il est possible que le joueur en question triche."
 
-#: src/synced_commands.cpp:397
+#: src/synced_commands.cpp:394
 msgid "Details:"
 msgstr "Détails :"
 
-#: src/synced_commands.cpp:400
+#: src/synced_commands.cpp:397
 msgid "Do you wish to save the game before continuing?"
 msgstr "Voulez-vous sauvegarder la partie avant de continuer ?"
 
-#: src/synced_commands.cpp:402
+#: src/synced_commands.cpp:399
 msgid "Debug Command Used"
 msgstr "Commandes de débogage utilisées"
 
-#: src/synced_commands.cpp:508
+#: src/synced_commands.cpp:505
 msgid "A unit was created using debug mode during $player’s turn"
 msgstr ""
 "Une unité a été créée en utilisant le mode débogage pendant le tour du "
