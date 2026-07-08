@@ -2,13 +2,15 @@
 ### Add-ons client
 ### Add-ons server
 ### Campaigns
+   * The Deceivers Gambit
+     * Fix missing siphon attack sound, which would cause a crash anytime the attack was used.
 ### Editor
 ### Multiplayer
 ### Lua API
 ### Packaging
 ### Terrain
 ### Translations
-   * Updated translations: Bengali, British English, French, Polish, Russian
+   * Updated translations: Bengali, British English, French, Galician, Hungarian, Italian, Polish, Russian, Serbian
 ### Units
 ### User interface
    * Fix sound effect slider which was incorrectly affecting the music track volume.
