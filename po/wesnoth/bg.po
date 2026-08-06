@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2026-06-22 22:16-0500\n"
-"PO-Revision-Date: 2023-12-08 17:02+0200\n"
+"POT-Creation-Date: 2026-08-02 22:45-0500\n"
+"PO-Revision-Date: 2026-07-11 23:56+0300\n"
 "Last-Translator: Ivan Petrov <vankata_petrov@abv.bg>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "Language: bg\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Bookmarks: 811,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.6\n"
 
 #. [multiplayer_side]: id=Custom
 #: data/_main.cfg:22
@@ -32,7 +32,7 @@ msgstr "По избор"
 #. [advanced_preference]: type=combo
 #: data/advanced_preferences.cfg:4
 msgid "Compress saved games"
-msgstr ""
+msgstr "Компресиране на записани игри"
 
 #. [option]: id=gzip
 #: data/advanced_preferences.cfg:9
@@ -47,7 +47,7 @@ msgstr "Стандартно компресиране, по-бързо"
 #. [option]: id=bzip2
 #: data/advanced_preferences.cfg:14
 msgid "save_compression^Bzip2"
-msgstr ""
+msgstr "Bzip2"
 
 #. [option]: id=bzip2
 #: data/advanced_preferences.cfg:15
@@ -62,7 +62,7 @@ msgstr "Не"
 #. [option]: id=none
 #: data/advanced_preferences.cfg:20
 msgid "save_compression_desc^Large plain text files"
-msgstr "Едри обикновени текстове"
+msgstr "Едри обикновени текстови файлове"
 
 #. [advanced_preference]: type=boolean
 #: data/advanced_preferences.cfg:26
@@ -79,22 +79,22 @@ msgstr ""
 #. [advanced_preference]: type=boolean
 #: data/advanced_preferences.cfg:34
 msgid "Confirm deleting saves"
-msgstr "Потвърждаване при изтриването на записи"
+msgstr "Потвърждение при изтриването на записи"
 
 #. [advanced_preference]: type=boolean
 #: data/advanced_preferences.cfg:41
 msgid "Mouse scrolling"
-msgstr "Придвижване с мишката"
+msgstr "Скролиране с мишката"
 
 #. [advanced_preference]: type=boolean
 #: data/advanced_preferences.cfg:48
 msgid "Middle-click scrolling"
-msgstr "Придвижване чрез натискане на средното копче"
+msgstr "Скролиране чрез натискане на средното копче"
 
 #. [advanced_preference]: type=boolean
 #: data/advanced_preferences.cfg:55
 msgid "Keep scrolling when mouse leaves window"
-msgstr "Продължаване на придвижването, когато мишката напусне екрана"
+msgstr "Продължаване на скролирането, когато мишката напусне екрана"
 
 #. [advanced_preference]: type=boolean
 #: data/advanced_preferences.cfg:62
@@ -118,7 +118,7 @@ msgid ""
 "is animated"
 msgstr ""
 "Изберете дали погледа над картата ще се прехвърли върху единица, когато "
-"действието или движението `и е анимирано"
+"действието или движението ѝ е анимирано"
 
 #. [advanced_preference]: type=int
 #: data/advanced_preferences.cfg:84
@@ -132,7 +132,7 @@ msgid ""
 "to disable."
 msgstr ""
 "Колко минути трябва да изтекат преди съобщение в чата да бъде изтрито. "
-"Поставете на 0, за да го изключите."
+"Поставете на 0 за да го изключите."
 
 #. [advanced_preference]: type=boolean
 #: data/advanced_preferences.cfg:95
@@ -156,7 +156,7 @@ msgid ""
 "that have been encountered will be shown."
 msgstr ""
 "Показване на всички единици в ръководството (необходим е рестарт). Ако бъде "
-"изключено, ще виждате само единици, които са срещнати в играта."
+"изключено, ще виждате само единици, които вече сте срещнали."
 
 #. [advanced_preference]: type=int
 #: data/advanced_preferences.cfg:117
@@ -168,7 +168,7 @@ msgstr "Максимум скорошни файлове в редактора"
 msgid ""
 "The maximum number of items to display on the Recent Files menu in the editor"
 msgstr ""
-"Колко предмети ще бъдат показвани в менюто Скорошни файлове в редактора"
+"Колко предмети ще бъдат показвани в менюто \"Скорошни файлове\" в редактора"
 
 #. [advanced_preference]: type=boolean
 #: data/advanced_preferences.cfg:128
@@ -212,7 +212,7 @@ msgstr ""
 #. [advanced_preference]: type=boolean
 #: data/advanced_preferences.cfg:162
 msgid "Show deprecation messages in-game"
-msgstr ""
+msgstr "Показване на съобщения за отхвърляне в играта"
 
 #. [advanced_preference]: type=boolean
 #: data/advanced_preferences.cfg:163
@@ -221,11 +221,14 @@ msgid ""
 "will still be shown in the log, even if this is disabled. In addition, the "
 "deprecation log-domain controls how many messages are printed."
 msgstr ""
+"Показване на предупреждения за отхвърлени API в чата на играта. Тези "
+"съобщения ще се впишат в доклада, дори и тази опция да е изключена. Освен "
+"това, докладването управлява колко съобщения да бъдат принтирани."
 
 #. [advanced_preference]: type=int
 #: data/advanced_preferences.cfg:170
 msgid "Font size scale (experimental)"
-msgstr ""
+msgstr "Оразмеряване на шрифта (експериментално)"
 
 #. [advanced_preference]: type=int
 #: data/advanced_preferences.cfg:171
@@ -233,11 +236,12 @@ msgid ""
 "Scales all text up or down from the standard size for your resolution. "
 "Warning: Scaling text up may cause issues in the in-game sidebar."
 msgstr ""
+"Уголемява или смалява текстовете спрямо стандарта за резолюцията ви. "
+"Внимание: уголемяването на текст може да създаде проблеми в страничната "
+"лента."
 
 #. [advanced_preference]: type=int
 #: data/advanced_preferences.cfg:181
-#, fuzzy
-#| msgid "Connection timed out"
 msgid "Server disconnect timeout"
 msgstr "Времето за връзката е просрочено"
 
@@ -248,6 +252,9 @@ msgid ""
 "logged into the multiplayer server, you must log out and then log back in "
 "for this to take effect."
 msgstr ""
+"Колко време в секунди трябва да изтече, преди да бъде засечено прекъсване на "
+"връзкате. Ако в този момент сте свързани в мултиплейър сървър, ще трябва да "
+"излезете и после да влезете пак, за да наложите промените."
 
 #. [advanced_preference]: type=boolean
 #: data/advanced_preferences.cfg:192
@@ -275,7 +282,7 @@ msgstr ""
 #. [unstore_unit]
 #. [lua]: set_status
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:369
-#: data/lua/wml/harm_unit.lua:124 src/actions/attack.cpp:949
+#: data/lua/wml/harm_unit.lua:124 src/actions/attack.cpp:941
 msgid "poisoned"
 msgstr "отровен(а)"
 
@@ -434,10 +441,8 @@ msgstr "Превод на баски (северна Испания)"
 
 #. [about]
 #: data/core/about_i18n.cfg:65
-#, fuzzy
-#| msgid "Bulgarian Translation"
 msgid "Bengali Translation"
-msgstr "Български превод"
+msgstr "Бенгалски превод"
 
 #. [about]
 #: data/core/about_i18n.cfg:78
@@ -487,7 +492,7 @@ msgstr "Английски (Великобритания) превод"
 #. [about]
 #: data/core/about_i18n.cfg:487
 msgid "English (Shaw) Translation"
-msgstr "Превод на английски (Великобритания)"
+msgstr "Превод на английски (Ирландски)"
 
 #. [about]
 #: data/core/about_i18n.cfg:505
@@ -645,55 +650,53 @@ msgid "Serbian Translation"
 msgstr "Сръбски превод"
 
 #. [about]
-#: data/core/about_i18n.cfg:1691
+#: data/core/about_i18n.cfg:1696
 msgid "Slovak Translation"
 msgstr "Словашки превод"
 
 #. [about]
-#: data/core/about_i18n.cfg:1726
+#: data/core/about_i18n.cfg:1731
 msgid "Slovenian Translation"
 msgstr "Словенски превод"
 
 #. [about]
-#: data/core/about_i18n.cfg:1742
+#: data/core/about_i18n.cfg:1747
 msgid "Spanish Translation"
 msgstr "Испански превод"
 
 #. [about]
-#: data/core/about_i18n.cfg:1836
+#: data/core/about_i18n.cfg:1841
 msgid "Swedish Translation"
 msgstr "Шведски превод"
 
 #. [about]
-#: data/core/about_i18n.cfg:1881
+#: data/core/about_i18n.cfg:1886
 msgid "Turkish Translation"
 msgstr "Турски превод"
 
 #. [about]
-#: data/core/about_i18n.cfg:1906
+#: data/core/about_i18n.cfg:1911
 msgid "Ukrainian Translation"
 msgstr "Украински превод"
 
 #. [about]
-#: data/core/about_i18n.cfg:1940
+#: data/core/about_i18n.cfg:1945
 msgid "Valencian (southern Catalan) Translation"
 msgstr "Превод на валенсиански (Южна Каталония)"
 
 #. [about]
-#: data/core/about_i18n.cfg:1953
+#: data/core/about_i18n.cfg:1958
 msgid "Vietnamese Translation"
 msgstr "Виетнамски превод"
 
 #. [about]
-#: data/core/about_i18n.cfg:1972
-#, fuzzy
-#| msgid "Polish Translation"
+#: data/core/about_i18n.cfg:1977
 msgid "Welsh Translation"
-msgstr "Полски превод"
+msgstr "Уелски превод"
 
 #. [about]
 #. Real Acadèmia de Cultura Valenciana
-#: data/core/about_i18n.cfg:1981
+#: data/core/about_i18n.cfg:1986
 msgid "RACV’s Translation"
 msgstr "Превод на валенсиански /Валенсия/"
 
@@ -747,12 +750,12 @@ msgstr "Брадва"
 #. [item]: id=axe-small
 #: data/core/editor/items.cfg:82
 msgid "Small Axe"
-msgstr ""
+msgstr "Малка брадва"
 
 #. [item]: id=axe-throwing
 #: data/core/editor/items.cfg:89
 msgid "Throwing Axe"
-msgstr ""
+msgstr "Метателна брадва"
 
 #. [item]: id=ball-blue
 #: data/core/editor/items.cfg:96
@@ -826,12 +829,12 @@ msgstr "Кутия"
 #. [item]: id=branch
 #: data/core/editor/items.cfg:229
 msgid "Branch"
-msgstr ""
+msgstr "Клон"
 
 #. [item]: id=branch-bare
 #: data/core/editor/items.cfg:236
 msgid "Bare Branch"
-msgstr ""
+msgstr "Оголен клон"
 
 #. [item]: id=brazier
 #: data/core/editor/items.cfg:243
@@ -840,10 +843,8 @@ msgstr "Мангал"
 
 #. [item]: id=brazier-lit1
 #: data/core/editor/items.cfg:251
-#, fuzzy
-#| msgid "Brazier"
 msgid "Lit Brazier"
-msgstr "Мангал"
+msgstr "Горящ мангал"
 
 #. [item]: id=buckler
 #. [item]: id=buckler2
@@ -863,18 +864,14 @@ msgstr "Клетка"
 
 #. [item]: id=chest
 #: data/core/editor/items.cfg:286
-#, fuzzy
-#| msgid "Closed Plain Chest"
 msgid "Closed Chest"
-msgstr "Обикновен затворен сандък"
+msgstr "Затворен сандък"
 
 #. [item]: id=chest-open
 #. Open is an adjective here, not a verb. That is, a (treasure) chest that is open, not an action to open such a chest.
 #: data/core/editor/items.cfg:294
-#, fuzzy
-#| msgid "Open Plain Chest"
 msgid "Open Chest"
-msgstr "Обикновен отворен сандък"
+msgstr "Отворен сандък"
 
 #. [item]: id=chest-plain-closed
 #: data/core/editor/items.cfg:301
@@ -894,7 +891,7 @@ msgstr "Зелено наметало"
 #. [item]: id=club
 #: data/core/editor/items.cfg:322
 msgid "Club"
-msgstr ""
+msgstr "Бухалка"
 
 #. [item]: id=coffin-closed
 #: data/core/editor/items.cfg:329
@@ -904,32 +901,28 @@ msgstr "Затворен саркофаг"
 #. [item]: id=coffin-open
 #. Open is an adjective here, not a verb. That is, a coffin that is open, not an action to open a coffin.
 #: data/core/editor/items.cfg:337
-#, fuzzy
-#| msgid "Closed Coffin"
 msgid "Open Coffin"
-msgstr "Затворен саркофаг"
+msgstr "Отворен саркофаг"
 
 #. [item]: id=crossbow
 #: data/core/editor/items.cfg:344
 msgid "Crossbow"
-msgstr ""
+msgstr "Арбалет"
 
 #. [item]: id=dagger
 #: data/core/editor/items.cfg:351
 msgid "Dagger"
-msgstr ""
+msgstr "Кинжал"
 
 #. [item]: id=dagger-poison
 #: data/core/editor/items.cfg:358
-#, fuzzy
-#| msgid "Poison"
 msgid "Poison Dagger"
-msgstr "Отрова"
+msgstr "Отровен кинжал"
 
 #. [item]: id=dagger-poison-bare
 #: data/core/editor/items.cfg:365
 msgid "Poison Dagger (clean)"
-msgstr ""
+msgstr "Отровен кинжал (чист)"
 
 #. [item]: id=dragonstatue
 #: data/core/editor/items.cfg:372
@@ -943,10 +936,8 @@ msgstr "Пламтящ меч"
 
 #. [item]: id=flame-sword-bare
 #: data/core/editor/items.cfg:386
-#, fuzzy
-#| msgid "Flaming Sword"
 msgid "Unenchanted Flaming Sword"
-msgstr "Пламтящ меч"
+msgstr "Разомагьосан пламтящ меч"
 
 #. [item]: id=flower1
 #. [item]: id=flower2
@@ -965,7 +956,7 @@ msgstr ""
 #. [item]: id=gold-coins-large
 #: data/core/editor/items.cfg:427
 msgid "Large Pile of Gold Coins"
-msgstr "Едра купчина монети"
+msgstr "Голяма купчина монети"
 
 #. [item]: id=gold-coins-medium
 #: data/core/editor/items.cfg:434
@@ -984,10 +975,8 @@ msgstr "Наръч слама"
 
 #. [item]: id=hammer
 #: data/core/editor/items.cfg:455
-#, fuzzy
-#| msgid "Runic Hammer"
 msgid "Hammer"
-msgstr "Рунически чук"
+msgstr "Чук"
 
 #. [item]: id=hammer-runic
 #: data/core/editor/items.cfg:462
@@ -1008,10 +997,8 @@ msgstr "Ключ"
 
 #. [item]: id=key-dark
 #: data/core/editor/items.cfg:490
-#, fuzzy
-#| msgid "Dark Red"
 msgid "Dark Key"
-msgstr "Тъмночервено"
+msgstr "Тъмен ключ"
 
 #. [item]: id=leather-pack
 #: data/core/editor/items.cfg:497
@@ -1021,21 +1008,17 @@ msgstr "Кожена раница"
 #. [item]: id=mace
 #: data/core/editor/items.cfg:504
 msgid "Mace"
-msgstr ""
+msgstr "Боздуган"
 
 #. [item]: id=necklace-bone
 #: data/core/editor/items.cfg:511
-#, fuzzy
-#| msgid "Ankh Necklace"
 msgid "Bone Necklace"
-msgstr "Анкх"
+msgstr "Накит от кости"
 
 #. [item]: id=necklace-stone
 #: data/core/editor/items.cfg:518
-#, fuzzy
-#| msgid "Ankh Necklace"
 msgid "Stone Necklace"
-msgstr "Анкх"
+msgstr "Каменен накит"
 
 #. [item]: id=orcish-flag
 #: data/core/editor/items.cfg:525
@@ -1128,14 +1111,12 @@ msgstr "Огнен скиптър"
 #. [item]: id=sling
 #: data/core/editor/items.cfg:644
 msgid "Sling"
-msgstr ""
+msgstr "Прашка"
 
 #. [item]: id=spear
 #: data/core/editor/items.cfg:651
-#, fuzzy
-#| msgid "Fancy Spear"
 msgid "Spear"
-msgstr "Изискано копие"
+msgstr "Копие"
 
 #. [item]: id=spear-fancy
 #. [item]: id=spear-fancy2
@@ -1146,7 +1127,7 @@ msgstr "Изискано копие"
 #. [item]: id=spear-javelin
 #: data/core/editor/items.cfg:672
 msgid "Javelin"
-msgstr ""
+msgstr "Дротик"
 
 #. [item]: id=staff
 #. [item]: id=staff2
@@ -1156,10 +1137,8 @@ msgstr "Жезъл"
 
 #. [item]: id=staff-druid
 #: data/core/editor/items.cfg:693
-#, fuzzy
-#| msgid "Magic Staff"
 msgid "Druid Staff"
-msgstr "Магьоснически жезъл"
+msgstr "Друидически жезъл"
 
 #. [item]: id=staff-magic
 #. [item]: id=staff-magic2
@@ -1169,17 +1148,13 @@ msgstr "Магьоснически жезъл"
 
 #. [item]: id=staff-magic-wand
 #: data/core/editor/items.cfg:714
-#, fuzzy
-#| msgid "Magic Staff"
 msgid "Magic Wand"
-msgstr "Магьоснически жезъл"
+msgstr "Магическа пръчка"
 
 #. [item]: id=staff-plain
 #: data/core/editor/items.cfg:721
-#, fuzzy
-#| msgid "Magic Staff"
 msgid "Plain Staff"
-msgstr "Магьоснически жезъл"
+msgstr "Обикновен жезъл"
 
 #. [item]: id=stone-tablet
 #: data/core/editor/items.cfg:728
@@ -1208,56 +1183,48 @@ msgstr "Меч"
 
 #. [item]: id=sword-holy
 #: data/core/editor/items.cfg:777
-#, fuzzy
-#| msgid "Sword"
 msgid "Holy Sword"
-msgstr "Меч"
+msgstr "Свещен меч"
 
 #. [item]: id=sword-short
 #: data/core/editor/items.cfg:784
-#, fuzzy
-#| msgid "Sword"
 msgid "Short Sword"
-msgstr "Меч"
+msgstr "Къс меч"
 
 #. [item]: id=sword-wraith
 #: data/core/editor/items.cfg:791
-#, fuzzy
-#| msgid "Flaming Sword"
 msgid "Wraith Sword"
-msgstr "Пламтящ меч"
+msgstr "Призрачен меч"
 
 #. [item]: id=talisman-ankh
 #: data/core/editor/items.cfg:798
 msgid "Ankh Talisman"
-msgstr ""
+msgstr "Анкх-талисман"
 
 #. [item]: id=talisman-bone
 #: data/core/editor/items.cfg:805
 msgid "Bone Talisman"
-msgstr ""
+msgstr "Талисман от кости"
 
 #. [item]: id=talisman-stone
 #: data/core/editor/items.cfg:812
-#, fuzzy
-#| msgid "Stone Tablet"
 msgid "Stone Talisman"
-msgstr "Каменна плочка"
+msgstr "Каменен талисман"
 
 #. [item]: id=thunderstick
 #: data/core/editor/items.cfg:819
 msgid "Thunderstick"
-msgstr ""
+msgstr "Гръмотевична пръчка"
 
 #. [item]: id=torch
 #: data/core/editor/items.cfg:826
 msgid "Lit Torch"
-msgstr ""
+msgstr "Горяща факла"
 
 #. [item]: id=torch-bare
 #: data/core/editor/items.cfg:833
 msgid "Unlit Torch"
-msgstr ""
+msgstr "Незапалена факла"
 
 #. [item_group]: id=scenery
 #: data/core/editor/items.cfg:840
@@ -1449,10 +1416,8 @@ msgstr "Храм"
 #. [item]: id=temple-cracked3
 #: data/core/editor/items.cfg:1209 data/core/editor/items.cfg:1216
 #: data/core/editor/items.cfg:1223
-#, fuzzy
-#| msgid "Ruined Tent"
 msgid "Ruined Temple"
-msgstr "Съсипана палатка"
+msgstr "Разрушен храм"
 
 #. [item]: id=tent-fancy-red
 #: data/core/editor/items.cfg:1230
@@ -2005,7 +1970,6 @@ msgid "sceptre of fire"
 msgstr "огнен скитпър"
 
 #: data/core/macros/names.cfg:19
-#, fuzzy
 msgid ""
 "Egar,Elch,Ga’ash,Gadé Ihn,Gakré Ohm,Galeck,Galsh,Garadin,Garchin,Gark,Garlan,"
 "Garlin Ohn,Garrutin,Gart’lo,Garushi,Gashinar,Gashol,Gaushii,Gaustun,Gegchi,"
@@ -2017,24 +1981,23 @@ msgid ""
 "Merritos Gark,Morusté,Murr,Omataké,Reshan,Vashitt,Velnick,Veralon,Veramo,"
 "Verath,Verditt,Verkon,Verlinn,Vermad,Vertick,Vladnir"
 msgstr ""
-"Егар,Елч,Га'аш,Гади Ин,Гакри Ом,Галек,Галш,Гарадин,Гаршин,Гарк,Гарлан,"
-"Гарлин\vОн,Гарутин,Гарт'ло,Гареши,Гашинар,Гашол,Гауший,Гаустун,Гегчи,Гелка "
-"Кон,Гелкник,Гилан,Гишарри,Гост,Града,Гръет\vИн,Грашен,Гравлан,Граг,Грелнит,"
-"Грен Он,Греф,Грибел,Грида,Гриш,Грон Ин,Ка,Кан И,Кариган,Кари Кон,Карон,Каск,"
-"Кегрид,Керат Ин,Керат\vКор,Клаш,Кон Гараши,Крааг,Крал Он,Кран Кор,Краш,"
+"Егар,Елч,Га'аш,Гади Ин,Гакри Ом,Галек,Галш,Гарадин,Гаршин,Гарк,Гарлан,Гарлин "
+"Он,Гарутин,Гарт'ло,Гареши,Гашинар,Гашол,Гауший,Гаустун,Гегчи,Гелка Кон,"
+"Гелкник,Гилан,Гишарри,Гост,Града,Гръет Ин,Грашен,Гравлан,Граг,Грелнит,Грен "
+"Он,Греф,Грибел,Грида,Гриш,Грон Ин,Ка,Кан И,Кариган,Кари Кон,Карон,Каск,"
+"Кегрид,Керат Ин,Керат Кор,Клаш,Кон Гараши,Крааг,Крал Он,Кран Кор,Краш,"
 "Краслар,Кренли,Крюген,Кун,Ма Туа,Маргиан,Мар'илдиан,Маркан,Маркинос,Мар Он,"
-"Мара Ди'лек,Марито,Маритос,Меркуш,Меритос\vГарк,Морюще,Мур,Оматаки,Решан,"
+"Мара Ди'лек,Марито,Маритос,Меркуш,Меритос Гарк,Морюще,Мур,Оматаки,Решан,"
 "Вашит,Велник,Вералон,Верамо,Верат,Вердит,Веркон,Верлин,Вермат,Вертик,Владнир"
 
 #: data/core/macros/names.cfg:20
-#, fuzzy
 msgid ""
 "Alen Ka,Alinash Mal,Ashirt,Auginet Ka,Auuglann,Damell,Dell,Demla,Dinsill,"
 "Eshi,Olath,Omage,Omagrra,Orra Ka,Orridan,Orrida,Oshibi,Vallin,Valnirra,"
 "Valnitt,Velisk,Verra,Vellin Ka,Veshtar,Vushtin"
 msgstr ""
 "Ален Ка,Алинаш Мал,Аширт,Аугинт Ка,Ауглан,Дамел,Дел,Демла,Динсил,Еши,Олат,"
-"Омаги,Омагра,Ора\vКа,Оридан,Орида,Ошиби,Валин,Валнира,Валнит,Велиск,Вера,"
+"Омаги,Омагра,Ора Ка,Оридан,Орида,Ошиби,Валин,Валнира,Валнит,Велиск,Вера,"
 "Велин Ка,Вещар,Вущин"
 
 #. Generator for male drake names; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax
@@ -2048,6 +2011,13 @@ msgid ""
 "suffix=ash|kré|lsh|lin|rutin|shinar|rushi|ka|ash|ag|all|ash|slar|li|dian|"
 "ritos|rusté|shitt|nick|rath|ditt|kon|mad|tick|nir\n"
 msgstr ""
+"\n"
+"основи={prefix}{suffix}|{prefix}’{suffix}|{prefix}{suffix} {short_name}\n"
+"short_name=Ом|Ин|Он|Ка|Мур|Кон|Елч|Ко|Грет|Егар\n"
+"префикс=Га|Ге|Гел|Ги|Го|Гра|Гри|Ка|Ко|Кла|Мар|Ди|Мер|Мор|Ома|Ре|Вел|Ваш|Вер|"
+"Вла\n"
+"суфикс=ash|kré|lsh|lin|rutin|shinar|rushi|ka|ash|ag|all|ash|slar|li|dian|"
+"ritos|rusté|shitt|nick|rath|ditt|kon|mad|tick|nir\n"
 
 #. Generator for female drake names; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax
 #: data/core/macros/names.cfg:29
@@ -2058,6 +2028,11 @@ msgid ""
 "suffix=en|nash|irt|glann|ll|ge|lin|nitt|tin|tar|lisk|rida|grra|sill|la|mell\n"
 "short_name=Mal|Ka|Emth|Dar|Eshi\n"
 msgstr ""
+"\n"
+"Основи={prefix}{suffix}|{prefix}{suffix} {short_name}\n"
+"префикс=Ал|Али|Аш|Ог|Ауг|Да|Де|Дем|Дин|Ол|Ома|Ори|Оши|Вал|Вер|Вел|Вуш\n"
+"суфикс=ен|наш|ирт|глан|ил|ге|лин|нит|тин|тар|лиск|рида|гра|сил|ла|мел\n"
+"short_name=Мал|Ка|Емф|Дар|Еши\n"
 
 #: data/core/macros/names.cfg:38
 msgid ""
@@ -2160,6 +2135,15 @@ msgid ""
 "til|til|tol|los|rol|sol|ril|sil|as|us|lil|fur|mur|fur\n"
 "centre=lal|mal|ra|dur|thal|thas|ma|gal|thau|ga|ith|ma|cat|la|ral|dur|bur\n"
 msgstr ""
+"\n"
+"основи={long_name}\n"
+"long_name={prefix}{centre}{suffix}|{prefix}{centre}{centre}{suffix}\n"
+"short_name={prefix}{suffix}\n"
+"префикс=Ай|Ал|А|Ду|Глам|Дул|Гом|Нар|Пел|Три|Дун|До|Бар|Ер|Тим|Ал|Ду|Бу|Бур|"
+"Нор|Дер|Ур|Гар\n"
+"суфикс=сил|фур|бор|бус|бур|бор|гос|дор|рин|дур|инг|рас|дис|тис|рол|сол|лас|"
+"ти|тил|тол|лос|рол|сол|рил|сил|ас|ус|лил|фур|мур|фър\n"
+"център=лал|мал|ра|дър|тал|тас|ма|гал|тау|га|ит|ма|кат|ла|рал|дър|бур\n"
 
 #: data/core/macros/names.cfg:51
 msgid ""
@@ -2423,6 +2407,20 @@ msgid ""
 "short_centre=lol|febr|tom|lith|nal|lor|wón|rad|rien|mar|reb|riel|mal|ram|nil|"
 "nim|nol|bris|lad|rier|ra|fil|thran|man\n"
 msgstr ""
+"\n"
+"основи={generated_prefix}{consonnant}{suffix}|{prefix}{centre}{suffix}\n"
+"generated_prefix={starting_consonnant}{vowel}\n"
+"starting_consonnant=К|Д|Ф|Л|М|Н|П|Ку|Р|С|Т|В\n"
+"гласна=а|е|и|о|е|и|ьо\n"
+"съгласна=н|л|р|м|с|в|т|н\n"
+"префикс={prefix_vc}{vowel}|{prefix_cv}\n"
+"prefix_vc=Лон|Еон|Ад|Сар|Ал|Тал|Тин|Ел|Лег|Ор|Тир|Ол|Кел|Кен|Елв|Фан|Фад|Фит|"
+"Фи|Гал|Глад|Лег|Глар|Гли|Хер|Тад|Сьор|Пир\n"
+"prefix_cv=Ама|Ами|Бе|Ка|Га|Иси|Ха|Хе|Ле|Льо|Най|Ни|Ма|Ту|Три|Ти|Уну|Ве|Ва\n"
+"суфикс=ор|им|иан|ин|ар|иел|ас|еон|ас|ор|ион|ал|енд|ер|ас|ир|ел|ал|ад|аел\n"
+"център={short_centre}|{short_centre}|-{short_centre}|{short_centre}-\n"
+"short_centre=лол|фебр|том|лит|нал|ор|уон|рад|риен|мар|реб|риел|мал|рам|нил|"
+"ним|нол|брис|лад|риер|ра|фил|тран|ман\n"
 
 #. Generator for female elf names; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax
 #: data/core/macros/names.cfg:68
@@ -2448,6 +2446,26 @@ msgid ""
 "short_centre_c=enn|all|an|ith|el|il|am|ol|arth|ól|ár|ir|if|im|ion|iw|én|un|"
 "iw\n"
 msgstr ""
+"\n"
+"основи={generated_prefix_v}{centre_v}{suffix_v}|{generated_prefix_c}"
+"{centre_c}{suffix_c}\n"
+"generated_prefix_v={starting_consonnant}{vowel}\n"
+"generated_prefix_c={starting_consonnant}{vowel}{consonnant}\n"
+"starting_consonnant=К|Д|Ф|Л|М|Н|П|Ку|Р|С|Т|В\n"
+"гласна=а|е|и|о|е|и|ьо\n"
+"съгласна=н|л|р|м|с|в|д|р|д|ф|т\n"
+"prefix_c=Вал|Ол|Ам|Ан|Ел|Фа|Ел|Гло|Ху|Ле|Мил|Нил|Пин|Пор|Мот|Мор|Трал|Лег|"
+"Нам|Ним|Сим|Лен|Ис|Тал\n"
+"prefix_v=Ла|Ва|Та|Не|Ай|Ке|Фа|Фе|Я|Ке|Ма|Ми|Па|Ри|Сю|Га|Ка|Де|Ей|Ео|Но|По|Ле|"
+"Лю|си|Па|Са|Ни|Ти|Уно|Уни|Вю|Гио\n"
+"suffix_v=теа|ниа|лиа|кеа|ни|ит|ниел|виел|ра|ди|я|тие|на|не\n"
+"suffix_c=иеl|иен|иа|а|йе|и|иа|еа\n"
+"centre_v=|{short_centre_v}\n"
+"short_centre_v=на|ла|на|ти|саие|ли|ма|ло|тра|лю|ря|бри|фи|ми|нио|ви|ни|ну|"
+"ви\n"
+"centre_c=|{short_centre_c}\n"
+"short_centre_c=ен|ал|ан|ит|ел|ил|ам|ол|арт|юл|ер|ир|иф|им|ион|ив|ин|ун|ив\n"
+"\n"
 
 #: data/core/macros/names.cfg:88
 msgid "Graa,Greaa,Gree,Kaaa,Kassshh,Kessshh,Korro,Kraa,Kuu,Kzaaa,Kzuuu"
@@ -2466,6 +2484,11 @@ msgid ""
 "suffix=aa|eaa|ee|aaa|ssshh|rro|uu|uuu\n"
 "centre=arr|aash|eez|ozz\n"
 msgstr ""
+"\n"
+"main={prefix}{suffix}|{prefix}{centre}{suffix}\n"
+"prefix=Гр|Ка|Ке|Ко|Кр|Кз\n"
+"suffix=аа|еаа|ее|ааа|ссш|рро|уу|ууу\n"
+"centre=арр|ааш|еез|озз\n"
 
 #. Generator for female gryphon names; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax
 #: data/core/macros/names.cfg:98
@@ -2476,6 +2499,11 @@ msgid ""
 "suffix=sa|yya|ra|rra\n"
 "centre=err|aash|eez|azz\n"
 msgstr ""
+"\n"
+"main={prefix}{suffix}|{prefix}{centre}{suffix}\n"
+"prefix=Каа|Ка|Ке|Куу|Ко\n"
+"suffix=са|ия|ра|рра\n"
+"centre=ерр|ааш|еез|азз\n"
 
 #: data/core/macros/names.cfg:107
 msgid ""
@@ -2684,6 +2712,24 @@ msgid ""
 "centre_c=redd|reor|og|thyn\n"
 "centre_v=rae|ra|thar|gwy\n"
 msgstr ""
+"\n"
+"main={generated_prefix_c}{suffix_c}|{generated_prefix_v}{suffix_v}|{prefix_c}"
+"{centre_c}{suffix_c}|{prefix_v}{centre_v}{suffix_v}\n"
+"generated_prefix_c={starting_consonnant}{vowel}{consonnant}|{starting_vowel}"
+"{consonnant}\n"
+"generated_prefix_v={starting_consonnant}{vowel}|{starting_vowel}\n"
+"starting_consonnant=Б|К|Д|Г|Х|Л|М|Р|Рх|С|Т|В\n"
+"starting_vowel=А|Е|И|Я|Ае\n"
+"vowel=а|е|и|о|у|я|йо|ае\n"
+"consonnant=у|л|д|н|р|рк|л|нн|тд|т\n"
+"prefix_c=Ад|Ден|Дер|Гум|Мад|Мар|Оу|Тед|Т{vowel}н|Вар|Вин|Воб|Въг|Ир|Рхир\n"
+"prefix_v=Ае|Бл{vowel}|К{vowel}|Д{vowel}|Гл{vowel}|Г{vowel}|Гу{vowel}|Ха|"
+"Л{vowel}|М{vowel}|Р{vowel}|Рх{vowel}|С{vowel}|С{vowel}|Т{vowel}|В{vowel}\n"
+"suffix_c=ин|ер|ик|ек|ок|ир|ин|аент\n"
+"suffix_v=ри|рин|ран|лин|ван|ник\n"
+"centre_c=ред|реор|ог|тдин\n"
+"centre_v=рае|ра|тар|гуи\n"
+"\n"
 
 #. Generator for female Wesnothian human names; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax
 #: data/core/macros/names.cfg:126
@@ -2706,6 +2752,24 @@ msgid ""
 "centre_c=il|ing|ol|ur|ung|ean|eal|ong|al|iv\n"
 "centre_v=na|lla|na|ry|li|ni|ri|rae|bry\n"
 msgstr ""
+"\n"
+"main={generated_prefix_c}{suffix_c}|{generated_prefix_v}{suffix_v}|{prefix_c}"
+"{centre_c}{suffix_c}|{prefix_v}{centre_v}{suffix_v}\n"
+"generated_prefix_c={starting_consonnant}{vowel}{consonnant}|{starting_vowel}"
+"{consonnant}\n"
+"generated_prefix_v={starting_consonnant}{vowel}|{starting_vowel}\n"
+"starting_consonnant=Б|К|Д|Г|Х|Л|М|Р|Рх|С|Т|В\n"
+"starting_vowel=А|Е|И|Иа|Ае\n"
+"vowel=а|е|и|о|у|иа|ео|ае\n"
+"consonnant=у|л|д|н|р|рк|л|нн|тд|т\n"
+"prefix_c=Ал|Ел|Мер|Мил|Рер|Ис|М{vowel}р|М{vowel}л\n"
+"prefix_v=А|Бр{vowel}|Кл{vowel}|К{vowel}|Д{vowel}|Гу{vowel}|Хе|Дж{vowel}|"
+"Л{vowel}|М{vowel}|Н{vowel}|Р{vowel}|С{vowel}\n"
+"suffix_c=ян|ойк|ел|ил\n"
+"suffix_v=уин|на|ла|ра|ла|уиан|са|ка|вен\n"
+"centre_c=ил|инг|ол|ур|унг|еан|еал|онг|ал|ив\n"
+"centre_v=на|ла|на|ри|ли|ни|ри|рае|бри\n"
+"\n"
 
 #: data/core/macros/names.cfg:144
 #, fuzzy
@@ -2983,6 +3047,20 @@ msgid ""
 "connector= al-| bin | ibn\n"
 "centre=ʿ|ʾ|hi|sa|kar|da|na|ja|tay|ki|hai|saw\n"
 msgstr ""
+"\n"
+"main={name_long}|{prefix}{suffix}|{name_mid}{connector}{name_mid}\n"
+"name_mid={prefix}{suffix}|{name_short}\n"
+"name_long={prefix}{suffix}|{prefix}{centre}{suffix}\n"
+"name_short=Дин|Сиф|Дин|Таж|Суд|Али|Лут|Ну|Квайс|Нимр|Джад|Бушр|Лът|Маʿд|Нур|"
+"Фад\n"
+"prefix=Аб|Бас|Фат|Га|Ал|Ба|Джа|Ха|Му|Ра|Раз|Аби|Ам|Ла|ʿАж|Ала|ʿАк|Фа|Ду|Им|"
+"Джу|Мун|Ма|Ни|Джи|Му|Лаб|Луф|Мих|Ми|Кв|Тал|Та|Тда|За|Зи|Яс|уа|Су|Ква|ʿИкри|"
+"Лу|Су|Оса|Раг|Саф|Да|Фей|Ниб|Наш\n"
+"suffix=аф|ал|ли|баир|сур|би|ла|ат|сим|ма|и|ил|ик|раж|мам|ман|я|зид|рия|ай|"
+"аир|а|ен|ин|айд|уд|ра|уа|нан|ас|ир|ба|ни|яд|рас|зук|хид|мал|киб\n"
+"connector= ал-| бин | ибн\n"
+"centre=ʿлʾ|хи|са|кар|да|на|я|тай|ки|хай|со\n"
+"\n"
 
 #. Generator for female dunefolk human names; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax
 #: data/core/macros/names.cfg:158
@@ -3014,6 +3092,32 @@ msgid ""
 "riya|ail|air|ah|en|in|ayd|ud|rah|wah|nan|as|ir|ba|ni|yad|ras|zuq|hid|mal|"
 "kib\n"
 msgstr ""
+"\n"
+"main={name_long}|{prefix}{suffix}|{name_mid}{connector}{surname}\n"
+"name_mid={prefix}{suffix}|{name_short}\n"
+"surname={name_mid_male}|{name_mid}|{name_mid_male}\n"
+"name_long={prefix}{suffix}|{prefix}{centre}{suffix}\n"
+"name_short=Афаф|Аида|Алиа|Ариж|Арва|Асма|Асра|Азра|Дуа|Фажр|Хала|Хана|Хиба|"
+"Инас|Исра|Лина|Мона|Муна|Нида|Нима|Нур|Рана|Рим|Руба|Руя|Рува|Сана|Сара|Суха|"
+"Туба|Узма|Зара\n"
+"prefix=Аб|Бас|Фат|Гат|Ал|Ба|Джа|Ха|Му|Ра|Раз|Аби|Ам|Ла|ʿАдж|Ала|ʿАк|Фа|Ду|Им|"
+"Джу|Мун|Ма|Ни|Джи|Му|Лаб|Луф|Ми|Ми|Ку|Тал|Та|Тда|За|Зи|Яс|Уа|Су|Ка|ʿИкри|Лу|"
+"Су|Оса|Раг|Саф|Да|Фей|Ниб|Наш\n"
+"suffix=а|аб|ад|а|аф|аж|ал|ам|ан|ар|ас|ат|ай|аз|да|еен|иа|иж|ин|ир|ла|ма|мас|"
+"н|на|наб|ни|р|ра|раа|ран|рат|ул|ур|уз|уа|я|иа|ям|за|зи\n"
+"connector= ал-| ибна | бинт\n"
+"centre=ʿлʾ|хи|са|кар|да|на|я|тай|ки|хай|со\n"
+"\n"
+"Следните са буквално копирани от мъжките имена.\n"
+"name_mid_male={prefix_male}{suffix_male}|{name_short_male}\n"
+"name_short_male=Дин|Сиф|Дин|Таж|Суд|Али|Лут|Ну|Квайс|Нимр|Джад|Бушр|Лът|Маʿд|"
+"Нур|Фад\n"
+"prefix_male=Аб|Бас|Фат|Га|Ал|Ба|Джа|Ха|Му|Ра|Раз|Аби|Ам|Ла|ʿАж|Ала|ʿАк|Фа|Ду|"
+"Им|Джу|Мун|Ма|Ни|Джи|Му|Лаб|Луф|Мих|Ми|Кв|Тал|Та|Тда|За|Зи|Яс|уа|Су|Ква|"
+"ʿИкри|Лу|Су|Оса|Раг|Саф|Да|Фей|Ниб|Наш\n"
+"suffix=аф|ал|ли|баир|сур|би|ла|ат|сим|ма|и|ил|ик|раж|мам|ман|я|зид|рия|ай|"
+"аир|а|ен|ин|айд|уд|ра|уа|нан|ас|ир|ба|ни|яд|рас|зук|хид|мал|киб\n"
+"\n"
 
 #: data/core/macros/names.cfg:179
 #, fuzzy
@@ -3062,6 +3166,13 @@ msgid ""
 "suffix=ta|ir|az|ix|za|trax|il|le|esz|izs|ezz|irr|asch|ez|is|iss|azz\n"
 "centre=ix|’Kza|tra|na|an|ex|ssa|zzi|’Usz\n"
 msgstr ""
+"\n"
+"main={prefix}{suffix}|{prefix}{centre}{suffix}\n"
+"prefix=Ам|Ан|Ар|Бзз|Ча|Клей|Фа|Фи|Фли|Фри|Кса|Хе|Ин|Ир|Ин|Ка|Ке|Джезз|Джи|Ка|"
+"Ке|Ло|Ма|Окс|По|Са|Се|Ли|Ме|На|Пре|Ска|Ссе|Сси|Сто|Сте|Сзи|Сза|Ти|Ве|Ври|Кса|"
+"Ксе|Кси|Зна|Зил|Ззу\n"
+"suffix=та|ир|аз|икс|за|тракс|ил|ле|есз|изс|езз|ирр|ашш|ез|ис|ис|азз\n"
+"centre=икс|’Кза|тра|на|ан|екс|сса|ззи|’Усз\n"
 
 #: data/core/macros/names.cfg:190
 msgid ""
@@ -3104,6 +3215,13 @@ msgid ""
 "lau|nik|sa|loa|roa\n"
 "centre=la|ma|ri|sei|te|ka|li|cer|tu|ni|ki|na|ga|si\n"
 msgstr ""
+"\n"
+"main={prefix}{suffix}|{prefix}{centre}{suffix}\n"
+"prefix=А|Ай|Апа|Бар|Атла|Да|Ел|Фа|Я|Ла|Къ|Ли|Ма|Ме|Ми|На|Не|Ньо|Нуа|Ну|Оке|"
+"Окре|Фор|По|Про|Ра|Ро|Риу|Ски|Си|Та|Тау|Ти|Ви|Три|Во|Воу\n"
+"suffix=су|йон|ла|та|уа|мар|ре|лау|лу|на|ир|ра|тес|нус|теус|тес|тан|мас|ки|ни|"
+"лау|ник|са|лоа|роа\n"
+"centre=ла|ма|ри|сей|те|ка|ли|кер|ту|ни|ки|на|га|си\n"
 
 #. Generator for mermaid names; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax
 #: data/core/macros/names.cfg:200
@@ -3115,6 +3233,12 @@ msgid ""
 "suffix=me|pe|gia|noe|dna|la|ris|ta|tea|va|mo|pe|riam|riel|na|ra|tea\n"
 "centre=ophe|phri|tri|phro|di|si|xie|ce|ty|la|me|ro|co|mar|ran|then|la|ga\n"
 msgstr ""
+"\n"
+"main={prefix}{suffix}|{prefix}{centre}{suffix}\n"
+"prefix=Агла|Амфи|А|Ка|Дел|Дер|Ди|Ел|Га|Йе|Леу|Ли|Ло|Ма|Уа|Ма|Ми|Мо|Пар|Пел|"
+"Пи|Се|Сте|Ма|Те|Ти|Ва|Ве\n"
+"suffix=ме|пе|гиа|ное|дна|ла|рис|та|теа|ва|мо|пе|риам|риел|на|ра|теа\n"
+"centre=офе|фри|три|фро|ди|си|ксие|ке|ти|ла|ме|ро|ко|мар|ран|ден|ла|га\n"
 
 #: data/core/macros/names.cfg:209
 msgid ""
@@ -3161,6 +3285,13 @@ msgid ""
 "suffix=iss|ail|nal|eii|mol|loss|noss|xos|sal|zel|kps|pek|ness|or|sol|peii|"
 "iaz|on|sal|ol|kil|oz|ail|al|nis|rak|lel|nas|kon|ekp\n"
 msgstr ""
+"\n"
+"main={prefix}{suffix}\n"
+"prefix=Абра|Але|Ама|Акс|Бла|Бле|Бре|Бри|Гри|Хай|Хар|Ху|Ине|Кле|Крез|Лам|Лин|"
+"Лоб|Май|Лал|Нилд|Пон|Псе|Пза|Са|Се|Сле|Со|Сор|Три|Ви|Вла|Кса|Кси|Ксна|За|Зле|"
+"Зсе\n"
+"suffix=исс|айл|нал|ейй|мол|лосс|носс|ксос|сал|зел|кпс|пек|несс|ор|сол|пейй|"
+"иаз|он|сал|ол|кил|оз|айл|ал|нис|рак|лел|нас|кон|екп\n"
 
 #. Generator for female naga names; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax
 #: data/core/macros/names.cfg:218
@@ -3173,6 +3304,13 @@ msgid ""
 "suffix=asse|mailia|ilis|ana|ama|ssa|ssilai|zi|xias|lai|maissa|bra|lin|lina|"
 "na|bra|aa|lia|lai|laila|na|pkne|alsp|ekp\n"
 msgstr ""
+"\n"
+"main={prefix}{suffix}\n"
+"prefix=Али|Ама|Акс|Бла|Бли|Бра|Бри|Гакс|Гри|Хай|Хар|Ху|Ина|Исс|Крез|Кзап|Лам|"
+"Лекс|Ли|Лин|Май|Му|Нил|Окс|Пон|Пза|Ри|Сал|Сакс|Сек|Снел|Сра|Трикс|Вил|Вис|"
+"Блан|Ксаб|Ксам|Кси|Кснам|Ксоп|Зал|Зле|Зсе\n"
+"suffix=ассе|майлиа|илис|ана|ама|сса|ссилай|зи|ксиас|лай|маисса|бра|лин|лина|"
+"на|бра|аа|лиа|лай|лайла|на|пкне|алсп|екп\n"
 
 #: data/core/macros/names.cfg:226
 msgid ""
@@ -3198,6 +3336,11 @@ msgid ""
 "Ker|Kil|King|Kor|Kru|Kur|Mar|Mer|Nal|Trak|Urk\n"
 "suffix=ark|ort|alk|arm|kuk|kak|ukk|nak|ta|k|rok|rar|kon|gak|nik\n"
 msgstr ""
+"\n"
+"main={prefix}{suffix}\n"
+"prefix=Ак|Ар|Бар|Блок|Бор|Бул|Корк|Дел|Гар|Гну|Гра|Гру|Гъ|Кал|Кар|Кай|Кел|"
+"Кер|Кил|Кинг|Кор|Кру|Кур|Мар|Мер|Нал|Трак|Урк\n"
+"suffix=арк|орт|алк|арм|кук|как|ук|нак|та|к|рок|рар|кон|гак|ник\n"
 
 #: data/core/macros/names.cfg:236
 msgid ""
@@ -3280,9 +3423,36 @@ msgid ""
 "ending_consonnant=b|g|r|sh|k\n"
 "ending_vowel=o|u\n"
 msgstr ""
+"\n"
+"main={starting_consonnant}{vowel}{consonnant}{vowel}{ending_consonnant}|"
+"{starting_consonnant}{vowel}{consonnant}{ending_vowel}|{starting_vowel}"
+"{consonnant}{vowel}{ending_consonnant}|{starting_consonnant}{vowel}"
+"{ending_consonnant}|{starting_vowel}{consonnant}{ending_vowel}\n"
+"starting_consonnant=Б|Бр|Д|Др|Г|Гр|Гх|Х|Кх|М|Н|П|Пр|Р|С|Ш|Т|В\n"
+"starting_vowel=А|И|О|У\n"
+"consonnant=б|бр|д|др|г|гр|гх|кх|м|н|п|пр|р|с|ш|т|в|гз|зг|рб|бр|др|вр|кхр|гд|"
+"шн\n"
+"vowel=а|и|о|у\n"
+"ending_consonnant=б|г|р|ш|к\n"
+"ending_vowel=о|у\n"
+"\n"
 
 #. Generator for ship names
 #: data/core/macros/names.cfg:251
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "main={starting_consonnant}{vowel}{consonnant}{vowel}{ending_consonnant}|"
+#| "{starting_consonnant}{vowel}{consonnant}{ending_vowel}|{starting_vowel}"
+#| "{consonnant}{vowel}{ending_consonnant}|{starting_consonnant}{vowel}"
+#| "{ending_consonnant}|{starting_vowel}{consonnant}{ending_vowel}\n"
+#| "starting_consonnant=B|Br|D|Dr|G|Gr|Gh|H|Kh|M|N|P|Pr|R|S|Sh|T|V\n"
+#| "starting_vowel=A|I|O|U\n"
+#| "consonnant=b|br|d|dr|g|gr|gh|kh|m|n|p|pr|r|s|sh|t|v|gz|zg|rb|br|dr|vr|khr|"
+#| "gd|shn\n"
+#| "vowel=a|i|o|u\n"
+#| "ending_consonnant=b|g|r|sh|k\n"
+#| "ending_vowel=o|u\n"
 msgid ""
 "\n"
 "main={prefix} {starting_consonnant}{vowel}{consonnant}{vowel}"
@@ -3298,6 +3468,19 @@ msgid ""
 "ending_consonnant=yan|oic|ell|yll|tar|sh\n"
 "ending_vowel=a|ae|o|u\n"
 msgstr ""
+"\n"
+"main={starting_consonnant}{vowel}{consonnant}{vowel}{ending_consonnant}|"
+"{starting_consonnant}{vowel}{consonnant}{ending_vowel}|{starting_vowel}"
+"{consonnant}{vowel}{ending_consonnant}|{starting_consonnant}{vowel}"
+"{ending_consonnant}|{starting_vowel}{consonnant}{ending_vowel}\n"
+"starting_consonnant=Б|Бр|Д|Др|Г|Гр|Гх|Х|Кх|М|Н|П|Пр|Р|С|Ш|Т|В\n"
+"starting_vowel=А|И|О|У\n"
+"consonnant=б|бр|д|др|г|гр|гх|кх|м|н|п|пр|р|с|ш|т|в|гз|зг|рб|бр|др|вр|кхр|гд|"
+"шн\n"
+"vowel=а|и|о|у\n"
+"ending_consonnant=б|г|р|ш|к\n"
+"ending_vowel=о|у\n"
+"\n"
 
 #: data/core/macros/names.cfg:264
 msgid ""
@@ -3323,6 +3506,14 @@ msgid ""
 "beginning=Ä|Ü|A|U\n"
 "suffix=rb|g|gh|k|rf|kk|r|g|th|h|rg\n"
 msgstr ""
+"\n"
+"main={short_name}|{short_name}|{short_name}|{short_name} {short_name}\n"
+"short_name={prefix}{middle}{suffix}|{prefix}{middle}{suffix}|{prefix}{middle}"
+"{suffix}|{beginning}{suffix}\n"
+"prefix=Б|Бр|Д|Г|Гн|Х|К|Кр|Л|Н|К|П|Р|С|Ш|Ст|Т|Тс|Т|В|З\n"
+"middle=а|о|у|уу|е|ю\n"
+"beginning=Е|Ю|А|У\n"
+"suffix=рб|г|гх|к|рф|кк|р|г|т|х|рг\n"
 
 #: data/core/macros/names.cfg:277
 msgid ""
@@ -3367,6 +3558,17 @@ msgid ""
 "suffix=men|drum|tor|num|lad|de|ak|lol|dum|tam|nur|dium|deum|bil|rook|relm|"
 "dium|numm|dan|doom|tum|din\n"
 msgstr ""
+"\n"
+"main={prefix}{centre}{centre}{suffix}|{prefix}{centre}{centre}{centre}"
+"{suffix}\n"
+"prefix=Блу|Бо|Бре|Бро|Бру|Бу|Кар|Да|Да|Де|Диб|Дол|Дро|Дул|Дум|Ел|Гре|Гъл|Гум|"
+"Лаф|Лан|Лас|Леф|Либ|Лол|Мон|Мул|Мън|Нан|Нун|Ор|Пам|Пом|Рит|Тан|Тем|Тон|Труум|"
+"Тън|Тум|Уон|Уън\n"
+"centre=де|бал|друм|вул|дел|бем|пом|гон|тан|бом|кен|тан|тон|ман|тен|дрон|дъб|"
+"на|да|ни|ми|лъл|мон|дуел|лем|нум|ноб|манд|руум|лад|роам|бе|лом|сем|нъб|ди|"
+"вим|дин|блем|нанд|дъл|дил|оф|там|кон|тон|тун|кон|тен|рън|мал|до\n"
+"suffix=мен|дръм|тор|нум|лад|де|ак|лол|дъм|там|нур|диум|деум|бил|руук|релм|"
+"диум|нъмм|дан|дуум|тум|дин\n"
 
 #: data/core/macros/names.cfg:289
 msgid ""
@@ -3378,6 +3580,13 @@ msgstr ""
 
 #. Generator for the base names of features assigned by the random map generator; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax
 #: data/core/macros/names.cfg:291
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "main={prefix}{middle}{suffix}\n"
+#| "prefix=B|C|D|E|F|Fr|Wat|G|H|K|N|O|R|S|T|W|Y|Ro\n"
+#| "middle=a|e|o|u|i\n"
+#| "suffix=l|m|rn|x|w|ld|ck|k|rk\n"
 msgid ""
 "\n"
 "main={c_prefix}{c_middle}{suffix}|{f_prefix}{f_middle}{suffix}|{other_prefix}"
@@ -3390,6 +3599,11 @@ msgid ""
 "middle=a|e|o|i|u\n"
 "suffix=l|m|rn|x|w|ld|ck|k|rk\n"
 msgstr ""
+"\n"
+"main={prefix}{middle}{suffix}\n"
+"prefix=Б|К|Д|Е|Ф|Фр|Уат|Г|Х|К|Н|О|Р|С|Т|У|И|Ро\n"
+"middle=а|е|о|у|и\n"
+"suffix=л|м|рн|кс|у|лд|ск|к|рк\n"
 
 #. [objective]: condition=lose
 #: data/core/macros/objective-utils.cfg:7
@@ -3415,7 +3629,7 @@ msgstr "Пожелателна цел:"
 #. [note]: description=<b>
 #: data/core/macros/objective-utils.cfg:60
 msgid "This is the last scenario."
-msgstr "Това е последната Ви мисия."
+msgstr "Това е последната ви мисия."
 
 #. [note]: description=<b>
 #: data/core/macros/objective-utils.cfg:67
@@ -3604,211 +3818,211 @@ msgstr "Получихте $amount_gold жълтици."
 
 #. [color_range]: id=red
 #. [color_range]: id=1
-#: data/core/team-colors.cfg:14 data/core/team-colors.cfg:265
+#: data/core/team-colors.cfg:14 data/core/team-colors.cfg:271
 msgid "Red"
 msgstr "Червено"
 
-#. [color_range]: id=lightred
-#: data/core/team-colors.cfg:21
-msgid "Light Red"
-msgstr "Светлочервено"
-
-#. [color_range]: id=darkred
-#: data/core/team-colors.cfg:27
-msgid "Dark Red"
-msgstr "Тъмночервено"
-
 #. [color_range]: id=blue
 #. [color_range]: id=2
-#: data/core/team-colors.cfg:33 data/core/team-colors.cfg:271
+#: data/core/team-colors.cfg:21 data/core/team-colors.cfg:277
 msgid "Blue"
 msgstr "Синьо"
 
-#. [color_range]: id=lightblue
-#: data/core/team-colors.cfg:40
-msgid "Light blue"
-msgstr "Светлосиньо"
-
 #. [color_range]: id=green
 #. [color_range]: id=3
-#: data/core/team-colors.cfg:46 data/core/team-colors.cfg:277
+#: data/core/team-colors.cfg:28 data/core/team-colors.cfg:283
 msgid "Green"
 msgstr "Зелено"
 
-#. [color_range]: id=brightgreen
-#: data/core/team-colors.cfg:53
-msgid "Bright green"
-msgstr "Светлозелено"
-
 #. [color_range]: id=purple
 #. [color_range]: id=4
-#: data/core/team-colors.cfg:59 data/core/team-colors.cfg:283
+#: data/core/team-colors.cfg:35 data/core/team-colors.cfg:289
 msgid "Purple"
 msgstr "Лилаво"
 
 #. [color_range]: id=black
 #. [color_range]: id=5
-#: data/core/team-colors.cfg:66 data/core/team-colors.cfg:295
+#: data/core/team-colors.cfg:42 data/core/team-colors.cfg:301
 msgid "Black"
 msgstr "Черно"
 
 #. [color_range]: id=brown
 #. [color_range]: id=6
-#: data/core/team-colors.cfg:73 data/core/team-colors.cfg:307
+#: data/core/team-colors.cfg:49 data/core/team-colors.cfg:313
 msgid "Brown"
 msgstr "Кафяво"
 
 #. [color_range]: id=orange
 #. [color_range]: id=7
-#: data/core/team-colors.cfg:80 data/core/team-colors.cfg:289
+#: data/core/team-colors.cfg:56 data/core/team-colors.cfg:295
 msgid "Orange"
 msgstr "Оранжево"
 
-#. [color_range]: id=brightorange
-#: data/core/team-colors.cfg:87
-msgid "Bright orange"
-msgstr "Ярко оранжево"
-
 #. [color_range]: id=white
 #. [color_range]: id=8
-#: data/core/team-colors.cfg:93 data/core/team-colors.cfg:301
+#: data/core/team-colors.cfg:63 data/core/team-colors.cfg:307
 msgid "White"
 msgstr "Бяло"
 
 #. [color_range]: id=teal
 #. [color_range]: id=9
-#: data/core/team-colors.cfg:100 data/core/team-colors.cfg:313
+#: data/core/team-colors.cfg:70 data/core/team-colors.cfg:319
 msgid "Teal"
 msgstr "Синьозелено"
 
 #. [color_range]: id=gold
-#: data/core/team-colors.cfg:107
+#: data/core/team-colors.cfg:77
 msgid "color^Gold"
 msgstr "color^Златно"
 
+#. [color_range]: id=lightblue
+#: data/core/team-colors.cfg:84
+msgid "Light blue"
+msgstr "Светлосиньо"
+
+#. [color_range]: id=brightgreen
+#: data/core/team-colors.cfg:91
+msgid "Bright green"
+msgstr "Светлозелено"
+
+#. [color_range]: id=darkred
+#: data/core/team-colors.cfg:98
+msgid "Dark Red"
+msgstr "Тъмночервено"
+
+#. [color_range]: id=brightorange
+#: data/core/team-colors.cfg:105
+msgid "Bright orange"
+msgstr "Ярко оранжево"
+
+#. [color_range]: id=lightred
+#: data/core/team-colors.cfg:112
+msgid "Light Red"
+msgstr "Светлочервено"
+
 #. [color_range]: id=yellow
-#: data/core/team-colors.cfg:113
+#: data/core/team-colors.cfg:119
 #, fuzzy
 #| msgid "Yellow Potion"
 msgid "Yellow"
 msgstr "Жълта отвара"
 
 #. [color_range]: id=pink
-#: data/core/team-colors.cfg:119
+#: data/core/team-colors.cfg:125
 msgid "Pink"
 msgstr ""
 
 #. [color_range]: id=darkblue
-#: data/core/team-colors.cfg:126
+#: data/core/team-colors.cfg:132
 msgid "Dark blue"
 msgstr "Тъмносиньо"
 
 #. [color_range]: id=reef
-#: data/core/team-colors.cfg:135
+#: data/core/team-colors.cfg:141
 msgid "Reef"
 msgstr "Риф"
 
 #. [color_range]: id=shallow_water
-#: data/core/team-colors.cfg:141
+#: data/core/team-colors.cfg:147
 msgid "Shallow water"
 msgstr "Плитчини"
 
 #. [color_range]: id=deep_water
-#: data/core/team-colors.cfg:147
+#: data/core/team-colors.cfg:153
 msgid "Deep water"
 msgstr "Дълбока вода"
 
 #. [color_range]: id=swamp_water
-#: data/core/team-colors.cfg:153
+#: data/core/team-colors.cfg:159
 msgid "Swamp water"
 msgstr "Блатна вода"
 
 #. [color_range]: id=flat
-#: data/core/team-colors.cfg:159
+#: data/core/team-colors.cfg:165
 msgid "Flat"
 msgstr "Равнина"
 
 #. [color_range]: id=hills
-#: data/core/team-colors.cfg:165
+#: data/core/team-colors.cfg:171
 msgid "Hills"
 msgstr "Хълмове"
 
 #. [color_range]: id=mountains
-#: data/core/team-colors.cfg:171
+#: data/core/team-colors.cfg:177
 msgid "Mountains"
 msgstr "Планини"
 
 #. [color_range]: id=forest
-#: data/core/team-colors.cfg:177
+#: data/core/team-colors.cfg:183
 msgid "Forest"
 msgstr "Гора"
 
 #. [color_range]: id=sand
-#: data/core/team-colors.cfg:183
+#: data/core/team-colors.cfg:189
 msgid "Sand"
 msgstr "Пясъци"
 
 #. [color_range]: id=frozen
-#: data/core/team-colors.cfg:189
+#: data/core/team-colors.cfg:195
 msgid "Frozen"
 msgstr "Заледена земя"
 
 #. [color_range]: id=cave
-#: data/core/team-colors.cfg:195
+#: data/core/team-colors.cfg:201
 msgid "Cave"
 msgstr "Пещера"
 
 #. [color_range]: id=fungus
-#: data/core/team-colors.cfg:201
+#: data/core/team-colors.cfg:207
 msgid "Fungus"
 msgstr "Гъби"
 
 #. #-#-#-#-#  wesnoth.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [color_range]: id=village
-#: data/core/team-colors.cfg:207 src/terrain/terrain.cpp:169
+#: data/core/team-colors.cfg:213 src/terrain/terrain.cpp:169
 msgid "Village"
 msgstr "Селище"
 
 #. [color_range]: id=castle
-#: data/core/team-colors.cfg:213
+#: data/core/team-colors.cfg:219
 msgid "Castle"
 msgstr "Замък"
 
 #. [color_range]: id=keep
-#: data/core/team-colors.cfg:219
+#: data/core/team-colors.cfg:225
 msgid "Keep"
 msgstr "Крепост"
 
 #. [color_range]: id=rails
-#: data/core/team-colors.cfg:225
+#: data/core/team-colors.cfg:231
 msgid "Rail"
 msgstr "Релса"
 
 #. [color_range]: id=unwalkable
-#: data/core/team-colors.cfg:231
+#: data/core/team-colors.cfg:237
 msgid "Unwalkable"
 msgstr "Непроходимо"
 
 #. [color_range]: id=impassable
-#: data/core/team-colors.cfg:237
+#: data/core/team-colors.cfg:243
 msgid "Impassable"
 msgstr "Препятствие"
 
 #. #-#-#-#-#  wesnoth.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [color_range]: id=fog
-#: data/core/team-colors.cfg:243 src/game_initialization/lobby_data.cpp:376
+#: data/core/team-colors.cfg:249 src/game_initialization/lobby_data.cpp:376
 msgid "Fog"
 msgstr "Мъгла"
 
 #. #-#-#-#-#  wesnoth.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [color_range]: id=shroud
-#: data/core/team-colors.cfg:249 src/game_initialization/lobby_data.cpp:379
+#: data/core/team-colors.cfg:255 src/game_initialization/lobby_data.cpp:379
 #: src/game_initialization/lobby_data.cpp:382
 msgid "Shroud"
 msgstr "Було"
 
 #. [color_range]: id=urbanjungle
-#: data/core/team-colors.cfg:256
+#: data/core/team-colors.cfg:262
 msgid "Urban"
 msgstr ""
 
@@ -3902,6 +4116,10 @@ msgid ""
 "\t\tmain=$base {bridge_type}|$base{!}’s {bridge_type}\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tbridge_type=Мост|Пресечка\n"
+"\t\tmain=$base {bridge_type}|$base{!}’s {bridge_type}\n"
+"\t"
 
 #. [naming]
 #. Generator for road labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -3912,6 +4130,10 @@ msgid ""
 "\t\tmain=$base{!}’s {road_type}|{road_type} of $base\n"
 "\t"
 msgstr ""
+"\n"
+"\t\troad_type=Главен път|Проход|Пътека|Път|Друм|Горска пътека\n"
+"\t\tmain=$base{!}’s {road_type}|{road_type} of $base\n"
+"\t"
 
 #. [naming]
 #. Generator for river labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -3922,6 +4144,10 @@ msgid ""
 "\t\tmain=$base {river_type}|{river_type} $base\n"
 "\t"
 msgstr ""
+"\n"
+"\t\triver_type=Река|Ручей|Река|Поток|Струя|Течение|Канал\n"
+"\t\tmain=$base {river_type}|{river_type} $base\n"
+"\t"
 
 #. [naming]
 #. Generator for forest labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -3932,6 +4158,10 @@ msgid ""
 "\t\tmain=$base {forest_type}|$base{!}’s {forest_type}|{forest_type} $base\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tforest_type=Гора|Лес|Дъбрава\n"
+"\t\tmain=$base {forest_type}|$base{!}’s {forest_type}|{forest_type} $base\n"
+"\t"
 
 #. [naming]
 #. Generator for lake labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -3942,6 +4172,10 @@ msgid ""
 "\t\tmain=$base {lake_type}|{lake_type} $base\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tlake_type=Езеро|Езеро|Езеро|Дълбоко езеро|Море\n"
+"\t\tmain=$base {lake_type}|{lake_type} $base\n"
+"\t"
 
 #. [naming]
 #. Generator for mountain labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -3951,6 +4185,9 @@ msgid ""
 "\t\tmain=$base{!}’s Peak|$base Peak|Mount $base|Mount $base\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tmain=$base{!} връх|$base връх|Планина $base|Възвишение $base\n"
+"\t"
 
 #. [naming]
 #. Generator for swamp labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -3961,6 +4198,10 @@ msgid ""
 "\t\tmain=$base{!}{suffix}\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tsuffix=блато|тресавище|мочурище\n"
+"\t\tmain=$base{!}{suffix}\n"
+"\t"
 
 #. [village_naming]
 #. Generator for generic village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -3971,6 +4212,10 @@ msgid ""
 "\t\tmain=$base{!}{suffix}\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tsuffix=бъри|бъри|хам|тон|град\n"
+"\t\tmain=$base{!}{suffix}\n"
+"\t"
 
 #. [village_naming]
 #. Generator for lakeside village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -3982,6 +4227,11 @@ msgid ""
 "\t\tmain={prefix}{suffix}\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tprefix=$base{!}|$lake{!}\n"
+"\t\tsuffix=Пристанище|порт\n"
+"\t\tmain={prefix}{suffix}\n"
+"\t"
 
 #. [village_naming]
 #. Generator for riverside village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -3994,6 +4244,12 @@ msgid ""
 "\t\tmain={prefix}{suffix}\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tprefix=$base{!}|$river{!}\n"
+"\t\triver=$river{!}|River\n"
+"\t\tsuffix=хам|брод|брод| край {river}\n"
+"\t\tmain={prefix}{suffix}\n"
+"\t"
 
 #. [village_naming]
 #. Generator for bridge village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -4005,6 +4261,11 @@ msgid ""
 "\t\tmain={prefix}{suffix}\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tprefix=$base{!}|$river{!}|$bridge{!}\n"
+"\t\tsuffix=мост|мост|хам|тон\n"
+"\t\tmain={prefix}{suffix}\n"
+"\t"
 
 #. [village_naming]
 #. Generator for grassland village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -4015,6 +4276,10 @@ msgid ""
 "\t\tmain=$base{!}{suffix}\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tsuffix=хам|тон|поле\n"
+"\t\tmain=$base{!}{suffix}\n"
+"\t"
 
 #. [village_naming]
 #. Generator for forest village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -4026,6 +4291,11 @@ msgid ""
 "\t\tmain={prefix}{suffix}\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tprefix=$base{!}|$forest{!}\n"
+"\t\tsuffix=хам|тон|лес| Гора\n"
+"\t\tmain={prefix}{suffix}\n"
+"\t"
 
 #. [village_naming]
 #. Generator for hill village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -4036,6 +4306,10 @@ msgid ""
 "\t\tmain=$base{!}{suffix}\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tsuffix=хам|бери|тон|хълм|гребен\n"
+"\t\tmain=$base{!}{suffix}\n"
+"\t"
 
 #. [village_naming]
 #. Generator for mountain village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -4047,6 +4321,11 @@ msgid ""
 "\t\tmain={prefix}{suffix}\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tprefix=$base{!}|$mountain{!}\n"
+"\t\tsuffix=монт|скала|бъри|хам\n"
+"\t\tmain={prefix}{suffix}\n"
+"\t"
 
 #. [village_naming]
 #. Generator for mountain labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -4057,6 +4336,10 @@ msgid ""
 "\t\tmain=$base{!}{suffix}\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tsuffix=хам|бъри|тон|монт|планина|скала|камък\n"
+"\t\tmain=$base{!}{suffix}\n"
+"\t"
 
 #. [village_naming]
 #. Generator for roadside village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -4068,6 +4351,11 @@ msgid ""
 "\t\tmain={prefix}{suffix}\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tprefix=$road{!}|$road{!}|$base{!}\n"
+"\t\tsuffix=Отдих|Кръстовище|бъри|бъри|хам|хам\n"
+"\t\tmain={prefix}{suffix}\n"
+"\t"
 
 #. [village_naming]
 #. Generator for swamp village labels in random maps; see <https://wiki.wesnoth.org/Context-free_grammar> for syntax and <https://wiki.wesnoth.org/MapGeneratorWML#The_Default_Generator> for variables summary
@@ -4079,6 +4367,11 @@ msgid ""
 "\t\tmain={prefix}{suffix}\n"
 "\t"
 msgstr ""
+"\n"
+"\t\tprefix=$base{!}|$swamp{!}\n"
+"\t\tsuffix=бъри|хам|тон\n"
+"\t\tmain={prefix}{suffix}\n"
+"\t"
 
 #. [server]
 #: data/game_config.cfg:4
@@ -4124,10 +4417,8 @@ msgstr "DejaVu Sans Mono"
 
 #. [fonts]
 #: data/hardwired/fonts.cfg:20
-#, fuzzy
-#| msgid "No description available."
 msgid "WesScript"
-msgstr "Няма описание."
+msgstr ""
 
 #. [time]: id=dawn_noweather
 #: data/internal/Weather/_main.cfg:151
@@ -4268,7 +4559,7 @@ msgstr "Загуба"
 #. [lua]: carryover.get_popup_text_basic
 #: data/lua/carryover_gold.lua:118
 msgid "You have been defeated!"
-msgstr "Бяхте надвит!"
+msgstr "Бяхте победен!"
 
 #. [lua]: carryover.remaining_gold_message
 #: data/lua/carryover_gold.lua:127
@@ -4323,8 +4614,8 @@ msgid ""
 msgid_plural ""
 "You will start the next scenario with $gold on top of the defined minimum "
 "starting gold."
-msgstr[0] "80% от златото Ви се запазва за следващата мисия."
-msgstr[1] "80% от златото Ви се запазва за следващата мисия."
+msgstr[0] "80% от златото се запазва за следващата мисия."
+msgstr[1] "80% от златото се запазва за следващата мисия."
 
 #. [lua]: carryover.carryover_mesage
 #: data/lua/carryover_gold.lua:179
@@ -4355,46 +4646,46 @@ msgstr[1] ""
 #. [lua]: wesnoth.deprecate_api
 #: data/lua/core/_initial.lua:32
 msgid "(Note: You should use $replacement instead in new code)"
-msgstr ""
+msgstr "(Бележка: използвайте $replacement, наместо нов код)"
 
 #. #-#-#-#-#  wesnoth.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [lua]: wesnoth.deprecate_api
 #: data/lua/core/_initial.lua:38 src/deprecation.cpp:68
 msgid "Invalid deprecation level $level (should be 1-4)"
-msgstr ""
+msgstr "Невалидно ниво на отхвърляне $level (трябва да е 1-4)"
 
 #. [lua]: wml_actions.deprecated_message
 #: data/lua/wml-tags.lua:891
 msgid "Invalid deprecation level (should be 1-4)"
-msgstr ""
+msgstr "Невалидно ниво на отхвърляне (трябва да е 1-4)"
 
 #. #-#-#-#-#  wesnoth.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [lua]: set_status
-#: data/lua/wml/harm_unit.lua:124 src/actions/attack.cpp:949
+#: data/lua/wml/harm_unit.lua:124 src/actions/attack.cpp:941
 msgid "female^poisoned"
 msgstr "отровена"
 
 #. #-#-#-#-#  wesnoth.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [lua]: set_status
-#: data/lua/wml/harm_unit.lua:126 src/actions/attack.cpp:956
+#: data/lua/wml/harm_unit.lua:126 src/actions/attack.cpp:948
 msgid "female^slowed"
 msgstr "забавена"
 
 #. #-#-#-#-#  wesnoth.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [lua]: set_status
-#: data/lua/wml/harm_unit.lua:126 src/actions/attack.cpp:956
+#: data/lua/wml/harm_unit.lua:126 src/actions/attack.cpp:948
 msgid "slowed"
 msgstr "забавен"
 
 #. #-#-#-#-#  wesnoth.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [lua]: set_status
-#: data/lua/wml/harm_unit.lua:127 src/actions/attack.cpp:962
+#: data/lua/wml/harm_unit.lua:127 src/actions/attack.cpp:954
 msgid "female^petrified"
 msgstr "вкаменена"
 
 #. #-#-#-#-#  wesnoth.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [lua]: set_status
-#: data/lua/wml/harm_unit.lua:127 src/actions/attack.cpp:962
+#: data/lua/wml/harm_unit.lua:127 src/actions/attack.cpp:954
 msgid "petrified"
 msgstr "вкаменен"
 
@@ -4410,10 +4701,10 @@ msgstr "нелечим"
 
 #. #-#-#-#-#  wesnoth.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [lua]: wesnoth.wml_actions.message
-#: data/lua/wml/message.lua:442 src/scripting/game_lua_kernel.cpp:3755
-#: src/scripting/game_lua_kernel.cpp:3790
+#: data/lua/wml/message.lua:442 src/scripting/game_lua_kernel.cpp:3766
+#: src/scripting/game_lua_kernel.cpp:3801
 msgid "input"
-msgstr ""
+msgstr "подаване"
 
 #. #-#-#-#-#  wesnoth.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [lua]: generate_objectives
@@ -4431,12 +4722,12 @@ msgstr "Загуба:"
 msgid "(this turn left)"
 msgid_plural "($remaining_turns turns left)"
 msgstr[0] "(последен ход)"
-msgstr[1] "(остават Ви %d хода)"
+msgstr[1] "(остават ви %d хода)"
 
 #. [lua]: generate_objectives
 #: data/lua/wml/objectives.lua:119
 msgid "$percent|% of gold carried over to the next scenario."
-msgstr "%d%% от златото Ви ще остане за следващата мисия."
+msgstr "%d%% от златото ви ще остане за следващата мисия."
 
 #. [modification]: id=plan_unit_advance, type=mp
 #: data/modifications.cfg:6
@@ -4445,22 +4736,16 @@ msgstr "Планиране на повишенията"
 
 #. [modification]: id=plan_unit_advance, type=mp
 #: data/modifications.cfg:7
-#, fuzzy
-#| msgid ""
-#| "When playing a multiplayer game, you do not control what a unit advances "
-#| "to if it advances on another player's turn. With this modification you "
-#| "can set what your units advance to beforehand, either for a specific unit "
-#| "or for all units of the same type."
 msgid ""
 "When playing a multiplayer game, you do not control what a unit advances to "
 "if it advances on another player’s turn. With this modification you can set "
 "what your units advance to beforehand, either for a specific unit or for all "
 "units of the same type."
 msgstr ""
-"Когато играете мултиплейър игра, нямате контрол в какво ще бъде повишена "
-"дадена единица, ако достигне този момент по време на чужд ход. С тази "
-"модификация ще можете предварително да изберете повишенията си за определена "
-"или всички видове единици от този тип."
+"Когато играете мултиплейър игра, ако ваша единица вдигне ниво по време на "
+"чужд ход, нямате контрол в какво ще бъде повишена тя. С тази модификация ще "
+"можете предварително да изберете повишенията си за всяка една единица от "
+"този тип."
 
 #. [checkbox]: id=pickadvance_force_choice
 #: data/modifications.cfg:13
@@ -4475,7 +4760,7 @@ msgid ""
 "\n"
 "Some eras and scenarios may automatically enable this option."
 msgstr ""
-"Ще Ви бъде зададен въпрос да изберете повишения за единици, при които такова "
+"Ще ви бъде зададен въпрос да изберете повишения за единици, при които такова "
 "не е избрано.\n"
 "\n"
 "Някои ери и мисии автоматично включват тази опция."
@@ -4496,7 +4781,7 @@ msgstr "Планирани повишения"
 #: data/modifications/pick_advance/gui/pick_advance.cfg:53
 msgid ""
 "This advancement is currently the default for all units of the same type"
-msgstr "Това повишение е стандартът за всички единици от същия тип"
+msgstr "Това повишение е стандарт за всички единици от същия тип"
 
 #. [toggle_button]: id=apply_to_all
 #: data/modifications/pick_advance/gui/pick_advance.cfg:118
@@ -4650,10 +4935,8 @@ msgstr "Зареждане на..."
 
 #. [menu]: id=menu-quickreplay
 #: data/themes/default.cfg:108
-#, fuzzy
-#| msgid "play turn"
 msgid "Replay Turn..."
-msgstr "изиграване на хода"
+msgstr "Повтаряне на хода..."
 
 #. [menu]: id=actions-menu
 #: data/themes/default.cfg:116
@@ -4678,7 +4961,7 @@ msgstr "ТД"
 #. [label]: id=label-def
 #: data/themes/default.cfg:189
 msgid "def"
-msgstr "защ"
+msgstr "защт"
 
 #. [unit_level]: id=unit-level
 #: data/themes/default.cfg:409
@@ -4705,8 +4988,8 @@ msgid ""
 "In the map editor, select <i>New Scenario</i> in the <i>File</i> menu to "
 "make use of advanced features."
 msgstr ""
-"В редактора изберете <i>Нова мисия</i> в менюто <i>Файл</i>, за да се "
-"възползвате от напреднали функции."
+"В редактора изберете <i>Нова мисия</i> от менюто <i>Файл</i>, за да се "
+"възползвате от по-сложни функции."
 
 #. [tip]
 #: data/tips.cfg:12
@@ -4714,8 +4997,8 @@ msgid ""
 "Scenarios saved from the editor in their default folder can be selected in "
 "the <i>Custom Scenarios</i> section of the Multiplayer “Create Game” screen."
 msgstr ""
-"Мисиите записани от редактора в стандартната им папка могат да бъдат "
-"избирани в секцията <i>Мисии по избор</i> от екранът за Създаване на игра в "
+"Редакторът записва мисии в стандартната посочена папка, които могат да бъдат "
+"избирани в секцията <i>Мисии по избор</i> от екранът \"Създаване на игра\" в "
 "мултиплейър."
 
 #. [tip]
@@ -4724,8 +5007,8 @@ msgid ""
 "Don’t neglect to earn your leader experience! You need to keep him safe, but "
 "if you coddle him too much he may be too weak to survive future battles."
 msgstr ""
-"Не пренебрегвайте опита на своя водач! Трябва да го предпазите, но ако го "
-"обгрижвате твърде много, той ще остане твърде слаб за бъдещите битки."
+"Грижете се за опита на своя водач! Вярно е, че трябва да го пазите, но ако "
+"твърде много го обгрижвате, той ще остане твърде слаб за бъдещите битки."
 
 #. [tip]
 #: data/tips.cfg:17
@@ -4742,10 +5025,10 @@ msgid ""
 "where they are). Use this to make sure the enemy can’t reach your weak or "
 "injured units on his next turn."
 msgstr ""
-"В менюто с <b>Действия</b>, можете да натиснете <b>Показване на вражеските "
-"ходове</b>, за да осветите всички полета, до които Вашият опонент може да се "
-"придвижи (при условие, че единиците Ви стоят неподвижни). Използвайте този "
-"способ, за да прецените дали врагът Ви може да достигне слаби или ранени "
+"В менюто с <b>Действия</b> можете да натиснете <b>Показване на вражеските "
+"ходове</b>, за да осветите всички полета, до които вашият опонент може да се "
+"придвижи (при условие, че единиците ви стоят неподвижни). Използвайте този "
+"метод, за да прецените дали врагът може да стигне до слаби или ранени "
 "единици на следващия си ход."
 
 #. [tip]
@@ -4768,9 +5051,9 @@ msgid ""
 "level up. Early in a campaign, try to give killing blows to these units so "
 "you can get some high-level troops sooner."
 msgstr ""
-"Единици, които са <i>интелигентни</i>, се нуждаят от по-малко точки опит, за "
-"да се развият. По-рано в кампанията си, предоставяйте им смъртоносните "
-"удари, за да получите по-могъщи единици по-рано."
+"Единици с качеството <i>интелигентни</i> се нуждаят от по-малко точки опит, "
+"за да получат повишение. Предоставяйте им смъртоносните удари още в началото "
+"на кампанията, за да получите отрано по-могъщи единици."
 
 #. [tip]
 #: data/tips.cfg:25
@@ -4785,10 +5068,10 @@ msgid ""
 "will restrict it to one hex of movement in any direction. Unfortunately, you "
 "must completely surround skirmishers to immobilize them."
 msgstr ""
-"Обкръжаващата тактика е много могъща, особено срещу бързи опоненти. Като "
-"разположите две единици от двете страни на врага, зоните им на контрол ще го "
-"ограничат във всяка посока. За съжаление някои единици трябва напълно да ги "
-"обездвижите."
+"Тактика на обкръжаване е особено могъща, особено срещу бързи опоненти. Ако "
+"разположите по две единици от двете страни на врага, зоните им на контрол ще "
+"го ограничат във всяка посока. За съжаление някои единици трябва да бъдат "
+"напълно обездвижени."
 
 #. [tip]
 #: data/tips.cfg:29 data/tips.cfg:141
@@ -4803,10 +5086,10 @@ msgid ""
 "a unit in. Placing units wisely can sometimes let you reach a village a turn "
 "earlier."
 msgstr ""
-"Можете да изберете командите <b>Набор</b> и <b>Привикване</b> чрез натискане "
-"на дясно копче върху произволно поле из замък. Така можете да изберете къде "
-"точно да поставите дадена единица. Мъдрото разположение може да Ви спечели "
-"селище един ход по-рано."
+"Командите <b>Набор</b> и <b>Привикване</b> се използват чрез натискане на "
+"дясно копче върху произволно поле на замъка. Това ще позволява да се избере "
+"къде точно да бъде поставена дадена единица. Мъдрото разположение може да "
+"спечели селище цял един ход по-рано."
 
 #. [tip]
 #: data/tips.cfg:36
@@ -4815,9 +5098,9 @@ msgid ""
 "<b>Status Table</b> will let you know how your enemies are doing, and how "
 "you are doing in comparison."
 msgstr ""
-"В главното меню има някои полезни обобщаващи прозорци: например, <b>Статус</"
-"b> Ви позволява да видите напредъка на враговете си и как се справяте в "
-"сравнение с тях."
+"В главното меню има някои полезни обобщаващи прозорци: например, <b>Статут</"
+"b> позволява да се види напредъка на врага си и как се справя в сравнение с "
+"играча."
 
 #. [tip]
 #: data/tips.cfg:40
@@ -4826,10 +5109,10 @@ msgid ""
 "can be very important when moving through difficult terrain such as water or "
 "caves. It can make the difference between being able to move one hex or two."
 msgstr ""
-"Единици с <i>Бърза</i> черта получават допълнителна точка за придвижване "
-"всеки ход. Това може да е от ключово значение, когато ги придвижвате през "
-"труден терен, като вода или пещери. Има значителна разлика между придвижване "
-"на едно или две полета."
+"Единици с <i>Бърза</i> черта получават допълнителна точка за придвижване на "
+"всеки ход. Това може да е от ключово значение, когато се придвижват през "
+"труден терен, като вода или пещери. Дали единица може да прекоси едно или "
+"две полета в повече е от съществено значение."
 
 #. [tip]
 #: data/tips.cfg:41 data/tips.cfg:117 data/tips.cfg:218 data/tips.cfg:230
@@ -4843,9 +5126,9 @@ msgid ""
 "the <b>Help</b> screen carefully. Details become important as scenarios get "
 "harder!"
 msgstr ""
-"След като преминете няколко мисии, в менюто <b>Помощ</b>, прочетете секцията "
-"<b>Начин на игра</b> внимателно. Детайлите стават все по-важни с вдигането "
-"на трудността!"
+"След като сте изиграли няколко мисии, прочетете секцията <b>Начин на игра</"
+"b> в менюто <b>Помощ</b> внимателно. Детайлите стават все по-важни при по-"
+"трудните мисии!"
 
 #. [tip]
 #: data/tips.cfg:48
@@ -4854,9 +5137,9 @@ msgid ""
 "level units that are about to level up than with those same units at a "
 "higher level."
 msgstr ""
-"Често е по-добре да започнете следваща мисия в някоя кампания с единици на "
-"по-ниско ниво, които са на път да се развият, наместо единици на по-високото "
-"ниво."
+"Обикновено е по-добре следващата мисия в някоя кампания да се започне с "
+"единици на по-ниско ниво, които са на път да бъдат повишени, отколкото с "
+"единици на по-високо ниво."
 
 #. [tip]
 #: data/tips.cfg:52
@@ -4881,7 +5164,7 @@ msgid ""
 msgstr ""
 "<i>Праведните</i> единици се бият по-добре денем, а <i>хаотичните</i> – "
 "нощем. <i>Неутралните</i> единици не се влияят от часа на деня. Редките "
-"<i>лиминали</i> се бият най-добре в среднощ.."
+"<i>лиминални</i> се бият най-добре посред нощ."
 
 #. [tip]
 #: data/tips.cfg:57
@@ -4895,8 +5178,8 @@ msgstr ""
 msgid ""
 "An otherwise sound plan can fail if you attack at the wrong time of day."
 msgstr ""
-"Един чудесен план лесно може да се провали, ако изберете неподходящото време "
-"на деня за целта."
+"Един чудесен план лесно може да се провали, ако за целта изберете "
+"неподходящо време на деня."
 
 #. [tip]
 #: data/tips.cfg:61 data/tips.cfg:85 data/tips.cfg:137 data/tips.cfg:145
@@ -4921,10 +5204,9 @@ msgid ""
 "turn."
 msgstr ""
 "Ако играете с включено <b>Було</b> или <b>Бойна мъгла</b>, няма да знаете "
-"срещу какво се изправяте. В такъв случай, разузнавачите стават безценни. "
-"Избирайте тези, които лесно да могат да се придвижват из околния терен, "
-"защото единиците виждат само дотолкова, доколкото могат да се придвижат за "
-"един ход."
+"срещу какво се изправяте. Разузнавачите стават безценни при това положение. "
+"Избирете тези, които лесно преодоляват разстояния, защото единиците виждат "
+"само това, до което могат да се придвижат за един ход."
 
 #. [tip]
 #: data/tips.cfg:68
@@ -4957,9 +5239,9 @@ msgid ""
 "in the currently selected terrain is displayed in the top right corner of "
 "the screen."
 msgstr ""
-"По време на битка вероятността противник да улучи единиците Ви се определя "
+"По време на битка вероятността противник да улучи единиците ви се определя "
 "от терена, върху който те се намират. Защитното ниво на избраната единица в "
-"настоящия си терен, е показано в горния десен ъгъл на екрана."
+"настоящия си терен е показано в горния десен ъгъл на екрана."
 
 #. [tip]
 #: data/tips.cfg:76
@@ -4970,11 +5252,11 @@ msgid ""
 "poison will not be removed unless the unit regenerates, or begins a turn in "
 "a village, in an oasis, or next to a unit with the <i>Cures</i> ability."
 msgstr ""
-"Отровените единици губят по осем точки живот всеки ход, докато паднат до "
-"една точка. Те ще останат на ръба на смъртта, докато отровата бъде изцелена. "
-"Лечителите могат да поддържат такава единица, но отровата няма да се "
-"изчисти, освен ако единицата се регенерира, започне своя ход в селище или се "
-"намира до единица с умението да <i>Изцерява</i>."
+"Отровените единици губят по осем точки живот на всеки ход, преди да паднат "
+"до една точка. Те ще останат на ръба на смъртта, докато отровата бъде "
+"изцелена. Лечителите могат да поддържат такава единица, но отровата няма да "
+"се изчисти, освен ако единицата се регенерира, започне своя ход в селище или "
+"се намира до единица с умението да <i>Изцерява</i>."
 
 #. [tip]
 #: data/tips.cfg:80
@@ -4984,8 +5266,8 @@ msgid ""
 "build up a powerful and experienced army."
 msgstr ""
 "Можете да използвате единици от предишни сценарии, като ги <b>Привиквате</b> "
-"от менюто с <b>Действия</b>. Като привиквате същите единици отново и отново, "
-"можете да изградите мощна и опитна армия."
+"от менюто с <b>Действия</b>. Когато играете със същите единици отново и "
+"отново, можете да изградите мощна и опитна армия."
 
 #. [tip]
 #: data/tips.cfg:84
@@ -4999,8 +5281,8 @@ msgstr ""
 "Всяка единица има <i>Зона на контрол</i> върху полетата съседни на нейното. "
 "Ако дадена единица се придвижи в <i>Зоната на контрол</i> на противник, тя "
 "прекратява движението си за този ход. Това означава, че единици, които имат "
-"две празни полета помежду си, могат да създадат бариера за врага. "
-"Внимавайте, обаче: някои единици могат да преминат оттам."
+"две празни полета помежду си, могат да създадат бариера за врага. Внимавайте "
+"обаче: бързоходците могат да преминат през тези празнини."
 
 #. [tip]
 #: data/tips.cfg:88
@@ -5028,8 +5310,8 @@ msgid ""
 "Units stationed in villages will either heal eight hitpoints at the "
 "beginning of their turn, or will recover from poisoning."
 msgstr ""
-"Единици, разположени в селище, или се лекуват с осем точки, или се "
-"възстановяват от отравяне в началото на хода си."
+"Единици, разположени в селище се лекуват с осем точки или се възстановяват "
+"от отравяне в началото на хода си."
 
 #. [tip]
 #: data/tips.cfg:96
@@ -5038,7 +5320,7 @@ msgid ""
 "does not move or attack, it will recover two hitpoints at the beginning of "
 "its next turn."
 msgstr ""
-"Не придвижвайте наранена единица, ако не Ви се налага - нека си почива. Ако "
+"Не придвижвайте наранена единица, ако не се налага - нека си почива. Ако "
 "дадена единица не се придвижи или атакува, тя ще се излекува с две точки на "
 "следващия си ход."
 
@@ -5050,10 +5332,10 @@ msgid ""
 "valuable but slow units, keep at least one fast unit with them so that you "
 "are not caught out by a surprise attack."
 msgstr ""
-"На карти, където <i>Було</i> и <i>Бойна мъгла</i> са включени, единиците "
+"На карти, където са включени <i>Було</i> и <i>Бойна мъгла</i>, единиците "
 "имат видимост само до границата на максималното си придвижване. Ако имате "
-"ценни, но бавни единици, дръжте към тях поне една бърза, за да избегнете "
-"изненади."
+"ценни, но бавни единици, нека бъдат придружавани от поне една бърза, за да "
+"избегнете изненади."
 
 #. [tip]
 #: data/tips.cfg:104
@@ -5062,8 +5344,8 @@ msgid ""
 "terrain types, while most mounted units do not gain any defensive advantages "
 "from villages or castles."
 msgstr ""
-"Пехотата обикновено се защитават по-добре на територията на селища и замъци, "
-"докато на същата територия конните единици не получават такъв бонус."
+"Пехотинците обикновено се защитават по-добре на територията на селища и "
+"замъци, докато на същата територия конниците не получават такъв бонус."
 
 #. [tip]
 #: data/tips.cfg:105 data/tips.cfg:185
@@ -5077,7 +5359,7 @@ msgid ""
 "weapons, but are vulnerable to attacks with piercing weapons, including bows "
 "and spears."
 msgstr ""
-"Конните единици като цяло са устойчиви на прорезни и ударни атаки, но са "
+"Конните единици са устойчиви на остриета и смазващи атаки като цяло, но са "
 "уязвими към пробождащи оръжия, включително лъкове и копия."
 
 #. [tip]
@@ -5093,8 +5375,8 @@ msgid ""
 "every level of the unit they kill, or four experience points for a zero-"
 "level opponent."
 msgstr ""
-"Най-добрият начин да се трупа опит е нанасянето на смъртоносен удар на "
-"противник. Единица, убила противник, получава осем точки опит за всяко ниво "
+"Най-добрият начин за трупане на опит е нанасянето на смъртоносен удар на "
+"противник. Единицата убила противник, получава осем точки опит за всяко ниво "
 "на убитата единица или четири точки за опонент на нулево ниво."
 
 #. [tip]
@@ -5112,9 +5394,9 @@ msgid ""
 "Patience is often key. Rather than attacking in bad conditions or with few "
 "troops, wait for better conditions and then attack."
 msgstr ""
-"Често търпението е от огромно значение. Ако се намирате в неизгодно "
-"положение или нямате достатъчно войски, по-добре изчакайте ситуацията да се "
-"подобри, преди да атакувате."
+"Търпението е от огромно значение. Ако се намирате в неизгодно положение или "
+"нямате достатъчно войски, по-добре изчакайте ситуацията да се подобри, преди "
+"да атакувате."
 
 #. [tip]
 #: data/tips.cfg:124
@@ -5122,17 +5404,16 @@ msgid ""
 "If you are attacked from several directions, it may be a good idea to send "
 "expendable units in some directions to delay enemy units."
 msgstr ""
-"Ако ви атакуват от няколко страни е добре да жертвате част от тези, от които "
-"можете да се лишите, в различни посоки, за да забавите единиците на "
-"противника."
+"Ако ви атакуват от няколко страни, бихте могли да пратите единици, от които "
+"можете да се лишите, в различни посоки, за да забавите силите на противника."
 
 #. [tip]
 #: data/tips.cfg:128
 msgid ""
 "Do not be afraid to retreat and regroup; it is often the key to victory."
 msgstr ""
-"Не се притеснявайте да отстъпвате и да се прегрупирате. Това често е ключът "
-"към победата."
+"Не се страхувайте да отстъпвате, за да съберете нови сили. Това често е "
+"ключът към победата."
 
 #. [tip]
 #: data/tips.cfg:129
@@ -5147,7 +5428,7 @@ msgid ""
 "remaining. You will usually earn more gold this way than through capturing "
 "villages and waiting for the turns to run out."
 msgstr ""
-"В повечето кампании ще получите бонус злато ако приключите по-рано от "
+"В повечето кампании ще получите бонус злато, ако приключите по-рано от "
 "предвиденото. Размерът на бонуса зависи от броя на селата на картата и броя "
 "на ходовете, които сте си спестили. По този начин винаги се печели повече "
 "злато, отколкото чрез завладяване на села или изчерпване на ходове."
@@ -5160,11 +5441,10 @@ msgid ""
 "make room for you on their keep so you can recruit from there, and you can "
 "even capture an enemy’s keep and use that."
 msgstr ""
-"<i>Предводителят</i> Ви може да привиква единици от всяка крепост в рамките "
-"на замък, не само от крепостта, която му е изходна позиция. Включително, ако "
-"завладеете крепост на противника, можете да набирате единици от нея. Ваш "
-"съюзник може да Ви направи място в крепостта си, за да наберете войски и "
-"оттам."
+"<i>Водачът</i> ви може да привиква единици от всяка крепост в рамките на "
+"замък, не само от крепостта, която е негова изходна позиция. Ако завладеете "
+"крепост на противника, можете да набирате единици от нея. Ваш съюзник може "
+"да ви направи място в крепостта си, за да наберете войски и оттам."
 
 #. [tip]
 #: data/tips.cfg:140
@@ -5172,8 +5452,8 @@ msgid ""
 "Skeletons are resistant to piercing, bladed and cold-based attacks but are "
 "vulnerable to impact, fire, and arcane attacks."
 msgstr ""
-"Скелетите са устойчиви срещу прободни и прорезни атаки, но са уязвими към "
-"сблъсък, огнени и мистични атаки."
+"Скелетите са устойчиви срещу остриета, пробождащи и ледени атаки, но са "
+"уязвими към смазващи, огнени и мистични атаки."
 
 #. [tip]
 #: data/tips.cfg:144
@@ -5182,9 +5462,9 @@ msgid ""
 "the same side fight better. You can move these units slowly along your "
 "battle lines and give bonuses to large numbers of lower-level troops."
 msgstr ""
-"Единици с <i>Водачество<i> помагат на съседни съюзни единици с по-ниско ниво "
-"да се бият по-добре. Можете да придвижите тези единици бавно покрай бойната "
-"си линия, за да подсилите голям брой от войските Ви."
+"Единици с <i>Водачество<i> помагат на съседни съюзни единици от по-ниско "
+"ниво да се бият по-добре. Можете да придвижите тези единици бавно покрай "
+"бойната си линия, за да подсилите голям брой от войските си."
 
 #. [tip]
 #: data/tips.cfg:148
@@ -5194,7 +5474,7 @@ msgid ""
 "village."
 msgstr ""
 "Избягвайте селища, които не са под ничие владение, защото противникът може "
-"да се опита да го завладее и да Ви атакува, докато се възползва от защитата "
+"да се опита да го завладее и да ви атакува, докато се възползва от защитата "
 "и лечението там."
 
 #. [tip]
@@ -5212,8 +5492,8 @@ msgid ""
 msgstr ""
 "Притежаването на селища често е ключово за успеха на дадена мисия. "
 "Използвайте този факт, за да привличате враговете си в капан, като оставяте "
-"селищата си незаети, ала планирайте внимателно! Уседнал враг става много по-"
-"труден за премахване."
+"селищата си незаети. Планирайте внимателно все пак! Укрепеният враг става "
+"много по-труден за премахване."
 
 #. [tip]
 #: data/tips.cfg:153
@@ -5238,9 +5518,9 @@ msgid ""
 "If you move a unit, but don’t attack or discover any additional information, "
 "you can undo your move by pressing <b>u</b>."
 msgstr ""
-"Ако придвижите своя единица, но без да атакувате и ако придвижването не Ви "
-"носи нова информация, можете на отмените движението с натискане на клавиш "
-"<b>u</b>."
+"Ако придвижите своя единица, но без да атакувате и ако придвижването не "
+"доведе до нова информация, можете на отмените движението с натискане на "
+"клавиша <b>u</b>."
 
 #. [tip]
 #: data/tips.cfg:164
@@ -5248,8 +5528,8 @@ msgid ""
 "You can see how far enemy units can move by moving the mouse cursor over "
 "them."
 msgstr ""
-"За да видите докъде могат да се придвижат единиците на противника, "
-"прекарайте курсора си над тях."
+"За да видите докъде могат да се придвижат единиците на противника, поставете "
+"курсора си над тях."
 
 #. [tip]
 #: data/tips.cfg:168
@@ -5257,8 +5537,8 @@ msgid ""
 "Use healers to support your attacks — they will win you battles without "
 "needing to attack anything themselves."
 msgstr ""
-"Използвайте лечители, за да подкрепят атаката Ви – те ще спечелят битката, "
-"без да е нужно да се бият."
+"Използвайте лечители, за да подкрепят атаката – те ще спечелят битката, без "
+"да е нужно да се бият."
 
 #. [tip]
 #: data/tips.cfg:169 data/tips.cfg:210
@@ -5290,8 +5570,8 @@ msgid ""
 "Units are healed when they advance a level. Used wisely, this can turn a "
 "fight."
 msgstr ""
-"При повишаване на нивото си, единиците се излекуват напълно. Ако се използва "
-"по подходящ начин, това може да обърне хода на боя."
+"Единици, които получат повишение, напълно възстановяват здравето си. Ако се "
+"използва мъдро, този метод може да обърне хода на битката."
 
 #. [tip]
 #: data/tips.cfg:184
@@ -5300,7 +5580,7 @@ msgid ""
 "blow."
 msgstr ""
 "Най-удачно е щурмуващите единици да се използват срещу врагове, където един "
-"удар е достатъчен да бъдат убити."
+"удар е достатъчен, за да победят."
 
 #. [tip]
 #: data/tips.cfg:188
@@ -5321,8 +5601,8 @@ msgid ""
 msgstr ""
 "Единиците могат да получават <i>Повишения над максималното ниво</i> (ПНМН), "
 "което обикновено увеличава максималния им брой точки здраве с 3 и ги лекува. "
-"Ползата от това е по-малка от обичайното, затова е по-разумно да се стремите "
-"да повишавате нивата на единиците си с по-ниско ниво."
+"Ползата от това не е толкова голяма, затова е по-разумно да се стремите да "
+"повишавате нивата на единиците си с по-ниско ниво."
 
 #. [tip]
 #: data/tips.cfg:192
@@ -5331,9 +5611,8 @@ msgid ""
 "veteran to damage a joint target heavily enough for the junior partner to "
 "get in the killing blow."
 msgstr ""
-"За да повишавате единици от ниски нива по-бързо, съберете ги с ветеран и го "
-"използвайте да нарани обща за двамата цел, достатъчно тежко, за да може "
-"младшият партньор да нанесе фаталният удар."
+"За да повишавате някоя единица от ниско ниво по-бързо, съберете я с ветеран, "
+"който да нарани врага така, че младшият партньор да нанесе фаталният удар."
 
 #. [tip]
 #: data/tips.cfg:193
@@ -5351,8 +5630,8 @@ msgstr ""
 "Не можете да отменяте придвижване, което е довело до разкриване на скрити "
 "или замъглени територии. Включете<b>Забавяне на разкриването</b>, за да "
 "можете да придвижвате единиците си като при това запазите възможността да "
-"отменяте придвижването, или използвайте новият инструмент за планиране "
-"\"Бяла дъска\"."
+"отменяте придвижването или използвайте новият инструмент за планиране \"Бяла "
+"дъска\"."
 
 #. [tip]
 #: data/tips.cfg:201
@@ -5360,7 +5639,7 @@ msgid ""
 "If an enemy benefits more from a rare terrain type than you do, occupying "
 "that terrain will deprive them of its benefits."
 msgstr ""
-"Ако врагът черпи по-голяма полза от рядък вид територия, окупирането на тази "
+"Ако врагът черпи по-голяма полза от рядък вид терен, окупирането на тази "
 "територия ще го лиши от ползите й."
 
 #. [tip]
@@ -5370,9 +5649,9 @@ msgid ""
 "a river can inflict heavy casualties. Elves can use the edge of a forest in "
 "a similar manner, and dwarves can do the same with mountains."
 msgstr ""
-"Малко единици имат добра защита във водата; група от нападатели по ръбът на "
-"река, могат да нанесат съкрушително поражение. Елфите могат да използват "
-"гората по същия начин, а джуджетата - планините."
+"Малко единици имат добра защита във водата; линия от нападатели по ръба на "
+"река могат да нанесат тежка вреда на опонента. Елфите могат да използват "
+"гората по същият начин, както джуджетата - планините."
 
 #. [tip]
 #: data/tips.cfg:209
@@ -5388,7 +5667,7 @@ msgstr ""
 "ефект. Умението на немъртвите да <i>Източват</i> е разполовено, бонусите от "
 "<i>Щурм</i> и <i>Удар в гръб</i> биват премахнати, а <i>Берсеркът</i> бива "
 "отслабен. Бързите врагове се мъчат да се спасят; бавните врагове стават "
-"почти неподвижни, а собствените Ви единици понасят по-малко ответна вреда, "
+"почти неподвижни, а собствените ви единици понасят по-малко ответна вреда, "
 "затова лечението им се улеснява."
 
 #. [tip]
@@ -5399,9 +5678,9 @@ msgid ""
 "This gives you another try whenever your first devastating attack misses — "
 "as inevitably happens from time to time."
 msgstr ""
-"Опитайте да работите с единици имащи малко на брой мощни атаки - като Тъмни "
-"послушници, Конници, Оркски редници и Джуджешки гръмовержци - по двойки или "
-"тройки. Това Ви дава повторна възможност, ако някоя съкрушителна атака "
+"Опитайте да работите с единици имащи малко на брой мощни атаки по двойки или "
+"тройки - като Тъмни послушници, Конници, Оркски редници и Джуджешки "
+"гръмовержци. Това ви дава повторна възможност, ако някоя съкрушителна атака "
 "пропусне - което неизбежно се случва понякога."
 
 #. [tip]
@@ -5424,9 +5703,9 @@ msgid ""
 "little experience it has. Sometimes it’s worth paying a premium to know "
 "exactly what traits a new arrival will have."
 msgstr ""
-"Замислете се, преди да пропъдите единица от списъка си за привикване, без "
-"значение колко опит има. Понякога е по-добре да платиш добри пари, за да "
-"знаеш с какви качества разполага новопристигналият."
+"Замислете се, преди да премахнете единица от списъка си за привикване, без "
+"значение колко опит има. Понякога е полезно да се плати висока цена, стига "
+"да знаете какви точно качества има новодошлият."
 
 #. [tip]
 #: data/tips.cfg:225
@@ -5435,9 +5714,9 @@ msgid ""
 "turns’ movement away from the fighting. Then it can recover in peace (at 10 "
 "hitpoints per turn) without tying up front-line villages."
 msgstr ""
-"Ако могъща единица биде тежко ранена, я пратете да се излекува в някое "
-"селище на няколко хода разстояние от борбата. Така ще се възстанови на "
-"спокойствие (с по 10 точки на ход), без да се тревожи, че е на \"фронта\"."
+"Ако единица с много живот бъде тежко ранена, изпратете я да се лекува в "
+"някое селище на няколко хода разстояние от борбата. Така ще се възстанови на "
+"спокойствие (с по 10 точки на ход), без да заема по-близките селища."
 
 #. [tip]
 #: data/tips.cfg:226 data/tips.cfg:238
@@ -5451,8 +5730,8 @@ msgid ""
 "work to combine, for example, <i>Leadership</i>, <i>Illuminates</i> and "
 "<i>Charge</i> against a slowed opponent, the results can be impressive."
 msgstr ""
-"Съчетаването на няколко специални атаки може да е смъртоносно. Макар да не е "
-"лесно да се съчетаят, например, <i>Водачество</i>, <i>Осветяване</i> и "
+"Съчетаването на няколко специални атаки може да е смъртоносно. Макар това "
+"невинаги да е лесно, ако комбинирате <i>Водачество</i>, <i>Осветяване</i> и "
 "<i>Щурм</i> против забавен опонент, резултатът може да бъде впечатляващ."
 
 #. [tip]
@@ -5463,10 +5742,10 @@ msgid ""
 "your units extra experience. When deciding whether or not to finish a "
 "scenario early, weigh these factors against one another."
 msgstr ""
-"Макар ранното привършване на мисия да дава допълнително злато и "
-"предотвратява нечия потенциална смърт, също така отнема възможността Ви да "
-"обучите войските си. Когато вземате решение дали да приключите дадена мисия "
-"по-рано, мислете върху тези съотношения."
+"Ранното завършване на мисия дава допълнително злато и предотвратява нечия "
+"ненужна смърт, но пък отнема възможността ви да обучите войските си. Когато "
+"вземате решение дали да приключите дадена мисия по-рано, обмисляйте тези "
+"възможности."
 
 #. [tip]
 #: data/tips.cfg:237
@@ -5477,10 +5756,10 @@ msgid ""
 "average. Plan for heavy losses, and take firm control of any hex where the "
 "land does favor you."
 msgstr ""
-"Ако войските Ви са отслабени навсякъде на картата, заемете място, където Вие "
-"и врагът Ви споделяте едни и същи недостатъци. Избягвайте места, където сте "
-"слаби, а врагът Ви е на средно ниво. Очаквайте тежки загуби, но не губете "
-"полета, където земята е във Ваша полза."
+"Ако войските ви са слабо укрепени по картата, заемете място, където вие и "
+"врагът ви ще споделяте едни и същи недостатъци. Избягвайте места, където сте "
+"слаби, а врагът ви ще има с умерен успех. Очаквайте тежки загуби, но пазете "
+"полета, където земята е във ваша полза."
 
 #. [tip]
 #: data/tips.cfg:241
@@ -5490,8 +5769,8 @@ msgid ""
 "may be cheaper."
 msgstr ""
 "Наемането на някои единици може да е по-скъпо от 20-те жълтици за "
-"привикването им. По време на кампания винаги проверявайте кое ще Ви излезе "
-"по-евтино за един и същи вид единица."
+"привикването им. По време на кампания винаги проверявайте кой вариант е по-"
+"евтин за един и същи вид единица."
 
 #. [tip]
 #: data/tips.cfg:245
@@ -5499,8 +5778,8 @@ msgid ""
 "You must accept some losses in battle. It is not uncommon for beginners to "
 "lose sight of victory as they attempt to keep every unit alive."
 msgstr ""
-"Някои загуби трябва да бъдат преглъщани. Не е рядкост, когато новобранците "
-"губят борбата, само защото искат да опазят всички живи."
+"Някои загуби са неизбежни. Често се случва неопитни водачи да изгубят "
+"битката, само защото искат да опазят всяка единица жива."
 
 #. [tip]
 #: data/tips.cfg:246
@@ -5510,7 +5789,8 @@ msgstr "<i>― Кралица Ашевиер, 503 УГ</i>"
 #. [tip]
 #: data/tips.cfg:249
 msgid "Using lower-level units can be very cost-effective."
-msgstr "Използване на единици от по-ниски нива може да бъде добра сделка."
+msgstr ""
+"Използване на единици от по-ниски нива може да бъде разумно откъм разходи."
 
 #. [tip]
 #: data/tips.cfg:253
@@ -5519,9 +5799,9 @@ msgid ""
 "<i>Cures</i>, or <i>Nightstalk</i>. Obtaining those units early can make a "
 "big difference in a campaign."
 msgstr ""
-"Някои единици от по-високите нива имат несравними атаки, като <i>Водачество</"
+"Някои единици от по-високи нива имат несравними умения, като <i>Водачество</"
 "i>, <i>Изцеряване</i>, или <i>Нощно бдение</i>. Ако се сдобиете с такива "
-"единици рано в една кампания, ще видите значителна промяна."
+"единици рано в една кампания, борбата ще бъде по-различна."
 
 #. [tip]
 #: data/tips.cfg:254
@@ -5535,13 +5815,14 @@ msgid ""
 "the underworld hinders the flightless, while offering illumination in "
 "darkness to those that may fly above it."
 msgstr ""
+"Пречистващите води на един оазис лекуват ранените. Огнените води на "
+"подземния свят възпрепятстват безлетежните, но предоставят светлина в мрака "
+"на тези, които летят над тях."
 
 #. [tip]
 #: data/tips.cfg:258
-#, fuzzy
-#| msgid "<i>― King Konrad, 536YW</i>"
 msgid "<i>― Dominant Gorlack, 3YW</i>"
-msgstr "<i>― Крал Конрад, 536 УГ</i>"
+msgstr "<i>― Доминант Горлак, 3 УГ</i>"
 
 #. [tip]
 #: data/tips.cfg:261
@@ -5579,7 +5860,7 @@ msgid ""
 "Game</i> screen when loading start-of-scenario save files."
 msgstr ""
 "Знаете ли, че можете да променяте степента на трудност по време на "
-"кампанията? Изберете <i>Промяна на трудността</i> в дъното на екрана "
+"кампанията? Изберете <i>Промяна на трудността</i>, в дъното на екрана "
 "<i>Зареждане на игра</i>, когато зареждате записи за началото на дадена "
 "мисия."
 
@@ -5608,13 +5889,13 @@ msgstr ""
 #. other players. It will be embedded within a message.
 #: src/actions/advancement.cpp:256
 msgid "waiting for^an advancement choice"
-msgstr "избор за произвеждане"
+msgstr "избор за повишение"
 
-#: src/actions/attack.cpp:478 src/actions/attack.cpp:1274
+#: src/actions/attack.cpp:478 src/actions/attack.cpp:1266
 msgid "An invalid attacker weapon got selected."
 msgstr "Избрано е невалидно оръжие за атакуващия."
 
-#: src/actions/attack.cpp:969
+#: src/actions/attack.cpp:961
 #, fuzzy
 #| msgid "Attacks: "
 msgid "attack^miss"
@@ -5622,16 +5903,16 @@ msgstr "Брой нападения: "
 
 #: src/actions/create.cpp:340
 msgid "You do not have a leader to recall with."
-msgstr "Нямате водач, който да привиква единици."
+msgstr "Нямате водач, който може да привиква единици."
 
 #: src/actions/create.cpp:344
 msgid "None of your leaders are able to recall that unit."
-msgstr "Никой от водачите Ви е способен да привика тази единица."
+msgstr "Никой от водачите ви не е способен да привика тази единица."
 
 #: src/actions/create.cpp:348
 msgid "You must have a leader on a keep who is able to recall that unit."
 msgstr ""
-"Водач, който може да привика тази единица, трябва да се намира в крепост, ."
+"Водач, който може да привика тази единица, трябва да се намира в крепост."
 
 #: src/actions/create.cpp:352
 msgid "There are no vacant castle tiles in which to recall the unit."
@@ -5647,7 +5928,7 @@ msgstr "Нямате водач, който да набира единици."
 
 #: src/actions/create.cpp:480
 msgid "None of your leaders are able to recruit this unit."
-msgstr "Никой от водачите Ви е способен да набере тази единица."
+msgstr "Никой от водачите ви не е способен да набере тази единица."
 
 #: src/actions/create.cpp:484
 msgid "You must have a leader on a keep who is able to recruit the unit."
@@ -5672,7 +5953,7 @@ msgstr "Засада!"
 
 #: src/actions/move.cpp:1281
 msgid "Failed teleport! Exit not empty"
-msgstr "Провалена телепортация! Дестинацията е заета"
+msgstr "Неуспешна телепортация! Дестинацията е заета"
 
 #. TRANSLATORS: This becomes the "friendphrase" in "Units sighted! ($friendphrase, $enemyphrase)"
 #: src/actions/move.cpp:1297
@@ -5714,19 +5995,19 @@ msgstr[1] "$friends приятелски единици забелязани"
 msgid "(press $hotkey to keep moving)"
 msgstr "(натиснете $hotkey , за да продължите)"
 
-#: src/actions/undo.cpp:330
-#, fuzzy
-#| msgid "Game Error"
-msgid "Redo Error"
-msgstr "Грешка"
-
 #: src/actions/undo.cpp:331
+msgid "Redo Error"
+msgstr "Грешка при преповтарянето"
+
+#: src/actions/undo.cpp:332
 msgid ""
 "The redo stack is out of sync. This is most commonly caused by a corrupt "
 "save file or by faulty WML code in the scenario or era. Details:"
 msgstr ""
+"Купа за повторение е десинхронизиран. Това най-често се случва заради "
+"повреден запис или сбъркан WML код в мисията или епохата. Подробности:"
 
-#: src/actions/undo.cpp:342
+#: src/actions/undo.cpp:343
 msgid "Unhandled choices while redoing"
 msgstr ""
 
@@ -5751,14 +6032,16 @@ msgid "Requesting add-on downloads by version..."
 msgstr ""
 
 #: src/addon/client.cpp:164
+#, fuzzy
+#| msgid "Requesting file index..."
 msgid "Requesting forum_auth usage..."
-msgstr ""
+msgstr "Търсене на индекс за файла..."
 
 #: src/addon/client.cpp:182
 #, fuzzy
-#| msgid "Downloading list of add-ons..."
+#| msgid "Requesting distribution terms..."
 msgid "Requesting list of admins..."
-msgstr "Сваляне на списъка с допълнения..."
+msgstr "Търсене на условия за разпределяне..."
 
 #: src/addon/client.cpp:202
 #, fuzzy
@@ -5784,7 +6067,7 @@ msgstr "Сваляне на списъка с допълнения..."
 
 #: src/addon/client.cpp:288
 msgid "Requesting distribution terms..."
-msgstr ""
+msgstr "Търсене на условия за разпределяне..."
 
 #: src/addon/client.cpp:312
 msgid ""
@@ -5825,27 +6108,31 @@ msgid ""
 "conflicts. File or directory names may not be differently-cased versions of "
 "the same string."
 msgstr ""
+"Добавката <i>$addon_title</i> съдържа файлове или директории с конфликти. "
+"Имената им по една и съща линия може да са с разминаващи се главни букви."
 
 #: src/addon/client.cpp:350
 msgid ""
 "The connection to the remote server is not secure. The add-on "
 "<i>$addon_title</i> cannot be uploaded."
 msgstr ""
+"Връзката към отдалечения сървър не е сигурна. Добавката <i>$addon_title</i> "
+"не може да бъде качена."
 
 #: src/addon/client.cpp:355
 #, fuzzy
 #| msgid "Sending an update pack for the add-on <i>$addon_title</i>..."
 msgid ""
 "The file size for the icon for the add-on <i>$addon_title</i> is too large."
-msgstr "Изпращане на обновяващ пакет за добавката <i>$addon_title</i>..."
+msgstr "Изпращане на обновяващ пакет за добавката <i>$addon_title</i>…"
 
 #: src/addon/client.cpp:368
 msgid "Requesting file index..."
-msgstr ""
+msgstr "Търсене на индекс за файла..."
 
 #: src/addon/client.cpp:384
 msgid "Sending an update pack for the add-on <i>$addon_title</i>..."
-msgstr "Изпращане на обновяващ пакет за добавката <i>$addon_title</i>..."
+msgstr "Изпращане на обновяващ пакет за добавката <i>$addon_title</i>…"
 
 #: src/addon/client.cpp:405
 msgid "Sending add-on <i>$addon_title</i>..."
@@ -5864,10 +6151,8 @@ msgid "Add-ons Manager"
 msgstr "Управител на допълненията"
 
 #: src/addon/client.cpp:500
-#, fuzzy
-#| msgid "Sending add-on <i>$addon_title</i>..."
 msgid "Installing add-on <i>$addon_title</i>..."
-msgstr "Изпращане на добавка <i>$addon_title</i>..."
+msgstr "Инсталиране на добавка <i>$addon_title</i>..."
 
 #: src/addon/client.cpp:512 src/addon/client.cpp:538
 msgid ""
@@ -5882,6 +6167,8 @@ msgid ""
 "The add-on <i>$addon_title</i> has file or directory names with case "
 "conflicts. This may cause problems."
 msgstr ""
+"Добавката <i>$addon_title</i> има файл или директория с конфликт в името. "
+"Това може да породи проблеми."
 
 #: src/addon/client.cpp:632
 msgid ""
@@ -5931,7 +6218,7 @@ msgstr "Публикуване на файл с информация (.pbl)"
 
 #: src/addon/client.cpp:716
 msgid "Version control system (VCS) information"
-msgstr ""
+msgstr "Информация за контролната система на версията (КСВ)"
 
 #: src/addon/client.cpp:720
 msgid "Do you really wish to continue?"
@@ -5944,51 +6231,51 @@ msgstr "Потвърждаване"
 
 #: src/addon/info.cpp:236
 msgid "addon_type^Campaign"
-msgstr "addon_type^Кампания"
+msgstr "Кампания"
 
 #: src/addon/info.cpp:238
 msgid "addon_type^Scenario"
-msgstr "addon_type^Мисия"
+msgstr "Мисия"
 
 #: src/addon/info.cpp:240
 msgid "addon_type^SP/MP Campaign"
-msgstr "addon_type^ЕИ/МИ Кампании"
+msgstr "ЕИ/МИ Кампании"
 
 #: src/addon/info.cpp:242
 msgid "addon_type^MP era"
-msgstr "addon_type^МИ ера"
+msgstr "МИ ера"
 
 #: src/addon/info.cpp:244
 msgid "addon_type^MP faction"
-msgstr "addon_type^МИ групировка"
+msgstr "МИ групировка"
 
 #: src/addon/info.cpp:246
 msgid "addon_type^MP map-pack"
-msgstr "addon_type^МИ пакет с карти"
+msgstr "МИ пакет с карти"
 
 #: src/addon/info.cpp:248
 msgid "addon_type^MP scenario"
-msgstr "addon_type^МИ мисия"
+msgstr "МИ мисия"
 
 #: src/addon/info.cpp:250
 msgid "addon_type^MP campaign"
-msgstr "addon_type^МИ кампания"
+msgstr "МИ кампания"
 
 #: src/addon/info.cpp:252
 msgid "addon_type^Modification"
-msgstr "addon_type^Модификация"
+msgstr "Модификация"
 
 #: src/addon/info.cpp:254
 msgid "addon_type^Core"
-msgstr "addon_type^Основоположно"
+msgstr "Ядро"
 
 #: src/addon/info.cpp:256
 msgid "addon_type^Resources"
-msgstr "addon_type^Ресурси"
+msgstr "Ресурси"
 
 #: src/addon/info.cpp:258
 msgid "addon_type^Other"
-msgstr "addon_type^Други"
+msgstr "Други"
 
 #: src/addon/info.cpp:260
 msgid "addon_type^(unknown)"
@@ -5996,7 +6283,7 @@ msgstr "(неизвестно)"
 
 #: src/addon/info.cpp:296
 msgid "unit_byte^B"
-msgstr ""
+msgstr "B"
 
 #: src/addon/manager_ui.cpp:55
 msgid "Remote host disconnected."
@@ -6054,10 +6341,10 @@ msgid_plural ""
 "The following add-ons appear to have publishing or version control "
 "information stored locally, and will not be removed:"
 msgstr[0] ""
-"Следната добавка има местно съхранена информация относно публикуване и "
+"Следната добавка има локално съхранена информация относно публикуване и "
 "контрол на версията. Не може да бъде премахната:"
 msgstr[1] ""
-"Следните добавки имат местно съхранена информация относно публикуване и "
+"Следните добавки имат локално съхранена информация относно публикуване и "
 "контрол на версията. Не могат да бъдат премахнати:"
 
 #: src/addon/manager_ui.cpp:218
@@ -6075,7 +6362,7 @@ msgstr[1] "Допълненията са изтрити"
 #: src/addon/manager_ui.cpp:227
 msgid "The following add-on was successfully deleted:"
 msgid_plural "The following add-ons were successfully deleted:"
-msgstr[0] "Допълнениенот беше успешно изтрито:"
+msgstr[0] "Допълнението беше успешно изтрито:"
 msgstr[1] "Следните допълнения бяха успешно изтрити:"
 
 #: src/addon/manager_ui.cpp:284
@@ -6093,13 +6380,14 @@ msgstr "Успех."
 
 #: src/addon/validation.cpp:396
 msgid "Incorrect add-on passphrase."
-msgstr ""
+msgstr "Неправилен пас на добавката."
 
 #: src/addon/validation.cpp:400
 msgid ""
 "Forum authentication was requested for a user that is not registered on the "
 "forums."
 msgstr ""
+"Упълномощение за форума бе поискано за потребител, който няма регистрация."
 
 #: src/addon/validation.cpp:404
 msgid "Upload denied. Please contact the server administration for assistance."
@@ -6155,6 +6443,10 @@ msgid ""
 "Names in the same directory may not be differently-cased versions of each "
 "other."
 msgstr ""
+"Добавката съдържа файлове или директории с конфликт в буквите.\n"
+"\n"
+"Имената в една и съща директория не могат да имат различаващи се версии една "
+"от друга."
 
 #: src/addon/validation.cpp:449
 msgid "The add-on name contains an invalid UTF-8 sequence."
@@ -6182,11 +6474,11 @@ msgstr "Добавката няма зададен е-мейл за автор/�
 
 #: src/addon/validation.cpp:478
 msgid "Missing passphrase."
-msgstr "Липсваща парола"
+msgstr "Липсваща парола."
 
 #: src/addon/validation.cpp:482
 msgid "Formatting character in add-on title."
-msgstr ""
+msgstr "Форматиране на буквите в заглавието на добавката."
 
 #: src/addon/validation.cpp:486
 msgid "Invalid or unspecified add-on type."
@@ -6207,12 +6499,18 @@ msgstr ""
 #: src/addon/validation.cpp:502
 msgid "The add-on publish information contains an invalid UTF-8 sequence."
 msgstr ""
+"Информацията за публикуване на добавката съдържа невалиден UTF-8 "
+"последователност."
 
 #: src/addon/validation.cpp:506
+#, fuzzy
+#| msgid ""
+#| "The add-on's forum_auth attribute does not match what was previously "
+#| "uploaded."
 msgid ""
 "The add-on’s forum_auth attribute does not match what was previously "
 "uploaded."
-msgstr ""
+msgstr "Атрибутът forum_auth на добавката не съвпада с предишната качена."
 
 #: src/addon/validation.cpp:510
 msgid "The add-on’s icon’s file size is too large."
@@ -6237,7 +6535,7 @@ msgstr "Списъкът с версии на добавките от сървъ
 #: src/addon/validation.cpp:535
 msgid ""
 "This server does not support using the forum_auth attribute in your pbl."
-msgstr ""
+msgstr "Сървърът не поддържа употребата на атрибута forum_auth във вашия pbl."
 
 #: src/addon/validation.cpp:545
 msgid "Unspecified validation failure."
@@ -6296,8 +6594,8 @@ msgid ""
 "Send a query to the server. Without arguments the server should tell you the "
 "available commands."
 msgstr ""
-"Изпращане на запитване към сървъра. Сървърът би трябвало да Ви каже "
-"достъпните си команди без възражения."
+"Изпращане на запитване към сървъра. Сървърът би трябвало да каже достъпните "
+"си команди свободно."
 
 #: src/chat_command_handler.hpp:78
 msgid ""
@@ -6318,6 +6616,7 @@ msgstr "<nickname>"
 #: src/chat_command_handler.hpp:81
 msgid "Unban a user. He does not have to be in the game but on the server."
 msgstr ""
+"Допускане на потребител. Той не трябва да участва в играта, само в сървъра."
 
 #: src/chat_command_handler.hpp:84
 msgid "Kick a player or observer."
@@ -6411,7 +6710,7 @@ msgstr "Изчиства хронологията на чата."
 
 #: src/chat_events.cpp:57
 msgid "Unknown debug level: '$level'."
-msgstr ""
+msgstr "Непознато ниво на дебъга: '$level'."
 
 #: src/chat_events.cpp:59 src/chat_events.cpp:68
 msgid "error"
@@ -6419,45 +6718,45 @@ msgstr "грешка"
 
 #: src/chat_events.cpp:66
 msgid "Unknown debug domain: '$domain'."
-msgstr ""
+msgstr "Непозната област на дебъга: '$domain'."
 
 #: src/chat_events.cpp:76
 msgid "Switched domain: '$domain' to level: '$level'."
-msgstr ""
+msgstr "Превключване на областта: '$domain' към ниво: '$level'."
 
-#: src/chat_events.cpp:144
+#: src/chat_events.cpp:149
 msgid "whisper to $receiver"
 msgstr "прошепване на $receiver"
 
-#: src/chat_events.cpp:151
+#: src/chat_events.cpp:156
 msgid "whisper: $sender"
 msgstr "прошепване: $sender"
 
 #: src/deprecation.cpp:39
 msgid "$elem has been deprecated indefinitely."
-msgstr ""
+msgstr "$elem е отхвърлен(а/о) за постоянно."
 
 #: src/deprecation.cpp:46
 msgid "$elem has been deprecated and may be removed in version $version."
-msgstr ""
+msgstr "$elem е отхвърлен(а/о) и може да бъде премахнат във версия $version."
 
 #: src/deprecation.cpp:48
 msgid "$elem has been deprecated and may be removed at any time."
-msgstr ""
+msgstr "$elem е отхвърлен(а/о) и може да бъде премахнат по всяко време."
 
 #: src/deprecation.cpp:55
 msgid "$elem has been deprecated and will be removed in version $version."
-msgstr ""
+msgstr "$elem е отхвърлен(а/о) и ще бъде премахнат във версия $version."
 
 #: src/deprecation.cpp:60
 msgid "$elem has been deprecated and removed."
-msgstr ""
+msgstr "$elem е отхвърлен(а/о) и премахнат."
 
 #: src/desktop/notifications.cpp:77
 msgid "Chat message"
 msgstr "Чат съобщение"
 
-#: src/desktop/windows_tray_notification.cpp:137 src/game_config.cpp:588
+#: src/desktop/windows_tray_notification.cpp:137 src/game_config.cpp:587
 msgid "The Battle for Wesnoth"
 msgstr "Битката за Уеснот"
 
@@ -6491,6 +6790,10 @@ msgstr "%b %d"
 msgid "%b %d %Y"
 msgstr "%b %d %Y"
 
+#: src/formula/format_timespan.hpp:57 src/formula/format_timespan.hpp:90
+msgid "timespan^expired"
+msgstr ""
+
 #. TRANSLATORS: The "timespan^$num xxxxx" strings originating from the same file
 #. as the string with this comment MUST be translated following the usual rules
 #. for WML variable interpolation -- that is, without including or translating
@@ -6499,53 +6802,49 @@ msgstr "%b %d %Y"
 #. is the time unit (year, month, etc.) For example, for French you would
 #. translate "timespan^$num years" as "$num ans", thus allowing the game UI to
 #. generate output such as "39 ans" after variable interpolation.
-#: src/formula/format_timespan.hpp:38
+#: src/formula/format_timespan.hpp:82
 msgid "timespan^$num year"
 msgid_plural "timespan^$num years"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/formula/format_timespan.hpp:39
+#: src/formula/format_timespan.hpp:83
 msgid "timespan^$num month"
 msgid_plural "timespan^$num months"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/formula/format_timespan.hpp:40
+#: src/formula/format_timespan.hpp:84
 msgid "timespan^$num week"
 msgid_plural "timespan^$num weeks"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/formula/format_timespan.hpp:41
+#: src/formula/format_timespan.hpp:85
 msgid "timespan^$num day"
 msgid_plural "timespan^$num days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/formula/format_timespan.hpp:42
+#: src/formula/format_timespan.hpp:86
 msgid "timespan^$num hour"
 msgid_plural "timespan^$num hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/formula/format_timespan.hpp:43
+#: src/formula/format_timespan.hpp:87
 msgid "timespan^$num minute"
 msgid_plural "timespan^$num minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/formula/format_timespan.hpp:44
+#: src/formula/format_timespan.hpp:88
 msgid "timespan^$num second"
 msgid_plural "timespan^$num seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/formula/format_timespan.hpp:89 src/formula/format_timespan.hpp:112
-msgid "timespan^expired"
-msgstr ""
-
-#: src/game_config.cpp:536
+#: src/game_config.cpp:535
 msgid "Invalid color in range: "
 msgstr "Невалиден цвят: "
 
@@ -6600,7 +6899,7 @@ msgstr "Стандартното ядро не може да бъде откри
 
 #: src/game_config_manager.cpp:303
 msgid "The game will now exit."
-msgstr "Сега играта ще спре."
+msgstr "Играта ще бъде спряна."
 
 #: src/game_config_manager.cpp:364
 msgid ""
@@ -6616,7 +6915,7 @@ msgid ""
 "default core files."
 msgstr ""
 "Грешка при зареждането на настройките по избор. Играта ще се върне към "
-"стандартните файлове."
+"стандартното ядро."
 
 #: src/game_config_manager.cpp:380
 msgid ""
@@ -6632,10 +6931,13 @@ msgid ""
 "to advance to ‘$higher_level’; please ask the add-on author to use "
 "[modify_unit_type] instead."
 msgstr ""
+"Грешка: [advancefrom] вече не работи. Единици от ‘$lower_level’ няма да "
+"могат да напреднат до ‘$higher_level’; Моля, помолете автора на добавката да "
+"използва [modify_unit_type]."
 
 #: src/game_config_manager.cpp:442
 msgid "instead, use the macro with the same name in the [campaign] tag"
-msgstr ""
+msgstr "изпозвайте макрос със същото име в табелката [campaign]"
 
 #: src/game_config_manager.cpp:631
 msgid "The following add-on had errors and could not be loaded:"
@@ -6661,7 +6963,7 @@ msgstr "Внимание: "
 
 #: src/game_events/pump.cpp:393
 msgid "Debug: "
-msgstr "Дебъг:"
+msgstr "Дебъг: "
 
 #: src/game_events/pump.cpp:395
 msgid "Info: "
@@ -6791,7 +7093,7 @@ msgstr "Непозната епоха"
 #: src/game_initialization/lobby_data.cpp:263
 #: src/game_initialization/lobby_data.cpp:290
 msgid "scenario_abbreviation^S"
-msgstr ""
+msgstr "S"
 
 #: src/game_initialization/lobby_data.cpp:276
 msgid "Remote scenario"
@@ -6800,7 +7102,7 @@ msgstr "Отдалечен сценарий"
 #: src/game_initialization/lobby_data.cpp:297
 #: src/game_initialization/lobby_data.cpp:321
 msgid "campaign_abbreviation^C"
-msgstr ""
+msgstr "C"
 
 #: src/game_initialization/lobby_data.cpp:327
 msgid "Unknown scenario"
@@ -6842,8 +7144,8 @@ msgid ""
 "The host’s version of <i>$addon</i> is incompatible. They have version "
 "<b>$host_ver</b> while you have version <b>$local_ver</b>."
 msgstr ""
-"Домакинът представя несъвместима версия на <i>$addon</i>. Тяхната версия е "
-"<b>$host_ver</b>, докато Вашата е <b>$local_ver</b>."
+"Домакинът има несъвместима версия на <i>$addon</i>. Тяхната версия е "
+"<b>$host_ver</b>, докато вашата е <b>$local_ver</b>."
 
 #: src/game_initialization/lobby_data.cpp:451
 msgid ""
@@ -6998,7 +7300,7 @@ msgstr ""
 
 #: src/game_initialization/multiplayer.cpp:466
 msgid "The password you provided was incorrect."
-msgstr "Представената от Вас парола е неправилна."
+msgstr "Представената парола е неправилна."
 
 #: src/game_initialization/multiplayer.cpp:468
 msgid "You have made too many login attempts."
@@ -7006,7 +7308,7 @@ msgstr "Опитахте да се впишете твърде много път
 
 #: src/game_initialization/multiplayer.cpp:470
 msgid "Password hashing failed."
-msgstr ""
+msgstr "Хашването на паролата беше неуспешно."
 
 #: src/game_initialization/playcampaign.cpp:150 src/game_launcher.cpp:903
 msgid "The game could not be loaded: "
@@ -7049,7 +7351,7 @@ msgid "No campaigns are available."
 msgstr "Няма достъпни кампании."
 
 #: src/game_launcher.cpp:685 src/game_launcher.cpp:704
-#: src/hotkey/hotkey_handler_sp.cpp:324 src/replay.cpp:662 src/savegame.cpp:167
+#: src/hotkey/hotkey_handler_sp.cpp:324 src/replay.cpp:664 src/savegame.cpp:167
 msgid "The file you have tried to load is corrupt"
 msgstr "Файлът който се опитвате да заредите, е повреден"
 
@@ -7059,15 +7361,15 @@ msgstr "Файлът който се опитвате да заредите, е 
 
 #: src/game_launcher.cpp:696
 msgid "File I/O Error while reading the game"
-msgstr ""
+msgstr "Грешка I/O на файла по време на разчитане на играта"
 
 #: src/game_launcher.cpp:698
 msgid "File I/O Error while reading the game: '"
-msgstr ""
+msgstr "Грешка I/O на файла по време на разчитане на играта:"
 
 #: src/game_launcher.cpp:901
 msgid "Error while starting server: "
-msgstr "Грешка при стартиране на сървъра : "
+msgstr "Грешка при стартиране на сървъра: "
 
 #: src/game_launcher.cpp:923
 msgid "Connection failed: "
@@ -7077,7 +7379,7 @@ msgstr "Свързването бе неуспешно: "
 #, fuzzy
 #| msgid "Random maps with an odd width aren't supported."
 msgid "Random maps with an odd width aren’t supported."
-msgstr "Не се поддържат карти произволни карти с различна ширина."
+msgstr "Не се поддържат произволни карти с особена ширина."
 
 #: src/generators/default_map_generator_job.cpp:965
 #, fuzzy
@@ -7094,6 +7396,7 @@ msgstr ""
 #: src/gui/core/linked_group_definition.cpp:40
 msgid "Linked group '$id' needs a 'fixed_width' or 'fixed_height' key."
 msgstr ""
+"Свързаната група '$id' се нуждае от 'fixed_width' или от ключ 'fixed_height'."
 
 #: src/gui/dialogs/addon/install_dependencies.cpp:32
 msgid ""
@@ -7110,46 +7413,36 @@ msgstr[1] ""
 "инсталирани. Искате ли да ги инсталирате, преди да продължите?"
 
 #: src/gui/dialogs/editor/choose_addon.cpp:73
-#, fuzzy
-#| msgid "Create a unit."
 msgid "Create a new add-on"
-msgstr "Създаване на единица."
+msgstr "Създаване на нова добавка"
 
 #: src/gui/dialogs/editor/choose_addon.cpp:73
-#, fuzzy
 msgid "New Add-on"
-msgstr "Пращане на допълнението"
+msgstr "Нова добавка"
 
 #: src/gui/dialogs/editor/choose_addon.cpp:78
 msgid "Mainline"
-msgstr ""
+msgstr "Основна линия"
 
 #: src/gui/dialogs/editor/choose_addon.cpp:78
-#, fuzzy
-#| msgid "No multiplayer sides."
 msgid "Mainline multiplayer scenarios"
-msgstr "Няма страни за игра в мрежа."
+msgstr "Мисии за мултиплейър по основната линия"
 
 #: src/gui/dialogs/game_stats.hpp:38
 msgid "No visible sides found."
 msgstr "Не са намерени страни."
 
 #: src/gui/dialogs/multiplayer/lobby_player_list_helper.cpp:171
-#, fuzzy
 msgid "Selected Game"
-msgstr "Избери единица:"
+msgstr "Избери игра"
 
 #: src/gui/dialogs/multiplayer/lobby_player_list_helper.cpp:172
-#, fuzzy
-#| msgid "Game Lobby"
 msgid "Lobby"
-msgstr "Лоби на играта"
+msgstr "Лоби"
 
 #: src/gui/dialogs/multiplayer/lobby_player_list_helper.cpp:173
-#, fuzzy
-#| msgid "Observe Game"
 msgid "Other Games"
-msgstr "Наблюдавай игра"
+msgstr "Други игри"
 
 #: src/gui/dialogs/multiplayer/match_history.cpp:49
 #: src/gui/dialogs/multiplayer/match_history.cpp:90
@@ -7157,45 +7450,36 @@ msgid "Match History — $player"
 msgstr "История на игрите - $player"
 
 #: src/gui/dialogs/multiplayer/match_history.cpp:68
-#, fuzzy
 msgid "Scenario"
-msgstr "Отдалечена мисия"
+msgstr "Мисия"
 
 #: src/gui/dialogs/multiplayer/match_history.cpp:69
-#, fuzzy
-#| msgid "Era:"
 msgid "Era"
-msgstr "Епоха:"
+msgstr "Епоха"
 
 #: src/gui/dialogs/multiplayer/match_history.cpp:70
-#, fuzzy
 msgid "Modification"
-msgstr "Невалиден цвят"
+msgstr "Модификация"
 
 #: src/gui/dialogs/multiplayer/match_history.cpp:150
-#, fuzzy
-#| msgid "Era:"
 msgid "Era: "
-msgstr "Епоха:"
+msgstr "Епоха: "
 
 #: src/gui/dialogs/multiplayer/match_history.cpp:151
 msgid " UTC+0"
-msgstr ""
+msgstr " UTC+0"
 
 #: src/gui/dialogs/multiplayer/match_history.cpp:253
-#, fuzzy
 msgid "No game history found."
-msgstr "Не са открити ери"
+msgstr "Не е открита история на игрите."
 
 #: src/gui/dialogs/multiplayer/match_history.cpp:266
-#, fuzzy
-#| msgid "Connection timed out"
 msgid "Request timed out."
-msgstr "Времето за връзката е просрочено"
+msgstr "Времето за поискването е просрочено."
 
 #: src/gui/dialogs/multiplayer/match_history.cpp:276
 msgid "Request encountered an unexpected error, please check the logs."
-msgstr ""
+msgstr "Поискването срещна неочаквана грешка, моля проверете документацията."
 
 #: src/gui/dialogs/multiplayer/player_info.cpp:104
 msgid "In game:"
@@ -7318,19 +7602,15 @@ msgstr "Няма описание."
 #, fuzzy
 #| msgid "This is the last scenario."
 msgid "This is a global trait."
-msgstr "Това е последната Ви мисия."
+msgstr "Това е последната ви мисия."
 
 #: src/help/help_impl.cpp:763
-#, fuzzy
-#| msgid "<header>text='Units with this ability'</header>"
 msgid "Races with this trait"
-msgstr "<header>text='Единици с това умение'</header>"
+msgstr ""
 
 #: src/help/help_impl.cpp:783
-#, fuzzy
-#| msgid "<header>text='Units with this ability'</header>"
 msgid "Units with this trait"
-msgstr "<header>text='Единици с това умение'</header>"
+msgstr ""
 
 #: src/help/help_impl.cpp:907 src/help/help_impl.cpp:1125
 msgid "race^Miscellaneous"
@@ -7346,13 +7626,13 @@ msgstr "Уклон: "
 #, fuzzy
 #| msgid ""
 #| "This is a group of units, all of whom are <ref>dst='$topic_id' "
-#| "text='$help_taxonomy'</ref>"
+#| "text='$help_taxonomy'</ref>."
 msgid ""
 "This is a group of units, all of whom are <ref "
 "dst='$topic_id'>$help_taxonomy</ref>."
 msgstr ""
 "Това са групи единици, принадлежащи към <ref>dst='$topic_id' "
-"text='$help_taxonomy'</ref>"
+"text='$help_taxonomy'</ref>."
 
 #: src/help/help_impl.cpp:1172
 #, fuzzy
@@ -7414,15 +7694,13 @@ msgstr "Обратно в началото"
 
 #: src/hotkey/hotkey_handler.cpp:419
 #, fuzzy
-#| msgid "play turn"
+#| msgid "Replay from Turn "
 msgid "Replay from Turn $number"
-msgstr "изиграване на хода"
+msgstr "Повтаряне от ход "
 
 #: src/hotkey/hotkey_handler.cpp:420
-#, fuzzy
-#| msgid "Ready to start!"
 msgid "Replay from Start"
-msgstr "Готови за начало!"
+msgstr "Повтаряне отначало"
 
 #: src/hotkey/hotkey_handler_sp.cpp:156
 msgid "(press $hotkey to deactivate)"
@@ -7438,15 +7716,13 @@ msgstr "Планирането е изключено!"
 
 #: src/hotkey/hotkey_handler_sp.cpp:342
 #, fuzzy
-#| msgid "The file you have tried to load is corrupt"
+#| msgid "The file you have tried to load has no replay information. "
 msgid "The file you have tried to load has no replay information."
-msgstr "Файлът който се опитвате да заредите, е повреден"
+msgstr "Файлът който се опитвате да заредите няма информация за повторение. "
 
 #: src/hotkey/hotkey_handler_sp.cpp:346
-#, fuzzy
-#| msgid "The file you have tried to load is corrupt"
 msgid "The file you have tried to load is not from the current session."
-msgstr "Файлът който се опитвате да заредите, е повреден"
+msgstr "Файлът който се опитвате да заредите не е от същата сесия."
 
 #: src/language.cpp:115
 msgid "System default language"
@@ -7483,14 +7759,14 @@ msgstr "Тази команда в момента е недостъпна."
 #: src/map_command_handler.hpp:227
 #, fuzzy
 #| msgid ""
-#| "Unknown command '$command', try $help_command for a list of available "
-#| "commands."
+#| "Unknown command '$command', did you mean '$command_proposal'? try "
+#| "$help_command for a list of available commands."
 msgid ""
 "Unknown command ‘$command’, did you mean ‘$command_proposal’? try "
 "$help_command for a list of available commands."
 msgstr ""
-"Неразпозната команда '$command'. Изберете $help_command, за да получите "
-"списък с достъпни команди."
+"Неразпозната команда '$command', може би искахте '$command_proposal'? "
+"Изберете $help_command, за да получите списък с достъпни команди."
 
 #: src/map_command_handler.hpp:231
 #, fuzzy
@@ -7513,6 +7789,8 @@ msgid ""
 "Available commands list and command-specific help. Use \"help all\" to "
 "include currently unavailable commands."
 msgstr ""
+"Списък с достъпни команди и помощ за тях. Използвайте \"help all\", за да "
+"включите всички недостъпни в момента команди."
 
 #. TRANSLATORS: These are the arguments accepted by the "help" command,
 #. which are either "all" or the name of another command.
@@ -7523,10 +7801,13 @@ msgid ""
 "“all” = overview of all commands, <command> = name of a specific command "
 "(provides more detail)"
 msgstr ""
+"[all|<command>]\n"
+"“all” = преглед на всички команди, <command> = името на конкретна команда "
+"(представя повече детайли)"
 
 #: src/map_command_handler.hpp:304
 msgid "Missing argument $arg_id"
-msgstr ""
+msgstr "Липсващ аргумент$arg_id"
 
 #: src/map_command_handler.hpp:357
 msgid ""
@@ -7551,15 +7832,15 @@ msgstr " Няма достъпна помощ."
 
 #: src/map_command_handler.hpp:381 src/map_command_handler.hpp:384
 msgid "Usage:"
-msgstr ""
+msgstr "Употреба:"
 
 #. TRANSLATORS: alternative names for command-line commands, only shown if
 #. there is at least one of them.
 #: src/map_command_handler.hpp:396
 msgid "command^Alias:"
 msgid_plural "Aliases:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Друго име"
+msgstr[1] "Други имена"
 
 #: src/map_settings.cpp:87
 msgid "$login|’s game"
@@ -7604,7 +7885,7 @@ msgstr "Не разполагате с единици за набор."
 
 #: src/menu_events.cpp:392
 msgid "You are separated from your soldiers and may not recall them."
-msgstr "Откъснати сте от войниците си и не можете да ги привиквате."
+msgstr "Откъснати сте от войниците си и не можете да ги привикате."
 
 #: src/menu_events.cpp:411
 msgid ""
@@ -7618,7 +7899,7 @@ msgstr ""
 #, fuzzy
 #| msgid "You currently can't recall at the highlighted location."
 msgid "You currently can’t recall at the highlighted location."
-msgstr "На тази локация не може да привиквате."
+msgstr "На тази локация привикването е невъзможно."
 
 #: src/menu_events.cpp:447
 msgid "You must have at least 1 gold piece to recall a unit."
@@ -7633,12 +7914,12 @@ msgstr "Не може да завършите хода си все още!"
 #: src/menu_events.cpp:607
 msgid ""
 "You have not started your turn yet. Do you really want to end your turn?"
-msgstr "Все още не сте започнали хода си. Наистина ли искате да го прекратите?"
+msgstr "Все още не сте започнали хода си. Наистина ли ще го прекратите?"
 
 #: src/menu_events.cpp:616
 msgid "Some units have movement left. Do you really want to end your turn?"
 msgstr ""
-"Някои единици имат неизразходвано движение. Наистина ли искате да прекратите "
+"Някои единици имат още точки за движение. Наистина ли искате да прекратите "
 "хода си?"
 
 #: src/menu_events.cpp:625
@@ -7668,15 +7949,15 @@ msgstr "Търсене"
 
 #: src/menu_events.cpp:1207
 msgid "(D) — debug only, (N) — network only, (A) — admin only"
-msgstr ""
+msgstr "(D) - само дебъг, (N) - само мрежа, (A) - само админ"
 
 #: src/menu_events.cpp:1214
 msgid "(debug command)"
-msgstr ""
+msgstr "(дебъг команда)"
 
 #: src/menu_events.cpp:1215
 msgid "(network only)"
-msgstr ""
+msgstr "(само мрежа)"
 
 #: src/menu_events.cpp:1217
 msgid "(not during other events)"
@@ -7684,11 +7965,11 @@ msgstr "(забранено по време на други събития)"
 
 #: src/menu_events.cpp:1247
 msgid "Refresh gui."
-msgstr ""
+msgstr "Презареждане на интерфейса."
 
 #: src/menu_events.cpp:1248
 msgid "Switch a side to/from AI control."
-msgstr ""
+msgstr "Прехвърляне на дадена страна към компютърно управление."
 
 #. TRANSLATORS: These are the arguments accepted by the "droid" command,
 #. which must be a side-number and then optionally one of "on", "off" or "full".
@@ -7699,26 +7980,29 @@ msgid ""
 "“on” = enable but retain vision, “full” = as if it’s controlled by another "
 "player"
 msgstr ""
+"[<side> [on/off/full]]\n"
+"“on” = включва, но запазва видимостта, “full” = все едно, че се контролира "
+"от друг играч"
 
 #: src/menu_events.cpp:1253
 msgid "Change terrain type of current hex"
-msgstr "Сменете терена на настоящото поле"
+msgstr "Сменете вида терен на настоящото поле"
 
 #. TRANSLATORS: [both|base|overlay] are hardcoded literal arguments and shouldn't be translated.
 #: src/menu_events.cpp:1255
 msgid "<terrain type> [both|base|overlay]"
-msgstr ""
+msgstr "<terrain type> [both|base|overlay]"
 
 #: src/menu_events.cpp:1256
 msgid "Switch a side to/from idle state."
-msgstr ""
+msgstr "Превключване на страна от/към неподвижно състояние."
 
 #. TRANSLATORS: These are the arguments accepted by the "idle" command,
 #. which must be a side-number and then optionally "on" or "off".
 #. As with the command's name, "on" and "off" are hardcoded, and shouldn't change in the translation.
 #: src/menu_events.cpp:1260
 msgid "command_idle^[<side> [on/off]]"
-msgstr ""
+msgstr "command_idle^[<side> [on/off]]"
 
 #: src/menu_events.cpp:1261
 msgid "Change the in-game theme."
@@ -7726,37 +8010,44 @@ msgstr "Смяна на музиката в играта."
 
 #: src/menu_events.cpp:1263
 msgid "<side> <nickname>"
-msgstr ""
+msgstr "<side> <nickname>"
 
 #: src/menu_events.cpp:1263
 msgid "Assign control of a side to a different player or observer."
-msgstr "Припишете контрол на дадена страна към друг играч или наблюдател."
+msgstr ""
+"Приписване на контрол върху дадена страна към друг играч или наблюдател."
 
 #: src/menu_events.cpp:1264
 msgid "Query the controller status of a side."
-msgstr ""
+msgstr "Информация кой контролира дадена страна."
 
 #: src/menu_events.cpp:1265
 msgid "<side>"
-msgstr ""
+msgstr "<side>"
 
 #: src/menu_events.cpp:1267
 msgid "Debug foreground terrain."
-msgstr ""
+msgstr "Дебъг на предния терен."
 
 #: src/menu_events.cpp:1269
 msgid "Debug layers from terrain under the mouse."
-msgstr ""
+msgstr "Дебъг на пластовете от терена под мишката."
 
 #: src/menu_events.cpp:1270
 msgid "Display and log fps (Frames Per Second)."
-msgstr ""
+msgstr "Показва и записва К/с (Кадри в секунда)."
 
 #: src/menu_events.cpp:1271
+#, fuzzy
+#| msgid ""
+#| "Similar to the 'fps' command, but also forces everything to redraw "
+#| "instead of only things that have changed."
 msgid ""
 "Similar to the ‘fps’ command, but also forces everything to redraw instead "
 "of only things that have changed."
 msgstr ""
+"Подобно на 'fps' командата, но също така принуждава всичко да бъде "
+"прерисувано, вместо само нещата, които са се променили."
 
 #: src/menu_events.cpp:1272
 msgid "Save game."
@@ -7786,7 +8077,7 @@ msgstr "<id>"
 #, fuzzy
 #| msgid "Advance to the next scenario, or scenario identified by 'id'"
 msgid "Advance to the next scenario, or scenario identified by ‘id’"
-msgstr "Напредване към следващата мисия или към мисия обозначена с 'id'"
+msgstr "Придвижване към следващата мисия или към мисия обозначена с 'id'"
 
 #: src/menu_events.cpp:1284
 msgid "Choose next scenario"
@@ -7802,7 +8093,7 @@ msgstr ""
 
 #: src/menu_events.cpp:1287
 msgid "[turn]"
-msgstr ""
+msgstr "[turn]"
 
 #: src/menu_events.cpp:1290
 msgid ""
@@ -7814,31 +8105,31 @@ msgstr ""
 
 #: src/menu_events.cpp:1290
 msgid "[limit]"
-msgstr ""
+msgstr "[limit]"
 
 #: src/menu_events.cpp:1292
 msgid "Turn debug mode on."
-msgstr "Включи дебъг режим"
+msgstr "Включи дебъг режим."
 
 #: src/menu_events.cpp:1293
 msgid "Turn debug mode off."
-msgstr "Изключи дебъг режим"
+msgstr "Изключи дебъг режим."
 
 #: src/menu_events.cpp:1295 src/menu_events.cpp:1299
 msgid "<command>[;<command>...]"
-msgstr ""
+msgstr "<command>[;<command>...]"
 
 #: src/menu_events.cpp:1295
 msgid "Execute a Lua statement."
-msgstr ""
+msgstr "Изпълняване на Lua."
 
 #: src/menu_events.cpp:1297
 msgid "Grant higher privileges to Lua scripts."
-msgstr ""
+msgstr "Дава по-високи привилегии на скриптовете Lua."
 
 #: src/menu_events.cpp:1298
 msgid "Set the command used by the custom command hotkey"
-msgstr ""
+msgstr "Задава командата, която да бъде изпълнена при натискане на това копче"
 
 #: src/menu_events.cpp:1301
 msgid "Invoke a dialog allowing changing control of MP sides."
@@ -7846,31 +8137,31 @@ msgstr "Извиква диалог, който позволява промян�
 
 #: src/menu_events.cpp:1302
 msgid "Launch the gamestate inspector"
-msgstr ""
+msgstr "Включва инспектора по състоянието на играта"
 
 #: src/menu_events.cpp:1304
 msgid "<name>[=<command>]"
-msgstr ""
+msgstr "<name>[=<command>]"
 
 #: src/menu_events.cpp:1304
 msgid "Set or show alias to a command"
-msgstr ""
+msgstr "Задава или показва асоциациите с дадена команда"
 
 #: src/menu_events.cpp:1306 src/menu_events.cpp:1311
 msgid "<var>=<value>"
-msgstr ""
+msgstr "<var>=<value>"
 
 #: src/menu_events.cpp:1306
 msgid "Set a scenario variable."
-msgstr ""
+msgstr "Задава променлива за мисия."
 
 #: src/menu_events.cpp:1307
 msgid "<var>"
-msgstr ""
+msgstr "<var>"
 
 #: src/menu_events.cpp:1307
 msgid "Show a scenario variable."
-msgstr ""
+msgstr "Показва променлива за мисия."
 
 #. TRANSLATORS: Do not translate the word "advances"; it is a hardcoded literal argument.
 #: src/menu_events.cpp:1310
@@ -7878,6 +8169,8 @@ msgid ""
 "Modify a unit variable. (Only top level keys are supported, and "
 "advances=<number>.)"
 msgstr ""
+"Променя променлива за единица. (Поддържат се само най-високите ключове и "
+"advances=<number>.)"
 
 #: src/menu_events.cpp:1317
 msgid "Discover all units in help."
@@ -7891,7 +8184,7 @@ msgstr "'Закриване' на всички единици в помощта.
 
 #: src/menu_events.cpp:1319
 msgid "<unit type id>"
-msgstr ""
+msgstr "<unit type id>"
 
 #: src/menu_events.cpp:1319
 msgid "Create a unit."
@@ -7899,15 +8192,15 @@ msgstr "Създаване на единица."
 
 #: src/menu_events.cpp:1320
 msgid "Toggle fog for the current player."
-msgstr "Включване на мъгла за настоящия игра."
+msgstr "Включване на мъгла за текущия играч."
 
 #: src/menu_events.cpp:1321
 msgid "Toggle shroud for the current player."
-msgstr ""
+msgstr "Включване на було за текущия играч."
 
 #: src/menu_events.cpp:1322
 msgid "<amount>"
-msgstr ""
+msgstr "<amount>"
 
 #: src/menu_events.cpp:1322
 msgid "Give gold to the current player."
@@ -7915,11 +8208,11 @@ msgstr "Даване на злато на този играч."
 
 #: src/menu_events.cpp:1323
 msgid "<event name>"
-msgstr ""
+msgstr "<event name>"
 
 #: src/menu_events.cpp:1323
 msgid "Fire a game event."
-msgstr "Пускане на събитие в играта."
+msgstr "Пускане в действие на събитие в играта."
 
 #: src/menu_events.cpp:1326
 msgid "Toggle overlaying of x,y coordinates on hexes."
@@ -7931,7 +8224,7 @@ msgstr "Превключва показването на теренни кодо
 
 #: src/menu_events.cpp:1332
 msgid "Toggle overlaying of number of bitmaps on hexes."
-msgstr ""
+msgstr "Превключва покритието на броя растерни изображения върху полетата."
 
 #: src/menu_events.cpp:1334
 msgid "Toggle planning mode."
@@ -7946,12 +8239,16 @@ msgid "Could not find label or unit containing the string ‘$search’."
 msgstr "Не е намерен етикет или единица съдържащи нишката ‘$search’."
 
 #: src/menu_events.cpp:1498
+#, fuzzy
+#| msgid "Can't droid invalid side: '$side'."
 msgid "Can’t droid invalid side: ‘$side’."
-msgstr ""
+msgstr "Тази страна не може да се управлява от компютър: '$side'."
 
 #: src/menu_events.cpp:1501
+#, fuzzy
+#| msgid "Can't droid networked side: '$side'."
 msgid "Can’t droid networked side: ‘$side’."
-msgstr ""
+msgstr "Тази страна в мрежа не може да се управлява от компютър: '$side'."
 
 #: src/menu_events.cpp:1513 src/menu_events.cpp:1529 src/menu_events.cpp:1561
 #, fuzzy
@@ -7973,9 +8270,9 @@ msgstr "'$side' страна се управлява от: компютър."
 
 #: src/menu_events.cpp:1525
 #, fuzzy
-#| msgid "Side '$side' is already fully AI controlled."
+#| msgid "Side '$side' is already droided."
 msgid "Side ‘$side’ is already droided."
-msgstr "'$side' страна вече се управлява напълно от компютъра."
+msgstr "Страната '$side' е вече под компютърен контрол."
 
 #: src/menu_events.cpp:1539 src/menu_events.cpp:1571
 #, fuzzy
@@ -7985,9 +8282,9 @@ msgstr "'$side' страна се управлява от: човек."
 
 #: src/menu_events.cpp:1541
 #, fuzzy
-#| msgid "Side '$side' is already fully AI controlled."
+#| msgid "Side '$side' is already not droided."
 msgid "Side ‘$side’ is already not droided."
-msgstr "'$side' страна вече се управлява напълно от компютъра."
+msgstr "Страната '$side' не се управлява от компютър."
 
 #: src/menu_events.cpp:1545
 #, fuzzy
@@ -7999,7 +8296,7 @@ msgid ""
 "your turn."
 msgstr ""
 "Забранено е смяната на страна от човек на компютърен контрол, когато не е "
-"Ваш ход."
+"ваш ход."
 
 #: src/menu_events.cpp:1555
 #, fuzzy
@@ -8014,63 +8311,82 @@ msgid "Side ‘$side’ is already fully AI controlled."
 msgstr "'$side' страна вече се управлява напълно от компютъра."
 
 #: src/menu_events.cpp:1582
+#, fuzzy
+#| msgid ""
+#| "Invalid action provided for side '$side'. Valid actions are: on, off, "
+#| "full."
 msgid ""
 "Invalid action provided for side ‘$side’. Valid actions are: on, off, full."
 msgstr ""
+"Невалидно действие за страна '$side'. Валидните действия са: on, off, full."
 
 #: src/menu_events.cpp:1591
-#, fuzzy
-#| msgid "Side '$side' is already fully AI controlled."
 msgid "Side ‘$side’ is not a human or AI player."
-msgstr "'$side' страна вече се управлява напълно от компютъра."
+msgstr ""
 
 #: src/menu_events.cpp:1628
+#, fuzzy
+#| msgid "Can't idle invalid side: '$side'."
 msgid "Can’t idle invalid side: ‘$side’."
-msgstr ""
+msgstr "Невалидната страна не може да бъде неподвижна: '$side'."
 
 #: src/menu_events.cpp:1633
+#, fuzzy
+#| msgid "Can't idle networked side: '$side'."
 msgid "Can’t idle networked side: ‘$side’."
-msgstr ""
+msgstr "Невалидната страна в мрежа не може да бъде неподвижна: '$side'."
 
 #: src/menu_events.cpp:1638
+#, fuzzy
+#| msgid "Can't idle local ai side: '$side'."
 msgid "Can’t idle local ai side: ‘$side’."
-msgstr ""
+msgstr "Страната управлявана от ии не може да бъде неподвижна: '$side'."
 
 #: src/menu_events.cpp:1684
+#, fuzzy
+#| msgid "Can't change control of invalid side: '$side'."
 msgid "Can’t change control of invalid side: ‘$side’."
-msgstr ""
+msgstr "Не може да бъде променен контролът над невалидната страна: '$side'."
 
 #: src/menu_events.cpp:1694
+#, fuzzy
+#| msgid "Can't change control of out-of-bounds side: '$side'."
 msgid "Can’t change control of out-of-bounds side: ‘$side’."
 msgstr ""
+"Не може да бъде променен контролът над страна, която е извън рамките: "
+"'$side'."
 
 #: src/menu_events.cpp:1711
+#, fuzzy
+#| msgid "Can't query control of invalid side: '$side'."
 msgid "Can’t query control of invalid side: ‘$side’."
-msgstr ""
+msgstr "Не може да бъде установен контрола над невалидната страна: '$side'."
 
 #: src/menu_events.cpp:1718
+#, fuzzy
+#| msgid "Can't query control of out-of-bounds side: '$side'."
 msgid "Can’t query control of out-of-bounds side: ‘$side’."
-msgstr ""
+msgstr "Не може да бъде установен контрола над страната извън рамки: '$side'."
 
 #: src/menu_events.cpp:1840
 msgid "Choose Scenario (Debug!)"
-msgstr "Избери сценарий (Дебъг!)"
+msgstr "Изберете мисия (Дебъг!)"
 
 #: src/menu_events.cpp:1876
 msgid "Debug mode activated!"
-msgstr ""
+msgstr "Активиран е дебъг режим!"
 
 #: src/menu_events.cpp:1879
 msgid "Debug mode not available in network games"
-msgstr ""
+msgstr "Дебъг режимът не е достъпен за мрежови игри"
 
 #: src/menu_events.cpp:1886
 msgid "Debug mode deactivated!"
-msgstr ""
+msgstr "Деактивиран е дебъг режимът!"
 
 #: src/menu_events.cpp:1906
 msgid "WARNING! Unsafe Lua Mode"
-msgstr ""
+msgstr "ВНИМАНИЕ! Небезопасен Lua режим"
 
 #: src/menu_events.cpp:1907
 msgid ""
@@ -8080,6 +8396,10 @@ msgid ""
 "\n"
 "Do not continue unless you really know what you are doing."
 msgstr ""
+"Изпълняване на кода Lua по този начин поставя компютъра ви в уязвимо "
+"положение откъм злонамерени добавки или други инсталирани от вас програми.\n"
+"\n"
+"Не продължавайте, освен ако знаете какво точно правите."
 
 #: src/menu_events.cpp:1912
 msgid "Unsafe mode enabled!"
@@ -8090,14 +8410,25 @@ msgid "Variable not found"
 msgstr "Вариацията не е открита"
 
 #: src/menu_events.cpp:1994
+#, fuzzy
+#| msgid ""
+#| "Debug command 'unit: $unit' failed: no unit selected or hovered over."
 msgid "Debug command ‘unit: $unit’ failed: no unit selected or hovered over."
 msgstr ""
+"Дебъг команда за 'unit: $unit' беше неуспешна: не е избрана единица или няма "
+"такава под мишката."
 
 #: src/menu_events.cpp:2012
+#, fuzzy
+#| msgid ""
+#| "Invalid alignment: '$alignment', needs to be one of lawful, neutral, "
+#| "chaotic, or liminal."
 msgid ""
 "Invalid alignment: ‘$alignment’, needs to be one of lawful, neutral, "
 "chaotic, or liminal."
 msgstr ""
+"Невалиден аргумент: '$alignment' трябва да бъде праведен, неутрален, "
+"хаотичен или лиминален."
 
 #: src/menu_events.cpp:2038
 msgid "Do you wish to clear all of your discovered units from help?"
@@ -8122,7 +8453,7 @@ msgstr "Команда:"
 msgid "prompt^Formula:"
 msgstr "Команда:"
 
-#: src/mouse_events.cpp:1317
+#: src/mouse_events.cpp:1337
 msgid ""
 "You cannot move your leader away from the keep with some planned recruits or "
 "recalls left."
@@ -8130,44 +8461,37 @@ msgstr ""
 "Не може да изведете водача си от крепостта, когато имате вече планирани "
 "набори или привиквания."
 
-#: src/mouse_events.cpp:1420
-#, fuzzy
-#| msgid "Attack"
-#| msgid_plural "Attacks"
+#: src/mouse_events.cpp:1440
 msgid "No Attacks"
-msgstr "Атакува"
+msgstr "Няма атаки"
 
-#: src/mouse_events.cpp:1420
+#: src/mouse_events.cpp:1440
 msgid "This unit has no usable weapons."
-msgstr "Тази единица няма подходящи оръжия."
+msgstr "Тази единица няма оръжия."
 
-#: src/mouse_events.cpp:1496 src/mouse_events.cpp:1512
-#, fuzzy
-#| msgid "With specials: "
+#: src/mouse_events.cpp:1516 src/mouse_events.cpp:1532
 msgid "Other aspects: "
-msgstr "Със специалитети: "
+msgstr "Други аспекти: "
 
-#: src/mouse_events.cpp:1525 src/mouse_events.cpp:1539
+#: src/mouse_events.cpp:1545 src/mouse_events.cpp:1559
 msgid "Weapon: "
 msgstr "Оръжие: "
 
-#: src/mouse_events.cpp:1526 src/mouse_events.cpp:1540
+#: src/mouse_events.cpp:1546 src/mouse_events.cpp:1560
 msgid "Type: "
 msgstr "Тип "
 
-#: src/mouse_events.cpp:1527 src/mouse_events.cpp:1541
+#: src/mouse_events.cpp:1547 src/mouse_events.cpp:1561
 msgid "Damage: "
 msgstr "Вреда: "
 
-#: src/mouse_events.cpp:1528 src/mouse_events.cpp:1542
+#: src/mouse_events.cpp:1548 src/mouse_events.cpp:1562
 msgid "Attacks: "
 msgstr "Брой нападения: "
 
-#: src/mouse_events.cpp:1529 src/mouse_events.cpp:1543
-#, fuzzy
-#| msgid "Advances to: "
+#: src/mouse_events.cpp:1549 src/mouse_events.cpp:1563
 msgid "Chance to hit: "
-msgstr "Повишения към: "
+msgstr "Шанс за удар: "
 
 #: src/mp_ui_alerts.cpp:46
 msgid "A game ($name|, $scenario|) has been created"
@@ -8184,7 +8508,7 @@ msgstr "Нов играч се включи"
 
 #: src/mp_ui_alerts.cpp:77
 msgid "A player has left"
-msgstr "Играч напусна"
+msgstr "Един от играчите напусна"
 
 #: src/mp_ui_alerts.cpp:152
 msgid "Ready to start!"
@@ -8214,40 +8538,35 @@ msgstr ""
 
 #: src/network_download_file.cpp:55
 msgid "Confirm overwrite"
-msgstr ""
+msgstr "Потвърдете презаписването"
 
 #: src/network_download_file.cpp:55
 msgid "Overwrite existing file?"
-msgstr ""
+msgstr "Презаписване над съществуващия файл?"
 
 #: src/network_download_file.cpp:61
-#, fuzzy
 msgid "Download complete"
-msgstr "Сваляния"
+msgstr "Свалянето е завършено"
 
 #: src/network_download_file.cpp:61
-#, fuzzy
-#| msgid "The game has been saved."
 msgid "The file has been downloaded."
-msgstr "Играта бе запазена."
+msgstr "Файлът беше свален."
 
 #: src/network_download_file.cpp:63
-#, fuzzy
-#| msgid ""
-#| "An error occurred while downloading the add-ons list from the server."
 msgid ""
 "An error occurred when downloading the file. Check the game logs for more "
 "information."
-msgstr "Възникна грешка при свалянето на добавките от сървъра."
+msgstr ""
+"Възникна грешка при свалянето на файла. Проверете документацията на играта "
+"за повече информация."
 
 #: src/network_download_file.cpp:63
-#, fuzzy
 msgid "Download error"
-msgstr "Сваляния"
+msgstr "Грешка при свалянето"
 
 #: src/pathfind/pathfind.cpp:754
 msgid "Terrain with a movement cost less than 1 encountered."
-msgstr "Бе открит терен с по-малко от 1 точка за придвижване."
+msgstr "Бе открит терен с по-малко от 1 точка нужна за придвижване."
 
 #. TRANSLATORS:  In networked games, this text is shown for other
 #. clients, while they wait to receive the content of a global variable
@@ -8266,7 +8585,7 @@ msgstr "настоящо местно време"
 
 #: src/play_controller.cpp:604
 msgid "Trying to create a corrupt file, please report this bug"
-msgstr ""
+msgstr "Опит за създаване на погрешен файл, моля, докладвайте този бъг"
 
 #: src/play_controller.cpp:1062
 msgid ""
@@ -8314,7 +8633,7 @@ msgstr[1] ""
 
 #: src/play_controller.cpp:1260
 msgid "Once this is fixed, you will need to restart this scenario."
-msgstr "Щом това е оправено, ще трябва да рестартирате мисията."
+msgstr "Щом това бъде оправено, рестартирайте мисията."
 
 #: src/play_controller.cpp:1339
 msgid "No objectives available"
@@ -8334,9 +8653,9 @@ msgid ""
 "Do you want to save an error log of your game?"
 msgstr ""
 "Играта е несинхронизирана и не може да продължи. Има ред причини, по които "
-"това може да се случи: ако Вие или друг играч сте променили настройките си. "
-"Това може да значи, че някой от играчите опитва да мами. Може да се дължи и "
-"на бъг в играта, но то е малко вероятно.\n"
+"това може да се случи: това може да се случи, ако вие или друг играч сте "
+"променили настройките си. Това може да значи, че някой от играчите опитва да "
+"мами. Може да се дължи и на бъг в играта, но вероятността е малка.\n"
 "\n"
 "Искате ли да запазите доклад за играта си?"
 
@@ -8346,7 +8665,7 @@ msgid ""
 "to another controller. You may use :droid, :control or :give_control for "
 "example."
 msgstr ""
-"Тази страна е в неподвижно състояние. За да продължите, трябва да `и бъде "
+"Тази страна е в неподвижно състояние. За да продължите, трябва да ѝ бъде "
 "приписан управител. Използвайте команди като :droid, :control или :"
 "give_control."
 
@@ -8368,7 +8687,7 @@ msgstr "Замяна с локален играч"
 
 #: src/playmp_controller.cpp:594
 msgid "Set side to idle"
-msgstr ""
+msgstr "Задаване на страната да бъде неподвижна"
 
 #: src/playmp_controller.cpp:595
 msgid "Save and abort game"
@@ -8384,7 +8703,7 @@ msgstr ""
 
 #: src/playsingle_controller.cpp:182
 msgid "Game Error"
-msgstr "Грешка"
+msgstr "Грешка на играта"
 
 #: src/playsingle_controller.cpp:183
 #, fuzzy
@@ -8398,8 +8717,7 @@ msgid ""
 "reloaded a corrupt game."
 msgstr ""
 "Тази мултиплеър игра използва алтернативен произволен режим. Ако не знаете "
-"какво означава съобщението, вероятно някой чийтва или е заредил повредена "
-"игра"
+"какво означава съобщението, вероятно някой мами или е заредил повредена игра."
 
 #: src/playsingle_controller.cpp:384
 msgid "The game is over."
@@ -8430,7 +8748,7 @@ msgstr ""
 
 #: src/playsingle_controller.cpp:557
 msgid "It is now $name|’s turn"
-msgstr "Сега е ред на $name|’s turn"
+msgstr "Сега е ред на $name|"
 
 #: src/quit_confirmation.cpp:55
 msgid "Quit"
@@ -8490,7 +8808,7 @@ msgid ""
 "attacking and its movement cost is doubled."
 msgstr ""
 "Тази единица е била забавена. Ще нанася само половината от основната си "
-"вреда, когато напада, а и придвижването `и е удвоено."
+"вреда, когато напада, освен това придвижването ѝ е двойно по-трудно."
 
 #: src/reports.cpp:352
 #, fuzzy
@@ -8507,7 +8825,7 @@ msgid ""
 "Units cannot be killed by poison alone. The poison will not reduce it below "
 "1 HP."
 msgstr ""
-"Тази единица е отровена. Ще губи по 8 точки здраве всеки ход, докато не бъде "
+"Тази единица е отровена. Ще губи по 8 точки здраве всеки ход, докато бъде "
 "излекувана чрез престой в селище или от приятелска единица с умението "
 "'изцеление'.\n"
 "\n"
@@ -8526,30 +8844,27 @@ msgstr "Тази единица е вкаменена. Не може да се �
 
 #: src/reports.cpp:360
 #, fuzzy
-#| msgid "unhealable"
+#| msgid "unhealable: "
 msgid "unhealable:"
-msgstr "нелечим"
+msgstr "нелечим: "
 
 #: src/reports.cpp:361
 msgid ""
 "This unit is unhealable. It cannot be healed by healers or villages and "
 "doesn’t benefit from resting."
 msgstr ""
+"Тази единица не може да бъде излекувана от лечители или селища и няма ползи "
+"от почивка."
 
 #: src/reports.cpp:364
 #, fuzzy
-#| msgid "invisible: "
+#| msgid "invulnerable: "
 msgid "invulnerable:"
-msgstr "невидим: "
+msgstr "неуязвим: "
 
 #: src/reports.cpp:365
-#, fuzzy
-#| msgid ""
-#| "This unit is invisible. It cannot be seen or attacked by enemy units."
 msgid "This unit is invulnerable. It cannot be harmed by any attack."
-msgstr ""
-"Тази единица е невидима. Не може а бъде видяна или атакувана от вражески "
-"единици."
+msgstr "Тази единица е неуязвима. Никоя атака не може да ѝ навреди."
 
 #: src/reports.cpp:395 src/reports.cpp:993
 msgid "Alignment:"
@@ -8615,12 +8930,13 @@ msgstr "видимост:"
 #. TRANSLATORS: single-letter abbreviation of "jamming", fits in a small space on the sidebar
 #: src/reports.cpp:669
 #, fuzzy
+#| msgid "jamming:"
 msgid "jamming^J:"
-msgstr "Сутрин"
+msgstr "затруднение:"
 
 #: src/reports.cpp:670
 msgid "jamming:"
-msgstr ""
+msgstr "затруднение:"
 
 #: src/reports.cpp:694
 msgid "Movement Costs:"
@@ -8648,7 +8964,7 @@ msgstr "Основна вреда: "
 #, fuzzy
 #| msgid "With specials: "
 msgid "With specials:"
-msgstr "Със специалитети: "
+msgstr "Със специалност: "
 
 #: src/reports.cpp:846 src/reports.cpp:1407
 msgid "Time of day:"
@@ -8673,13 +8989,16 @@ msgid "Attacks:"
 msgstr "Брой нападения: "
 
 #: src/reports.cpp:862
+#, fuzzy
+#| msgid "Max swarm bonus: "
 msgid "Max swarm bonus:"
-msgstr ""
+msgstr "Макс. роячески бонус: "
 
 #: src/reports.cpp:863 src/reports.cpp:882
 #, fuzzy
+#| msgid "Swarm: "
 msgid "Swarm:"
-msgstr "масирана атака"
+msgstr "Рояк: "
 
 #: src/reports.cpp:864 src/reports.cpp:875 src/reports.cpp:886
 #, fuzzy
@@ -8694,8 +9013,10 @@ msgid "Specials:"
 msgstr "Специални: "
 
 #: src/reports.cpp:880
+#, fuzzy
+#| msgid "Subject to swarm: "
 msgid "Subject to swarm:"
-msgstr ""
+msgstr "Подлежи на рояк: "
 
 #: src/reports.cpp:920
 #, fuzzy
@@ -8717,11 +9038,12 @@ msgstr "Вреда против: "
 
 #: src/reports.cpp:1002
 #, fuzzy
-#| msgid "Base attacks: "
+#| msgid "$number attack used"
+#| msgid_plural "$number attacks used"
 msgid "uses $num attack"
 msgid_plural "uses $num attacks"
-msgstr[0] "Основни атаки: "
-msgstr[1] "Основни атаки: "
+msgstr[0] "$number използвана атака"
+msgstr[1] "$number използвани атаки"
 
 #: src/reports.cpp:1010
 msgid "This attack uses $num attack point"
@@ -8795,8 +9117,7 @@ msgid ""
 "When the game exceeds the number of turns indicated by the second number, it "
 "will end."
 msgstr ""
-"Когато превишите бройката ходове заречени от втората бройка, играта Ви е "
-"приключена."
+"Когато превишите бройката ходове заречени от второто число, играта приключва."
 
 #: src/reports.cpp:1552
 msgid "Gold"
@@ -8811,7 +9132,7 @@ msgstr ""
 
 #: src/reports.cpp:1570
 msgid "The fraction of known villages that your side has captured."
-msgstr "Групата от селища, които Вашата страна е заела."
+msgstr "Общият брой селища, които вашата страна е заела."
 
 #: src/reports.cpp:1570
 msgid "Villages"
@@ -8819,7 +9140,7 @@ msgstr "Селища"
 
 #: src/reports.cpp:1575
 msgid "The total number of units on your side."
-msgstr "Общият брой единици на Ваша страна."
+msgstr "Общият брой единици на ваша страна."
 
 #: src/reports.cpp:1575
 msgid "Units"
@@ -8834,10 +9155,10 @@ msgid ""
 "amount of gold that would be deducted if you lost all villages."
 msgstr ""
 "Разходите, които имате всеки ход за поддръжката на армията си. Първата "
-"бройка е златото, което Ви се отнема. То е равно на броя единици, които не "
-"са поддържани от селища. Втората бройка са общите надници, включващи и "
-"първата бройка - с други думи златото, което бихте изразходвали, ако "
-"изгубите всичките си селища."
+"бройка е златото, което се намаля. То е равно на броя единици, които не са "
+"поддържани от селища. Втората бройка са общите надници, включващи и първата "
+"бройка - с други думи златото, което бихте изразходвали, ако изгубите "
+"всичките си селища."
 
 #: src/reports.cpp:1584
 msgid "Upkeep"
@@ -8852,8 +9173,8 @@ msgid ""
 "The net amount of gold you gain or lose each turn, taking into account "
 "income from controlled villages and payment of upkeep."
 msgstr ""
-"Общото количество злато, което печелите или губите всеки ход, вземайки "
-"предвид приходите от Вашите селища и плащането на надниците."
+"Общото количество злато, което печелите или губите на всеки ход, вземайки "
+"предвид приходите от вашите селища и надниците."
 
 #: src/reports.cpp:1814
 msgid "Observers:"
@@ -8869,11 +9190,11 @@ msgstr "Батерия"
 
 #: src/reports.cpp:1886
 msgid "Countdown until your turn automatically ends."
-msgstr "Оставащо време до края на Вашия ход."
+msgstr "Оставащо време до края на вашия ход."
 
 #: src/reports.cpp:1886
 msgid "Turn Countdown"
-msgstr "Остатък на хода Ви"
+msgstr "Оставащи ходове"
 
 #. TRANSLATORS: Day of week + month + day of month + year + 12-hour time, eg 'Tue Nov 02 2021, 1:59 PM'.
 #. Format for your locale.
@@ -8895,7 +9216,7 @@ msgstr "повторение"
 #: src/save_index.cpp:343 src/savegame.cpp:66 src/savegame.cpp:526
 #: src/savegame.cpp:528
 msgid "Auto-Save"
-msgstr "Автоматично запазване"
+msgstr "Автоматичен запис"
 
 #: src/savegame.cpp:123
 msgid ""
@@ -8932,7 +9253,7 @@ msgstr ""
 "предизвикателството, <i>забавлението</i> може да липсват.\n"
 "\n"
 "Например, кампанията може да е била балансирана с по-малко врагове в по-"
-"ранните мисии, очаквайки, че единиците Ви за привикване ще имат по-малко "
+"ранните мисии, очаквайки, че единиците ви за привикване ще имат по-малко "
 "опит по-нататък.\n"
 "\n"
 "Все още ли искате да продължите?"
@@ -8995,7 +9316,7 @@ msgstr "Играта бе запазена."
 
 #: src/savegame.cpp:430 src/savegame.cpp:447
 msgid "Could not write to file"
-msgstr "Записът бе неуспешен"
+msgstr "Записването на файла е невъзможно"
 
 #: src/savegame.cpp:482
 msgid "Save Replay"
@@ -9023,11 +9344,11 @@ msgstr "Липсва затварящ етикет за етикет [$tag]"
 
 #: src/serialization/parser.cpp:178
 msgid "expected at $pos"
-msgstr ""
+msgstr "очаква се в $pos"
 
 #: src/serialization/parser.cpp:179 src/serialization/parser.cpp:268
 msgid "opened at $pos"
-msgstr ""
+msgstr "отворено на $pos"
 
 #: src/serialization/parser.cpp:199
 msgid "Unterminated [element] tag"
@@ -9059,7 +9380,7 @@ msgstr "Невалиден затварящ етикет [/$tag2] за етик�
 
 #: src/serialization/parser.cpp:269
 msgid "closed at $pos"
-msgstr ""
+msgstr "затворено на $pos"
 
 #: src/serialization/parser.cpp:305 src/serialization/parser.cpp:321
 msgid "Empty variable name"
@@ -9075,85 +9396,87 @@ msgstr "Незатворен цитат"
 
 #: src/serialization/parser.cpp:467
 msgid "at $pos"
-msgstr ""
+msgstr "при $pos"
 
 #: src/serialization/parser.cpp:480
+#, fuzzy
+#| msgid "Value: '$value' Previous: '$previous_value'"
 msgid "Value: ‘$value’ Previous: ‘$previous_value’"
-msgstr ""
+msgstr "Стойност: '$value' Предишна: '$previous_value'"
 
 #: src/serialization/string_utils.cpp:569
 msgid "prefix_milli^m"
-msgstr ""
+msgstr "m"
 
 #: src/serialization/string_utils.cpp:570
 msgid "prefix_micro^µ"
-msgstr ""
+msgstr "µ"
 
 #: src/serialization/string_utils.cpp:571
 msgid "prefix_nano^n"
-msgstr ""
+msgstr "n"
 
 #: src/serialization/string_utils.cpp:572
 msgid "prefix_pico^p"
-msgstr ""
+msgstr "p"
 
 #: src/serialization/string_utils.cpp:573
 msgid "prefix_femto^f"
-msgstr ""
+msgstr "f"
 
 #: src/serialization/string_utils.cpp:574
 msgid "prefix_atto^a"
-msgstr ""
+msgstr "a"
 
 #: src/serialization/string_utils.cpp:575
 msgid "prefix_zepto^z"
-msgstr ""
+msgstr "z"
 
 #: src/serialization/string_utils.cpp:576
 msgid "prefix_yocto^y"
-msgstr ""
+msgstr "y"
 
 #. TRANSLATORS: Translate the K in KiB only
 #: src/serialization/string_utils.cpp:589
 msgid "prefix_kibi^K"
-msgstr ""
+msgstr "K"
 
 #: src/serialization/string_utils.cpp:590
 msgid "prefix_kilo^k"
-msgstr ""
+msgstr "k"
 
 #: src/serialization/string_utils.cpp:592
 msgid "prefix_mega^M"
-msgstr ""
+msgstr "M"
 
 #: src/serialization/string_utils.cpp:593
 msgid "prefix_giga^G"
-msgstr ""
+msgstr "G"
 
 #: src/serialization/string_utils.cpp:594
 msgid "prefix_tera^T"
-msgstr ""
+msgstr "T"
 
 #: src/serialization/string_utils.cpp:595
 msgid "prefix_peta^P"
-msgstr ""
+msgstr "P"
 
 #: src/serialization/string_utils.cpp:596
 msgid "prefix_exa^E"
-msgstr ""
+msgstr "E"
 
 #: src/serialization/string_utils.cpp:597
 msgid "prefix_zetta^Z"
-msgstr ""
+msgstr "Z"
 
 #: src/serialization/string_utils.cpp:598
 msgid "prefix_yotta^Y"
-msgstr ""
+msgstr "Y"
 
 #. TRANSLATORS: Translate the i in (for example) KiB only
 #: src/serialization/string_utils.cpp:613
 msgid "infix_binary^i"
-msgstr ""
+msgstr "i"
 
 #: src/synced_commands.cpp:379
 msgid "(unknown player)"
@@ -9161,13 +9484,15 @@ msgstr "(непознат играч)"
 
 #: src/synced_commands.cpp:384
 msgid "The :$command debug command was used during $player’s turn"
-msgstr ""
+msgstr "Дебъг командата :$command беше използвана по време на хода на $player"
 
 #: src/synced_commands.cpp:392
 msgid ""
 "A player used a debug command during the game. If this is unexpected, it is "
 "possible the player in question is cheating."
 msgstr ""
+"Един играч е използвал дебъг команда по време на играта. Ако това е "
+"неочаквано, възможно е играчът да мами."
 
 #: src/synced_commands.cpp:394
 msgid "Details:"
@@ -9179,30 +9504,30 @@ msgstr "Искате ли да запишете играта си, преди д
 
 #: src/synced_commands.cpp:399
 msgid "Debug Command Used"
-msgstr ""
+msgstr "Използвана дебъг команда"
 
 #: src/synced_commands.cpp:505
 msgid "A unit was created using debug mode during $player’s turn"
-msgstr ""
+msgstr "Единица беше създадена чрез дебъг режима по време на хода на $player"
 
 #: src/synced_user_choice.cpp:344
 msgid "waiting for $desc from side $sides"
 msgid_plural "waiting for $desc from sides $sides"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "изчакване за $desc от страна $sides"
+msgstr[1] "изчакване за $desc от страни $sides"
 
 #. TRANSLATORS: In networked games, this text is shown for other clients,
 #. while they wait for an action from another player.
 #. This text will be embedded into a sentence.
 #: src/synced_user_choice.hpp:45
 msgid "waiting for^input"
-msgstr ""
+msgstr "подаване"
 
 #. TRANSLATORS: $color_id is the internal identifier of a side color, for example, 'lightred'.
 #. Translate the quotation marks only; leave "color_id" untranslated, as it's a variable name.
 #: src/team.cpp:989
 msgid "“$color_id”"
-msgstr ""
+msgstr "“$color_id”"
 
 #: src/terrain/terrain.cpp:174
 msgid "Allied village"
@@ -9218,11 +9543,11 @@ msgstr "Притежавано селище"
 
 #: src/theme.cpp:330
 msgid "border_size should be between 0.0 and 0.5."
-msgstr ""
+msgstr "border_size трябва да бъде между 0.0 и 0.5."
 
 #: src/theme.cpp:581 src/theme.cpp:586
 msgid "Hotkey(s): "
-msgstr ""
+msgstr "Бързи клавиши: "
 
 #: src/time_of_day.cpp:45
 msgid "Stub Time of Day"
@@ -9232,25 +9557,23 @@ msgstr ""
 msgid "This Time of Day is only a Stub!"
 msgstr ""
 
-#: src/units/abilities.cpp:1161
-#, fuzzy
-#| msgid "slowed: "
-msgid "Owned: "
-msgstr "забавен: "
-
-#. TRANSLATORS: Past-participle of "teach", used for an ability similar to leadership
-#: src/units/abilities.cpp:1163
-msgid "Taught: "
-msgstr ""
-
-#. TRANSLATORS: Past-participle of "teach", used for an ability similar to leadership
-#: src/units/abilities.cpp:1165
-msgid "Taught: (by an enemy): "
-msgstr ""
-
 #: src/units/abilities.cpp:1166
+msgid "Owned: "
+msgstr "Притежавано: "
+
+#. TRANSLATORS: Past-participle of "teach", used for an ability similar to leadership
+#: src/units/abilities.cpp:1168
+msgid "Taught: "
+msgstr "Обучен: "
+
+#. TRANSLATORS: Past-participle of "teach", used for an ability similar to leadership
+#: src/units/abilities.cpp:1170
+msgid "Taught: (by an enemy): "
+msgstr "Обучен: (от врага): "
+
+#: src/units/abilities.cpp:1171
 msgid "Used by opponent: "
-msgstr ""
+msgstr "Използвано от опонент: "
 
 #: src/units/attack_type.cpp:114
 msgid "Accuracy:"
@@ -9262,8 +9585,11 @@ msgstr "Париране:"
 
 #. TRANSLATORS: Current value for WML code set_min_range, documented in https://wiki.wesnoth.org/EffectWML
 #: src/units/attack_type.cpp:542
+#, fuzzy
+#| msgid "$number damage"
+#| msgid_plural "$number damage"
 msgid "$number min range"
-msgstr ""
+msgstr "$number damage"
 
 #. TRANSLATORS: Current value for WML code increase_min_range, documented in https://wiki.wesnoth.org/EffectWML
 #: src/units/attack_type.cpp:549
@@ -9275,8 +9601,11 @@ msgstr "<span color=\"$color\">$number_or_percent</span> вреда"
 
 #. TRANSLATORS: Current value for WML code set_max_range, documented in https://wiki.wesnoth.org/EffectWML
 #: src/units/attack_type.cpp:556
+#, fuzzy
+#| msgid "$number damage"
+#| msgid_plural "$number damage"
 msgid "$number max range"
-msgstr ""
+msgstr "$number damage"
 
 #. TRANSLATORS: Current value for WML code increase_max_range, documented in https://wiki.wesnoth.org/EffectWML
 #: src/units/attack_type.cpp:563
@@ -9296,8 +9625,8 @@ msgstr[1] "<span color=\"$color\">$number_or_percent</span> вреда"
 #: src/units/attack_type.cpp:579
 msgid "$number damage"
 msgid_plural "$number damage"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "$number damage"
+msgstr[1] "$number damage"
 
 #. TRANSLATORS: Current value for WML code increase_attacks, documented in https://wiki.wesnoth.org/EffectWML
 #: src/units/attack_type.cpp:588
@@ -9310,35 +9639,35 @@ msgstr[1] "<span color=\"$color\">$number_or_percent</span> удари"
 #: src/units/attack_type.cpp:597
 msgid "$number strike"
 msgid_plural "$number strikes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "$number удар"
+msgstr[1] "$number удари"
 
 #. TRANSLATORS: Current value for WML code set_accuracy, documented in https://wiki.wesnoth.org/EffectWML
 #: src/units/attack_type.cpp:606
 msgid "$number| accuracy"
-msgstr ""
+msgstr "$number| точност"
 
 #. TRANSLATORS: Current value for WML code increase_accuracy, documented in https://wiki.wesnoth.org/EffectWML
 #: src/units/attack_type.cpp:613
 msgid "<span color=\"$color\">$number_or_percent|%</span> accuracy"
-msgstr ""
+msgstr "<span color=\"$color\">$number_or_percent|%</span> точност"
 
 #. TRANSLATORS: Current value for WML code set_parry, documented in https://wiki.wesnoth.org/EffectWML
 #: src/units/attack_type.cpp:620
 msgid "$number parry"
-msgstr ""
+msgstr "$number париране"
 
 #. TRANSLATORS: Current value for WML code increase_parry, documented in https://wiki.wesnoth.org/EffectWML
 #: src/units/attack_type.cpp:627
 msgid "<span color=\"$color\">$number_or_percent</span> parry"
-msgstr ""
+msgstr "<span color=\"$color\">$number_or_percent</span> париране"
 
 #. TRANSLATORS: Current value for WML code set_movement_used, documented in https://wiki.wesnoth.org/EffectWML
 #: src/units/attack_type.cpp:634
 msgid "$number movement point"
 msgid_plural "$number movement points"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "$number точка за придвижване"
+msgstr[1] "$number точки за придвижване"
 
 #. TRANSLATORS: Current value for WML code increase_movement_used, documented in https://wiki.wesnoth.org/EffectWML
 #: src/units/attack_type.cpp:643
@@ -9351,19 +9680,15 @@ msgstr[1] "<span color=\"$color\">$number_or_percent</span> точки прид�
 #: src/units/attack_type.cpp:652
 msgid "$number attack used"
 msgid_plural "$number attacks used"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "$number използвана атака"
+msgstr[1] "$number използвани атаки"
 
 #. TRANSLATORS: Current value for WML code increase_attacks_used, documented in https://wiki.wesnoth.org/EffectWML
 #: src/units/attack_type.cpp:661
-#, fuzzy
-#| msgid "<span color=\"$color\">$number_or_percent</span> attack per turn"
-#| msgid_plural ""
-#| "<span color=\"$color\">$number_or_percent</span> attacks per turn"
 msgid "<span color=\"$color\">$number_or_percent</span> attack used"
 msgid_plural "<span color=\"$color\">$number_or_percent</span> attacks used"
-msgstr[0] "<span color=\"$color\">$number_or_percent</span> удар на ход"
-msgstr[1] "<span color=\"$color\">$number_or_percent</span> удари на ход"
+msgstr[0] "<span color=\"$color\">$number_or_percent</span> използвана атака"
+msgstr[1] "<span color=\"$color\">$number_or_percent</span> използвани атаки"
 
 #: src/units/helper.cpp:63
 msgid "Level: "
@@ -9431,24 +9756,21 @@ msgstr "лиминален"
 #, fuzzy
 #| msgid "This unit has no usable weapons."
 msgid "This unit cannot be dismissed."
-msgstr "Тази единица няма подходящи оръжия."
+msgstr "Тази единица няма оръжия."
 
 #: src/units/unit.cpp:752
 #, fuzzy
-#| msgid ""
-#| "This unit is invisible. It cannot be seen or attacked by enemy units."
+#| msgid "This unit is invulnerable. It cannot be harmed by any attack."
 msgid "This unit is a leader and cannot be dismissed."
-msgstr ""
-"Тази единица е невидима. Не може а бъде видяна или атакувана от вражески "
-"единици."
+msgstr "Тази единица е неуязвима. Никоя атака не може да ѝ навреди."
 
 #: src/units/unit.cpp:2008
 msgid "$attack_list|: $effect_description"
-msgstr ""
+msgstr "$attack_list|: $effect_description"
 
 #: src/units/unit.cpp:2014
 msgid "<span color=\"$color\">$number_or_percent</span> HP"
-msgstr ""
+msgstr "<span color=\"$color\">$number_or_percent</span> ТЖ"
 
 #: src/units/unit.cpp:2024
 msgid "<span color=\"$color\">$number_or_percent</span> move"
@@ -9458,30 +9780,30 @@ msgstr[1] "<span color=\"$color\">$number_or_percent</span> ходове"
 
 #: src/units/unit.cpp:2030
 msgid "<span color=\"$color\">$number_or_percent</span> vision"
-msgstr ""
+msgstr "<span color=\"$color\">$number_or_percent</span> видимост"
 
 #: src/units/unit.cpp:2034
 msgid "<span color=\"$color\">$number_or_percent</span> jamming"
-msgstr ""
+msgstr "<span color=\"$color\">$number_or_percent</span> затруднение"
 
 #: src/units/unit.cpp:2039
 msgid "<span color=\"$color\">$number_or_percent</span> XP to advance"
-msgstr ""
+msgstr "<span color=\"$color\">$number_or_percent</span> ТО до повишение"
 
 #: src/units/unit.cpp:2043
 msgid "<span color=\"$color\">$number_or_percent</span> attack per turn"
 msgid_plural ""
 "<span color=\"$color\">$number_or_percent</span> attacks per turn"
-msgstr[0] "<span color=\"$color\">$number_or_percent</span> удар на ход"
-msgstr[1] "<span color=\"$color\">$number_or_percent</span> удари на ход"
+msgstr[0] "<span color=\"$color\">$number_or_percent</span> атака на ход"
+msgstr[1] "<span color=\"$color\">$number_or_percent</span> атаки на ход"
 
 #: src/units/unit.cpp:2050
 msgid "<span color=\"$color\">$number_or_percent</span> cost to recall"
-msgstr ""
+msgstr "<span color=\"$color\">$number_or_percent</span> цена за привикване"
 
 #: src/units/unit.cpp:2556
 msgid "$effect_description per level"
-msgstr ""
+msgstr "$effect_description за всяко ниво"
 
 #. TRANSLATORS: "Before Wesnoth"   - format for years prior to the founding of Wesnoth
 #: src/utils/irdya_datetime.cpp:60
@@ -9501,20 +9823,21 @@ msgstr "$year ПП"
 #. TRANSLATORS: "After the Fall"   - format for years after the fall of Wesnoth
 #: src/utils/irdya_datetime.cpp:69
 msgid "$year AF"
-msgstr "$year СУ"
+msgstr "$year СП"
 
-#: src/wesnoth.cpp:804
+#: src/wesnoth.cpp:808
 msgid ""
 "Unable to create log files in directory $logdir. This is often caused by "
 "incorrect folder permissions, anti-virus software restricting folder access, "
 "or using OneDrive to manage your My Documents folder."
 msgstr ""
+"В $logdir не могат да бъдат създадени доклади. Причината за това често пъти "
+"е неправилен достъп до файлове, ограничения откъм анти-вирусни програми или "
+"употребата на OneDrive, за да управлява папката My Documents."
 
-#: src/wesnoth.cpp:805
-#, fuzzy
-#| msgid "Logging"
+#: src/wesnoth.cpp:809
 msgid "Logging Failure"
-msgstr "Вписване"
+msgstr "Неуспешно документиране"
 
 #: src/wesnothd_connection.cpp:547
 msgid "Disconnected from server."
@@ -9540,33 +9863,11 @@ msgstr "Скриване плановете на $player"
 msgid "Whiteboard Options"
 msgstr "Настройки за Бялата дъска"
 
-#, fuzzy
-#~| msgid "Legends of the North"
-#~ msgid "Echoes of the Earth"
-#~ msgstr "Северни легенди"
+#~ msgid "Lato Light"
+#~ msgstr "Lato Light"
 
 #~ msgid "Oldania ADF Std"
 #~ msgstr "Oldania ADF Std"
-
-#, fuzzy
-#~| msgid "Do you still want to download it?"
-#~ msgid "Do you want to load it anyway?"
-#~ msgstr "Искате ли да го свалите?"
-
-#~ msgid ""
-#~ "Warning: The file you have tried to load is corrupt. Loading anyway.\n"
-#~ msgstr ""
-#~ "Внимание: Файлът, който се опитвате да заредите е повреден. Въпреки това "
-#~ "се зарежда. \n"
-
-#~ msgid "Time of day: "
-#~ msgstr "Час от денонощието: "
-
-#~ msgid "Internal error. Please report this as a bug! Details:\n"
-#~ msgstr "Вътрешна грешка. Моля, докладвайте това като бъг! Подробности:\n"
-
-#~ msgid "You cannot recruit a $unit_type_name at this time."
-#~ msgstr "Сега не можете да наемете $unit_type_name."
 
 #~ msgid ""
 #~ "Send some data to the server. Can be used to verify the network "
@@ -9575,29 +9876,44 @@ msgstr "Настройки за Бялата дъска"
 #~ "Изпращане на данни към сървъра. Може да се използва, за да свери мрежова "
 #~ "връзка и да отбележи напускания."
 
-#~ msgid "Era:"
-#~ msgstr "Епоха:"
-
-#~ msgid "Lato Light"
-#~ msgstr "Lato Light"
+#~ msgid "Invalid Color"
+#~ msgstr "Невалиден цвят"
 
 #~ msgid "No units found."
 #~ msgstr "Не са открити единици."
 
-#~ msgid "No unit recruited."
-#~ msgstr "Не е наета единица."
-
-#~ msgid "No unit recalled."
-#~ msgstr "Не е привикана единица."
-
-#~ msgid "Invalid Color"
-#~ msgstr "Невалиден цвят"
-
 #~ msgid "Reference to unknown topic: "
 #~ msgstr "Препратка към непозната тема: "
 
+#~ msgid "Era:"
+#~ msgstr "Епоха:"
+
 #~ msgid "corrupted original file"
 #~ msgstr "повреден оригинален файл"
+
+#~ msgid "Do you want to load it anyway?"
+#~ msgstr "Искате ли да го заредите?"
+
+#~ msgid "No unit recruited."
+#~ msgstr "Не е наета единица."
+
+#~ msgid "Internal error. Please report this as a bug! Details:\n"
+#~ msgstr "Вътрешна грешка. Моля, докладвайте това като бъг! Подробности:\n"
+
+#~ msgid "You cannot recruit a $unit_type_name at this time."
+#~ msgstr "Сега не можете да наемете $unit_type_name."
+
+#~ msgid "No unit recalled."
+#~ msgstr "Няма привикана единица."
+
+#~ msgid "Time of day: "
+#~ msgstr "Час от денонощието: "
+
+#~ msgid ""
+#~ "Warning: The file you have tried to load is corrupt. Loading anyway.\n"
+#~ msgstr ""
+#~ "Внимание: файлът, който се опитвате да заредите е повреден. Въпреки това "
+#~ "се зарежда. \n"
 
 #~ msgid "Chest"
 #~ msgstr "Сандък"
@@ -10746,6 +11062,10 @@ msgstr "Настройки за Бялата дъска"
 #~ msgstr "Версия: "
 
 #, fuzzy
+#~ msgid " jamming"
+#~ msgstr "Сутрин"
+
+#, fuzzy
 #~ msgid "Show your ignores and friends list."
 #~ msgstr "Показване на черният списък и списъка с приятели: /list display"
 
@@ -11330,6 +11650,10 @@ msgstr "Настройки за Бялата дъска"
 #~| msgid "Recruit"
 #~ msgid "Recruiting"
 #~ msgstr "Набор"
+
+#, fuzzy
+#~ msgid "Swarm"
+#~ msgstr "масирана атака"
 
 #, fuzzy
 #~ msgid "Bats"

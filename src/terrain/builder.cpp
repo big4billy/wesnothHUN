@@ -147,9 +147,9 @@ void terrain_builder::tile::rebuild_cache(const std::string& tod, logs* log)
 			assert(anim.get_animation_duration() != 0ms);
 
 			if(variant.random_start < 0ms) {
-				img_list.back().set_animation_time(std::chrono::milliseconds{ri.rand} % img_list.back().get_animation_duration());
+				img_list.back().apply_time_offset(std::chrono::milliseconds{ri.rand} % img_list.back().get_animation_duration());
 			} else if(variant.random_start > 0ms) {
-				img_list.back().set_animation_time(std::chrono::milliseconds{ri.rand} % variant.random_start);
+				img_list.back().apply_time_offset(std::chrono::milliseconds{ri.rand} % variant.random_start);
 			}
 
 			if(!animate) {
@@ -327,14 +327,16 @@ bool terrain_builder::update_animation(const map_location& loc)
 	tile& btile = tile_map_[loc];
 
 	for(animated<image::locator>& a : btile.images_background) {
-		if(a.need_update())
+		if(a.need_update()) {
 			changed = true;
-		a.update_last_draw_time();
+			a.advance_to_current_frame();
+		}
 	}
 	for(animated<image::locator>& a : btile.images_foreground) {
-		if(a.need_update())
+		if(a.need_update()) {
 			changed = true;
-		a.update_last_draw_time();
+			a.advance_to_current_frame();
+		}
 	}
 
 	return changed;
@@ -1191,11 +1193,9 @@ void terrain_builder::build_terrains()
 		assert(min_constraint != nullptr);
 
 		// NOTE: if min_types is not empty, we have found a valid min_constraint;
-		for(t_translation::ter_list::const_iterator t = min_types.begin(); t != min_types.end(); ++t) {
-			const std::vector<map_location>* locations = &terrain_by_type_[*t];
-
-			for(std::vector<map_location>::const_iterator itor = locations->begin(); itor != locations->end(); ++itor) {
-				const map_location loc = legacy_difference(*itor, min_constraint->loc);
+		for(const auto& t : min_types) {
+			for(map_location mloc : terrain_by_type_[t]) {
+				const map_location loc = legacy_difference(mloc, min_constraint->loc);
 
 				if(rule_matches(rule, loc, min_constraint)) {
 					apply_rule(rule, loc);

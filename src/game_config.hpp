@@ -63,6 +63,7 @@ namespace game_config
 
 	extern bool allow_insecure;
 	extern bool addon_server_info;
+	extern bool no_simd;
 
 	extern const bool& debug;
 	void set_debug(bool new_debug);
@@ -152,7 +153,6 @@ namespace game_config
 	extern std::vector<color_t> blue_white_scale;
 	extern std::vector<color_t> blue_white_scale_text;
 
-	extern std::vector<std::string> foot_speed_prefix;
 	extern std::string foot_teleport_enter, foot_teleport_exit;
 
 	/**
